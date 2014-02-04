@@ -18,7 +18,8 @@
 		7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */; };
 		7E1D05D918A14105006EF056 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */; };
 		7E1D05DA18A14105006EF056 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */; };
-		7E1D05EF18A14FCC006EF056 /* SCItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05EE18A14FCC006EF056 /* SCItemListCell.m */; };
+		7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05F118A15235006EF056 /* SCItemListCell.m */; };
+		7E1D05F518A1525B006EF056 /* SCItemGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05F418A1525B006EF056 /* SCItemGrid.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +65,10 @@
 		7E1D05E718A14F6D006EF056 /* SIBListModeAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBListModeAppearance.h; sourceTree = "<group>"; };
 		7E1D05E918A14F6D006EF056 /* SIBGridModeCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBGridModeCellFactory.h; sourceTree = "<group>"; };
 		7E1D05EA18A14F6D006EF056 /* SIBListModeCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBListModeCellFactory.h; sourceTree = "<group>"; };
-		7E1D05ED18A14FCC006EF056 /* SCItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListCell.h; sourceTree = "<group>"; };
-		7E1D05EE18A14FCC006EF056 /* SCItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListCell.m; sourceTree = "<group>"; };
+		7E1D05F018A15235006EF056 /* SCItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListCell.h; sourceTree = "<group>"; };
+		7E1D05F118A15235006EF056 /* SCItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListCell.m; sourceTree = "<group>"; };
+		7E1D05F318A1525B006EF056 /* SCItemGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemGrid.h; sourceTree = "<group>"; };
+		7E1D05F418A1525B006EF056 /* SCItemGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemGrid.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +190,8 @@
 		7E1D05EB18A14FB3006EF056 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
-				7E1D05ED18A14FCC006EF056 /* SCItemListCell.h */,
-				7E1D05EE18A14FCC006EF056 /* SCItemListCell.m */,
+				7E1D05F318A1525B006EF056 /* SCItemGrid.h */,
+				7E1D05F418A1525B006EF056 /* SCItemGrid.m */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -196,6 +199,8 @@
 		7E1D05EC18A14FB3006EF056 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				7E1D05F018A15235006EF056 /* SCItemListCell.h */,
+				7E1D05F118A15235006EF056 /* SCItemListCell.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -281,7 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E1D05EF18A14FCC006EF056 /* SCItemListCell.m in Sources */,
+				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
+				7E1D05F518A1525B006EF056 /* SCItemGrid.m in Sources */,
 				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
