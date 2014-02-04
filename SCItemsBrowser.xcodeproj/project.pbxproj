@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E1D05B018A13D8E006EF056 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05AF18A13D8E006EF056 /* Foundation.framework */; };
+		7E1D05B518A13D8E006EF056 /* SCItemsBrowser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */; };
+		7E1D05B718A13D8E006EF056 /* SCItemsBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05B618A13D8E006EF056 /* SCItemsBrowser.m */; };
+		7E1D05BE18A13D8E006EF056 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05BD18A13D8E006EF056 /* XCTest.framework */; };
+		7E1D05BF18A13D8E006EF056 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05AF18A13D8E006EF056 /* Foundation.framework */; };
+		7E1D05C118A13D8E006EF056 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05C018A13D8E006EF056 /* UIKit.framework */; };
+		7E1D05C418A13D8E006EF056 /* libSCItemsBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05AC18A13D8E006EF056 /* libSCItemsBrowser.a */; };
+		7E1D05CA18A13D8E006EF056 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D05C818A13D8E006EF056 /* InfoPlist.strings */; };
+		7E1D05CC18A13D8E006EF056 /* SCItemsBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05CB18A13D8E006EF056 /* SCItemsBrowserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E1D05C218A13D8E006EF056 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E1D05A418A13D8E006EF056 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E1D05AB18A13D8E006EF056;
+			remoteInfo = SCItemsBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E1D05AA18A13D8E006EF056 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7E1D05B518A13D8E006EF056 /* SCItemsBrowser.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7E1D05AC18A13D8E006EF056 /* libSCItemsBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCItemsBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1D05AF18A13D8E006EF056 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7E1D05B318A13D8E006EF056 /* SCItemsBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCItemsBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowser.h; sourceTree = "<group>"; };
+		7E1D05B618A13D8E006EF056 /* SCItemsBrowser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemsBrowser.m; sourceTree = "<group>"; };
+		7E1D05BC18A13D8E006EF056 /* SCItemsBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCItemsBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1D05BD18A13D8E006EF056 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7E1D05C018A13D8E006EF056 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7E1D05C718A13D8E006EF056 /* SCItemsBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCItemsBrowserTests-Info.plist"; sourceTree = "<group>"; };
+		7E1D05C918A13D8E006EF056 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E1D05CB18A13D8E006EF056 /* SCItemsBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCItemsBrowserTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E1D05A918A13D8E006EF056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1D05B018A13D8E006EF056 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E1D05B918A13D8E006EF056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1D05BE18A13D8E006EF056 /* XCTest.framework in Frameworks */,
+				7E1D05C418A13D8E006EF056 /* libSCItemsBrowser.a in Frameworks */,
+				7E1D05C118A13D8E006EF056 /* UIKit.framework in Frameworks */,
+				7E1D05BF18A13D8E006EF056 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E1D05A318A13D8E006EF056 = {
+			isa = PBXGroup;
+			children = (
+				7E1D05B118A13D8E006EF056 /* SCItemsBrowser */,
+				7E1D05C518A13D8E006EF056 /* SCItemsBrowserTests */,
+				7E1D05AE18A13D8E006EF056 /* Frameworks */,
+				7E1D05AD18A13D8E006EF056 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E1D05AD18A13D8E006EF056 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D05AC18A13D8E006EF056 /* libSCItemsBrowser.a */,
+				7E1D05BC18A13D8E006EF056 /* SCItemsBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E1D05AE18A13D8E006EF056 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D05AF18A13D8E006EF056 /* Foundation.framework */,
+				7E1D05BD18A13D8E006EF056 /* XCTest.framework */,
+				7E1D05C018A13D8E006EF056 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E1D05B118A13D8E006EF056 /* SCItemsBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
+				7E1D05B618A13D8E006EF056 /* SCItemsBrowser.m */,
+				7E1D05B218A13D8E006EF056 /* Supporting Files */,
+			);
+			path = SCItemsBrowser;
+			sourceTree = "<group>";
+		};
+		7E1D05B218A13D8E006EF056 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D05B318A13D8E006EF056 /* SCItemsBrowser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E1D05C518A13D8E006EF056 /* SCItemsBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D05CB18A13D8E006EF056 /* SCItemsBrowserTests.m */,
+				7E1D05C618A13D8E006EF056 /* Supporting Files */,
+			);
+			path = SCItemsBrowserTests;
+			sourceTree = "<group>";
+		};
+		7E1D05C618A13D8E006EF056 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E1D05C718A13D8E006EF056 /* SCItemsBrowserTests-Info.plist */,
+				7E1D05C818A13D8E006EF056 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E1D05AB18A13D8E006EF056 /* SCItemsBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E1D05CF18A13D8E006EF056 /* Build configuration list for PBXNativeTarget "SCItemsBrowser" */;
+			buildPhases = (
+				7E1D05A818A13D8E006EF056 /* Sources */,
+				7E1D05A918A13D8E006EF056 /* Frameworks */,
+				7E1D05AA18A13D8E006EF056 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCItemsBrowser;
+			productName = SCItemsBrowser;
+			productReference = 7E1D05AC18A13D8E006EF056 /* libSCItemsBrowser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7E1D05BB18A13D8E006EF056 /* SCItemsBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E1D05D218A13D8E006EF056 /* Build configuration list for PBXNativeTarget "SCItemsBrowserTests" */;
+			buildPhases = (
+				7E1D05B818A13D8E006EF056 /* Sources */,
+				7E1D05B918A13D8E006EF056 /* Frameworks */,
+				7E1D05BA18A13D8E006EF056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E1D05C318A13D8E006EF056 /* PBXTargetDependency */,
+			);
+			name = SCItemsBrowserTests;
+			productName = SCItemsBrowserTests;
+			productReference = 7E1D05BC18A13D8E006EF056 /* SCItemsBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E1D05A418A13D8E006EF056 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Sitecore;
+			};
+			buildConfigurationList = 7E1D05A718A13D8E006EF056 /* Build configuration list for PBXProject "SCItemsBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7E1D05A318A13D8E006EF056;
+			productRefGroup = 7E1D05AD18A13D8E006EF056 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E1D05AB18A13D8E006EF056 /* SCItemsBrowser */,
+				7E1D05BB18A13D8E006EF056 /* SCItemsBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E1D05BA18A13D8E006EF056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1D05CA18A13D8E006EF056 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E1D05A818A13D8E006EF056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1D05B718A13D8E006EF056 /* SCItemsBrowser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E1D05B818A13D8E006EF056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E1D05CC18A13D8E006EF056 /* SCItemsBrowserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E1D05C318A13D8E006EF056 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E1D05AB18A13D8E006EF056 /* SCItemsBrowser */;
+			targetProxy = 7E1D05C218A13D8E006EF056 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E1D05C818A13D8E006EF056 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E1D05C918A13D8E006EF056 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E1D05CD18A13D8E006EF056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7E1D05CE18A13D8E006EF056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E1D05D018A13D8E006EF056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCItemsBrowser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7E1D05D118A13D8E006EF056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SCItemsBrowser.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7E1D05D318A13D8E006EF056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SCItemsBrowserTests/SCItemsBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7E1D05D418A13D8E006EF056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				INFOPLIST_FILE = "SCItemsBrowserTests/SCItemsBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E1D05A718A13D8E006EF056 /* Build configuration list for PBXProject "SCItemsBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E1D05CD18A13D8E006EF056 /* Debug */,
+				7E1D05CE18A13D8E006EF056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E1D05CF18A13D8E006EF056 /* Build configuration list for PBXNativeTarget "SCItemsBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E1D05D018A13D8E006EF056 /* Debug */,
+				7E1D05D118A13D8E006EF056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E1D05D218A13D8E006EF056 /* Build configuration list for PBXNativeTarget "SCItemsBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E1D05D318A13D8E006EF056 /* Debug */,
+				7E1D05D418A13D8E006EF056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E1D05A418A13D8E006EF056 /* Project object */;
+}
