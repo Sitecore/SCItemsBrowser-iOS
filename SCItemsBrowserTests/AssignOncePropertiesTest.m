@@ -9,7 +9,7 @@
 #import "StubGridModeTheme.h"
 #import "StubItemsBrowserDelegate.h"
 #import "StubCellFactory.h"
-
+#import "StubRequestBuilder.h"
 
 @interface AssignOncePropertiesTest : XCTestCase
 @end
@@ -25,6 +25,7 @@
     StubGridModeTheme* _gridModeThemeStub;
     StubItemsBrowserDelegate* _delegateStub;
     StubCellFactory* _cellFactoryStub;
+    StubRequestBuilder* _requestBuilderStub;
     
     SCItemsBrowserView* _itemsBrowser;
     CGRect _stubRect;
@@ -45,6 +46,7 @@
     self->_gridModeThemeStub = [ StubGridModeTheme        new ];
     self->_delegateStub      = [ StubItemsBrowserDelegate new ];
     self->_cellFactoryStub   = [ StubCellFactory          new ];
+    self->_requestBuilderStub = [ StubRequestBuilder new ];
     
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: nil
                                                  apiContext: self->_context ];
@@ -205,5 +207,25 @@
     );
 }
 
+
+-(void)testNextLevelBuilderIsAssignedOnce
+{
+    XCTAssertNil( self->_itemsBrowser.nextLevelRequestBuilder, @"nil rootItem expected" );
+    
+    self->_itemsBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
+    XCTAssertTrue( self->_itemsBrowser.nextLevelRequestBuilder == self->_requestBuilderStub, @"rootItem pointer mismatch" );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setNextLevelRequestBuilder: self->_requestBuilderStub ],
+     @"assign is allowed only once"
+     );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setNextLevelRequestBuilder: nil ],
+     @"assign is allowed only once"
+     );
+}
 
 @end
