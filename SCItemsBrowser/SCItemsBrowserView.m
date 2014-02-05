@@ -2,23 +2,34 @@
 
 @implementation SCItemsBrowserView
 
--(id)initWithFrame:(CGRect)frame
+-(void)setApiContext:( SCExtendedApiContext* )value
 {
-    self = [ super initWithFrame: frame ];
-    if ( self )
-    {
-        // Initialization code
-    }
-    return self;
+    NSParameterAssert( nil == self->_apiContext );
+    self->_apiContext = value;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void)setRootItem:(SCItem *)rootItem
 {
-    // Drawing code
+    NSParameterAssert( nil == self->_rootItem );
+    self->_rootItem = rootItem;
 }
-*/
+
+-(void)setListModeTheme:(id<SIBListModeAppearance>)listModeTheme
+{
+    NSParameterAssert( nil == self->_listModeTheme );
+    self->_listModeTheme = listModeTheme;
+}
+
+-(void)setGridModeTheme:(id<SIBGridModeAppearance>)gridModeTheme
+{
+    NSParameterAssert( nil == self->_gridModeTheme );
+    self->_gridModeTheme = gridModeTheme;
+}
+
+-(void)setDelegate:(id<SCItemsBrowserDelegate>)delegate
+{
+    NSParameterAssert( nil == self->_delegate );
+    self->_delegate = delegate;
+}
 
 @end
