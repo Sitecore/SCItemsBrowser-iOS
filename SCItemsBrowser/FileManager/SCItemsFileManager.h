@@ -9,6 +9,7 @@
 -(instancetype)initWithApiContext:( SCExtendedApiContext* )apiContext
               levelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder;
 
--(void)loadLevelForItem:( )
+//-(void)loadLevelForItem:( SCItem* )item
+//             completion:;
 
 @end
