@@ -1,6 +1,6 @@
-#import "SCItemGrid.h"
+#import "SCItemGridCell.h"
 
-@implementation SCItemGrid
+@implementation SCItemGridCell
 
 -(void)setModel:( SCItem* )item
 {
