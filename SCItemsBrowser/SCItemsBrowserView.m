@@ -32,4 +32,17 @@
     self->_delegate = delegate;
 }
 
+-(void)setListModeCellBuilder:(id<SIBListModeCellFactory>)listModeCellBuilder
+{
+    NSParameterAssert( nil == self->_listModeCellBuilder );
+    self->_listModeCellBuilder = listModeCellBuilder;
+    
+}
+
+-(void)setGridModeCellBuilder:(id<SIBGridModeCellFactory>)gridModeCellBuilder
+{
+    NSParameterAssert( nil == self->_gridModeCellBuilder );
+    self->_gridModeCellBuilder = gridModeCellBuilder;
+}
+
 @end

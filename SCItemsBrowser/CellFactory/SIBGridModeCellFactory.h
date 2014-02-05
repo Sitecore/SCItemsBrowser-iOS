@@ -5,7 +5,7 @@
 
 @protocol SIBGridModeCellFactory <NSObject>
 
--(UICollectionViewCell<SCItemCell>*)createCell;
+-(UICollectionViewCell<SCItemCell>*)createCellForGridMode;
 
 @end
 

@@ -46,6 +46,7 @@
 		7E225BD918A246F9009CEBEE /* StubListModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BD818A246F9009CEBEE /* StubListModeTheme.m */; };
 		7E225BDC18A24805009CEBEE /* StubGridModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */; };
 		7E225BDF18A24950009CEBEE /* StubItemsBrowserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */; };
+		7E225BE218A26466009CEBEE /* StubCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BE118A26466009CEBEE /* StubCellFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,8 @@
 		7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubGridModeTheme.m; sourceTree = "<group>"; };
 		7E225BDD18A24950009CEBEE /* StubItemsBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubItemsBrowserDelegate.h; sourceTree = "<group>"; };
 		7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubItemsBrowserDelegate.m; sourceTree = "<group>"; };
+		7E225BE018A26466009CEBEE /* StubCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubCellFactory.h; sourceTree = "<group>"; };
+		7E225BE118A26466009CEBEE /* StubCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubCellFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 				7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */,
 				7E225BDD18A24950009CEBEE /* StubItemsBrowserDelegate.h */,
 				7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */,
+				7E225BE018A26466009CEBEE /* StubCellFactory.h */,
+				7E225BE118A26466009CEBEE /* StubCellFactory.m */,
 			);
 			path = SCItemsBrowserTests;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E225BDF18A24950009CEBEE /* StubItemsBrowserDelegate.m in Sources */,
+				7E225BE218A26466009CEBEE /* StubCellFactory.m in Sources */,
 				7E225BDC18A24805009CEBEE /* StubGridModeTheme.m in Sources */,
 				7E225BD918A246F9009CEBEE /* StubListModeTheme.m in Sources */,
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,

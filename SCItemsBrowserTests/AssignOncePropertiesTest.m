@@ -4,9 +4,11 @@
 #import <SCItemsBrowser/SCItemsBrowser.h>
 
 #import "SCItem+PrivateMethods.h"
+
 #import "StubListModeTheme.h"
 #import "StubGridModeTheme.h"
 #import "StubItemsBrowserDelegate.h"
+#import "StubCellFactory.h"
 
 
 @interface AssignOncePropertiesTest : XCTestCase
@@ -22,6 +24,7 @@
     StubListModeTheme* _listModeThemeStub;
     StubGridModeTheme* _gridModeThemeStub;
     StubItemsBrowserDelegate* _delegateStub;
+    StubCellFactory* _cellFactoryStub;
     
     SCItemsBrowserView* _itemsBrowser;
     CGRect _stubRect;
@@ -38,9 +41,10 @@
     self->_legacyContext = [ SCApiContext contextWithHost: @"www.StubHost.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     
-    self->_listModeThemeStub = [ StubListModeTheme new ];
-    self->_gridModeThemeStub = [ StubGridModeTheme new ];
+    self->_listModeThemeStub = [ StubListModeTheme        new ];
+    self->_gridModeThemeStub = [ StubGridModeTheme        new ];
     self->_delegateStub      = [ StubItemsBrowserDelegate new ];
+    self->_cellFactoryStub   = [ StubCellFactory          new ];
     
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: nil
                                                  apiContext: self->_context ];
@@ -158,5 +162,48 @@
      @"assign is allowed only once"
      );
 }
+
+
+-(void)testListCellFactoryIsAssignedOnce
+{
+    XCTAssertNil( self->_itemsBrowser.listModeCellBuilder, @"nil rootItem expected" );
+    
+    self->_itemsBrowser.listModeCellBuilder = self->_cellFactoryStub;
+    XCTAssertTrue( self->_itemsBrowser.listModeCellBuilder == self->_cellFactoryStub, @"rootItem pointer mismatch" );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setListModeCellBuilder: self->_cellFactoryStub ],
+     @"assign is allowed only once"
+     );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setListModeCellBuilder: nil ],
+     @"assign is allowed only once"
+     );
+}
+
+
+-(void)testGridCellFactoryIsAssignedOnce
+{
+    XCTAssertNil( self->_itemsBrowser.gridModeCellBuilder, @"nil rootItem expected" );
+    
+    self->_itemsBrowser.gridModeCellBuilder = self->_cellFactoryStub;
+    XCTAssertTrue( self->_itemsBrowser.gridModeCellBuilder == self->_cellFactoryStub, @"rootItem pointer mismatch" );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setGridModeCellBuilder: self->_cellFactoryStub ],
+     @"assign is allowed only once"
+    );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setGridModeCellBuilder: nil ],
+     @"assign is allowed only once"
+    );
+}
+
 
 @end
