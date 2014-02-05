@@ -47,6 +47,9 @@
 		7E225BDC18A24805009CEBEE /* StubGridModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */; };
 		7E225BDF18A24950009CEBEE /* StubItemsBrowserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */; };
 		7E225BE218A26466009CEBEE /* StubCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BE118A26466009CEBEE /* StubCellFactory.m */; };
+		7E225BE618A28BED009CEBEE /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BE518A28BED009CEBEE /* StubRequestBuilder.m */; };
+		7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */; };
+		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +132,13 @@
 		7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubItemsBrowserDelegate.m; sourceTree = "<group>"; };
 		7E225BE018A26466009CEBEE /* StubCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubCellFactory.h; sourceTree = "<group>"; };
 		7E225BE118A26466009CEBEE /* StubCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubCellFactory.m; sourceTree = "<group>"; };
+		7E225BE318A28715009CEBEE /* SCItemsLevelRequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsLevelRequestBuilder.h; sourceTree = "<group>"; };
+		7E225BE418A28BED009CEBEE /* StubRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubRequestBuilder.h; sourceTree = "<group>"; };
+		7E225BE518A28BED009CEBEE /* StubRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubRequestBuilder.m; sourceTree = "<group>"; };
+		7E225BE818A28E85009CEBEE /* SCItemsBrowserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserProtocol.h; sourceTree = "<group>"; };
+		7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManager.h; sourceTree = "<group>"; };
+		7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManager.m; sourceTree = "<group>"; };
+		7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,11 +250,14 @@
 				7E1D05E818A14F6D006EF056 /* CellFactory */,
 				7E1D05EB18A14FB3006EF056 /* Grid */,
 				7E1D05EC18A14FB3006EF056 /* List */,
+				7E225BE918A28EDF009CEBEE /* FileManager */,
 				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
 				7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */,
 				7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */,
+				7E225BE818A28E85009CEBEE /* SCItemsBrowserProtocol.h */,
 				7E1D05E218A14B95006EF056 /* SCItemCell.h */,
 				7E1D05E118A14AC0006EF056 /* SCItemsBrowserDelegate.h */,
+				7E225BE318A28715009CEBEE /* SCItemsLevelRequestBuilder.h */,
 				7E1D05B218A13D8E006EF056 /* Supporting Files */,
 			);
 			path = SCItemsBrowser;
@@ -262,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
+				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 				7E225BD418A245BA009CEBEE /* SCItem+PrivateMethods.h */,
 				7E225BD718A246F9009CEBEE /* StubListModeTheme.h */,
@@ -272,6 +286,8 @@
 				7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */,
 				7E225BE018A26466009CEBEE /* StubCellFactory.h */,
 				7E225BE118A26466009CEBEE /* StubCellFactory.m */,
+				7E225BE418A28BED009CEBEE /* StubRequestBuilder.h */,
+				7E225BE518A28BED009CEBEE /* StubRequestBuilder.m */,
 			);
 			path = SCItemsBrowserTests;
 			sourceTree = "<group>";
@@ -319,6 +335,15 @@
 				7E1D05F118A15235006EF056 /* SCItemListCell.m */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		7E225BE918A28EDF009CEBEE /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */,
+				7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */,
+			);
+			path = FileManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +429,7 @@
 			files = (
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
 				7E1D05F518A1525B006EF056 /* SCItemGridCell.m in Sources */,
+				7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */,
 				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +441,8 @@
 				7E225BDF18A24950009CEBEE /* StubItemsBrowserDelegate.m in Sources */,
 				7E225BE218A26466009CEBEE /* StubCellFactory.m in Sources */,
 				7E225BDC18A24805009CEBEE /* StubGridModeTheme.m in Sources */,
+				7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */,
+				7E225BE618A28BED009CEBEE /* StubRequestBuilder.m in Sources */,
 				7E225BD918A246F9009CEBEE /* StubListModeTheme.m in Sources */,
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,
 			);

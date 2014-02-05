@@ -2,6 +2,8 @@
 
 @implementation SCItemsBrowserView
 
+#pragma mark -
+#pragma mark Once assign properties
 -(void)setApiContext:( SCExtendedApiContext* )value
 {
     NSParameterAssert( nil == self->_apiContext );
@@ -43,6 +45,29 @@
 {
     NSParameterAssert( nil == self->_gridModeCellBuilder );
     self->_gridModeCellBuilder = gridModeCellBuilder;
+}
+
+-(void)setNextLevelRequestBuilder:(id<SCItemsLevelRequestBuilder>)nextLevelRequestBuilder
+{
+    NSParameterAssert( nil == self->_nextLevelRequestBuilder );
+    self->_nextLevelRequestBuilder = nextLevelRequestBuilder;
+}
+
+#pragma mark -
+#pragma mark Refresh
+-(void)reloadData
+{
+    NSAssert( NO, @"not implemented" );
+}
+
+-(void)forceRefreshData
+{
+    NSAssert( NO, @"not implemented" );
+}
+
+-(void)navigateToRootItem
+{
+    NSAssert( NO, @"not implemented" );
 }
 
 @end
