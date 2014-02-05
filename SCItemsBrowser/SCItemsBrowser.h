@@ -3,7 +3,8 @@
 #import <SCItemsBrowser/SCItemsBrowserView.h>
 #import <SCItemsBrowser/SCItemCell.h>
 #import <SCItemsBrowser/SCItemsBrowserDelegate.h>
-
+#import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>
+#import <SCItemsBrowser/SCItemsBrowserProtocol.h>
 
 #import <SCItemsBrowser/Appearance/SIBListModeAppearance.h>
 #import <SCItemsBrowser/Appearance/SIBGridModeAppearance.h>
