@@ -582,7 +582,7 @@
 				DSTROOT = /tmp/SCItemsBrowser.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser,
+					"../SCItemsBrowser-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
@@ -598,7 +598,7 @@
 				DSTROOT = /tmp/SCItemsBrowser.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser,
+					"../SCItemsBrowser-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
@@ -714,7 +714,7 @@
 				DSTROOT = /tmp/SCItemsBrowser.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser,
+					"../SCItemsBrowser-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
