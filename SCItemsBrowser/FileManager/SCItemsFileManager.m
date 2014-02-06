@@ -1,5 +1,13 @@
 #import "SCItemsFileManager.h"
 
+#import "SCItemsLevelRequestBuilder.h"
+
+@interface SCItemsFileManager()
+
+@property ( nonatomic, copy ) SCCancelAsyncOperation cancelLoaderBlock;
+
+@end
+
 @implementation SCItemsFileManager
 {
     SCExtendedApiContext*          _apiContext;
@@ -28,7 +36,59 @@
     self->_apiContext = apiContext;
     self->_nextLevelRequestBuilder = nextLevelRequestBuilder;
     
-    return nil;
+    return self;
+}
+
+-(void)loadLevelForItem:( SCItem* )item
+             completion:( OnLevelLoadedBlock )onLevelLoadedBlock
+          ignoringCache:( BOOL )shouldIgnoreCache
+{
+    NSParameterAssert( nil != onLevelLoadedBlock );
+    
+    SCExtendedAsyncOp loader = [ self buildLevelLoaderForItem: item
+                                                ignoringCache: shouldIgnoreCache ];
+    
+    self.cancelLoaderBlock = loader( nil, nil, onLevelLoadedBlock );
+}
+
+-(SCItemsReaderRequest*)buildLevelRequestForItem:( SCItem* )item
+                                   ignoringCache:( BOOL )shouldIgnoreCache
+{
+    NSParameterAssert( nil != item );
+    
+    NSParameterAssert( nil != self->_apiContext );
+    NSParameterAssert( nil != self->_nextLevelRequestBuilder );
+
+    SCItemsReaderRequest* request = [ self->_nextLevelRequestBuilder levelDownRequestForItem: item ];
+
+    NSParameterAssert( nil != request );
+    
+    if ( shouldIgnoreCache )
+    {
+        request.flags |= SCItemReaderRequestIngnoreCache;
+    }
+
+    return request;
+}
+
+-(SCExtendedAsyncOp)buildLevelLoaderForItem:( SCItem* )item
+                              ignoringCache:( BOOL )shouldIgnoreCache
+{
+    SCItemsReaderRequest* request = [ self buildLevelLoaderForItem: item
+                                                     ignoringCache: shouldIgnoreCache ];
+
+    SCExtendedAsyncOp loader = [ self->_apiContext itemsReaderWithRequest: request ];
+    return loader;
+}
+
+-(void)setCancelLoaderBlock:( SCCancelAsyncOperation )cancelLoaderBlock
+{
+    if ( nil != self->_cancelLoaderBlock )
+    {
+        self->_cancelLoaderBlock( YES );
+    }
+    
+    self->_cancelLoaderBlock = cancelLoaderBlock;
 }
 
 @end
