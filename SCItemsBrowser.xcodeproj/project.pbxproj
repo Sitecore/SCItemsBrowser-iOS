@@ -139,6 +139,8 @@
 		7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManager.h; sourceTree = "<group>"; };
 		7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManager.m; sourceTree = "<group>"; };
 		7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerTest.m; sourceTree = "<group>"; };
+		7E35B1F218A37B5A000F30E8 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
+		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 				7E225BD418A245BA009CEBEE /* SCItem+PrivateMethods.h */,
+				7E35B1F218A37B5A000F30E8 /* ItemsBrowserTestStubs.h */,
 				7E225BD718A246F9009CEBEE /* StubListModeTheme.h */,
 				7E225BD818A246F9009CEBEE /* StubListModeTheme.m */,
 				7E225BDA18A24805009CEBEE /* StubGridModeTheme.h */,
@@ -342,6 +345,7 @@
 			children = (
 				7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */,
 				7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */,
+				7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";

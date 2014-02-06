@@ -4,12 +4,7 @@
 #import <SCItemsBrowser/SCItemsBrowser.h>
 
 #import "SCItem+PrivateMethods.h"
-
-#import "StubListModeTheme.h"
-#import "StubGridModeTheme.h"
-#import "StubItemsBrowserDelegate.h"
-#import "StubCellFactory.h"
-#import "StubRequestBuilder.h"
+#import "ItemsBrowserTestStubs.h"
 
 @interface AssignOncePropertiesTest : XCTestCase
 @end
