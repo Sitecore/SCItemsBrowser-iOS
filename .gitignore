@@ -6,7 +6,7 @@ svnignore.*
 *.DS_Store
 *.mode1v3
 *.pbxuser
-xcuserdata
+*xcuserdata*
 *.xcworkspace
 .idea
 ._*

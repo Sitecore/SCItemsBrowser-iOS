@@ -141,6 +141,7 @@
 		7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerTest.m; sourceTree = "<group>"; };
 		7E35B1F218A37B5A000F30E8 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
 		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
+		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +195,7 @@
 		7E1D05A318A13D8E006EF056 = {
 			isa = PBXGroup;
 			children = (
+				7E35B1F618A3976D000F30E8 /* .gitignore */,
 				7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */,
 				7E1D05B118A13D8E006EF056 /* SCItemsBrowser */,
 				7E1D05C518A13D8E006EF056 /* SCItemsBrowserTests */,
