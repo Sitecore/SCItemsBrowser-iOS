@@ -43,11 +43,6 @@
 		7E225BCF18A242D2009CEBEE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BCE18A242D2009CEBEE /* AudioToolbox.framework */; };
 		7E225BD118A242FC009CEBEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BD018A242FC009CEBEE /* UIKit.framework */; };
 		7E225BD318A24313009CEBEE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BD218A24313009CEBEE /* MessageUI.framework */; };
-		7E225BD918A246F9009CEBEE /* StubListModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BD818A246F9009CEBEE /* StubListModeTheme.m */; };
-		7E225BDC18A24805009CEBEE /* StubGridModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */; };
-		7E225BDF18A24950009CEBEE /* StubItemsBrowserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */; };
-		7E225BE218A26466009CEBEE /* StubCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BE118A26466009CEBEE /* StubCellFactory.m */; };
-		7E225BE618A28BED009CEBEE /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BE518A28BED009CEBEE /* StubRequestBuilder.m */; };
 		7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */; };
 		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
@@ -55,6 +50,11 @@
 		7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807A18A503A000C73F62 /* SCLevelInfoPOD.m */; };
 		7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807D18A5120B00C73F62 /* SCLevelResponse.m */; };
 		7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */; };
+		7EAB808F18A5278A00C73F62 /* StubCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808618A5278A00C73F62 /* StubCellFactory.m */; };
+		7EAB809018A5278A00C73F62 /* StubGridModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808818A5278A00C73F62 /* StubGridModeTheme.m */; };
+		7EAB809118A5278A00C73F62 /* StubItemsBrowserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808A18A5278A00C73F62 /* StubItemsBrowserDelegate.m */; };
+		7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808C18A5278A00C73F62 /* StubListModeTheme.m */; };
+		7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,22 +129,11 @@
 		7E225BD018A242FC009CEBEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E225BD218A24313009CEBEE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7E225BD418A245BA009CEBEE /* SCItem+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+PrivateMethods.h"; sourceTree = "<group>"; };
-		7E225BD718A246F9009CEBEE /* StubListModeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubListModeTheme.h; sourceTree = "<group>"; };
-		7E225BD818A246F9009CEBEE /* StubListModeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubListModeTheme.m; sourceTree = "<group>"; };
-		7E225BDA18A24805009CEBEE /* StubGridModeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubGridModeTheme.h; sourceTree = "<group>"; };
-		7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubGridModeTheme.m; sourceTree = "<group>"; };
-		7E225BDD18A24950009CEBEE /* StubItemsBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubItemsBrowserDelegate.h; sourceTree = "<group>"; };
-		7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubItemsBrowserDelegate.m; sourceTree = "<group>"; };
-		7E225BE018A26466009CEBEE /* StubCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubCellFactory.h; sourceTree = "<group>"; };
-		7E225BE118A26466009CEBEE /* StubCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubCellFactory.m; sourceTree = "<group>"; };
 		7E225BE318A28715009CEBEE /* SCItemsLevelRequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsLevelRequestBuilder.h; sourceTree = "<group>"; };
-		7E225BE418A28BED009CEBEE /* StubRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubRequestBuilder.h; sourceTree = "<group>"; };
-		7E225BE518A28BED009CEBEE /* StubRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubRequestBuilder.m; sourceTree = "<group>"; };
 		7E225BE818A28E85009CEBEE /* SCItemsBrowserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserProtocol.h; sourceTree = "<group>"; };
 		7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManager.h; sourceTree = "<group>"; };
 		7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManager.m; sourceTree = "<group>"; };
 		7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerTest.m; sourceTree = "<group>"; };
-		7E35B1F218A37B5A000F30E8 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
 		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
 		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7EAB807318A4E9D800C73F62 /* SCItemsFileManagerCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManagerCallbacks.h; sourceTree = "<group>"; };
@@ -156,6 +145,17 @@
 		7EAB807C18A5120B00C73F62 /* SCLevelResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelResponse.h; sourceTree = "<group>"; };
 		7EAB807D18A5120B00C73F62 /* SCLevelResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLevelResponse.m; sourceTree = "<group>"; };
 		7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerHistoryTest.m; sourceTree = "<group>"; };
+		7EAB808518A5278A00C73F62 /* StubCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubCellFactory.h; sourceTree = "<group>"; };
+		7EAB808618A5278A00C73F62 /* StubCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubCellFactory.m; sourceTree = "<group>"; };
+		7EAB808718A5278A00C73F62 /* StubGridModeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubGridModeTheme.h; sourceTree = "<group>"; };
+		7EAB808818A5278A00C73F62 /* StubGridModeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubGridModeTheme.m; sourceTree = "<group>"; };
+		7EAB808918A5278A00C73F62 /* StubItemsBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubItemsBrowserDelegate.h; sourceTree = "<group>"; };
+		7EAB808A18A5278A00C73F62 /* StubItemsBrowserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubItemsBrowserDelegate.m; sourceTree = "<group>"; };
+		7EAB808B18A5278A00C73F62 /* StubListModeTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubListModeTheme.h; sourceTree = "<group>"; };
+		7EAB808C18A5278A00C73F62 /* StubListModeTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubListModeTheme.m; sourceTree = "<group>"; };
+		7EAB808D18A5278A00C73F62 /* StubRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubRequestBuilder.h; sourceTree = "<group>"; };
+		7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubRequestBuilder.m; sourceTree = "<group>"; };
+		7EAB809418A527AE00C73F62 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,22 +292,12 @@
 		7E1D05C518A13D8E006EF056 /* SCItemsBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				7EAB808418A5278A00C73F62 /* Stubs */,
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
 				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 				7E225BD418A245BA009CEBEE /* SCItem+PrivateMethods.h */,
-				7E35B1F218A37B5A000F30E8 /* ItemsBrowserTestStubs.h */,
-				7E225BD718A246F9009CEBEE /* StubListModeTheme.h */,
-				7E225BD818A246F9009CEBEE /* StubListModeTheme.m */,
-				7E225BDA18A24805009CEBEE /* StubGridModeTheme.h */,
-				7E225BDB18A24805009CEBEE /* StubGridModeTheme.m */,
-				7E225BDD18A24950009CEBEE /* StubItemsBrowserDelegate.h */,
-				7E225BDE18A24950009CEBEE /* StubItemsBrowserDelegate.m */,
-				7E225BE018A26466009CEBEE /* StubCellFactory.h */,
-				7E225BE118A26466009CEBEE /* StubCellFactory.m */,
-				7E225BE418A28BED009CEBEE /* StubRequestBuilder.h */,
-				7E225BE518A28BED009CEBEE /* StubRequestBuilder.m */,
 			);
 			path = SCItemsBrowserTests;
 			sourceTree = "<group>";
@@ -373,6 +363,24 @@
 				7EAB807D18A5120B00C73F62 /* SCLevelResponse.m */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		7EAB808418A5278A00C73F62 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				7EAB809418A527AE00C73F62 /* ItemsBrowserTestStubs.h */,
+				7EAB808518A5278A00C73F62 /* StubCellFactory.h */,
+				7EAB808618A5278A00C73F62 /* StubCellFactory.m */,
+				7EAB808718A5278A00C73F62 /* StubGridModeTheme.h */,
+				7EAB808818A5278A00C73F62 /* StubGridModeTheme.m */,
+				7EAB808918A5278A00C73F62 /* StubItemsBrowserDelegate.h */,
+				7EAB808A18A5278A00C73F62 /* StubItemsBrowserDelegate.m */,
+				7EAB808B18A5278A00C73F62 /* StubListModeTheme.h */,
+				7EAB808C18A5278A00C73F62 /* StubListModeTheme.m */,
+				7EAB808D18A5278A00C73F62 /* StubRequestBuilder.h */,
+				7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,14 +479,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E225BDF18A24950009CEBEE /* StubItemsBrowserDelegate.m in Sources */,
-				7E225BE218A26466009CEBEE /* StubCellFactory.m in Sources */,
-				7E225BDC18A24805009CEBEE /* StubGridModeTheme.m in Sources */,
+				7EAB809018A5278A00C73F62 /* StubGridModeTheme.m in Sources */,
+				7EAB809118A5278A00C73F62 /* StubItemsBrowserDelegate.m in Sources */,
 				7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */,
-				7E225BE618A28BED009CEBEE /* StubRequestBuilder.m in Sources */,
-				7E225BD918A246F9009CEBEE /* StubListModeTheme.m in Sources */,
+				7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */,
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,
+				7EAB808F18A5278A00C73F62 /* StubCellFactory.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
+				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
