@@ -4,7 +4,7 @@
 
 -(SCItemsReaderRequest*)levelDownRequestForItem:( SCItem* )item
 {
-    return nil;
+    return self.requestStub;
 }
 
 @end
