@@ -55,6 +55,7 @@
 		7EAB809118A5278A00C73F62 /* StubItemsBrowserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808A18A5278A00C73F62 /* StubItemsBrowserDelegate.m */; };
 		7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808C18A5278A00C73F62 /* StubListModeTheme.m */; };
 		7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */; };
+		7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,8 @@
 		7EAB808D18A5278A00C73F62 /* StubRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StubRequestBuilder.h; sourceTree = "<group>"; };
 		7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StubRequestBuilder.m; sourceTree = "<group>"; };
 		7EAB809418A527AE00C73F62 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
+		7EAB809618A528C700C73F62 /* ItemsLevelOperationBuilderHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsLevelOperationBuilderHook.h; sourceTree = "<group>"; };
+		7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsLevelOperationBuilderHook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				7EAB808418A5278A00C73F62 /* Stubs */,
+				7EAB809518A528A000C73F62 /* Hooks */,
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
 				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */,
@@ -381,6 +385,15 @@
 				7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		7EAB809518A528A000C73F62 /* Hooks */ = {
+			isa = PBXGroup;
+			children = (
+				7EAB809618A528C700C73F62 /* ItemsLevelOperationBuilderHook.h */,
+				7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */,
+			);
+			path = Hooks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +498,7 @@
 				7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */,
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,
 				7EAB808F18A5278A00C73F62 /* StubCellFactory.m in Sources */,
+				7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
 			);
