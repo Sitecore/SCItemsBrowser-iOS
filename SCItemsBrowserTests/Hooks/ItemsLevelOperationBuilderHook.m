@@ -3,6 +3,7 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
+#import "SCItemsFileManager.h"
 #import "SCItemsFileManagerCallbacks.h"
 
 @implementation ItemsLevelOperationBuilderHook
@@ -44,8 +45,9 @@
 #pragma clang diagnostic pop
     
     
-    self->_methodToHook = class_getInstanceMethod( [ SCItemsFileManagerCallbacks class ], self->_methodToHookSelector );
-    self->_originalImpl = class_getMethodImplementation( [ SCItemsFileManagerCallbacks class ], self->_methodToHookSelector );
+    self->_methodToHook = class_getInstanceMethod( [ SCItemsFileManager class ], self->_methodToHookSelector );
+    self->_originalImpl = class_getMethodImplementation( [ SCItemsFileManager class ], self->_methodToHookSelector );
+    self->_newImpl = imp_implementationWithBlock( self->_hookImpl );
 
     return self;
 }

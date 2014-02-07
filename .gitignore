@@ -13,3 +13,5 @@ svnignore.*
 
 
 SCItemsBrowser.xcodeproj/xcuserdata/dodikk.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+
+*.xcbkptlist
