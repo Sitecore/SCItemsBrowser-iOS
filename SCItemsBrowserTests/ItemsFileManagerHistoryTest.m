@@ -132,12 +132,8 @@
         
         XCTAssertNotNil( receivedResponse, @"invalid response" );
         XCTAssertNil( receivedError, @"unexpected" );
-
-        
     }
     [ self->_hook disableHook ];
-    
-    
 }
 
 @end
