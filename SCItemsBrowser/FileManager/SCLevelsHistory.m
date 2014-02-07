@@ -33,6 +33,21 @@
     [ self->_levelStorage addObject: record ];
 }
 
+-(void)popRequest
+{
+    [ self->_levelStorage removeLastObject ];
+}
+
+-(NSUInteger)currentLevel
+{
+    return [ self->_levelStorage count ];
+}
+
+-(BOOL)isLevelUpAvailable
+{
+    return [ self currentLevel ] >= 2;
+}
+
 -(SCItemsReaderRequest*)lastRequest
 {
     return [ [ self->_levelStorage lastObject ] levelRequest ];
@@ -43,9 +58,27 @@
     return [ [ self->_levelStorage lastObject ] levelParentItem ];
 }
 
--(void)popRequest
+-(SCLevelInfoPOD*)levelUpRecord
 {
-    [ self->_levelStorage removeLastObject ];
+    if ( ![ self isLevelUpAvailable ] )
+    {
+        return nil;
+    }
+    
+    NSUInteger levelsCount = [ self currentLevel ];
+    NSUInteger index = levelsCount - 1;
+
+    return self->_levelStorage[ index ];
+}
+
+-(SCItemsReaderRequest*)levelUpRequest
+{
+    return [ [ self levelUpRecord ] levelRequest ];
+}
+
+-(SCItem*)levelUpParentItem
+{
+    return [ [ self levelUpRecord ] levelParentItem ];
 }
 
 @end

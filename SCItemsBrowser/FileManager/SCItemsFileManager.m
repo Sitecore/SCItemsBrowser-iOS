@@ -3,9 +3,15 @@
 #import "SCItemsLevelRequestBuilder.h"
 #import "SCItemsFileManagerCallbacks.h"
 
+#import "SCLevelsHistory.h"
+#import "SCLevelResponse.h"
+
+typedef void(^UpdateHistoryActionBlock)(void);
+
 @interface SCItemsFileManager()
 
 @property ( nonatomic, copy ) SCCancelAsyncOperation cancelLoaderBlock;
+@property ( nonatomic ) SCLevelsHistory* levelsHistory;
 
 @end
 
@@ -44,6 +50,7 @@
     
     self->_apiContext = apiContext;
     self->_nextLevelRequestBuilder = nextLevelRequestBuilder;
+    self->_levelsHistory = [ SCLevelsHistory new ];
     
     return self;
 }
@@ -57,15 +64,56 @@
 {
     NSParameterAssert( nil != callbacks.onLevelLoadedBlock );
     
-    SCExtendedAsyncOp loader = [ self buildLevelLoaderForItem: item
-                                                ignoringCache: shouldIgnoreCache ];
+    SCItemsReaderRequest* request = [ self buildLevelRequestForItem: item
+                                                      ignoringCache: shouldIgnoreCache ];
+    SCExtendedAsyncOp loader = [ self levelLoaderFromRequest: request ];
+
     
-    self.cancelLoaderBlock = loader( nil, nil, callbacks.onLevelLoadedBlock );
+    SCLevelsHistory* levelsHistory = self->_levelsHistory;
+    OnLevelLoadedBlock originalCompletion = [ callbacks.onLevelLoadedBlock copy ];
+    UpdateHistoryActionBlock pushLevelAction = ^void(void)
+    {
+        [ levelsHistory pushRequest: request
+                            forItem: item ];
+    };
+
+    SCDidFinishAsyncOperationHandler completionHook = [ self hookLevelCompletion: originalCompletion
+                                                               byUpdatingHistory: pushLevelAction
+                                                               parentItemOfLevel: item ];
+    
+    self.cancelLoaderBlock = loader(
+        callbacks.onLevelProgressBlock,
+        nil,
+        completionHook );
 }
 
 -(void)goToLevelUpNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks
 {
     
+    SCItemsReaderRequest* request = [ self->_levelsHistory levelUpRequest ];
+    SCItem* levelUpParentItem     = [ self->_levelsHistory levelUpParentItem ];
+    
+    // set cache flag to zero
+    request.flags &= SCItemReaderRequestReadFieldsValues;
+    
+    
+    SCLevelsHistory* levelsHistory = self->_levelsHistory;
+    OnLevelLoadedBlock originalCompletion = [ callbacks.onLevelLoadedBlock copy ];
+    UpdateHistoryActionBlock popLevelAction = ^void(void)
+    {
+        [ levelsHistory popRequest ];
+    };
+    
+    SCDidFinishAsyncOperationHandler completionHook = [ self hookLevelCompletion: originalCompletion
+                                                               byUpdatingHistory: popLevelAction
+                                                               parentItemOfLevel: levelUpParentItem ];
+    
+    
+    SCExtendedAsyncOp loader = [ self levelLoaderFromRequest: request ];
+    self.cancelLoaderBlock = loader(
+        callbacks.onLevelProgressBlock,
+        nil,
+        completionHook );
 }
 
 
@@ -91,16 +139,6 @@
     return request;
 }
 
--(SCExtendedAsyncOp)buildLevelLoaderForItem:( SCItem* )item
-                              ignoringCache:( BOOL )shouldIgnoreCache
-{
-    SCItemsReaderRequest* request = [ self buildLevelLoaderForItem: item
-                                                     ignoringCache: shouldIgnoreCache ];
-
-    SCExtendedAsyncOp loader = [ self->_apiContext itemsReaderWithRequest: request ];
-    return loader;
-}
-
 -(void)setCancelLoaderBlock:( SCCancelAsyncOperation )cancelLoaderBlock
 {
     if ( nil != self->_cancelLoaderBlock )
@@ -113,7 +151,32 @@
 
 #pragma mark -
 #pragma mark goToLevelUpNotifyingCallbacks
+-(SCDidFinishAsyncOperationHandler)hookLevelCompletion:( OnLevelLoadedBlock )originalCompletion
+                                     byUpdatingHistory:( UpdateHistoryActionBlock )actionBlock
+                                     parentItemOfLevel:( SCItem* )item
+{
+    SCDidFinishAsyncOperationHandler completionHook = ^void( NSArray* loadedItems, NSError *error )
+    {
+        SCLevelResponse* response = nil;
+        
+        if ( nil != loadedItems )
+        {
+            NSParameterAssert( nil == error );
+            actionBlock();
+            
+            response = [ [ SCLevelResponse alloc ] initWithItem: item
+                                              levelContentItems: loadedItems ];
+        }
+        
+        originalCompletion( response, error );
+    };
+    
+    return [ completionHook copy ];
+}
 
-
+-(SCExtendedAsyncOp)levelLoaderFromRequest:( SCItemsReaderRequest* )request
+{
+    return [ self->_apiContext itemsReaderWithRequest: request ];
+}
 
 @end

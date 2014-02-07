@@ -10,9 +10,19 @@
 -(void)pushRequest:( SCItemsReaderRequest* )request
            forItem:( SCItem* )item;
 
+-(void)popRequest;
+
+-(BOOL)isLevelUpAvailable;
+
+// starts from "1"
+-(NSUInteger)currentLevel;
+
 -(SCItemsReaderRequest*)lastRequest;
 -(SCItem*)lastItem;
 
--(void)popRequest;
+-(SCItemsReaderRequest*)levelUpRequest;
+-(SCItem*)levelUpParentItem;
+
+
 
 @end
