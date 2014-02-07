@@ -1,6 +1,7 @@
 #import "SCItemsFileManager.h"
 
 #import "SCItemsLevelRequestBuilder.h"
+#import "SCItemsFileManagerCallbacks.h"
 
 @interface SCItemsFileManager()
 
@@ -12,6 +13,14 @@
 {
     SCExtendedApiContext*          _apiContext;
     id<SCItemsLevelRequestBuilder> _nextLevelRequestBuilder;
+}
+
+
+#pragma mark -
+#pragma mark constructors
+-(void)dealloc
+{
+    self.cancelLoaderBlock = nil;
 }
 
 -(instancetype)init
@@ -39,18 +48,29 @@
     return self;
 }
 
+
+#pragma mark -
+#pragma mark Public
 -(void)loadLevelForItem:( SCItem* )item
-             completion:( OnLevelLoadedBlock )onLevelLoadedBlock
+              callbacks:( SCItemsFileManagerCallbacks* )callbacks
           ignoringCache:( BOOL )shouldIgnoreCache
 {
-    NSParameterAssert( nil != onLevelLoadedBlock );
+    NSParameterAssert( nil != callbacks.onLevelLoadedBlock );
     
     SCExtendedAsyncOp loader = [ self buildLevelLoaderForItem: item
                                                 ignoringCache: shouldIgnoreCache ];
     
-    self.cancelLoaderBlock = loader( nil, nil, onLevelLoadedBlock );
+    self.cancelLoaderBlock = loader( nil, nil, callbacks.onLevelLoadedBlock );
 }
 
+-(void)goToLevelUpNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks
+{
+    
+}
+
+
+#pragma mark -
+#pragma mark loadLevelForItem
 -(SCItemsReaderRequest*)buildLevelRequestForItem:( SCItem* )item
                                    ignoringCache:( BOOL )shouldIgnoreCache
 {
@@ -90,5 +110,10 @@
     
     self->_cancelLoaderBlock = cancelLoaderBlock;
 }
+
+#pragma mark -
+#pragma mark goToLevelUpNotifyingCallbacks
+
+
 
 @end

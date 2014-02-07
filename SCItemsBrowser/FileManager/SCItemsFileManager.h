@@ -5,7 +5,7 @@
 @protocol SCItemsLevelRequestBuilder;
 
 
-typedef void (^OnLevelLoadedBlock)( NSArray* loadedItems, NSError *error );
+@class SCItemsFileManagerCallbacks;
 
 
 @interface SCItemsFileManager : NSObject
@@ -15,7 +15,9 @@ typedef void (^OnLevelLoadedBlock)( NSArray* loadedItems, NSError *error );
 
 
 -(void)loadLevelForItem:( SCItem* )item
-             completion:( OnLevelLoadedBlock )onLevelLoadedBlock
+              callbacks:( SCItemsFileManagerCallbacks* )callbacks
           ignoringCache:( BOOL )shouldIgnoreCache;
+
+-(void)goToLevelUpNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks;
 
 @end
