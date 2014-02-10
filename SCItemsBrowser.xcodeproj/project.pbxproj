@@ -57,6 +57,7 @@
 		7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808C18A5278A00C73F62 /* StubListModeTheme.m */; };
 		7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */; };
 		7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */; };
+		7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		7EAB809418A527AE00C73F62 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
 		7EAB809618A528C700C73F62 /* ItemsLevelOperationBuilderHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsLevelOperationBuilderHook.h; sourceTree = "<group>"; };
 		7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsLevelOperationBuilderHook.m; sourceTree = "<group>"; };
+		7EB927BC18A9002C0007B062 /* SIBAllChildrenRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAllChildrenRequestBuilder.h; sourceTree = "<group>"; };
+		7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBAllChildrenRequestBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +279,7 @@
 				7E1D05EB18A14FB3006EF056 /* Grid */,
 				7E1D05EC18A14FB3006EF056 /* List */,
 				7E225BE918A28EDF009CEBEE /* FileManager */,
+				7EB927BB18A900180007B062 /* RequestBuilder */,
 				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
 				7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */,
 				7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */,
@@ -401,6 +405,15 @@
 			path = Hooks;
 			sourceTree = "<group>";
 		};
+		7EB927BB18A900180007B062 /* RequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				7EB927BC18A9002C0007B062 /* SIBAllChildrenRequestBuilder.h */,
+				7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */,
+			);
+			path = RequestBuilder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +499,7 @@
 				7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */,
 				7E1D05F518A1525B006EF056 /* SCItemGridCell.m in Sources */,
 				7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */,
+				7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */,
 				7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */,
 				7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */,
 				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,

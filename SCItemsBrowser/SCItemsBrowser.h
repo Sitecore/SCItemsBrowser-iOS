@@ -6,6 +6,10 @@
 #import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>
 #import <SCItemsBrowser/SCItemsBrowserProtocol.h>
 
+#import <SCItemsBrowser/RequestBuilder/SIBAllChildrenRequestBuilder.h>
+
+#import <SCItemsBrowser/FileManager/SCLevelResponse.h>
+
 #import <SCItemsBrowser/Appearance/SIBListModeAppearance.h>
 #import <SCItemsBrowser/Appearance/SIBGridModeAppearance.h>
 
