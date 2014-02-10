@@ -43,6 +43,7 @@
 		7E3BFA9718A8DCE3001454C5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA9618A8DCE3001454C5 /* CoreAudio.framework */; };
 		7E3BFA9918A8DCF2001454C5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA9818A8DCF2001454C5 /* AudioToolbox.framework */; };
 		7EB927AB18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */; };
+		7EB927B818A8FB7C0007B062 /* libSCItemsBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB927B218A8FB580007B062 /* libSCItemsBrowser.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7E3BFA2A18A8D6C2001454C5;
 			remoteInfo = "SCItemsBrowserTests-ghunit";
+		};
+		7EB927B118A8FB580007B062 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E1D05AC18A13D8E006EF056;
+			remoteInfo = SCItemsBrowser;
+		};
+		7EB927B318A8FB580007B062 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E1D05BC18A13D8E006EF056;
+			remoteInfo = SCItemsBrowserTests;
+		};
+		7EB927B618A8FB760007B062 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E1D05AB18A13D8E006EF056;
+			remoteInfo = SCItemsBrowser;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -95,6 +117,7 @@
 		7E3BFA9618A8DCE3001454C5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		7E3BFA9818A8DCF2001454C5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libXCode5gcovPatch-Automation.a"; path = "../frameworks/libXCode5gcovPatch-Automation.a"; sourceTree = "<group>"; };
+		7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCItemsBrowser.xcodeproj; path = ../SCItemsBrowser.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB927B818A8FB7C0007B062 /* libSCItemsBrowser.a in Frameworks */,
 				7E3BFA9918A8DCF2001454C5 /* AudioToolbox.framework in Frameworks */,
 				7E3BFA9718A8DCE3001454C5 /* CoreAudio.framework in Frameworks */,
 				7E3BFA9418A8DCDF001454C5 /* CoreMedia.framework in Frameworks */,
@@ -149,9 +173,7 @@
 		7E3BFA2218A8D6C2001454C5 = {
 			isa = PBXGroup;
 			children = (
-				7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */,
-				7E3BFA6318A8D97F001454C5 /* GHUnitIOS.framework */,
-				7E3BFA6518A8D97F001454C5 /* SitecoreMobileSDK.framework */,
+				7EB927B518A8FB630007B062 /* lib */,
 				7E3BFA3418A8D6C2001454C5 /* SCItemsBrowserTests-ghunit */,
 				7E3BFA5318A8D6C2001454C5 /* SCItemsBrowserTests-ghunitTests */,
 				7E3BFA2D18A8D6C2001454C5 /* Frameworks */,
@@ -239,6 +261,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7EB927AD18A8FB570007B062 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EB927B218A8FB580007B062 /* libSCItemsBrowser.a */,
+				7EB927B418A8FB580007B062 /* SCItemsBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EB927B518A8FB630007B062 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */,
+				7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */,
+				7E3BFA6318A8D97F001454C5 /* GHUnitIOS.framework */,
+				7E3BFA6518A8D97F001454C5 /* SitecoreMobileSDK.framework */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +295,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7EB927B718A8FB760007B062 /* PBXTargetDependency */,
 			);
 			name = "SCItemsBrowserTests-ghunit";
 			productName = "SCItemsBrowserTests-ghunit";
@@ -302,6 +345,12 @@
 			mainGroup = 7E3BFA2218A8D6C2001454C5;
 			productRefGroup = 7E3BFA2C18A8D6C2001454C5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7EB927AD18A8FB570007B062 /* Products */;
+					ProjectRef = 7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7E3BFA2A18A8D6C2001454C5 /* SCItemsBrowserTests-ghunit */,
@@ -309,6 +358,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7EB927B218A8FB580007B062 /* libSCItemsBrowser.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCItemsBrowser.a;
+			remoteRef = 7EB927B118A8FB580007B062 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EB927B418A8FB580007B062 /* SCItemsBrowserTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SCItemsBrowserTests.xctest;
+			remoteRef = 7EB927B318A8FB580007B062 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7E3BFA2918A8D6C2001454C5 /* Resources */ = {
@@ -354,6 +420,11 @@
 			isa = PBXTargetDependency;
 			target = 7E3BFA2A18A8D6C2001454C5 /* SCItemsBrowserTests-ghunit */;
 			targetProxy = 7E3BFA5118A8D6C2001454C5 /* PBXContainerItemProxy */;
+		};
+		7EB927B718A8FB760007B062 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCItemsBrowser;
+			targetProxy = 7EB927B618A8FB760007B062 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
