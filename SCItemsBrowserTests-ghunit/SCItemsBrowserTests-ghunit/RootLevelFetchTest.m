@@ -89,7 +89,8 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     
     [ self prepare: thisTest ];
     {
-        dispatch_async( dispatch_get_main_queue() , ^{
+        dispatch_async( dispatch_get_main_queue() , ^void()
+        {
             [ self->_useCacheFm loadLevelForItem: self->_rootItemStub
                                        callbacks: callbacks
                                    ignoringCache: YES ];
