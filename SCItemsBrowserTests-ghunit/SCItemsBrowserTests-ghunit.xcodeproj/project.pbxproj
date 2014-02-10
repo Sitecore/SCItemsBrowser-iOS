@@ -44,6 +44,7 @@
 		7E3BFA9918A8DCF2001454C5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA9818A8DCF2001454C5 /* AudioToolbox.framework */; };
 		7EB927AB18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */; };
 		7EB927B818A8FB7C0007B062 /* libSCItemsBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB927B218A8FB580007B062 /* libSCItemsBrowser.a */; };
+		7EB927BA18A8FF500007B062 /* RootLevelFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,8 +117,10 @@
 		7E3BFA9318A8DCDF001454C5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7E3BFA9618A8DCE3001454C5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		7E3BFA9818A8DCF2001454C5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7E40D81618A90BB000CE98BF /* SCItemRecord_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemRecord_UnitTest.h; sourceTree = "<group>"; };
 		7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libXCode5gcovPatch-Automation.a"; path = "../frameworks/libXCode5gcovPatch-Automation.a"; sourceTree = "<group>"; };
 		7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCItemsBrowser.xcodeproj; path = ../SCItemsBrowser.xcodeproj; sourceTree = "<group>"; };
+		7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootLevelFetchTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,8 @@
 			children = (
 				7E3BFA4618A8D6C2001454C5 /* Images.xcassets */,
 				7E3BFA3518A8D6C2001454C5 /* Supporting Files */,
+				7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */,
+				7E40D81618A90BB000CE98BF /* SCItemRecord_UnitTest.h */,
 			);
 			path = "SCItemsBrowserTests-ghunit";
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3BFA3B18A8D6C2001454C5 /* main.m in Sources */,
+				7EB927BA18A8FF500007B062 /* RootLevelFetchTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
