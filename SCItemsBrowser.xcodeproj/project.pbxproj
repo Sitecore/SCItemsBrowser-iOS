@@ -46,7 +46,6 @@
 		7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */; };
 		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
-		7E3CB67818A62A0F004D28BD /* libXCode5gcovPatch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3CB67718A62A0F004D28BD /* libXCode5gcovPatch.a */; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
 		7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807718A4EDE300C73F62 /* SCLevelsHistory.m */; };
 		7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807A18A503A000C73F62 /* SCLevelInfoPOD.m */; };
@@ -96,7 +95,7 @@
 		7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssignOncePropertiesTest.m; sourceTree = "<group>"; };
 		7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserView.h; sourceTree = "<group>"; };
 		7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsBrowserView.m; sourceTree = "<group>"; };
-		7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		7E1D05E118A14AC0006EF056 /* SCItemsBrowserDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserDelegate.h; sourceTree = "<group>"; };
 		7E1D05E218A14B95006EF056 /* SCItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemCell.h; sourceTree = "<group>"; };
 		7E1D05E618A14F6D006EF056 /* SIBGridModeAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBGridModeAppearance.h; sourceTree = "<group>"; };
@@ -140,7 +139,7 @@
 		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
 		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperStructuresTest.m; sourceTree = "<group>"; };
-		7E3CB67718A62A0F004D28BD /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libXCode5gcovPatch.a; sourceTree = "<group>"; };
+		7E3CB67718A62A0F004D28BD /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXCode5gcovPatch.a; path = frameworks/libXCode5gcovPatch.a; sourceTree = "<group>"; };
 		7EAB807318A4E9D800C73F62 /* SCItemsFileManagerCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManagerCallbacks.h; sourceTree = "<group>"; };
 		7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManagerCallbacks.m; sourceTree = "<group>"; };
 		7EAB807618A4EDE300C73F62 /* SCLevelsHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelsHistory.h; sourceTree = "<group>"; };
@@ -190,7 +189,6 @@
 				7E225BC318A24276009CEBEE /* MapKit.framework in Frameworks */,
 				7E225BC118A24271009CEBEE /* libstdc++.dylib in Frameworks */,
 				7E225BBF18A2426B009CEBEE /* libc++.dylib in Frameworks */,
-				7E3CB67818A62A0F004D28BD /* libXCode5gcovPatch.a in Frameworks */,
 				7E225BBD18A24254009CEBEE /* libxml2.dylib in Frameworks */,
 				7E225BB518A2423E009CEBEE /* AVFoundation.framework in Frameworks */,
 				7E225BB618A2423E009CEBEE /* CoreAudio.framework in Frameworks */,
@@ -560,7 +558,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = ./frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -619,7 +617,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = ./frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -750,7 +748,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = .;
+				FRAMEWORK_SEARCH_PATHS = ./frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -779,7 +777,11 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-lXCode5gcovPatch",
+					"-L./frameworks",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Coverage;
