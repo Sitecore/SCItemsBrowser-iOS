@@ -5,6 +5,7 @@
 
 #import "SCLevelsHistory.h"
 #import "SCLevelResponse.h"
+#import "SCLevelUpItem.h"
 
 typedef void(^UpdateHistoryActionBlock)(void);
 
@@ -77,6 +78,7 @@ typedef void(^UpdateHistoryActionBlock)(void);
                             forItem: item ];
     };
 
+    
     SCDidFinishAsyncOperationHandler completionHook = [ self hookLevelCompletion: originalCompletion
                                                                byUpdatingHistory: pushLevelAction
                                                                parentItemOfLevel: item ];
@@ -155,6 +157,8 @@ typedef void(^UpdateHistoryActionBlock)(void);
                                      byUpdatingHistory:( UpdateHistoryActionBlock )actionBlock
                                      parentItemOfLevel:( SCItem* )item
 {
+    __weak SCItemsFileManager* weakSelf = self;
+    
     SCDidFinishAsyncOperationHandler completionHook = ^void( NSArray* loadedItems, NSError *error )
     {
         SCLevelResponse* response = nil;
@@ -163,6 +167,13 @@ typedef void(^UpdateHistoryActionBlock)(void);
         {
             NSParameterAssert( nil == error );
             actionBlock();
+            
+            BOOL shouldAddFakeItem = [ weakSelf.levelsHistory isLevelUpAvailable ];
+            if ( shouldAddFakeItem )
+            {
+                SCLevelUpItem* fakeLevelUp = [ SCLevelUpItem new ];
+                loadedItems = [ @[ fakeLevelUp ] arrayByAddingObjectsFromArray: loadedItems ];
+            }
             
             response = [ [ SCLevelResponse alloc ] initWithItem: item
                                               levelContentItems: loadedItems ];

@@ -118,6 +118,7 @@
 
         XCTAssertNotNil( receivedResponse, @"invalid response" );
         XCTAssertNil( receivedError, @"unexpected" );
+        XCTAssertTrue( 0 == [ receivedResponse.levelContentItems count ], @"empty list of children expected" );
         
         
         [ self->_useCacheFm loadLevelForItem: self->_rootItemStub
@@ -132,6 +133,10 @@
         
         XCTAssertNotNil( receivedResponse, @"invalid response" );
         XCTAssertNil( receivedError, @"unexpected" );
+        
+        XCTAssertTrue( 1 == [ receivedResponse.levelContentItems count ], @"list of levelUp item only expected" );
+        XCTAssertTrue( [ [ receivedResponse.levelContentItems lastObject ] isMemberOfClass: [ SCLevelUpItem class ] ], @"level up item class mismatch" );
+        
     }
     [ self->_hook disableHook ];
 }
@@ -262,7 +267,6 @@
     }
     [ self->_hook disableHook ];
 }
-
 
 -(void)testLevelIsPoppedAfterSuccessfullLevelUp
 {
