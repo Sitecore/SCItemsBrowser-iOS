@@ -337,5 +337,91 @@
     [ self->_hook disableHook ];
 }
 
+-(void)testLevelUpWhenNotInitializedProducesCrash
+{
+    __block SCLevelResponse* receivedResponse = nil;
+    __block NSError* receivedError            = nil;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* response, NSError* error )
+        {
+            receivedResponse = response;
+            receivedError    = error   ;
+        };
+    }
+    
+    XCTAssertThrows
+    (
+       [ self->_useCacheFm goToLevelUpNotifyingCallbacks: callbacks ],
+       @"assert expected"
+    );
+}
+
+-(void)testLevelUpFromRootLevelProducesCrash
+{
+    __block SCLevelResponse* receivedResponse = nil;
+    __block NSError* receivedError            = nil;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* response, NSError* error )
+        {
+            receivedResponse = response;
+            receivedError    = error   ;
+        };
+    }
+    
+    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+    {
+        SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
+                                                           SCAsyncOperationProgressHandler progressCallback,
+                                                           SCCancelAsyncOperationHandler cancelCallback,
+                                                           SCDidFinishAsyncOperationHandler doneCallback)
+        {
+            SCCancelAsyncOperation cancelBlockStub = ^void( BOOL isUnsubscribe )
+            {
+                //idle
+            };
+            
+            doneCallback( @[], nil );
+            return [ cancelBlockStub copy ];
+        };
+        
+        return [ result copy ];
+    };
+    self->_hook = [ [ ItemsLevelOperationBuilderHook alloc ] initWithHookImpl: hookImpl ];
+    
+    
+    XCTAssertTrue( 0 == [ self->_levelsHistory currentLevel ], @"empty history expected" );
+    XCTAssertNil( [ self->_levelsHistory lastItem ], @"nil last item expected" );
+    XCTAssertNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
+    XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
+    XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+    
+    [ self->_hook enableHook ];
+    {
+        [ self->_useCacheFm loadLevelForItem: self->_rootItemStub
+                                   callbacks: callbacks
+                               ignoringCache: NO ];
+        
+        XCTAssertTrue( 1 == [ self->_levelsHistory currentLevel ], @"one element history expected" );
+        XCTAssertNotNil( [ self->_levelsHistory lastItem ], @"nil last item expected" );
+        XCTAssertNotNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
+        XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
+        XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+        
+        XCTAssertNotNil( receivedResponse, @"invalid response" );
+        XCTAssertNil( receivedError, @"unexpected" );
+        XCTAssertTrue( 0 == [ receivedResponse.levelContentItems count ], @"empty list of children expected" );
+        
+        XCTAssertThrows
+        (
+         [ self->_useCacheFm goToLevelUpNotifyingCallbacks: callbacks ],
+         @"assert expected"
+         );
+    }
+    [ self->_hook disableHook ];
+}
 
 @end

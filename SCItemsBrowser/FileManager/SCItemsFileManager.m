@@ -91,9 +91,11 @@ typedef void(^UpdateHistoryActionBlock)(void);
 
 -(void)goToLevelUpNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks
 {
-    
     SCItemsReaderRequest* request = [ self->_levelsHistory levelUpRequest ];
     SCItem* levelUpParentItem     = [ self->_levelsHistory levelUpParentItem ];
+    
+    NSParameterAssert( nil != request           );
+    NSParameterAssert( nil != levelUpParentItem );
     
     // set cache flag to zero
     request.flags &= SCItemReaderRequestReadFieldsValues;
