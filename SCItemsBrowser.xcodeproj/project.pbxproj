@@ -46,6 +46,7 @@
 		7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */; };
 		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
+		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
 		7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807718A4EDE300C73F62 /* SCLevelsHistory.m */; };
 		7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807A18A503A000C73F62 /* SCLevelInfoPOD.m */; };
@@ -141,6 +142,8 @@
 		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperStructuresTest.m; sourceTree = "<group>"; };
 		7E3CB67718A62A0F004D28BD /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXCode5gcovPatch.a; path = frameworks/libXCode5gcovPatch.a; sourceTree = "<group>"; };
+		7E40D84418A91C1500CE98BF /* SCLevelUpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelUpItem.h; sourceTree = "<group>"; };
+		7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLevelUpItem.m; sourceTree = "<group>"; };
 		7EAB807318A4E9D800C73F62 /* SCItemsFileManagerCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManagerCallbacks.h; sourceTree = "<group>"; };
 		7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManagerCallbacks.m; sourceTree = "<group>"; };
 		7EAB807618A4EDE300C73F62 /* SCLevelsHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelsHistory.h; sourceTree = "<group>"; };
@@ -374,6 +377,8 @@
 				7EAB807A18A503A000C73F62 /* SCLevelInfoPOD.m */,
 				7EAB807C18A5120B00C73F62 /* SCLevelResponse.h */,
 				7EAB807D18A5120B00C73F62 /* SCLevelResponse.m */,
+				7E40D84418A91C1500CE98BF /* SCLevelUpItem.h */,
+				7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 			files = (
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
 				7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */,
+				7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */,
 				7E1D05F518A1525B006EF056 /* SCItemGridCell.m in Sources */,
 				7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */,
 				7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */,

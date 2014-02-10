@@ -8,6 +8,7 @@
 
 #import <SCItemsBrowser/RequestBuilder/SIBAllChildrenRequestBuilder.h>
 
+#import <SCItemsBrowser/FileManager/SCLevelUpItem.h>
 #import <SCItemsBrowser/FileManager/SCLevelResponse.h>
 
 #import <SCItemsBrowser/Appearance/SIBListModeAppearance.h>
