@@ -13,6 +13,7 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 {
     SCExtendedApiContext* _context;
     SCApiContext* _legacyContext;
+    SCItemSourcePOD* _defaultItemSource;
     
     SIBAllChildrenRequestBuilder* _allChildrenRequestBuilder;
     
@@ -26,12 +27,18 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 {
     [ super setUp ];
 
+    self->_defaultItemSource = [ SCItemSourcePOD new ];
     self->_legacyContext = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
                                                     login: @"sitecore\\admin"
                                                  password: @"b" ];
     {
         self->_legacyContext.defaultDatabase = @"master";
         self->_legacyContext.defaultSite     = @"/sitecore/shell";
+        
+        
+        self->_defaultItemSource.database = self->_legacyContext.defaultDatabase;
+        self->_defaultItemSource.site     = self->_legacyContext.defaultSite    ;
+        self->_defaultItemSource.language = self->_legacyContext.defaultLanguage;
     }
     self->_context = self->_legacyContext.extendedApiContext;
     
@@ -106,6 +113,74 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     
     GHAssertTrue( actualResponse.levelParentItem == self->_rootItemStub, @"root item mismatch" );
     GHAssertTrue( 4 == [ actualResponse.levelContentItems count ], @"children count mismatch" );
+}
+
+-(void)testFakeLevelItemIsAddedToInnerLevels
+{
+    SEL thisTest = _cmd;
+    
+    
+    __block SCLevelResponse* actualResponse = nil;
+    __block NSError        * actualError    = nil;
+    __block BOOL             isDoneCallbackReached = NO;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* blockResponse, NSError* blockError )
+        {
+            isDoneCallbackReached = YES;
+            
+            actualError    = blockError;
+            actualResponse = blockResponse;
+            
+            [ self notify: kGHUnitWaitStatusSuccess
+              forSelector: thisTest ];
+        };
+    }
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+        {
+           [ self->_useCacheFm loadLevelForItem: self->_rootItemStub
+                                      callbacks: callbacks
+                                  ignoringCache: YES ];
+        } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+////////
+
+    
+    actualResponse = nil;
+    actualError    = nil;
+    isDoneCallbackReached = NO;
+    
+    SCItem* allowedParentItem = [ self->_context itemWithPath: @"/sitecore/content/Home/Allowed_Parent"
+                                                   itemSource: self->_defaultItemSource ];
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+        {
+           [ self->_useCacheFm loadLevelForItem: allowedParentItem
+                                      callbacks: callbacks
+                                  ignoringCache: YES ];
+        } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+    
+    
+    GHAssertTrue( isDoneCallbackReached, @"completion callback not reached" );
+    
+    GHAssertNotNil( actualResponse, @"invalid level response" );
+    GHAssertNil( actualError, @"unexpected error" );
+    
+    GHAssertTrue( actualResponse.levelParentItem == allowedParentItem, @"level item mismatch" );
+    GHAssertTrue( 3 == [ actualResponse.levelContentItems count ], @"children count mismatch" );
+    
+    GHAssertTrue( [ actualResponse.levelContentItems[0] isMemberOfClass: [ SCLevelUpItem class ] ], @"levelup item not found" );
 }
 
 @end
