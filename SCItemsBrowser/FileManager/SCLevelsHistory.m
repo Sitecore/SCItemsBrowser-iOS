@@ -66,7 +66,7 @@
     }
     
     NSUInteger levelsCount = [ self currentLevel ];
-    NSUInteger index = levelsCount - 1;
+    NSUInteger index = levelsCount - 2;
 
     return self->_levelStorage[ index ];
 }

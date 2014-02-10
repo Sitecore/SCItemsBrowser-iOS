@@ -183,4 +183,98 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     GHAssertTrue( [ actualResponse.levelContentItems[0] isMemberOfClass: [ SCLevelUpItem class ] ], @"levelup item not found" );
 }
 
+-(void)testLevelUpReturnsSameItemsAtRootLevel
+{
+    SEL thisTest = _cmd;
+    
+    
+    NSArray* rootChildrenBeforeLevelUp = nil;
+    NSArray* rootChildrenAfterLevelUp  = nil;
+    
+    NSArray* rootChildrenIdsBeforeLevelUp = nil;
+    NSArray* rootChildrenIdsAfterLevelUp = nil;
+    
+    __block SCLevelResponse* actualResponse = nil;
+    __block NSError        * actualError    = nil;
+    __block BOOL             isDoneCallbackReached = NO;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* blockResponse, NSError* blockError )
+        {
+            isDoneCallbackReached = YES;
+            
+            actualError    = blockError;
+            actualResponse = blockResponse;
+            
+            [ self notify: kGHUnitWaitStatusSuccess
+              forSelector: thisTest ];
+        };
+    }
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+       {
+           [ self->_useCacheFm loadLevelForItem: self->_rootItemStub
+                                      callbacks: callbacks
+                                  ignoringCache: YES ];
+       } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+
+    rootChildrenBeforeLevelUp = actualResponse.levelContentItems;
+    rootChildrenIdsBeforeLevelUp = [ rootChildrenBeforeLevelUp map:^NSString*(SCItem* object)
+    {
+        return object.itemId;
+    } ];
+    ////////
+    
+    
+
+    
+    
+    actualResponse = nil;
+    actualError    = nil;
+    isDoneCallbackReached = NO;
+    
+    SCItem* allowedParentItem = [ self->_context itemWithPath: @"/sitecore/content/Home/Allowed_Parent"
+                                                   itemSource: self->_defaultItemSource ];
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+       {
+           [ self->_useCacheFm loadLevelForItem: allowedParentItem
+                                      callbacks: callbacks
+                                  ignoringCache: YES ];
+       } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+////////
+
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+       {
+           [ self->_useCacheFm goToLevelUpNotifyingCallbacks: callbacks ];
+       } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+    
+    
+    rootChildrenAfterLevelUp = actualResponse.levelContentItems;
+    rootChildrenIdsAfterLevelUp = [ rootChildrenAfterLevelUp map:^NSString*(SCItem* object)
+   {
+       return object.itemId;
+   } ];
+
+    
+    GHAssertEqualObjects( rootChildrenIdsAfterLevelUp, rootChildrenIdsBeforeLevelUp, @"id array mismatch" );
+}
+
 @end
