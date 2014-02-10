@@ -174,6 +174,9 @@ typedef void(^UpdateHistoryActionBlock)(void);
     return [ completionHook copy ];
 }
 
+
+// @adk : used for mocking in unit tests. Rename with care.
+// Do not inline
 -(SCExtendedAsyncOp)levelLoaderFromRequest:( SCItemsReaderRequest* )request
 {
     return [ self->_apiContext itemsReaderWithRequest: request ];
