@@ -6,8 +6,11 @@
 #import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>
 #import <SCItemsBrowser/SCItemsBrowserProtocol.h>
 
-#import <SCItemsBrowser/RequestBuilder/SIBWhiteListTemplateRequestBuilder.h>
+
 #import <SCItemsBrowser/RequestBuilder/SIBAllChildrenRequestBuilder.h>
+#import <SCItemsBrowser/RequestBuilder/SIBBlackListTemplateRequestBuilder.h>
+#import <SCItemsBrowser/RequestBuilder/SIBWhiteListTemplateRequestBuilder.h>
+
 
 #import <SCItemsBrowser/FileManager/SCLevelUpItem.h>
 #import <SCItemsBrowser/FileManager/SCLevelResponse.h>

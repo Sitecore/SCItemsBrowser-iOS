@@ -79,7 +79,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     [ super tearDown ];
 }
 
--(void)testWhiteListFilter_ValidDataSet
+-(void)testWhiteListFilterForSingleTemplate
 {
     SEL thisTest = _cmd;
     
@@ -128,6 +128,159 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     
     GHAssertTrue( actualResponse.levelParentItem == self->_placeholderSettingsStub, @"root item mismatch" );
     GHAssertTrue( 2 == [ actualResponse.levelContentItems count ], @"children count mismatch" );
+}
+
+-(void)testWhiteListFilterForMultipleTemplates
+{
+    SEL thisTest = _cmd;
+    
+    SIBWhiteListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBWhiteListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder", @"Node" ] ];
+    
+    self->_useCacheFm =
+    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+                                  levelRequestBuilder: foldersOnlyrequestBuilder ];
+    
+    GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );
+    
+    __block SCLevelResponse* actualResponse = nil;
+    __block NSError        * actualError    = nil;
+    __block BOOL isDoneCallbackReached = NO;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* blockResponse, NSError* blockError )
+        {
+            isDoneCallbackReached = YES;
+            
+            actualError    = blockError;
+            actualResponse = blockResponse;
+            
+            [ self notify: kGHUnitWaitStatusSuccess
+              forSelector: thisTest ];
+        };
+    }
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+       {
+           [ self->_useCacheFm loadLevelForItem: self->_placeholderSettingsStub
+                                      callbacks: callbacks
+                                  ignoringCache: YES ];
+       } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+    
+    GHAssertTrue( isDoneCallbackReached, @"completion callback not reached" );
+    
+    GHAssertNotNil( actualResponse, @"invalid level response" );
+    GHAssertNil( actualError, @"unexpected error" );
+    
+    GHAssertTrue( actualResponse.levelParentItem == self->_placeholderSettingsStub, @"root item mismatch" );
+    GHAssertTrue( 8 == [ actualResponse.levelContentItems count ], @"children count mismatch" );
+}
+
+-(void)testBlackListFilterForSingleTemplate
+{
+    SEL thisTest = _cmd;
+    
+    SIBBlackListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBBlackListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder" ] ];
+    
+    self->_useCacheFm =
+    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+                                  levelRequestBuilder: foldersOnlyrequestBuilder ];
+    
+    GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );
+    
+    __block SCLevelResponse* actualResponse = nil;
+    __block NSError        * actualError    = nil;
+    __block BOOL isDoneCallbackReached = NO;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* blockResponse, NSError* blockError )
+        {
+            isDoneCallbackReached = YES;
+            
+            actualError    = blockError;
+            actualResponse = blockResponse;
+            
+            [ self notify: kGHUnitWaitStatusSuccess
+              forSelector: thisTest ];
+        };
+    }
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+                       {
+                           [ self->_useCacheFm loadLevelForItem: self->_placeholderSettingsStub
+                                                      callbacks: callbacks
+                                                  ignoringCache: YES ];
+                       } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+    
+    GHAssertTrue( isDoneCallbackReached, @"completion callback not reached" );
+    
+    GHAssertNotNil( actualResponse, @"invalid level response" );
+    GHAssertNil( actualError, @"unexpected error" );
+    
+    GHAssertTrue( actualResponse.levelParentItem == self->_placeholderSettingsStub, @"root item mismatch" );
+    GHAssertTrue( 6 == [ actualResponse.levelContentItems count ], @"children count mismatch" );
+}
+
+-(void)testBlackListFilterForMultipleTemplates
+{
+    SEL thisTest = _cmd;
+    
+    SIBBlackListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBBlackListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder", @"Node" ] ];
+    
+    self->_useCacheFm =
+    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+                                  levelRequestBuilder: foldersOnlyrequestBuilder ];
+    
+    GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );
+    
+    __block SCLevelResponse* actualResponse = nil;
+    __block NSError        * actualError    = nil;
+    __block BOOL isDoneCallbackReached = NO;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* blockResponse, NSError* blockError )
+        {
+            isDoneCallbackReached = YES;
+            
+            actualError    = blockError;
+            actualResponse = blockResponse;
+            
+            [ self notify: kGHUnitWaitStatusSuccess
+              forSelector: thisTest ];
+        };
+    }
+    
+    [ self prepare: thisTest ];
+    {
+        dispatch_async( dispatch_get_main_queue() , ^void()
+                       {
+                           [ self->_useCacheFm loadLevelForItem: self->_placeholderSettingsStub
+                                                      callbacks: callbacks
+                                                  ignoringCache: YES ];
+                       } );
+    }
+    [ self waitForStatus: kGHUnitWaitStatusSuccess
+                 timeout: SINGLE_REQUEST_TIMEOUT ];
+    
+    GHAssertTrue( isDoneCallbackReached, @"completion callback not reached" );
+    
+    GHAssertNotNil( actualResponse, @"invalid level response" );
+    GHAssertNil( actualError, @"unexpected error" );
+    
+    GHAssertTrue( actualResponse.levelParentItem == self->_placeholderSettingsStub, @"root item mismatch" );
+    GHAssertTrue( 0 == [ actualResponse.levelContentItems count ], @"children count mismatch" );
 }
 
 @end

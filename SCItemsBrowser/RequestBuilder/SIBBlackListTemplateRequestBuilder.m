@@ -1,6 +1,6 @@
-#import "SIBWhiteListTemplateRequestBuilder.h"
+#import "SIBBlackListTemplateRequestBuilder.h"
 
-@implementation SIBWhiteListTemplateRequestBuilder
+@implementation SIBBlackListTemplateRequestBuilder
 {
     NSArray* _templateNames;
 }
@@ -25,11 +25,11 @@
     NSMutableArray* templateStatements = [ @[] mutableCopy ];
     for ( NSString* templateName in self->_templateNames )
     {
-        NSString* templateStatement = [ NSString stringWithFormat: @"@@templatename = '%@'", templateName ];
+        NSString* templateStatement = [ NSString stringWithFormat: @"@@templatename != '%@'", templateName ];
         [ templateStatements addObject: templateStatement ];
     }
-    NSString* templatesFilter = [ templateStatements componentsJoinedByString: @" OR " ];
-
+    NSString* templatesFilter = [ templateStatements componentsJoinedByString: @" AND " ];
+    
     return templatesFilter;
 }
 
