@@ -1,9 +1,6 @@
 #import "SCItemListBorwser.h"
 
-#import "SCItemsFileManager.h"
-#import "SCItemsFileManagerCallbacks.h"
-
-#import "SCLevelResponse.h"
+#import "SCLevelUpItem.h"
 
 
 @implementation SCItemListBorwser
@@ -186,14 +183,54 @@ numberOfRowsInSection:( NSInteger )section
     return static_cast<NSInteger>( result );
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)tableView:( UITableView* )tableView
+       cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    NSAssert( NO, @"not implemented" );
-    return nil;
+    static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.list.LevelUpCell";
+    static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell"   ;
+    
+    NSParameterAssert( nil != self->_loadedLevel );
+    NSParameterAssert( nil != self->_loadedLevel.levelParentItem );
+    NSParameterAssert( nil != self->_loadedLevel.levelContentItems );
+    
+    NSUInteger itemIndex = static_cast<NSUInteger>( indexPath.row );
+    id itemForCell = self->_loadedLevel.levelContentItems[ itemIndex ];
+    
+    if ( [ itemForCell isMemberOfClass: [ SCLevelUpItem class ] ] )
+    {
+        UITableViewCell* cell = [ tableView dequeueReusableCellWithIdentifier: LEVEL_UP_CELL_ID ];
+        if ( nil == cell )
+        {
+            cell = [ self->_listModeCellBuilder createLevelUpCellForListMode ];
+        }
+        
+        return cell;
+    }
+    else
+    {
+        UITableViewCell* cell = [ tableView dequeueReusableCellWithIdentifier: ITEM_CELL_ID ];
+        UITableViewCell<SCItemCell>* itemCell = nil;
+        SCItem* castedItem = (SCItem*)itemForCell;
+        
+        if ( nil == cell )
+        {
+            itemCell = [ self->_listModeCellBuilder createCellForListMode ];
+            cell = itemCell;
+        }
+        else
+        {
+            itemCell = ( UITableViewCell<SCItemCell>* )cell;
+        }
+        
+        NSParameterAssert( nil != itemCell );
+        [ itemCell setModel: castedItem ];
+        [ itemCell reloadData ];
+     
+        return cell;
+    }
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+-(NSInteger)numberOfSectionsInTableView:( UITableView* )tableView
 {
     return 1;
 }

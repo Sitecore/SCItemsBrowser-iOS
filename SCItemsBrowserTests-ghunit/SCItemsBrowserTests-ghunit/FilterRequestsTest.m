@@ -265,11 +265,11 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     [ self prepare: thisTest ];
     {
         dispatch_async( dispatch_get_main_queue() , ^void()
-                       {
-                           [ self->_useCacheFm loadLevelForItem: self->_placeholderSettingsStub
-                                                      callbacks: callbacks
-                                                  ignoringCache: YES ];
-                       } );
+        {
+           [ self->_useCacheFm loadLevelForItem: self->_placeholderSettingsStub
+                                      callbacks: callbacks
+                                  ignoringCache: YES ];
+        } );
     }
     [ self waitForStatus: kGHUnitWaitStatusSuccess
                  timeout: SINGLE_REQUEST_TIMEOUT ];
