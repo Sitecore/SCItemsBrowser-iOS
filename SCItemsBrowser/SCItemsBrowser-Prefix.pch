@@ -1,6 +1,12 @@
 
 
 #ifdef __OBJC__
+    #import "SCLevelResponse.h"
+    #import "SCItemsFileManager.h"
+    #import "SCItemsFileManagerCallbacks.h"
+
+    #import "SCItemCell.h"
+    #import "SIBListModeCellFactory.h"
     #import "SCItemsBrowserDelegate.h"
 
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
