@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E34F72318AA18F600B5D62E /* FilterRequestsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72218AA18F600B5D62E /* FilterRequestsTest.m */; };
 		7E3BFA2F18A8D6C2001454C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA2E18A8D6C2001454C5 /* Foundation.framework */; };
 		7E3BFA3118A8D6C2001454C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3018A8D6C2001454C5 /* CoreGraphics.framework */; };
 		7E3BFA3318A8D6C2001454C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3218A8D6C2001454C5 /* UIKit.framework */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E34F72218AA18F600B5D62E /* FilterRequestsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterRequestsTest.m; sourceTree = "<group>"; };
 		7E3BFA2B18A8D6C2001454C5 /* SCItemsBrowserTests-ghunit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCItemsBrowserTests-ghunit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3BFA2E18A8D6C2001454C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E3BFA3018A8D6C2001454C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -229,10 +231,11 @@
 		7E3BFA3418A8D6C2001454C5 /* SCItemsBrowserTests-ghunit */ = {
 			isa = PBXGroup;
 			children = (
+				7E40D81618A90BB000CE98BF /* SCItemRecord_UnitTest.h */,
 				7E3BFA4618A8D6C2001454C5 /* Images.xcassets */,
 				7E3BFA3518A8D6C2001454C5 /* Supporting Files */,
 				7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */,
-				7E40D81618A90BB000CE98BF /* SCItemRecord_UnitTest.h */,
+				7E34F72218AA18F600B5D62E /* FilterRequestsTest.m */,
 			);
 			path = "SCItemsBrowserTests-ghunit";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3BFA3B18A8D6C2001454C5 /* main.m in Sources */,
+				7E34F72318AA18F600B5D62E /* FilterRequestsTest.m in Sources */,
 				7EB927BA18A8FF500007B062 /* RootLevelFetchTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
