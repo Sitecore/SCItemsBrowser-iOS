@@ -5,6 +5,7 @@
 
 @protocol SIBListModeCellFactory <NSObject>
 
+-(UITableViewCell*)createLevelUpCellForListMode;
 -(UITableViewCell<SCItemCell>*)createCellForListMode;
 
 @end
