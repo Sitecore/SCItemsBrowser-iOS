@@ -183,8 +183,7 @@ numberOfRowsInSection:( NSInteger )section
     NSParameterAssert( nil != self->_loadedLevel.levelContentItems );
     
     NSUInteger result = [ self->_loadedLevel.levelContentItems count ];
-    
-    return NSNotFound;
+    return static_cast<NSInteger>( result );
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
