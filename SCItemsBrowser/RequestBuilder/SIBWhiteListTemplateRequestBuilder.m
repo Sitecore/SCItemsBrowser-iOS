@@ -20,7 +20,7 @@
     return self;
 }
 
--(SCItemsReaderRequest*)levelDownRequestForItem:( SCItem* )item
+-(NSString*)templateWhiteListClause
 {
     NSMutableArray* templateStatements = [ @[] mutableCopy ];
     for ( NSString* templateName in self->_templateNames )
@@ -30,6 +30,13 @@
     }
     NSString* templatesFilter = [ templateStatements componentsJoinedByString: @" OR " ];
 
+    return templatesFilter;
+}
+
+-(SCItemsReaderRequest*)levelDownRequestForItem:( SCItem* )item
+{
+    NSString* templatesFilter = [ self templateWhiteListClause ];
+    
     SCItemsReaderRequest* result = [ SCItemsReaderRequest new ];
     {
         result.requestType = SCItemReaderRequestQuery;

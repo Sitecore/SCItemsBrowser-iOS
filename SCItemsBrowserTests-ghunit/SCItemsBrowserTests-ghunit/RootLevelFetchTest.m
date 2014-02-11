@@ -1,10 +1,5 @@
-#import <SCItemsBrowser/FileManager/SCItemsFileManager.h>
-#import <SCItemsBrowser/FileManager/SCItemsFileManagerCallbacks.h>
 
-#import "SCItemRecord_UnitTest.h"
-#import <SCItemsBrowserTests/SCItem+PrivateMethods.h>
-
-NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
+static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 
 @interface RootLevelFetchTest : GHAsyncTestCase
 @end
@@ -22,9 +17,6 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     SCItemRecord*  _rootItemRecord;
     
     SCItemsFileManager* _useCacheFm;
-    
-    SCItemRecord*  _placeholderSettingsRecord;
-    SCItem* _placeholderSettingsStub;
 }
 
 -(void)setUp
@@ -62,16 +54,6 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     }
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: self->_rootItemRecord
                                                  apiContext: self->_context ];
-
-    
-    self->_placeholderSettingsRecord = [ SCItemRecord new ];
-    {
-        self->_placeholderSettingsRecord.path = @"/sitecore/layout/Placeholder Settings";
-        self->_placeholderSettingsRecord.itemId = @"{1CE3B36C-9B0C-4EB5-A996-BFCB4EAA5287}";
-        self->_placeholderSettingsRecord.displayName = @"Placeholder Settings";
-    }
-    self->_placeholderSettingsStub = [ [ SCItem alloc ] initWithRecord: self->_placeholderSettingsRecord
-                                                            apiContext: self->_context ];
 }
 
 -(void)tearDown
@@ -84,9 +66,6 @@ NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     self->_defaultItemSource = nil;
     
     self->_useCacheFm = nil;
-    
-    self->_placeholderSettingsRecord = nil;
-    self->_placeholderSettingsStub   = nil;
     
     self->_allChildrenRequestBuilder = nil;
     
