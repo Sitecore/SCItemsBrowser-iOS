@@ -1,36 +1,22 @@
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import <SCItemsBrowser/SCItemsBrowserProtocol.h>
 #import <SCItemsBrowser/SCItemsBrowserInitialization.h>
 
-@class SCItem;
-@class SCExtendedApiContext;
-
-@protocol SCItemsBrowserDelegate;
-@protocol SCItemsLevelRequestBuilder;
-
 @protocol SIBListModeAppearance;
-@protocol SIBGridModeAppearance;
-
 @protocol SIBListModeCellFactory;
-@protocol SIBGridModeCellFactory;
 
 
+@interface SCItemListBorwser : NSObject<SCItemsBrowserProtocol, SCItemsBrowserInitialization, UITableViewDataSource>
 
-@interface SCItemsBrowserView : UIView<SCItemsBrowserInitialization, SCItemsBrowserProtocol>
+@property ( nonatomic, weak ) IBOutlet UITableView* tableView;
 
-#pragma mark -
-#pragma mark Once assign properties
 @property ( nonatomic, strong ) IBOutlet SCExtendedApiContext* apiContext;
 @property ( nonatomic, strong ) IBOutlet SCItem*               rootItem  ;
 @property ( nonatomic, weak   ) IBOutlet id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder;
-
-@property ( nonatomic, weak   ) IBOutlet id<SIBListModeAppearance> listModeTheme;
-@property ( nonatomic, weak   ) IBOutlet id<SIBGridModeAppearance> gridModeTheme;
-
-@property ( nonatomic, weak   ) IBOutlet id<SIBListModeCellFactory> listModeCellBuilder;
-@property ( nonatomic, weak   ) IBOutlet id<SIBGridModeCellFactory> gridModeCellBuilder;
-
 @property ( nonatomic, weak   ) IBOutlet id<SCItemsBrowserDelegate> delegate;
 
-@end
+@property ( nonatomic, weak   ) IBOutlet id<SIBListModeAppearance> listModeTheme;
+@property ( nonatomic, weak   ) IBOutlet id<SIBListModeCellFactory> listModeCellBuilder;
 
+@end

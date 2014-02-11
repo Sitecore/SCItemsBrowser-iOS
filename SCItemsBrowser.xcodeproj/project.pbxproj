@@ -47,6 +47,7 @@
 		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
 		7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */; };
 		7E34F72A18AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72918AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m */; };
+		7E34F72D18AA45E700B5D62E /* SCItemListBorwser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72C18AA45E700B5D62E /* SCItemListBorwser.m */; };
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
 		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
@@ -145,6 +146,9 @@
 		7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBBlackListTemplateRequestBuilder.m; sourceTree = "<group>"; };
 		7E34F72818AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAbstractTemplateListRequestBuilder.h; sourceTree = "<group>"; };
 		7E34F72918AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBAbstractTemplateListRequestBuilder.m; sourceTree = "<group>"; };
+		7E34F72B18AA45E700B5D62E /* SCItemListBorwser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListBorwser.h; sourceTree = "<group>"; };
+		7E34F72C18AA45E700B5D62E /* SCItemListBorwser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListBorwser.m; sourceTree = "<group>"; };
+		7E34F72E18AA482200B5D62E /* SCItemsBrowserInitialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserInitialization.h; sourceTree = "<group>"; };
 		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
 		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperStructuresTest.m; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
 				7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */,
 				7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */,
+				7E34F72E18AA482200B5D62E /* SCItemsBrowserInitialization.h */,
 				7E225BE818A28E85009CEBEE /* SCItemsBrowserProtocol.h */,
 				7E1D05E218A14B95006EF056 /* SCItemCell.h */,
 				7E1D05E118A14AC0006EF056 /* SCItemsBrowserDelegate.h */,
@@ -368,6 +373,8 @@
 			children = (
 				7E1D05F018A15235006EF056 /* SCItemListCell.h */,
 				7E1D05F118A15235006EF056 /* SCItemListCell.m */,
+				7E34F72B18AA45E700B5D62E /* SCItemListBorwser.h */,
+				7E34F72C18AA45E700B5D62E /* SCItemListBorwser.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -522,6 +529,7 @@
 				7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */,
 				7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */,
 				7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */,
+				7E34F72D18AA45E700B5D62E /* SCItemListBorwser.m in Sources */,
 				7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */,
 				7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */,
 				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,
