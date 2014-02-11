@@ -1,8 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>
+#import <SCItemsBrowser/RequestBuilder/SIBAbstractTemplateListRequestBuilder.h>
 
-@interface SIBWhiteListTemplateRequestBuilder : NSObject< SCItemsLevelRequestBuilder >
 
--(instancetype)initWithTemplateNames:( NSArray* )templateNames;
-
+@interface SIBWhiteListTemplateRequestBuilder : SIBAbstractTemplateListRequestBuilder
 @end
