@@ -13,6 +13,7 @@
 -(void)popRequest;
 
 -(BOOL)isLevelUpAvailable;
+-(BOOL)isRootLevelLoaded;
 
 // starts from "1"
 -(NSUInteger)currentLevel;

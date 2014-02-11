@@ -43,6 +43,11 @@
     return [ self->_levelStorage count ];
 }
 
+-(BOOL)isRootLevelLoaded
+{
+    return [ self currentLevel ] >= 1;
+}
+
 -(BOOL)isLevelUpAvailable
 {
     return [ self currentLevel ] >= 2;
