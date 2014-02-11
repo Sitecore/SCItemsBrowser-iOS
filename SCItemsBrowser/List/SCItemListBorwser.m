@@ -1,6 +1,48 @@
 #import "SCItemListBorwser.h"
 
+#import "SCItemsFileManager.h"
+#import "SCItemsFileManagerCallbacks.h"
+
+#import "SCLevelResponse.h"
+
+
 @implementation SCItemListBorwser
+{
+    dispatch_once_t _onceItemsFileManagerToken;
+    SCItemsFileManager* _itemsFileManager;
+    
+    SCLevelResponse* _loadedLevel;
+}
+
+#pragma mark -
+#pragma mark LazyProperties
+-(void)disposeLazyItemsFileManager
+{
+    self->_onceItemsFileManagerToken = 0;
+    self->_itemsFileManager          = nil;
+}
+
+-(SCItemsFileManager*)lazyItemsFileManager
+{
+    SCExtendedApiContext* context = self->_apiContext;
+    id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder = self->_nextLevelRequestBuilder;
+
+    NSParameterAssert( nil != context );
+    NSParameterAssert( nil != nextLevelRequestBuilder );
+    if ( nil == context || nil == nextLevelRequestBuilder )
+    {
+        return nil;
+    }
+    
+    dispatch_once(&self->_onceItemsFileManagerToken, ^void()
+    {
+        self->_itemsFileManager =
+        [ [ SCItemsFileManager alloc ] initWithApiContext: context
+                                      levelRequestBuilder: nextLevelRequestBuilder ];
+    });
+    
+    return self->_itemsFileManager;
+}
 
 #pragma mark -
 #pragma mark Once assign properties
@@ -49,28 +91,99 @@
 
 #pragma mark - 
 #pragma mark SCItemsBrowserProtocol
+-(void)onLevelReloaded:( SCLevelResponse* )levelResponse
+{
+    self->_loadedLevel = levelResponse;
+    
+    [ self.tableView reloadData ];
+}
+
+-(void)onLevelReloadFailedWithError:( NSError* )levelError
+{
+    [ self.delegate itemsBrowser: self
+      levelLoadinFailedWithError: levelError ];
+}
+
+-(SCItemsFileManagerCallbacks*)newCallbacksForItemsFileManager
+{
+    __weak SCItemListBorwser* weakSelf = self;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* levelResponse, NSError* levelError )
+        {
+            if ( nil == levelResponse )
+            {
+                [ weakSelf onLevelReloadFailedWithError: levelError ];
+            }
+            else
+            {
+                [ weakSelf onLevelReloaded: levelResponse ];
+            }
+        };
+        
+        callbacks.onLevelProgressBlock = ^void( id progressInfo )
+        {
+            [ weakSelf.delegate itemsBrowser: weakSelf
+         didReceiveLevelProgressNotification: progressInfo ];
+        };
+    }
+    
+    return callbacks;
+}
+
+
+-(void)reloadDataIgnoringCache:( BOOL )shouldIgnoreCache
+{
+    NSParameterAssert( nil != self->_tableView );
+    
+    SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
+    
+    if ( ![ self.lazyItemsFileManager isRootLevelLoaded ] )
+    {
+        [ self.lazyItemsFileManager loadLevelForItem: self->_rootItem
+                                           callbacks: fmCallbacks
+                                       ignoringCache: shouldIgnoreCache ];
+    }
+    else
+    {
+        [ self.lazyItemsFileManager reloadCurrentLevelNotifyingCallbacks: fmCallbacks
+                                                           ignoringCache: shouldIgnoreCache ];
+    }
+}
+
 -(void)reloadData
 {
-    NSAssert( NO, @"not implemented" );
+    [ self reloadDataIgnoringCache: NO ];
 }
 
 -(void)forceRefreshData
 {
-    NSAssert( NO, @"not implemented" );
+    [ self reloadDataIgnoringCache: YES ];
 }
 
 -(void)navigateToRootItem
 {
-    NSAssert( NO, @"not implemented" );
+    [ self disposeLazyItemsFileManager ];
+ 
+    SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
+    [ self.lazyItemsFileManager loadLevelForItem: self->_rootItem
+                                       callbacks: fmCallbacks
+                                   ignoringCache: NO ];
 }
 
 
 #pragma mark -
 #pragma mark UITableViewDataSource
--(NSInteger)tableView:(UITableView *)tableView
-numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:( UITableView* )tableView
+numberOfRowsInSection:( NSInteger )section
 {
-    NSAssert( NO, @"not implemented" );    
+    NSParameterAssert( nil != self->_loadedLevel );
+    NSParameterAssert( nil != self->_loadedLevel.levelParentItem );
+    NSParameterAssert( nil != self->_loadedLevel.levelContentItems );
+    
+    NSUInteger result = [ self->_loadedLevel.levelContentItems count ];
+    
     return NSNotFound;
 }
 
