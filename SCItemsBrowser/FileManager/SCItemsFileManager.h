@@ -13,10 +13,14 @@
 -(instancetype)initWithApiContext:( SCExtendedApiContext* )apiContext
               levelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder;
 
+-(BOOL)isRootLevelLoaded;
 
 -(void)loadLevelForItem:( SCItem* )item
               callbacks:( SCItemsFileManagerCallbacks* )callbacks
           ignoringCache:( BOOL )shouldIgnoreCache;
+
+-(void)reloadCurrentLevelNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks
+                              ignoringCache:( BOOL )shouldIgnoreCache;
 
 -(void)goToLevelUpNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks;
 
