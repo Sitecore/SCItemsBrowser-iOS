@@ -8,6 +8,9 @@
 didReceiveLevelProgressNotification:( id<SCUploadProgress> )progressInfo;
 
 -(void)itemsBrowser:( id )sender
-levelLoadinFailedWithError:( NSError* )error;
+levelLoadingFailedWithError:( NSError* )error;
+
+-(void)itemsBrowser:( id )sender
+didLoadLevelForItem:( SCItem* )levelParentItem;
 
 @end
