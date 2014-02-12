@@ -63,6 +63,7 @@
 		7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */; };
 		7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */; };
 		7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */; };
+		7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,8 @@
 		7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsLevelOperationBuilderHook.m; sourceTree = "<group>"; };
 		7EB927BC18A9002C0007B062 /* SIBAllChildrenRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAllChildrenRequestBuilder.h; sourceTree = "<group>"; };
 		7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBAllChildrenRequestBuilder.m; sourceTree = "<group>"; };
+		7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListTextCell.h; sourceTree = "<group>"; };
+		7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListTextCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +378,8 @@
 				7E1D05F118A15235006EF056 /* SCItemListCell.m */,
 				7E34F72B18AA45E700B5D62E /* SCItemListBrowser.h */,
 				7E34F72C18AA45E700B5D62E /* SCItemListBrowser.mm */,
+				7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */,
+				7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				7E34F72D18AA45E700B5D62E /* SCItemListBrowser.mm in Sources */,
 				7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */,
 				7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */,
+				7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */,
 				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,
 				7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */,
 				7E34F72A18AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m in Sources */,
