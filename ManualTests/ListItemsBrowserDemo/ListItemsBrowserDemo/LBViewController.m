@@ -1,5 +1,9 @@
 #import "LBViewController.h"
 
+
+//static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
+static NSString* const ROOT_ITEM_PATH = @"/sitecore/Media Library";
+
 @interface LBViewController ()
 <
     SCItemsBrowserDelegate,
@@ -44,8 +48,9 @@
     [ self setupContext ];
     self.itemsBrowserController.apiContext = self->_apiContext;
     
+    
     SCExtendedAsyncOp rootItemLoader =
-    [ self->_apiContext itemReaderForItemPath: @"/sitecore/content/home"
+    [ self->_apiContext itemReaderForItemPath: ROOT_ITEM_PATH
                                    itemSource: nil ];
     
     [ self startLoading ];
@@ -130,13 +135,12 @@ static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.
 static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell"   ;
 
 
-
 -(NSString*)levelUpCellReuseIdentifier
 {
     return LEVEL_UP_CELL_ID;
 }
 
--(NSString*)itemCellReuseIdentifier
+-(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
 {
     return ITEM_CELL_ID;
 }

@@ -211,9 +211,8 @@ numberOfRowsInSection:( NSInteger )section
     NSParameterAssert( nil != self->_listModeCellBuilder );
     
     NSString* LEVEL_UP_CELL_ID = [ self->_listModeCellBuilder levelUpCellReuseIdentifier ];
-    NSString* ITEM_CELL_ID     = [ self->_listModeCellBuilder itemCellReuseIdentifier    ];
     NSParameterAssert( nil != LEVEL_UP_CELL_ID );
-    NSParameterAssert( nil != ITEM_CELL_ID     );
+    
     
     
     NSParameterAssert( nil != self->_loadedLevel );
@@ -235,9 +234,15 @@ numberOfRowsInSection:( NSInteger )section
     }
     else
     {
+        SCItem* castedItem = (SCItem*)itemForCell;
+        
+        NSString* ITEM_CELL_ID = [ self->_listModeCellBuilder itemCellReuseIdentifierForItem: castedItem ];
+        NSParameterAssert( nil != ITEM_CELL_ID );
+
+        
         UITableViewCell* cell = [ tableView dequeueReusableCellWithIdentifier: ITEM_CELL_ID ];
         UITableViewCell<SCItemCell>* itemCell = nil;
-        SCItem* castedItem = (SCItem*)itemForCell;
+
         
         if ( nil == cell )
         {

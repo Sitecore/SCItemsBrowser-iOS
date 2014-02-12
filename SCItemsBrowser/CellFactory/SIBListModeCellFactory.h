@@ -11,6 +11,6 @@
 -(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item;
 
 -(NSString*)levelUpCellReuseIdentifier;
--(NSString*)itemCellReuseIdentifier;
+-(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item;
 
 @end

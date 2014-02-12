@@ -22,7 +22,7 @@
     return nil;
 }
 
--(NSString*)itemCellReuseIdentifier
+-(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
 {
     return nil;
 }
