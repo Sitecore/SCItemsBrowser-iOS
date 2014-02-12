@@ -90,6 +90,12 @@
 #pragma mark SCItemsBrowserProtocol
 -(void)onLevelReloaded:( SCLevelResponse* )levelResponse
 {
+    NSParameterAssert( nil != levelResponse );
+    NSParameterAssert( nil != levelResponse.levelParentItem );
+    
+    [ self.delegate itemsBrowser: self
+             didLoadLevelForItem: levelResponse.levelParentItem ];
+
     self->_loadedLevel = levelResponse;
     
     [ self.tableView reloadData ];
@@ -98,7 +104,7 @@
 -(void)onLevelReloadFailedWithError:( NSError* )levelError
 {
     [ self.delegate itemsBrowser: self
-      levelLoadinFailedWithError: levelError ];
+     levelLoadingFailedWithError: levelError ];
 }
 
 -(SCItemsFileManagerCallbacks*)newCallbacksForItemsFileManager
@@ -186,8 +192,13 @@ numberOfRowsInSection:( NSInteger )section
 -(UITableViewCell*)tableView:( UITableView* )tableView
        cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.list.LevelUpCell";
-    static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell"   ;
+    NSParameterAssert( nil != self->_listModeCellBuilder );
+    
+    NSString* LEVEL_UP_CELL_ID = [ self->_listModeCellBuilder levelUpCellReuseIdentifier ];
+    NSString* ITEM_CELL_ID     = [ self->_listModeCellBuilder itemCellReuseIdentifier    ];
+    NSParameterAssert( nil != LEVEL_UP_CELL_ID );
+    NSParameterAssert( nil != ITEM_CELL_ID     );
+    
     
     NSParameterAssert( nil != self->_loadedLevel );
     NSParameterAssert( nil != self->_loadedLevel.levelParentItem );
