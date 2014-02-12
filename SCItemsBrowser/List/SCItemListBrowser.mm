@@ -11,6 +11,13 @@
     SCLevelResponse* _loadedLevel;
 }
 
+-(void)dealloc
+{
+    // @adk : this is required since properties are "assign"
+    self->_tableView.delegate   = nil;
+    self->_tableView.dataSource = nil;
+}
+
 #pragma mark -
 #pragma mark LazyProperties
 -(void)disposeLazyItemsFileManager
@@ -48,6 +55,7 @@
     NSParameterAssert( nil == self->_tableView );
     self->_tableView = tableView;
     self->_tableView.dataSource = self;
+    self->_tableView.delegate   = self;
 }
 
 -(void)setApiContext:( SCExtendedApiContext* )value
@@ -252,6 +260,29 @@ numberOfRowsInSection:( NSInteger )section
 -(NSInteger)numberOfSectionsInTableView:( UITableView* )tableView
 {
     return 1;
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+-(void)tableView:( UITableView* )tableView
+didSelectRowAtIndexPath:( NSIndexPath* )indexPath
+{
+    NSUInteger selectedItemIndex = static_cast<NSUInteger>( indexPath.row );
+    id selectedItem = self->_loadedLevel.levelContentItems[ selectedItemIndex ];
+    
+    SCItemsFileManagerCallbacks* callbacks = [ self newCallbacksForItemsFileManager ];
+    
+    if ( [ selectedItem isMemberOfClass: [ SCLevelUpItem class ] ] )
+    {
+        [ self->_itemsFileManager goToLevelUpNotifyingCallbacks: callbacks ];
+    }
+    else
+    {
+        SCItem* item = (SCItem*)selectedItem;
+        [ self->_itemsFileManager loadLevelForItem: item
+                                         callbacks: callbacks
+                                     ignoringCache: NO ];
+    }
 }
 
 @end
