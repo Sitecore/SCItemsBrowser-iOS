@@ -1,9 +1,9 @@
-#import "SCItemListBorwser.h"
+#import "SCItemListBrowser.h"
 
 #import "SCLevelUpItem.h"
 
 
-@implementation SCItemListBorwser
+@implementation SCItemListBrowser
 {
     dispatch_once_t _onceItemsFileManagerToken;
     SCItemsFileManager* _itemsFileManager;
@@ -103,7 +103,7 @@
 
 -(SCItemsFileManagerCallbacks*)newCallbacksForItemsFileManager
 {
-    __weak SCItemListBorwser* weakSelf = self;
+    __weak SCItemListBrowser* weakSelf = self;
     
     SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
     {

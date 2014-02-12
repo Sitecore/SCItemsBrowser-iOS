@@ -21,5 +21,6 @@
 #import <SCItemsBrowser/CellFactory/SIBListModeCellFactory.h>
 #import <SCItemsBrowser/CellFactory/SIBGridModeCellFactory.h>
 
+#import <SCItemsBrowser/List/SCItemListBrowser.h>
 #import <SCItemsBrowser/List/SCItemListCell.h>
 #import <SCItemsBrowser/Grid/SCItemGridCell.h>
