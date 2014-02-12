@@ -1,11 +1,10 @@
 #import <Foundation/Foundation.h>
 
-@protocol SCUploadProgress;
 
 @protocol SCItemsBrowserDelegate <NSObject>
 
 -(void)itemsBrowser:( id )sender
-didReceiveLevelProgressNotification:( id<SCUploadProgress> )progressInfo;
+didReceiveLevelProgressNotification:( id )progressInfo;
 
 -(void)itemsBrowser:( id )sender
 levelLoadingFailedWithError:( NSError* )error;
