@@ -37,12 +37,18 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="VL9-cN-7s8">
+                                <rect key="frame" x="0.0" y="274" width="320" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="allChildrenRequestBuilder" destination="zdn-uL-6r5" id="qUM-hn-39d"/>
                         <outlet property="itemPathTextView" destination="maX-iz-5aV" id="rzw-XK-fc0"/>
                         <outlet property="itemsBrowserController" destination="af3-fw-t3A" id="BMi-vj-EsB"/>
+                        <outlet property="loadingProgress" destination="VL9-cN-7s8" id="1d0-mE-IMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -51,10 +57,11 @@
                         <outlet property="delegate" destination="vXZ-lx-hvc" id="mg4-LJ-0vE"/>
                         <outlet property="listModeCellBuilder" destination="vXZ-lx-hvc" id="vY7-ez-uoh"/>
                         <outlet property="listModeTheme" destination="vXZ-lx-hvc" id="3dH-nr-toe"/>
-                        <outlet property="nextLevelRequestBuilder" destination="vXZ-lx-hvc" id="9cx-p3-XPb"/>
+                        <outlet property="nextLevelRequestBuilder" destination="zdn-uL-6r5" id="Psa-pO-bvz"/>
                         <outlet property="tableView" destination="xfP-uh-hIC" id="C2G-2Z-EFb"/>
                     </connections>
                 </customObject>
+                <customObject id="zdn-uL-6r5" customClass="SIBAllChildrenRequestBuilder"/>
             </objects>
         </scene>
     </scenes>
