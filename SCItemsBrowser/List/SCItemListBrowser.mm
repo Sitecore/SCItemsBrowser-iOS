@@ -284,9 +284,12 @@ didSelectRowAtIndexPath:( NSIndexPath* )indexPath
     else
     {
         SCItem* item = (SCItem*)selectedItem;
-        [ self->_itemsFileManager loadLevelForItem: item
-                                         callbacks: callbacks
-                                     ignoringCache: NO ];
+        if ( item.hasChildren )
+        {        
+            [ self->_itemsFileManager loadLevelForItem: item
+                                             callbacks: callbacks
+                                         ignoringCache: NO ];
+        }
     }
 }
 

@@ -133,6 +133,7 @@ didLoadLevelForItem:( SCItem* )levelParentItem
 #pragma mark SIBListModeCellFactory
 static NSString* const LEVEL_UP_CELL_ID = @"net.sitecore.MobileSdk.ItemsBrowser.list.LevelUpCell";
 static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell"   ;
+static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell.image";
 
 
 -(NSString*)levelUpCellReuseIdentifier
@@ -140,9 +141,26 @@ static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.
     return LEVEL_UP_CELL_ID;
 }
 
+-(BOOL)isImageItem:( SCItem* )item
+{
+    BOOL isUnversionedImage = [ item.itemTemplate isEqualToString: @"System/Media/Unversioned/Image" ];
+    BOOL isJpegImage        = [ item.itemTemplate isEqualToString: @"System/Media/Unversioned/Jpeg"  ];
+    
+    return isUnversionedImage || isJpegImage;
+}
+
 -(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
 {
-    return ITEM_CELL_ID;
+    NSLog( @"%@", item.itemTemplate );
+    
+    if ( [ self isImageItem: item ] )
+    {
+        return IMAGE_CELL_ID;
+    }
+    else
+    {
+        return ITEM_CELL_ID;
+    }
 }
 
 -(UITableViewCell*)createLevelUpCellForListMode
@@ -156,9 +174,13 @@ static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.
 
 -(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item
 {
+    NSLog( @"%@", item.itemTemplate );
+    
+    NSString* cellId = [ self itemCellReuseIdentifierForItem: item ];
+    
     SCItemListTextCell* cell =
     [ [ SCItemListTextCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                 reuseIdentifier: ITEM_CELL_ID ];
+                                 reuseIdentifier: cellId ];
 
     return cell;
 }
