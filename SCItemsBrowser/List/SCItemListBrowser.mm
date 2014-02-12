@@ -241,7 +241,7 @@ numberOfRowsInSection:( NSInteger )section
         
         if ( nil == cell )
         {
-            itemCell = [ self->_listModeCellBuilder createCellForListMode ];
+            itemCell = [ self->_listModeCellBuilder createListModeCellForItem: castedItem ];
             cell = itemCell;
         }
         else

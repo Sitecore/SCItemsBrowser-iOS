@@ -2,7 +2,7 @@
 
 @implementation StubCellFactory
 
--(UITableViewCell<SCItemCell>*)createCellForListMode
+-(UITableViewCell<SCItemCell>*)createListModeCellForItem:(SCItem *)item
 {
     return nil;
 }
@@ -16,5 +16,16 @@
 {
     return nil;
 }
+
+-(NSString*)levelUpCellReuseIdentifier
+{
+    return nil;
+}
+
+-(NSString*)itemCellReuseIdentifier
+{
+    return nil;
+}
+
 
 @end

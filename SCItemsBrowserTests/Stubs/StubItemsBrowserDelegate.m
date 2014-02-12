@@ -3,12 +3,17 @@
 @implementation StubItemsBrowserDelegate
 
 -(void)itemsBrowser:( id )sender
-didReceiveLevelProgressNotification:( id<SCUploadProgress> )progressInfo
+didReceiveLevelProgressNotification:( id )progressInfo
 {
 }
 
 -(void)itemsBrowser:( id )sender
-levelLoadinFailedWithError:( NSError* )error
+levelLoadingFailedWithError:( NSError* )error
+{
+}
+
+-(void)itemsBrowser:( id )sender
+didLoadLevelForItem:( SCItem* )levelParentItem
 {
 }
 

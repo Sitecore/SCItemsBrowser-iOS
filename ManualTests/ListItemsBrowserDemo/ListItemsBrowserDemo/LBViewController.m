@@ -150,7 +150,7 @@ static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.
     return cell;
 }
 
--(UITableViewCell<SCItemCell>*)createCellForListMode
+-(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item
 {
     SCItemListTextCell* cell =
     [ [ SCItemListTextCell alloc ] initWithStyle: UITableViewCellStyleDefault
