@@ -100,7 +100,6 @@
 -(void)itemsBrowser:( id )sender
 didReceiveLevelProgressNotification:( id )progressInfo
 {
-//    NSLog( @"%@ loaded. %@", [ progressInfo progress ], [ progressInfo url ] );
     [ self startLoading ];
 }
 
