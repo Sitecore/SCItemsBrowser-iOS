@@ -8,4 +8,7 @@
 -(UITableViewCell*)createLevelUpCellForListMode;
 -(UITableViewCell<SCItemCell>*)createCellForListMode;
 
+-(NSString*)levelUpCellReuseIdentifier;
+-(NSString*)itemCellReuseIdentifier;
+
 @end
