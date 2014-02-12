@@ -12,4 +12,9 @@
     return nil;
 }
 
+-(UITableViewCell*)createLevelUpCellForListMode
+{
+    return nil;
+}
+
 @end
