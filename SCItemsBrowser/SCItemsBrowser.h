@@ -23,4 +23,6 @@
 
 #import <SCItemsBrowser/List/SCItemListBrowser.h>
 #import <SCItemsBrowser/List/SCItemListCell.h>
+#import <SCItemsBrowser/List/SCItemListTextCell.h>
+
 #import <SCItemsBrowser/Grid/SCItemGridCell.h>
