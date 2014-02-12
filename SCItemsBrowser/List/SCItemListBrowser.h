@@ -7,7 +7,7 @@
 @protocol SIBListModeCellFactory;
 
 
-@interface SCItemListBrowser : NSObject<SCItemsBrowserProtocol, SCItemsBrowserInitialization, UITableViewDataSource>
+@interface SCItemListBrowser : NSObject<SCItemsBrowserProtocol, SCItemsBrowserInitialization, UITableViewDataSource, UITableViewDelegate>
 
 @property ( nonatomic, weak ) IBOutlet UITableView* tableView;
 

@@ -36,6 +36,10 @@
                                 <rect key="frame" x="0.0" y="96" width="320" height="472"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="af3-fw-t3A" id="rds-2m-fVD"/>
+                                    <outlet property="delegate" destination="af3-fw-t3A" id="lr2-3P-sto"/>
+                                </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="VL9-cN-7s8">
                                 <rect key="frame" x="0.0" y="274" width="320" height="20"/>
