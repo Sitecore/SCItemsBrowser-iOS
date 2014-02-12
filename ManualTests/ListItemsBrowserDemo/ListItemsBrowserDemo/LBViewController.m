@@ -54,7 +54,7 @@
     {
         [ weakSelf endLoading ];
         
-       if ( nil != rootItem )
+       if ( nil == rootItem )
        {
            [ weakSelf didFailLoadingRootItemWithError: blockError ];
        }
@@ -84,21 +84,23 @@
 
 -(void)startLoading
 {
+    self.loadingProgress.hidden = NO;
     [ self.loadingProgress startAnimating ];
 }
 
 -(void)endLoading
 {
     [ self.loadingProgress stopAnimating ];
+    self.loadingProgress.hidden = YES;
 }
 
 
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
 -(void)itemsBrowser:( id )sender
-didReceiveLevelProgressNotification:( id<SCUploadProgress> )progressInfo
+didReceiveLevelProgressNotification:( id )progressInfo
 {
-    NSLog( @"%@ loaded. %@", [ progressInfo progress ], [ progressInfo url ] );
+//    NSLog( @"%@ loaded. %@", [ progressInfo progress ], [ progressInfo url ] );
     [ self startLoading ];
 }
 
@@ -120,7 +122,7 @@ didLoadLevelForItem:( SCItem* )levelParentItem
     NSParameterAssert( nil != levelParentItem );
     
     [ self endLoading ];
-    self.itemPathTextView.text = levelParentItem.displayName;
+    self.itemPathTextView.text = levelParentItem.path;
 }
 
 #pragma mark -
