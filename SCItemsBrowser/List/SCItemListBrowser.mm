@@ -47,6 +47,7 @@
 {
     NSParameterAssert( nil == self->_tableView );
     self->_tableView = tableView;
+    self->_tableView.dataSource = self;
 }
 
 -(void)setApiContext:( SCExtendedApiContext* )value
@@ -181,6 +182,13 @@
 -(NSInteger)tableView:( UITableView* )tableView
 numberOfRowsInSection:( NSInteger )section
 {
+    if ( nil == self->_loadedLevel )
+    {
+        // @adk : this method is called on delegate assignment by UIKit.
+        // Replacing assert with "if" to workaround
+        return 0;
+    }
+    
     NSParameterAssert( nil != self->_loadedLevel );
     NSParameterAssert( nil != self->_loadedLevel.levelParentItem );
     NSParameterAssert( nil != self->_loadedLevel.levelContentItems );
