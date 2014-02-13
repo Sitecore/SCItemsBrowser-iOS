@@ -17,4 +17,10 @@ didLoadLevelForItem:( SCItem* )levelParentItem
 {
 }
 
+-(BOOL)itemsBrowser:( id )sender
+shouldLoadLevelForItem:( SCItem* )levelParentItem
+{
+    return YES;
+}
+
 @end

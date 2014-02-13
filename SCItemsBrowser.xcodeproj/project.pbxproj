@@ -65,6 +65,7 @@
 		7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB808E18A5278A00C73F62 /* StubRequestBuilder.m */; };
 		7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */; };
 		7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */; };
+		7EC6143A18AD2F7D008E6011 /* AssignOnceListPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */; };
 		7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +189,7 @@
 		7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsLevelOperationBuilderHook.m; sourceTree = "<group>"; };
 		7EB927BC18A9002C0007B062 /* SIBAllChildrenRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAllChildrenRequestBuilder.h; sourceTree = "<group>"; };
 		7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBAllChildrenRequestBuilder.m; sourceTree = "<group>"; };
+		7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceListPropertiesTest.m; sourceTree = "<group>"; };
 		7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListTextCell.h; sourceTree = "<group>"; };
 		7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListTextCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,6 +335,7 @@
 				7EAB808418A5278A00C73F62 /* Stubs */,
 				7EAB809518A528A000C73F62 /* Hooks */,
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
+				7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */,
 				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */,
 				7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */,
@@ -569,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC6143A18AD2F7D008E6011 /* AssignOnceListPropertiesTest.m in Sources */,
 				7EAB809018A5278A00C73F62 /* StubGridModeTheme.m in Sources */,
 				7EAB809118A5278A00C73F62 /* StubItemsBrowserDelegate.m in Sources */,
 				7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */,
