@@ -2,4 +2,8 @@
 
 @protocol SIBListModeAppearance <NSObject>
 
+@optional
+-(NSString*)levelHeaderTitleForTableViewSection;
+-(NSString*)levelFooterTitleForTableViewSection;
+
 @end

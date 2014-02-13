@@ -267,6 +267,28 @@ numberOfRowsInSection:( NSInteger )section
     return 1;
 }
 
+-(NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderTitleForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelHeaderTitleForTableViewSection ];
+    }
+    
+    return nil;
+}
+
+-(NSString *)tableView:(UITableView *)tableView
+titleForFooterInSection:(NSInteger)section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterTitleForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelFooterTitleForTableViewSection ];
+    }
+    
+    return nil;
+}
+
 #pragma mark -
 #pragma mark UITableViewDelegate
 -(void)tableView:( UITableView* )tableView

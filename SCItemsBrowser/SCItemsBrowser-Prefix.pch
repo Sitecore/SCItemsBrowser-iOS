@@ -7,6 +7,8 @@
 
     #import "SCItemCell.h"
     #import "SIBListModeCellFactory.h"
+
+    #import "SIBListModeAppearance.h"
     #import "SCItemsBrowserDelegate.h"
 
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>

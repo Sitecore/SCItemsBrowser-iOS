@@ -2,6 +2,8 @@
 
 #import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
 
+#define CUSTOMIZATION_ENABLED 1
+
 //static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
 static NSString* const ROOT_ITEM_PATH = @"/sitecore/Media Library";
 
@@ -152,7 +154,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 
 -(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
 {
-    NSLog( @"%@", item.itemTemplate );
+//    NSLog( @"%@", item.itemTemplate );
     
     if ( [ self isImageItem: item ] )
     {
@@ -175,7 +177,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 
 -(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item
 {
-    NSLog( @"%@", item.itemTemplate );
+//    NSLog( @"%@", item.itemTemplate );
     
     SCItemListCell* cell = nil;
     NSString* cellId = [ self itemCellReuseIdentifierForItem: item ];
@@ -202,4 +204,18 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
     return levelParentItem.isFolder || levelParentItem.hasChildren;
 }
 
+#pragma mark -
+#pragma mark Theme
+
+#if CUSTOMIZATION_ENABLED
+-(NSString*)levelHeaderTitleForTableViewSection
+{
+    return @"Level Header";
+}
+
+-(NSString*)levelFooterTitleForTableViewSection
+{
+    return @"Level Footer";
+}
+#endif
 @end
