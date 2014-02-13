@@ -66,17 +66,18 @@
     {
         [ weakSelf stopLoading ];
         
+        weakSelf.imageView.image = loadedImage;
+        [ weakSelf setNeedsLayout ];
+
+        
         if ( nil == loadedImage )
         {
             NSLog( @"[INFO] : image loading failed for item : |%@|", self->_item );
         }
-        else
-        {
-            weakSelf.imageView.image = loadedImage;
-        }
     };
-
-    [ self startLoading ];
+    
+    [ self startLoading   ];
+    [ self setNeedsLayout ];
     self->_cancelImageLoader = imageLoader( nil, nil, onImageLoadedBlock );
     self->_cancelImageLoader = [ self->_cancelImageLoader copy ];
 }
@@ -91,6 +92,12 @@
 {
     [ self->_progress stopAnimating       ];
     [ self->_progress removeFromSuperview ];
+}
+
+-(void)layoutSubviews
+{
+    [ super layoutSubviews ];
+    self->_progress.center = CGPointMake( self.frame.size.width / 2., self.frame.size.height / 2. );
 }
 
 @end
