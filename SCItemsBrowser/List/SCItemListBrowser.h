@@ -11,8 +11,8 @@
 
 @property ( nonatomic, weak ) IBOutlet UITableView* tableView;
 
-@property ( nonatomic, strong ) IBOutlet SCExtendedApiContext* apiContext;
-@property ( nonatomic, strong ) IBOutlet SCItem*               rootItem  ;
+@property ( nonatomic, strong ) SCExtendedApiContext* apiContext;
+@property ( nonatomic, strong ) SCItem*               rootItem  ;
 @property ( nonatomic, weak   ) IBOutlet id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder;
 @property ( nonatomic, weak   ) IBOutlet id<SCItemsBrowserDelegate> delegate;
 
