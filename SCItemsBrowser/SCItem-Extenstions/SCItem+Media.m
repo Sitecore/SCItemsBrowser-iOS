@@ -2,6 +2,7 @@
 
 static NSString* const MEDIA_ROOT = @"/sitecore/media library";
 
+
 @implementation SCItem (Media)
 
 
@@ -51,6 +52,19 @@ static NSString* const MEDIA_ROOT = @"/sitecore/media library";
 {
     if ( [ self isMediaItem ] )
     {
+        if ( nil == options )
+        {
+            options = [ SCFieldImageParams new ];
+        }
+        
+        SCItemSourcePOD* recordSource = [ self recordItemSource ];
+        {
+            options.database = recordSource.database;
+            options.language = recordSource.language;
+            options.version  = recordSource.itemVersion;
+        }
+        
+        
         NSString* mediaPath = [ self mediaPath ];
         
         return [ self.apiContext imageLoaderForSCMediaPath: mediaPath
@@ -61,6 +75,17 @@ static NSString* const MEDIA_ROOT = @"/sitecore/media library";
     {
         return nil;
     }
+}
+
+-(SCItemSourcePOD*)recordItemSource
+{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    id record = [ self performSelector: @selector( record ) ];
+    SCItemSourcePOD* recordSource = [ record performSelector: @selector(itemSource) ];
+    
+    return recordSource;
+#pragma clang diagnostic pop
 }
 
 @end
