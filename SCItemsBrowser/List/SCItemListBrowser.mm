@@ -267,28 +267,6 @@ numberOfRowsInSection:( NSInteger )section
     return 1;
 }
 
--(NSString *)tableView:(UITableView *)tableView
-titleForHeaderInSection:(NSInteger)section
-{
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderTitleForTableViewSection ) ] )
-    {
-        return [ self->_listModeTheme levelHeaderTitleForTableViewSection ];
-    }
-    
-    return nil;
-}
-
--(NSString *)tableView:(UITableView *)tableView
-titleForFooterInSection:(NSInteger)section
-{
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterTitleForTableViewSection ) ] )
-    {
-        return [ self->_listModeTheme levelFooterTitleForTableViewSection ];
-    }
-    
-    return nil;
-}
-
 #pragma mark -
 #pragma mark UITableViewDelegate
 -(void)tableView:( UITableView* )tableView
@@ -318,5 +296,90 @@ didSelectRowAtIndexPath:( NSIndexPath* )indexPath
         }
     }
 }
+
+#pragma mark -
+#pragma mark Appearance
+-(NSString*)tableView:( UITableView* )tableView
+titleForHeaderInSection:( NSInteger )section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderTitleForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelHeaderTitleForTableViewSection ];
+    }
+    
+    // @adk : as if not overloaded
+    return nil;
+}
+
+-(NSString*)tableView:( UITableView* )tableView
+titleForFooterInSection:( NSInteger )section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterTitleForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelFooterTitleForTableViewSection ];
+    }
+    
+    // @adk : as if not overloaded
+    return nil;
+}
+
+-(UIView *)tableView:( UITableView* )tableView
+viewForHeaderInSection:( NSInteger )section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderViewForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelHeaderViewForTableViewSection ];
+    }
+
+    
+    // @adk : as if not overloaded
+    return nil;
+}
+
+-(UIView *)tableView:( UITableView* )tableView
+viewForFooterInSection:( NSInteger )section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterViewForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelFooterViewForTableViewSection ];
+    }
+
+    // @adk : as if not overloaded
+    return nil;
+}
+
+-(CGFloat)tableView:( UITableView* )tableView
+heightForRowAtIndexPath:( NSIndexPath* )indexPath
+{
+    // @adk : as if not overloaded
+    return -1;
+}
+
+-(CGFloat)tableView:( UITableView* )tableView
+heightForHeaderInSection:( NSInteger )section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderHeightForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelHeaderHeightForTableViewSection ];
+    }
+    
+    // @adk : as if not overloaded
+    return -1;
+}
+
+-(CGFloat)tableView:( UITableView* )tableView
+heightForFooterInSection:( NSInteger )section
+{
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterHeightForTableViewSection ) ] )
+    {
+        return [ self->_listModeTheme levelFooterHeightForTableViewSection ];
+    }
+    
+    // @adk : as if not overloaded
+    return -1;
+}
+
+//- (NSInteger)tableView:(UITableView *)tableView
+//indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
 
 @end
