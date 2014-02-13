@@ -1,5 +1,6 @@
 #import "LBViewController.h"
 
+#import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
 
 //static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
 static NSString* const ROOT_ITEM_PATH = @"/sitecore/Media Library";
@@ -176,11 +177,21 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 {
     NSLog( @"%@", item.itemTemplate );
     
+    SCItemListCell* cell = nil;
     NSString* cellId = [ self itemCellReuseIdentifierForItem: item ];
     
-    SCItemListTextCell* cell =
-    [ [ SCItemListTextCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                 reuseIdentifier: cellId ];
+    if ( [ item isMediaItem ] )
+    {
+        cell =
+        [ [ SCMediaItemListCell alloc ] initWithStyle: UITableViewCellStyleDefault
+                                      reuseIdentifier: cellId
+                                          imageParams: nil ];
+    }
+    else
+    {
+        cell = [ [ SCItemListTextCell alloc ] initWithStyle: UITableViewCellStyleDefault
+                                            reuseIdentifier: cellId ];
+    }
 
     return cell;
 }

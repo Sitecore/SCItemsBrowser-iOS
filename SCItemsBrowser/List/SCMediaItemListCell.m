@@ -4,18 +4,16 @@
 
 @implementation SCMediaItemListCell
 {
-    SCExtendedApiContext* _apiContext          ;
-    SCFieldImageParams  * _imageResizingOptions;
+    SCItem                * _item;
+    SCFieldImageParams    * _imageResizingOptions;
+    SCCancelAsyncOperation  _cancelImageLoader;
     
-    SCCancelAsyncOperation _cancelImageLoader;
-
-    NSString* _displayName;
-    NSString* _mediaPath;
+    UIActivityIndicatorView* _progress;
 }
 
 
--(id)initWithStyle:(UITableViewCellStyle)style
-   reuseIdentifier:(NSString *)reuseIdentifier
+-(id)initWithStyle:( UITableViewCellStyle )style
+   reuseIdentifier:( NSString* )reuseIdentifier
 {
     [ self doesNotRecognizeSelector: _cmd ];
     return nil;
@@ -23,7 +21,6 @@
 
 -(id)initWithStyle:( UITableViewCellStyle  )style
    reuseIdentifier:( NSString            * )reuseIdentifier
-        apiContext:( SCExtendedApiContext* )apiContext
        imageParams:( SCFieldImageParams  * )imageResizingOptions
 {
     self = [ super initWithStyle: style
@@ -33,8 +30,8 @@
         return nil;
     }
 
-    self->_apiContext           = apiContext          ;
     self->_imageResizingOptions = imageResizingOptions;
+    self->_progress = [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray ];
 
     return self;
 }
@@ -46,45 +43,54 @@
 
 -(void)setModel:( SCItem* )item
 {
-    NSString* mediaPath = [ self getMediaPathForItem: item ];
-    self->_mediaPath   = mediaPath       ;
-    self->_displayName = item.displayName;
+    if ( nil != self->_cancelImageLoader )
+    {
+        self->_cancelImageLoader( YES );
+    }
+    self->_cancelImageLoader = nil;
+    self->_item = item;
 }
 
 -(void)reloadData
 {
     __weak SCMediaItemListCell* weakSelf = self;
     
-    self.textLabel.text = self->_displayName;
-
-    if ( nil == self->_mediaPath )
+    self.textLabel.text = self->_item.displayName;
+    if ( ![ self->_item isMediaImage ] )
     {
         return;
     }
-
-    if ( nil != self->_cancelImageLoader )
-    {
-        self->_cancelImageLoader( YES );
-    }
     
-    SCExtendedAsyncOp imageLoader =
-    [ self->_apiContext imageLoaderForSCMediaPath: self->_mediaPath
-                                      imageParams: self->_imageResizingOptions ];
-    
+    SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: self->_imageResizingOptions ];
     SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
     {
+        [ weakSelf stopLoading ];
+        
         if ( nil == loadedImage )
         {
-            NSLog( @"[INFO] : image loading failed for item : |%@|", self->_displayName );
+            NSLog( @"[INFO] : image loading failed for item : |%@|", self->_item );
         }
         else
         {
             weakSelf.imageView.image = loadedImage;
         }
     };
-    
+
+    [ self startLoading ];
     self->_cancelImageLoader = imageLoader( nil, nil, onImageLoadedBlock );
     self->_cancelImageLoader = [ self->_cancelImageLoader copy ];
+}
+
+-(void)startLoading
+{
+    [ self addSubview: self->_progress ];
+    [ self->_progress startAnimating ];
+}
+
+-(void)stopLoading
+{
+    [ self->_progress stopAnimating       ];
+    [ self->_progress removeFromSuperview ];
 }
 
 @end
