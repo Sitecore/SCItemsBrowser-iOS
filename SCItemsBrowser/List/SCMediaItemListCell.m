@@ -61,6 +61,7 @@
         return;
     }
     
+
     SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: self->_imageResizingOptions ];
     SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
     {
@@ -76,6 +77,8 @@
         }
     };
     
+    
+    weakSelf.imageView.image = nil;
     [ self startLoading   ];
     [ self setNeedsLayout ];
     self->_cancelImageLoader = imageLoader( nil, nil, onImageLoadedBlock );
