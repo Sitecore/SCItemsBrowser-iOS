@@ -46,6 +46,7 @@
 		7EB927AB18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */; };
 		7EB927B818A8FB7C0007B062 /* libSCItemsBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB927B218A8FB580007B062 /* libSCItemsBrowser.a */; };
 		7EB927BA18A8FF500007B062 /* RootLevelFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */; };
+		7EC6143718AD1224008E6011 /* MediaItemOperationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC6143418AD0E08008E6011 /* MediaItemOperationTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libXCode5gcovPatch-Automation.a"; path = "../frameworks/libXCode5gcovPatch-Automation.a"; sourceTree = "<group>"; };
 		7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCItemsBrowser.xcodeproj; path = ../SCItemsBrowser.xcodeproj; sourceTree = "<group>"; };
 		7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootLevelFetchTest.m; sourceTree = "<group>"; };
+		7EC6143418AD0E08008E6011 /* MediaItemOperationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaItemOperationTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				7E3BFA3518A8D6C2001454C5 /* Supporting Files */,
 				7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */,
 				7E34F72218AA18F600B5D62E /* FilterRequestsTest.m */,
+				7EC6143418AD0E08008E6011 /* MediaItemOperationTest.m */,
 			);
 			path = "SCItemsBrowserTests-ghunit";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				7E3BFA3B18A8D6C2001454C5 /* main.m in Sources */,
 				7E34F72318AA18F600B5D62E /* FilterRequestsTest.m in Sources */,
 				7EB927BA18A8FF500007B062 /* RootLevelFetchTest.m in Sources */,
+				7EC6143718AD1224008E6011 /* MediaItemOperationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
