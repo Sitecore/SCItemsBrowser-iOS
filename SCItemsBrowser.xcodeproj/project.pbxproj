@@ -51,6 +51,8 @@
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
 		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
+		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
+		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
 		7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807718A4EDE300C73F62 /* SCLevelsHistory.m */; };
 		7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807A18A503A000C73F62 /* SCLevelInfoPOD.m */; };
@@ -158,6 +160,10 @@
 		7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLevelUpItem.m; sourceTree = "<group>"; };
 		7E40D84718A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBWhiteListTemplateRequestBuilder.h; sourceTree = "<group>"; };
 		7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBWhiteListTemplateRequestBuilder.m; sourceTree = "<group>"; };
+		7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+Media.h"; sourceTree = "<group>"; };
+		7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItem+Media.m"; sourceTree = "<group>"; };
+		7E73B44A18ABD17500950AEB /* SCMediaItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaItemListCell.h; sourceTree = "<group>"; };
+		7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaItemListCell.m; sourceTree = "<group>"; };
 		7EAB807318A4E9D800C73F62 /* SCItemsFileManagerCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManagerCallbacks.h; sourceTree = "<group>"; };
 		7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManagerCallbacks.m; sourceTree = "<group>"; };
 		7EAB807618A4EDE300C73F62 /* SCLevelsHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelsHistory.h; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 				7E1D05EC18A14FB3006EF056 /* List */,
 				7E225BE918A28EDF009CEBEE /* FileManager */,
 				7EB927BB18A900180007B062 /* RequestBuilder */,
+				7E52E0CD18ACB7BC004DF524 /* SCItem-Extenstions */,
 				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
 				7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */,
 				7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */,
@@ -380,6 +387,8 @@
 				7E34F72C18AA45E700B5D62E /* SCItemListBrowser.mm */,
 				7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */,
 				7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */,
+				7E73B44A18ABD17500950AEB /* SCMediaItemListCell.h */,
+				7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -402,6 +411,15 @@
 				7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		7E52E0CD18ACB7BC004DF524 /* SCItem-Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */,
+				7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */,
+			);
+			path = "SCItem-Extenstions";
 			sourceTree = "<group>";
 		};
 		7EAB808418A5278A00C73F62 /* Stubs */ = {
@@ -528,6 +546,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
+				7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */,
+				7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */,
 				7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */,
 				7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */,
 				7E1D05F518A1525B006EF056 /* SCItemGridCell.m in Sources */,
