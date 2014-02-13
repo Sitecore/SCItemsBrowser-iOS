@@ -25,10 +25,16 @@ static NSString* const MEDIA_ROOT = @"/sitecore/media library";
     
     NSString* itemTemplate = self.itemTemplate;
     
-    BOOL isUnversionedImage = [ itemTemplate isEqualToString: @"System/Media/Unversioned/Image" ];
-    BOOL isJpegImage        = [ itemTemplate isEqualToString: @"System/Media/Unversioned/Jpeg"  ];
     
-    return isUnversionedImage || isJpegImage;
+    NSArray* imageTemplates =
+    @[
+      @"System/Media/Unversioned/Image",
+      @"System/Media/Unversioned/Jpeg",
+      @"System/Media/Versioned/Jpeg"
+    ];
+    NSSet* imageTemplatesSet = [ NSSet setWithArray: imageTemplates ];
+
+    return [ imageTemplatesSet containsObject: itemTemplate ];
 }
 
 -(BOOL)isMediaItem
