@@ -181,4 +181,30 @@
      );
 }
 
+-(void)testTableViewIsAssignedOnce
+{
+    UITableView* tableView =
+    [ [ UITableView alloc ] initWithFrame: CGRectMake(0, 0, 100, 100)
+                                    style:UITableViewStylePlain ];
+    XCTAssertNil( self->_itemsBrowser.tableView, @"nil rootItem expected" );
+    
+    self->_itemsBrowser.tableView = tableView;
+    XCTAssertTrue( self->_itemsBrowser.tableView == tableView , @"rootItem pointer mismatch"      );
+    XCTAssertTrue( tableView.delegate   == self->_itemsBrowser, @"table view delegate mismatch"   );
+    XCTAssertTrue( tableView.dataSource == self->_itemsBrowser, @"table view dataSource mismatch" );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setTableView: tableView ],
+     @"assign is allowed only once"
+     );
+    
+    XCTAssertThrows
+    (
+     [ self->_itemsBrowser setTableView: nil ],
+     @"assign is allowed only once"
+     );
+}
+
+
 @end
