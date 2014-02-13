@@ -284,7 +284,11 @@ didSelectRowAtIndexPath:( NSIndexPath* )indexPath
     else
     {
         SCItem* item = (SCItem*)selectedItem;
-        if ( item.hasChildren )
+
+        BOOL shouldGoToNextLevel = [ self->_delegate itemsBrowser: self
+                                           shouldLoadLevelForItem: item ];
+        
+        if ( shouldGoToNextLevel )
         {        
             [ self->_itemsFileManager loadLevelForItem: item
                                              callbacks: callbacks

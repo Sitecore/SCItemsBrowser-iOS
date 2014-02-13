@@ -4,6 +4,7 @@
 
 -(BOOL)isMediaItem;
 -(BOOL)isMediaImage;
+-(BOOL)isFolder;
 
 -(NSString*)mediaPath;
 -(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCFieldImageParams* )options;

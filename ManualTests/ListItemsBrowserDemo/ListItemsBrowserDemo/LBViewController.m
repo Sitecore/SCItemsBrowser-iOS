@@ -196,4 +196,10 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     return cell;
 }
 
+-(BOOL)itemsBrowser:( id )sender
+shouldLoadLevelForItem:( SCItem* )levelParentItem
+{
+    return levelParentItem.isFolder || levelParentItem.hasChildren;
+}
+
 @end

@@ -4,6 +4,17 @@ static NSString* const MEDIA_ROOT = @"/sitecore/media library";
 
 @implementation SCItem (Media)
 
+
+-(BOOL)isFolder
+{
+    NSString* itemTemplate = self.itemTemplate;
+    
+    BOOL isMediaFolder = [ itemTemplate isEqualToString: @"System/Media/Media folder" ];
+    BOOL isCommonFolder = [ itemTemplate isEqualToString: @"Common/Folder" ];
+    
+    return isMediaFolder || isCommonFolder;
+}
+
 -(BOOL)isMediaImage
 {
     if ( ![ self isMediaItem ] )
