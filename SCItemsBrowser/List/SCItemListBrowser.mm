@@ -305,9 +305,9 @@ didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 -(NSString*)tableView:( UITableView* )tableView
 titleForHeaderInSection:( NSInteger )section
 {
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderTitleForTableViewSection ) ] )
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderTitleForTableViewSectionOfItemsBrowser: ) ] )
     {
-        return [ self->_listModeTheme levelHeaderTitleForTableViewSection ];
+        return [ self->_listModeTheme levelHeaderTitleForTableViewSectionOfItemsBrowser: self ];
     }
     
     // @adk : as if not overloaded
@@ -317,9 +317,9 @@ titleForHeaderInSection:( NSInteger )section
 -(NSString*)tableView:( UITableView* )tableView
 titleForFooterInSection:( NSInteger )section
 {
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterTitleForTableViewSection ) ] )
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterTitleForTableViewSectionOfItemsBrowser: ) ] )
     {
-        return [ self->_listModeTheme levelFooterTitleForTableViewSection ];
+        return [ self->_listModeTheme levelFooterTitleForTableViewSectionOfItemsBrowser: self ];
     }
     
     // @adk : as if not overloaded
@@ -329,9 +329,9 @@ titleForFooterInSection:( NSInteger )section
 -(UIView *)tableView:( UITableView* )tableView
 viewForHeaderInSection:( NSInteger )section
 {
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderViewForTableViewSection ) ] )
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderViewForTableViewSectionOfItemsBrowser: ) ] )
     {
-        return [ self->_listModeTheme levelHeaderViewForTableViewSection ];
+        return [ self->_listModeTheme levelHeaderViewForTableViewSectionOfItemsBrowser: self ];
     }
 
     
@@ -342,9 +342,9 @@ viewForHeaderInSection:( NSInteger )section
 -(UIView *)tableView:( UITableView* )tableView
 viewForFooterInSection:( NSInteger )section
 {
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterViewForTableViewSection ) ] )
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterViewForTableViewSectionOfItemsBrowser: ) ] )
     {
-        return [ self->_listModeTheme levelFooterViewForTableViewSection ];
+        return [ self->_listModeTheme levelFooterViewForTableViewSectionOfItemsBrowser: self ];
     }
 
     // @adk : as if not overloaded
@@ -359,17 +359,19 @@ heightForRowAtIndexPath:( NSIndexPath* )indexPath
     
     if ( [ selectedItem isMemberOfClass: [ SCLevelUpItem class ] ] )
     {
-        if ( [ self->_listModeTheme respondsToSelector: @selector( levelUpCellHeigtAtIndexPath: ) ] )
+        if ( [ self->_listModeTheme respondsToSelector: @selector( itemsBrowser:levelUpCellHeigtAtIndexPath: ) ] )
         {
-            return [ self->_listModeTheme levelUpCellHeigtAtIndexPath: indexPath ];
+            return [ self->_listModeTheme itemsBrowser: self
+                           levelUpCellHeigtAtIndexPath: indexPath ];
         }
     }
     else
     {
-        if ( [ self->_listModeTheme respondsToSelector: @selector( heightOfCellForItem:atIndexPath: ) ] )
+        if ( [ self->_listModeTheme respondsToSelector: @selector( itemsBrowser:heightOfCellForItem:atIndexPath: ) ] )
         {
-            return [ self->_listModeTheme heightOfCellForItem: selectedItem
-                                                  atIndexPath: indexPath ];
+            return [ self->_listModeTheme itemsBrowser: self
+                                   heightOfCellForItem: selectedItem
+                                           atIndexPath: indexPath ];
         }
     }
     
@@ -380,9 +382,9 @@ heightForRowAtIndexPath:( NSIndexPath* )indexPath
 -(CGFloat)tableView:( UITableView* )tableView
 heightForHeaderInSection:( NSInteger )section
 {
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderHeightForTableViewSection ) ] )
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelHeaderHeightForTableViewSectionOfItemsBrowser: ) ] )
     {
-        return [ self->_listModeTheme levelHeaderHeightForTableViewSection ];
+        return [ self->_listModeTheme levelHeaderHeightForTableViewSectionOfItemsBrowser: self ];
     }
     
     // @adk : as if not overloaded
@@ -392,9 +394,9 @@ heightForHeaderInSection:( NSInteger )section
 -(CGFloat)tableView:( UITableView* )tableView
 heightForFooterInSection:( NSInteger )section
 {
-    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterHeightForTableViewSection ) ] )
+    if ( [ self->_listModeTheme respondsToSelector: @selector( levelFooterHeightForTableViewSectionOfItemsBrowser: ) ] )
     {
-        return [ self->_listModeTheme levelFooterHeightForTableViewSection ];
+        return [ self->_listModeTheme levelFooterHeightForTableViewSectionOfItemsBrowser: self ];
     }
     
     // @adk : as if not overloaded
