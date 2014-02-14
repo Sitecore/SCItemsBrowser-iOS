@@ -13,4 +13,8 @@
 -(CGFloat)levelHeaderHeightForTableViewSection;
 -(CGFloat)levelFooterHeightForTableViewSection;
 
+-(CGFloat)levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
+-(CGFloat)heightOfCellForItem:( SCItem* )item
+                  atIndexPath:( NSIndexPath* )indexPath;
+
 @end

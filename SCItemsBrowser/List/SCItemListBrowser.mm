@@ -351,6 +351,25 @@ viewForFooterInSection:( NSInteger )section
 -(CGFloat)tableView:( UITableView* )tableView
 heightForRowAtIndexPath:( NSIndexPath* )indexPath
 {
+    NSUInteger selectedItemIndex = static_cast<NSUInteger>( indexPath.row );
+    id selectedItem = self->_loadedLevel.levelContentItems[ selectedItemIndex ];
+    
+    if ( [ selectedItem isMemberOfClass: [ SCLevelUpItem class ] ] )
+    {
+        if ( [ self->_listModeTheme respondsToSelector: @selector( levelUpCellHeigtAtIndexPath: ) ] )
+        {
+            return [ self->_listModeTheme levelUpCellHeigtAtIndexPath: indexPath ];
+        }
+    }
+    else
+    {
+        if ( [ self->_listModeTheme respondsToSelector: @selector( heightOfCellForItem:atIndexPath: ) ] )
+        {
+            return [ self->_listModeTheme heightOfCellForItem: selectedItem
+                                                  atIndexPath: indexPath ];
+        }
+    }
+    
     // @adk : as if not overloaded
     return -1;
 }

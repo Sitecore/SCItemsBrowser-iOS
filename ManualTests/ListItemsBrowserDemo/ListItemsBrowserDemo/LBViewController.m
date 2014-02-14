@@ -217,5 +217,52 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
 {
     return @"Level Footer";
 }
+
+-(UIView*)levelHeaderViewForTableViewSection
+{
+    UIButton* result = [ UIButton buttonWithType: UIButtonTypeInfoDark ];
+    [result setTitle: @"Header Custom Button"
+            forState: UIControlStateNormal ];
+
+    return result;
+}
+
+-(UIView*)levelFooterViewForTableViewSection
+{
+    UIButton* result = [ UIButton buttonWithType: UIButtonTypeContactAdd ];
+    [result setTitle: @"Footer Custom Button"
+            forState: UIControlStateNormal ];
+    
+    return result;
+}
+
+-(CGFloat)levelHeaderHeightForTableViewSection
+{
+    return 100;
+}
+
+-(CGFloat)levelFooterHeightForTableViewSection
+{
+    return 50;
+}
+
+-(CGFloat)levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath
+{
+    return 44;
+}
+
+-(CGFloat)heightOfCellForItem:( SCItem* )item
+                  atIndexPath:( NSIndexPath* )indexPath
+{
+    if ( [ item isMediaImage ] )
+    {
+        return 100;
+    }
+    else
+    {
+        return 44;
+    }
+}
+
 #endif
 @end
