@@ -139,21 +139,15 @@ static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.
 static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell.image";
 
 
--(NSString*)levelUpCellReuseIdentifier
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
 {
     return LEVEL_UP_CELL_ID;
 }
 
--(BOOL)isImageItem:( SCItem* )item
+-(NSString*)itemsBrowser:( id )sender
+itemCellReuseIdentifierForItem:( SCItem* )item
 {
-    return [ item isMediaImage ];
-}
-
--(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
-{
-//    NSLog( @"%@", item.itemTemplate );
-    
-    if ( [ self isImageItem: item ] )
+    if ( [ item isMediaImage ] )
     {
         return IMAGE_CELL_ID;
     }
@@ -163,7 +157,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
 }
 
--(UITableViewCell*)createLevelUpCellForListMode
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
 {
     UITableViewCell* cell = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
                                                       reuseIdentifier: LEVEL_UP_CELL_ID ];
@@ -172,12 +166,12 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     return cell;
 }
 
--(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item
+-(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
+                  createListModeCellForItem:( SCItem* )item
 {
-//    NSLog( @"%@", item.itemTemplate );
-    
     SCItemListCell* cell = nil;
-    NSString* cellId = [ self itemCellReuseIdentifierForItem: item ];
+    NSString* cellId = [ self itemsBrowser: self->_itemsBrowserController
+            itemCellReuseIdentifierForItem: item ];
     
     if ( [ item isMediaImage ] )
     {

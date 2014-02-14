@@ -210,7 +210,7 @@ numberOfRowsInSection:( NSInteger )section
 {
     NSParameterAssert( nil != self->_listModeCellBuilder );
     
-    NSString* LEVEL_UP_CELL_ID = [ self->_listModeCellBuilder levelUpCellReuseIdentifier ];
+    NSString* LEVEL_UP_CELL_ID = [ self->_listModeCellBuilder reuseIdentifierForLevelUpCellOfItemsBrowser: self ];
     NSParameterAssert( nil != LEVEL_UP_CELL_ID );
     
     
@@ -227,16 +227,18 @@ numberOfRowsInSection:( NSInteger )section
         UITableViewCell* cell = [ tableView dequeueReusableCellWithIdentifier: LEVEL_UP_CELL_ID ];
         if ( nil == cell )
         {
-            cell = [ self->_listModeCellBuilder createLevelUpCellForListMode ];
+            cell = [ self->_listModeCellBuilder createLevelUpCellForListModeOfItemsBrowser: self ];
         }
         
         return cell;
     }
     else
     {
+        NSParameterAssert( [ itemForCell isMemberOfClass: [ SCItem class ] ] );
         SCItem* castedItem = (SCItem*)itemForCell;
         
-        NSString* ITEM_CELL_ID = [ self->_listModeCellBuilder itemCellReuseIdentifierForItem: castedItem ];
+        NSString* ITEM_CELL_ID = [ self->_listModeCellBuilder itemsBrowser: self
+                                            itemCellReuseIdentifierForItem: castedItem ];
         NSParameterAssert( nil != ITEM_CELL_ID );
 
         
@@ -246,7 +248,8 @@ numberOfRowsInSection:( NSInteger )section
         
         if ( nil == cell )
         {
-            itemCell = [ self->_listModeCellBuilder createListModeCellForItem: castedItem ];
+            itemCell = [ self->_listModeCellBuilder itemsBrowser: self
+                                       createListModeCellForItem: castedItem ];
             cell = itemCell;
         }
         else

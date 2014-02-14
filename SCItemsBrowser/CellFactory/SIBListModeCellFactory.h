@@ -7,10 +7,12 @@
 
 @protocol SIBListModeCellFactory <NSObject>
 
--(UITableViewCell*)createLevelUpCellForListMode;
--(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item;
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender;
+-(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
+                  createListModeCellForItem:( SCItem* )item;
 
--(NSString*)levelUpCellReuseIdentifier;
--(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item;
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender;
+-(NSString*)itemsBrowser:( id )sender
+itemCellReuseIdentifierForItem:( SCItem* )item;
 
 @end
