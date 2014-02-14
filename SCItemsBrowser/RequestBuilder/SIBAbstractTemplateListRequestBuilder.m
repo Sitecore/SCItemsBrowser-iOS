@@ -33,7 +33,8 @@
     return nil;
 }
 
--(SCItemsReaderRequest*)levelDownRequestForItem:( SCItem* )item
+-(SCItemsReaderRequest*)itemsBrowser:( id )sender
+             levelDownRequestForItem:( SCItem* )item
 {
     NSString* templatesFilter = [ self templateFilterClause ];
     

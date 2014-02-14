@@ -2,7 +2,8 @@
 
 @implementation SIBAllChildrenRequestBuilder
 
--(SCItemsReaderRequest*)levelDownRequestForItem:( SCItem* )item
+-(SCItemsReaderRequest*)itemsBrowser:( id )sender
+             levelDownRequestForItem:( SCItem* )item
 {
     SCItemsReaderRequest* result = [ SCItemsReaderRequest new ];
     {
