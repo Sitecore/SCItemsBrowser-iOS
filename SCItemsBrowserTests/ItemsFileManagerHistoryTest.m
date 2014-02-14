@@ -103,6 +103,8 @@
     XCTAssertNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
     XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
     XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+    
+    XCTAssertFalse( [ self->_useCacheFm isRootLevelLoaded ], @"root level is already loaded for some reason" );
     XCTAssertFalse( [ self->_levelsHistory isRootLevelLoaded ], @"root level is already loaded for some reason" );
     
     [ self->_hook enableHook ];
@@ -116,6 +118,8 @@
         XCTAssertNotNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
         XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
         XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+
+        XCTAssertTrue( [ self->_useCacheFm isRootLevelLoaded ], @"root level must have been loaded" );
         XCTAssertTrue( [ self->_levelsHistory isRootLevelLoaded ], @"root level must have been loaded" );
 
         XCTAssertNotNil( receivedResponse, @"invalid response" );
@@ -132,6 +136,9 @@
         XCTAssertNotNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
         XCTAssertNotNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
         XCTAssertNotNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+        
+        
+        XCTAssertTrue( [ self->_useCacheFm isRootLevelLoaded ], @"root level must have been loaded" );
         XCTAssertTrue( [ self->_levelsHistory isRootLevelLoaded ], @"root level must have been loaded" );
         
         XCTAssertNotNil( receivedResponse, @"invalid response" );
@@ -188,6 +195,9 @@
     XCTAssertNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
     XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
     XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+    
+    
+    XCTAssertFalse( [ self->_useCacheFm isRootLevelLoaded ], @"root level is already loaded for some reason" );
     XCTAssertFalse( [ self->_levelsHistory isRootLevelLoaded ], @"root level is already loaded for some reason" );
     
     [ self->_hook enableHook ];
@@ -201,6 +211,9 @@
         XCTAssertNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
         XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
         XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+        
+        
+        XCTAssertFalse( [ self->_useCacheFm isRootLevelLoaded ], @"root level is loaded despite error" );
         XCTAssertFalse( [ self->_levelsHistory isRootLevelLoaded ], @"root level is loaded despite error" );
         
         XCTAssertNil( receivedResponse, @"invalid response" );
@@ -383,9 +396,9 @@
     LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
     {
         SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
-                                                           SCAsyncOperationProgressHandler progressCallback,
-                                                           SCCancelAsyncOperationHandler cancelCallback,
-                                                           SCDidFinishAsyncOperationHandler doneCallback)
+           SCAsyncOperationProgressHandler progressCallback,
+           SCCancelAsyncOperationHandler cancelCallback,
+           SCDidFinishAsyncOperationHandler doneCallback)
         {
             SCCancelAsyncOperation cancelBlockStub = ^void( BOOL isUnsubscribe )
             {
@@ -406,6 +419,9 @@
     XCTAssertNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
     XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
     XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+    
+    
+    XCTAssertFalse( [ self->_useCacheFm isRootLevelLoaded ], @"root level is already loaded for some reason" );
     XCTAssertFalse( [ self->_levelsHistory isRootLevelLoaded ], @"root level is already loaded for some reason" );
     
     [ self->_hook enableHook ];
@@ -419,6 +435,8 @@
         XCTAssertNotNil( [ self->_levelsHistory lastRequest ], @"nil last request expected" );
         XCTAssertNil( [ self->_levelsHistory levelUpParentItem ], @"nil levelUp item expected" );
         XCTAssertNil( [ self->_levelsHistory levelUpRequest ], @"nil levelUp request expected" );
+        
+        XCTAssertTrue( [ self->_useCacheFm isRootLevelLoaded ], @"root level must have been loaded" );
         XCTAssertTrue( [ self->_levelsHistory isRootLevelLoaded ], @"root level must have been loaded" );
         
         XCTAssertNotNil( receivedResponse, @"invalid response" );
