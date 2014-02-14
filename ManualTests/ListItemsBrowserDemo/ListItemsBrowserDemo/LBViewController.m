@@ -146,10 +146,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 
 -(BOOL)isImageItem:( SCItem* )item
 {
-    BOOL isUnversionedImage = [ item.itemTemplate isEqualToString: @"System/Media/Unversioned/Image" ];
-    BOOL isJpegImage        = [ item.itemTemplate isEqualToString: @"System/Media/Unversioned/Jpeg"  ];
-    
-    return isUnversionedImage || isJpegImage;
+    return [ item isMediaImage ];
 }
 
 -(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
@@ -182,7 +179,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     SCItemListCell* cell = nil;
     NSString* cellId = [ self itemCellReuseIdentifierForItem: item ];
     
-    if ( [ item isMediaItem ] )
+    if ( [ item isMediaImage ] )
     {
         cell =
         [ [ SCMediaItemListCell alloc ] initWithStyle: UITableViewCellStyleDefault
