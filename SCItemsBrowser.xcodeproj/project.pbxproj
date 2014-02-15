@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E06396018B0090600259037 /* AllChildrenRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */; };
 		7E1D05B018A13D8E006EF056 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05AF18A13D8E006EF056 /* Foundation.framework */; };
 		7E1D05B518A13D8E006EF056 /* SCItemsBrowser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */; };
 		7E1D05BE18A13D8E006EF056 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05BD18A13D8E006EF056 /* XCTest.framework */; };
@@ -52,6 +53,7 @@
 		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
+		7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
 		7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */; };
 		7EA19EDC18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */; };
@@ -95,6 +97,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllChildrenRequestBuilderTest.m; sourceTree = "<group>"; };
 		7E1D05AC18A13D8E006EF056 /* libSCItemsBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSCItemsBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1D05AF18A13D8E006EF056 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E1D05B318A13D8E006EF056 /* SCItemsBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCItemsBrowser-Prefix.pch"; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBWhiteListTemplateRequestBuilder.m; sourceTree = "<group>"; };
 		7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+Media.h"; sourceTree = "<group>"; };
 		7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItem+Media.m"; sourceTree = "<group>"; };
+		7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListTextCellTest.m; sourceTree = "<group>"; };
 		7E73B44A18ABD17500950AEB /* SCMediaItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaItemListCell.h; sourceTree = "<group>"; };
 		7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaItemListCell.m; sourceTree = "<group>"; };
 		7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackListRequestBuilderTest.m; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 				7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */,
 				7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */,
 				7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */,
+				7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */,
+				7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 			);
 			path = SCItemsBrowserTests;
@@ -596,11 +602,13 @@
 				7EAB809118A5278A00C73F62 /* StubItemsBrowserDelegate.m in Sources */,
 				7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */,
 				7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */,
+				7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */,
 				7EA19EDC18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m in Sources */,
 				7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */,
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,
 				7EAB808F18A5278A00C73F62 /* StubCellFactory.m in Sources */,
 				7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */,
+				7E06396018B0090600259037 /* AllChildrenRequestBuilderTest.m in Sources */,
 				7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,

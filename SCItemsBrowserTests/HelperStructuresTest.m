@@ -1,8 +1,10 @@
 #import <XCTest/XCTest.h>
 
+#import "SCLevelUpItem.h"
 #import "SCLevelResponse.h"
 #import "SCLevelInfoPOD.h"
 
+#import <MobileSDK-Private/SCItem+PrivateMethods.h>
 
 @interface HelperStructuresTest : XCTestCase
 @end
@@ -29,6 +31,27 @@
         @"assert expected"
     );
 }
+
+-(void)testLevelResponseHoldsParentAndContentItems
+{
+    SCItem* mockRootItem = [ [ SCItem alloc ] initWithRecord: nil
+                                                  apiContext: nil ];
+    
+    SCLevelUpItem* levelUp = [ SCLevelUpItem new ];
+    SCItem* mockFirst = [ [ SCItem alloc ] initWithRecord: nil
+                                                  apiContext: nil ];
+    SCItem* mockSecond = [ [ SCItem alloc ] initWithRecord: nil
+                                               apiContext: nil ];
+    
+    NSArray* levelContent = @[ levelUp, mockFirst, mockSecond ];
+    
+    SCLevelResponse* response = [ [ SCLevelResponse alloc ] initWithItem: mockRootItem
+                                                       levelContentItems: levelContent ];
+
+    XCTAssertTrue( response.levelParentItem == mockRootItem, @"root item mismatch" );
+    XCTAssertTrue( response.levelContentItems == levelContent, @"level content mismatch" );
+}
+
 
 -(void)testLevelInfoRejectsInit
 {
