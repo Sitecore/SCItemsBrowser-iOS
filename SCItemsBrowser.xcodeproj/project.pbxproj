@@ -53,6 +53,7 @@
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
+		7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */; };
 		7EA19EDC18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
 		7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807718A4EDE300C73F62 /* SCLevelsHistory.m */; };
@@ -165,6 +166,7 @@
 		7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItem+Media.m"; sourceTree = "<group>"; };
 		7E73B44A18ABD17500950AEB /* SCMediaItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaItemListCell.h; sourceTree = "<group>"; };
 		7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaItemListCell.m; sourceTree = "<group>"; };
+		7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackListRequestBuilderTest.m; sourceTree = "<group>"; };
 		7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteListRequestBuilderTest.m; sourceTree = "<group>"; };
 		7EAB807318A4E9D800C73F62 /* SCItemsFileManagerCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManagerCallbacks.h; sourceTree = "<group>"; };
 		7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManagerCallbacks.m; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */,
 				7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */,
 				7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */,
+				7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 			);
 			path = SCItemsBrowserTests;
@@ -598,6 +601,7 @@
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,
 				7EAB808F18A5278A00C73F62 /* StubCellFactory.m in Sources */,
 				7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */,
+				7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
 			);
