@@ -777,7 +777,7 @@
 				INFOPLIST_FILE = "SCItemsBrowserTests/SCItemsBrowserTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser,
+					.,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -799,7 +799,7 @@
 				INFOPLIST_FILE = "SCItemsBrowserTests/SCItemsBrowserTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser,
+					.,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -906,7 +906,7 @@
 				INFOPLIST_FILE = "SCItemsBrowserTests/SCItemsBrowserTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser,
+					.,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
