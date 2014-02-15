@@ -2,7 +2,8 @@
 
 @implementation StubCellFactory
 
--(UITableViewCell<SCItemCell>*)createListModeCellForItem:(SCItem *)item
+-(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
+                  createListModeCellForItem:( SCItem* )item
 {
     return nil;
 }
@@ -12,17 +13,18 @@
     return nil;
 }
 
--(UITableViewCell*)createLevelUpCellForListMode
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
 {
     return nil;
 }
 
--(NSString*)levelUpCellReuseIdentifier
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
 {
     return nil;
 }
 
--(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
+-(NSString*)itemsBrowser:( id )sender
+itemCellReuseIdentifierForItem:( SCItem* )item
 {
     return nil;
 }

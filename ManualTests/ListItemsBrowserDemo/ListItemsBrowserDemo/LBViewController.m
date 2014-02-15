@@ -139,21 +139,15 @@ static NSString* const ITEM_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.
 static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser.list.ItemCell.image";
 
 
--(NSString*)levelUpCellReuseIdentifier
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
 {
     return LEVEL_UP_CELL_ID;
 }
 
--(BOOL)isImageItem:( SCItem* )item
+-(NSString*)itemsBrowser:( id )sender
+itemCellReuseIdentifierForItem:( SCItem* )item
 {
-    return [ item isMediaImage ];
-}
-
--(NSString*)itemCellReuseIdentifierForItem:( SCItem* )item
-{
-//    NSLog( @"%@", item.itemTemplate );
-    
-    if ( [ self isImageItem: item ] )
+    if ( [ item isMediaImage ] )
     {
         return IMAGE_CELL_ID;
     }
@@ -163,7 +157,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
 }
 
--(UITableViewCell*)createLevelUpCellForListMode
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
 {
     UITableViewCell* cell = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
                                                       reuseIdentifier: LEVEL_UP_CELL_ID ];
@@ -172,12 +166,12 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     return cell;
 }
 
--(UITableViewCell<SCItemCell>*)createListModeCellForItem:( SCItem* )item
+-(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
+                  createListModeCellForItem:( SCItem* )item
 {
-//    NSLog( @"%@", item.itemTemplate );
-    
     SCItemListCell* cell = nil;
-    NSString* cellId = [ self itemCellReuseIdentifierForItem: item ];
+    NSString* cellId = [ self itemsBrowser: self->_itemsBrowserController
+            itemCellReuseIdentifierForItem: item ];
     
     if ( [ item isMediaImage ] )
     {
@@ -205,17 +199,17 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
 #pragma mark Theme
 
 #if CUSTOMIZATION_ENABLED
--(NSString*)levelHeaderTitleForTableViewSection
+-(NSString*)levelHeaderTitleForTableViewSectionOfItemsBrowser:( id )sender
 {
     return @"Level Header";
 }
 
--(NSString*)levelFooterTitleForTableViewSection
+-(NSString*)levelFooterTitleForTableViewSectionOfItemsBrowser:( id )sender
 {
     return @"Level Footer";
 }
 
--(UIView*)levelHeaderViewForTableViewSection
+-(UIView*)levelHeaderViewForTableViewSectionOfItemsBrowser:( id )sender
 {
     UIButton* result = [ UIButton buttonWithType: UIButtonTypeInfoDark ];
     [result setTitle: @"Header Custom Button"
@@ -224,7 +218,7 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
     return result;
 }
 
--(UIView*)levelFooterViewForTableViewSection
+-(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( id )sender
 {
     UIButton* result = [ UIButton buttonWithType: UIButtonTypeContactAdd ];
     [result setTitle: @"Footer Custom Button"
@@ -233,23 +227,25 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
     return result;
 }
 
--(CGFloat)levelHeaderHeightForTableViewSection
+-(CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:( id )sender
 {
     return 100;
 }
 
--(CGFloat)levelFooterHeightForTableViewSection
+-(CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:( id )sender
 {
     return 50;
 }
 
--(CGFloat)levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath
+-(CGFloat)itemsBrowser:( id )sender
+levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath
 {
     return 44;
 }
 
--(CGFloat)heightOfCellForItem:( SCItem* )item
-                  atIndexPath:( NSIndexPath* )indexPath
+-(CGFloat)itemsBrowser:( id )sender
+   heightOfCellForItem:( SCItem* )item
+           atIndexPath:( NSIndexPath* )indexPath
 {
     if ( [ item isMediaImage ] )
     {

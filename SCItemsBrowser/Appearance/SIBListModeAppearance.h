@@ -4,17 +4,21 @@
 @protocol SIBListModeAppearance <NSObject>
 
 @optional
--(NSString*)levelHeaderTitleForTableViewSection;
--(NSString*)levelFooterTitleForTableViewSection;
+-(NSString*)levelHeaderTitleForTableViewSectionOfItemsBrowser:( id )sender;
+-(NSString*)levelFooterTitleForTableViewSectionOfItemsBrowser:( id )sender;
 
--(UIView*)levelHeaderViewForTableViewSection;
--(UIView*)levelFooterViewForTableViewSection;
+-(UIView*)levelHeaderViewForTableViewSectionOfItemsBrowser:( id )sender;
+-(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( id )sender;
 
--(CGFloat)levelHeaderHeightForTableViewSection;
--(CGFloat)levelFooterHeightForTableViewSection;
+-(CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:( id )sender;
+-(CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:( id )sender;
 
--(CGFloat)levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
--(CGFloat)heightOfCellForItem:( SCItem* )item
-                  atIndexPath:( NSIndexPath* )indexPath;
+-(CGFloat)itemsBrowser:( id )sender
+levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
+
+
+-(CGFloat)itemsBrowser:( id )sender
+   heightOfCellForItem:( SCItem* )item
+           atIndexPath:( NSIndexPath* )indexPath;
 
 @end

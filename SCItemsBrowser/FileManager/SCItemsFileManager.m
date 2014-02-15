@@ -178,7 +178,8 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
     NSParameterAssert( nil != self->_apiContext );
     NSParameterAssert( nil != self->_nextLevelRequestBuilder );
 
-    SCItemsReaderRequest* request = [ self->_nextLevelRequestBuilder levelDownRequestForItem: item ];
+    SCItemsReaderRequest* request = [ self->_nextLevelRequestBuilder itemsBrowser: self
+                                                          levelDownRequestForItem: item ];
 
     NSParameterAssert( nil != request );
     
