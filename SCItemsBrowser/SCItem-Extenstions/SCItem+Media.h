@@ -9,4 +9,6 @@
 -(NSString*)mediaPath;
 -(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCFieldImageParams* )options;
 
+-(SCItemSourcePOD*)recordItemSource;
+
 @end

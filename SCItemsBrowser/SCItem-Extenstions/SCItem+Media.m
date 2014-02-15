@@ -88,7 +88,7 @@ static NSString* const MEDIA_ROOT = @"/sitecore/media library";
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
     id record = [ self performSelector: @selector( record ) ];
-    SCItemSourcePOD* recordSource = [ record performSelector: @selector(itemSource) ];
+    SCItemSourcePOD* recordSource = [ record performSelector: @selector(getSource) ];
     
     return recordSource;
 #pragma clang diagnostic pop

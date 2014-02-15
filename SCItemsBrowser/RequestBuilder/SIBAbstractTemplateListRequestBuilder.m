@@ -1,5 +1,7 @@
 #import "SIBAbstractTemplateListRequestBuilder.h"
 
+#import "SCItem+Media.h"
+
 @implementation SIBAbstractTemplateListRequestBuilder
 
 {
@@ -44,7 +46,14 @@
         result.request     = [ NSString stringWithFormat: @"%@/*[%@]", item.path, templatesFilter ];
         result.scope       = SCItemReaderChildrenScope  ;
     }
-    
+   
+    SCItemSourcePOD* src = [ item recordItemSource ];
+    {
+        result.database = src.database;
+        result.language = src.language;
+        result.site     = src.site    ;
+    }
+
     return result;
 }
 
