@@ -35,6 +35,17 @@
     return nil;
 }
 
+-(void)setSourceFromItem:( SCItem* )item
+               toRequest:( SCItemsReaderRequest* )outRequest
+{
+    SCItemSourcePOD* src = [ item recordItemSource ];
+    {
+        outRequest.database = src.database;
+        outRequest.language = src.language;
+        outRequest.site     = src.site    ;
+    }
+}
+
 -(SCItemsReaderRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item
 {
@@ -47,12 +58,8 @@
         result.scope       = SCItemReaderChildrenScope  ;
     }
    
-    SCItemSourcePOD* src = [ item recordItemSource ];
-    {
-        result.database = src.database;
-        result.language = src.language;
-        result.site     = src.site    ;
-    }
+    [ self setSourceFromItem: item
+                   toRequest: result ];
 
     return result;
 }
