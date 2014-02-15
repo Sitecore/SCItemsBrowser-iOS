@@ -141,7 +141,6 @@
 		7E225BCE18A242D2009CEBEE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7E225BD018A242FC009CEBEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E225BD218A24313009CEBEE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7E225BD418A245BA009CEBEE /* SCItem+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+PrivateMethods.h"; sourceTree = "<group>"; };
 		7E225BE318A28715009CEBEE /* SCItemsLevelRequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsLevelRequestBuilder.h; sourceTree = "<group>"; };
 		7E225BE818A28E85009CEBEE /* SCItemsBrowserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserProtocol.h; sourceTree = "<group>"; };
 		7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManager.h; sourceTree = "<group>"; };
@@ -189,6 +188,8 @@
 		7EAB809418A527AE00C73F62 /* ItemsBrowserTestStubs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsBrowserTestStubs.h; sourceTree = "<group>"; };
 		7EAB809618A528C700C73F62 /* ItemsLevelOperationBuilderHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsLevelOperationBuilderHook.h; sourceTree = "<group>"; };
 		7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsLevelOperationBuilderHook.m; sourceTree = "<group>"; };
+		7EB288E718AF707C00EBCF11 /* SCItem+PrivateMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SCItem+PrivateMethods.h"; path = "frameworks/MobileSDK-Private/SCItem+PrivateMethods.h"; sourceTree = SOURCE_ROOT; };
+		7EB288E818AF707C00EBCF11 /* SCItemRecord_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCItemRecord_UnitTest.h; path = "frameworks/MobileSDK-Private/SCItemRecord_UnitTest.h"; sourceTree = SOURCE_ROOT; };
 		7EB927BC18A9002C0007B062 /* SIBAllChildrenRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAllChildrenRequestBuilder.h; sourceTree = "<group>"; };
 		7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBAllChildrenRequestBuilder.m; sourceTree = "<group>"; };
 		7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceListPropertiesTest.m; sourceTree = "<group>"; };
@@ -334,6 +335,8 @@
 		7E1D05C518A13D8E006EF056 /* SCItemsBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				7EB288E718AF707C00EBCF11 /* SCItem+PrivateMethods.h */,
+				7EB288E818AF707C00EBCF11 /* SCItemRecord_UnitTest.h */,
 				7EAB808418A5278A00C73F62 /* Stubs */,
 				7EAB809518A528A000C73F62 /* Hooks */,
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
@@ -343,7 +346,6 @@
 				7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */,
 				7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
-				7E225BD418A245BA009CEBEE /* SCItem+PrivateMethods.h */,
 			);
 			path = SCItemsBrowserTests;
 			sourceTree = "<group>";
@@ -662,6 +664,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
+					./frameworks,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -714,6 +717,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
+					./frameworks,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-all_load";
@@ -854,6 +858,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
+					./frameworks,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;

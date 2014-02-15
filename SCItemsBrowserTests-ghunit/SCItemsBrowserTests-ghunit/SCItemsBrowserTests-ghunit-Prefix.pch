@@ -17,8 +17,8 @@
     #import <SCItemsBrowser/FileManager/SCItemsFileManagerCallbacks.h>
     #import <SCItemsBrowser/SCItemsBrowser.h>
 
-    #import "SCItemRecord_UnitTest.h"
-    #import <SCItemsBrowserTests/SCItem+PrivateMethods.h>
+    #import <MobileSDK-Private/SCItemRecord_UnitTest.h>
+    #import <MobileSDK-Private/SCItem+PrivateMethods.h>
     #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 
 

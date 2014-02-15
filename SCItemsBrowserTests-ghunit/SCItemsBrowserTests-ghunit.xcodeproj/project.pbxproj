@@ -120,7 +120,7 @@
 		7E3BFA9318A8DCDF001454C5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7E3BFA9618A8DCE3001454C5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		7E3BFA9818A8DCF2001454C5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		7E40D81618A90BB000CE98BF /* SCItemRecord_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemRecord_UnitTest.h; sourceTree = "<group>"; };
+		7EB288EA18AF70F500EBCF11 /* SCItemRecord_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCItemRecord_UnitTest.h; path = "../../frameworks/MobileSDK-Private/SCItemRecord_UnitTest.h"; sourceTree = "<group>"; };
 		7EB927AA18A8E1FA0007B062 /* libXCode5gcovPatch-Automation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libXCode5gcovPatch-Automation.a"; path = "../frameworks/libXCode5gcovPatch-Automation.a"; sourceTree = "<group>"; };
 		7EB927AC18A8FB570007B062 /* SCItemsBrowser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCItemsBrowser.xcodeproj; path = ../SCItemsBrowser.xcodeproj; sourceTree = "<group>"; };
 		7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootLevelFetchTest.m; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 		7E3BFA3418A8D6C2001454C5 /* SCItemsBrowserTests-ghunit */ = {
 			isa = PBXGroup;
 			children = (
-				7E40D81618A90BB000CE98BF /* SCItemRecord_UnitTest.h */,
+				7EB288EA18AF70F500EBCF11 /* SCItemRecord_UnitTest.h */,
 				7E3BFA4618A8D6C2001454C5 /* Images.xcassets */,
 				7E3BFA3518A8D6C2001454C5 /* Supporting Files */,
 				7EB927B918A8FF500007B062 /* RootLevelFetchTest.m */,
@@ -502,6 +502,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					..,
+					../frameworks,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -544,6 +545,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					..,
+					../frameworks,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-all_load";
@@ -562,7 +564,7 @@
 				INFOPLIST_FILE = "SCItemsBrowserTests-ghunit/SCItemsBrowserTests-ghunit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+					../frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -579,7 +581,7 @@
 				INFOPLIST_FILE = "SCItemsBrowserTests-ghunit/SCItemsBrowserTests-ghunit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+					../frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -668,6 +670,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					..,
+					../frameworks,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -686,7 +689,7 @@
 				INFOPLIST_FILE = "SCItemsBrowserTests-ghunit/SCItemsBrowserTests-ghunit-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+					../frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
