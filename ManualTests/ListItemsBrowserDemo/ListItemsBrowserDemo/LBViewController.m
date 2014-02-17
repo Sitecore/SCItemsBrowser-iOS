@@ -103,6 +103,11 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore/Media Library";
 }
 
 
+-(IBAction)onRootButtonTapped:(id)sender
+{
+    [ self->_itemsBrowserController navigateToRootItem ];
+}
+
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
 -(void)itemsBrowser:( id )sender
