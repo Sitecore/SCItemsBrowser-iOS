@@ -1,45 +1,66 @@
 #import "SCItem+Media.h"
 
-static NSString* const MEDIA_ROOT = @"/sitecore/media library";
+static NSString* const MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
 
 
 @implementation SCItem (Media)
 
+-(NSLocale*)posixLocale
+{
+    static NSLocale* posixLocale = nil;
+
+    static dispatch_once_t onceToken;
+    dispatch_once( &onceToken, ^void()
+    {
+        posixLocale = [ [ NSLocale alloc ] initWithLocaleIdentifier: @"en_US_POSIX" ];
+    } );
+
+    return posixLocale;
+}
 
 -(BOOL)isFolder
 {
-    NSString* itemTemplate = self.itemTemplate;
+    NSString* itemTemplate = [ self.itemTemplate uppercaseStringWithLocale: [ self posixLocale ] ];
     
-    BOOL isMediaFolder = [ itemTemplate isEqualToString: @"System/Media/Media folder" ];
-    BOOL isCommonFolder = [ itemTemplate isEqualToString: @"Common/Folder" ];
+    NSArray* folderTemplates =
+    @[
+      @"SYSTEM/MEDIA/MEDIA FOLDER",
+      @"COMMON/FOLDER"
+    ];
     
-    return isMediaFolder || isCommonFolder;
+    NSSet* folderTemplateSet = [ NSSet setWithArray: folderTemplates ];
+    return [ folderTemplateSet containsObject: itemTemplate ];
+}
+
+-(BOOL)isImage
+{
+    NSString* itemTemplate = [ self.itemTemplate uppercaseStringWithLocale: [ self posixLocale ] ];
+    NSArray* imageTemplates =
+    @[
+       @"SYSTEM/MEDIA/UNVERSIONED/IMAGE",
+       @"SYSTEM/MEDIA/UNVERSIONED/JPEG" ,
+       @"SYSTEM/MEDIA/VERSIONED/JPEG"
+    ];
+    NSSet* imageTemplatesSet = [ NSSet setWithArray: imageTemplates ];
+    
+    return [ imageTemplatesSet containsObject: itemTemplate ];
 }
 
 -(BOOL)isMediaImage
 {
-    if ( ![ self isMediaItem ] )
-    {
-        return NO;
-    }
-    
-    NSString* itemTemplate = self.itemTemplate;
-    
-    
-    NSArray* imageTemplates =
-    @[
-      @"System/Media/Unversioned/Image",
-      @"System/Media/Unversioned/Jpeg",
-      @"System/Media/Versioned/Jpeg"
-    ];
-    NSSet* imageTemplatesSet = [ NSSet setWithArray: imageTemplates ];
+    BOOL result =
+        [ self isMediaItem ] &&
+        [ self isImage ];
 
-    return [ imageTemplatesSet containsObject: itemTemplate ];
+    return result;
 }
 
 -(BOOL)isMediaItem
 {
-    BOOL result = ( [ self.path hasPrefix: MEDIA_ROOT ] );
+    NSString* path = [ self.path uppercaseStringWithLocale: [ self posixLocale ] ];
+    
+    
+    BOOL result = ( [ path hasPrefix: MEDIA_ROOT ] );
     return result;
 }
 

@@ -4,6 +4,8 @@
 
 -(BOOL)isMediaItem;
 -(BOOL)isMediaImage;
+
+-(BOOL)isImage;
 -(BOOL)isFolder;
 
 -(NSString*)mediaPath;

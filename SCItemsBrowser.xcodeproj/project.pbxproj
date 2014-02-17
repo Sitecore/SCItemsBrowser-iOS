@@ -49,6 +49,7 @@
 		7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */; };
 		7E34F72A18AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72918AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m */; };
 		7E34F72D18AA45E700B5D62E /* SCItemListBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72C18AA45E700B5D62E /* SCItemListBrowser.mm */; };
+		7E3A432918B21242002B4160 /* ItemExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A432818B21242002B4160 /* ItemExtensionTests.m */; };
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
 		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
@@ -159,6 +160,7 @@
 		7E34F72E18AA482200B5D62E /* SCItemsBrowserInitialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserInitialization.h; sourceTree = "<group>"; };
 		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
 		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7E3A432818B21242002B4160 /* ItemExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemExtensionTests.m; sourceTree = "<group>"; };
 		7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperStructuresTest.m; sourceTree = "<group>"; };
 		7E3CB67718A62A0F004D28BD /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXCode5gcovPatch.a; path = frameworks/libXCode5gcovPatch.a; sourceTree = "<group>"; };
 		7E40D84418A91C1500CE98BF /* SCLevelUpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelUpItem.h; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */,
 				7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */,
 				7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */,
+				7E3A432818B21242002B4160 /* ItemExtensionTests.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 			);
 			path = SCItemsBrowserTests;
@@ -611,6 +614,7 @@
 				7E06396018B0090600259037 /* AllChildrenRequestBuilderTest.m in Sources */,
 				7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
+				7E3A432918B21242002B4160 /* ItemExtensionTests.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
