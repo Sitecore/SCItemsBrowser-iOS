@@ -8,6 +8,8 @@
 #import <MobileSDK-Private/SCItemRecord_Source.h>
 #import <MobileSDK-Private/SCItem+PrivateMethods.h>
 
+#import "StubRequestBuilder.h"
+#import "SCItemListBrowser_UnitTest.h"
 
 @interface ItemsBrowserTest : XCTestCase
 @end
@@ -21,6 +23,11 @@
     
     SCItem              * _rootItem     ;
     SCItemRecord        * _rootRecord   ;
+    
+    UITableView         * _tableView    ;
+    SCItemListBrowser   * _listBrowser  ;
+    
+    StubRequestBuilder  * _stubRequestBuilder;
 }
 
 -(void)setUp
@@ -55,23 +62,97 @@
     self->_rootRecord = newRecord;
     self->_rootItem   = [ [ SCItem alloc ] initWithRecord: self->_rootRecord
                                                apiContext: self->_context ];
+    
+    self->_tableView = [ [ UITableView alloc ] initWithFrame: CGRectMake( 0, 0, 100, 100 )
+                                                       style: UITableViewStylePlain ];
+    
+    self->_listBrowser = [ SCItemListBrowser new ];
+    self->_stubRequestBuilder = [ StubRequestBuilder new ];
 }
 
 -(void)tearDown
 {
-    self->_rootItem                   = nil;
-    self->_rootRecord                 = nil;
+    self->_rootItem      = nil;
+    self->_rootRecord    = nil;
 
-    self->_context                    = nil;
-    self->_legacyContext              = nil;
-    self->_recordSource               = nil;
+    self->_context       = nil;
+    self->_legacyContext = nil;
+    self->_recordSource  = nil;
     
-    [super tearDown];
+    self->_tableView     = nil;
+    self->_listBrowser   = nil;
+    
+    [ super tearDown ];
 }
 
--(void)testExample
+-(void)testMockTableViewIsCreatedSuccessfully
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertNotNil( self->_tableView, @"tableview not created" );
 }
+
+-(void)testItemsBrowserBecomesDelegateAndDataSourceOfTableView
+{
+    self->_listBrowser.tableView = self->_tableView;
+    
+    XCTAssertTrue( self->_tableView.delegate   == self->_listBrowser, @"delegate mismatch"   );
+    XCTAssertTrue( self->_tableView.dataSource == self->_listBrowser, @"dataSource mismatch" );
+}
+
+-(void)testNumberOfRowsReturnsZeroForNonInitializedBrowser
+{
+    NSInteger result = NSNotFound;
+    
+    self->_listBrowser.tableView = self->_tableView;
+    
+    result = [ self->_listBrowser tableView: self->_tableView
+                      numberOfRowsInSection: 0 ];
+    XCTAssertTrue( 0 == result, @"number of rows mismatch" );
+}
+
+-(void)testLazyItemsFileManagerRequiresContext
+{
+    XCTAssertThrows
+    (
+       [ self->_listBrowser lazyItemsFileManager ],
+       @"assert expected"
+    );
+    
+    
+    self->_listBrowser.apiContext = self->_context;
+    XCTAssertThrows
+    (
+     [ self->_listBrowser lazyItemsFileManager ],
+     @"assert expected"
+    );
+
+    
+    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    SCItemsFileManager* fm = [ self->_listBrowser lazyItemsFileManager ];
+    XCTAssertNotNil( fm, @"items file manager not created" );
+}
+
+-(void)testLazyItemsFileManagerRequiresRequestBuilder
+{
+    XCTAssertThrows
+    (
+     [ self->_listBrowser lazyItemsFileManager ],
+     @"assert expected"
+    );
+    
+    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    XCTAssertThrows
+    (
+     [ self->_listBrowser lazyItemsFileManager ],
+     @"assert expected"
+    );
+    
+    
+    self->_listBrowser.apiContext = self->_context;
+    SCItemsFileManager* fm = [ self->_listBrowser lazyItemsFileManager ];
+    XCTAssertNotNil( fm, @"items file manager not created" );
+}
+
+
+
 
 @end

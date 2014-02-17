@@ -209,6 +209,7 @@
 		7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListTextCell.h; sourceTree = "<group>"; };
 		7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListTextCell.m; sourceTree = "<group>"; };
 		7EFEC3E318B2678200363A8F /* ItemsBrowserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsBrowserTest.m; sourceTree = "<group>"; };
+		7EFEC3FB18B27D1000363A8F /* SCItemListBrowser_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemListBrowser_UnitTest.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +350,7 @@
 		7E1D05C518A13D8E006EF056 /* SCItemsBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				7EFEC3FB18B27D1000363A8F /* SCItemListBrowser_UnitTest.h */,
 				7EB288FF18AF7C7800EBCF11 /* MobileSDK-Private */,
 				7EAB808418A5278A00C73F62 /* Stubs */,
 				7EAB809518A528A000C73F62 /* Hooks */,
