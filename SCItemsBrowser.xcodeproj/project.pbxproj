@@ -73,6 +73,7 @@
 		7EC6143A18AD2F7D008E6011 /* AssignOnceListPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */; };
 		7EE94C6718B24CEA00E28C7B /* ImageLoaderBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE94C6618B24CE900E28C7B /* ImageLoaderBuilderHook.m */; };
 		7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */; };
+		7EFEC3E418B2678200363A8F /* ItemsBrowserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFEC3E318B2678200363A8F /* ItemsBrowserTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,7 @@
 		7EE94C6618B24CE900E28C7B /* ImageLoaderBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderBuilderHook.m; sourceTree = "<group>"; };
 		7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListTextCell.h; sourceTree = "<group>"; };
 		7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListTextCell.m; sourceTree = "<group>"; };
+		7EFEC3E318B2678200363A8F /* ItemsBrowserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsBrowserTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +362,7 @@
 				7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */,
 				7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */,
 				7E3A432818B21242002B4160 /* ItemExtensionTests.m */,
+				7EFEC3E318B2678200363A8F /* ItemsBrowserTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 			);
 			path = SCItemsBrowserTests;
@@ -622,6 +625,7 @@
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
 				7E3A432918B21242002B4160 /* ItemExtensionTests.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
+				7EFEC3E418B2678200363A8F /* ItemsBrowserTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
