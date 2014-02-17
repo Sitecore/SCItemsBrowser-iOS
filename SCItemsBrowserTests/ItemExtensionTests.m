@@ -121,6 +121,10 @@
 
 -(void)tearDown
 {
+    self->_context                    = nil;
+    self->_legacyContext              = nil;
+    self->_recordSource               = nil;
+    
     self->_rootItem                   = nil;
     self->_rootRecord                 = nil;
     self->_mediaImageItem             = nil;
