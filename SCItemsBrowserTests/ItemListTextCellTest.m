@@ -14,7 +14,7 @@
 @implementation ItemListTextCellTest
 {
     SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCApiContext        * _legacyContext;
     
     SCItemRecord*  _rootItemRecord;
     SCItem* _rootItemStub;
