@@ -109,6 +109,27 @@
     XCTAssertTrue( 0 == result, @"number of rows mismatch" );
 }
 
+-(void)testNumberOfRowsReturnsZeroForNonLoadedLevel
+{
+    XCTFail( @"not tested" );
+    
+    NSInteger result = NSNotFound;
+    
+    self->_listBrowser.tableView = self->_tableView;
+//    self->_listBrowser
+//    
+//    apiContext;
+//    rootItem  ;
+//    nextLevelRequestBuilder;
+//    delegate;
+//    listModeTheme;
+//    listModeCellBuilder;
+    
+    result = [ self->_listBrowser tableView: self->_tableView
+                      numberOfRowsInSection: 0 ];
+    XCTAssertTrue( 0 == result, @"number of rows mismatch" );
+}
+
 -(void)testLazyItemsFileManagerRequiresContext
 {
     XCTAssertThrows
@@ -152,7 +173,30 @@
     XCTAssertNotNil( fm, @"items file manager not created" );
 }
 
+-(void)testLazyFileManagerReturnsSameThing
+{
+    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    self->_listBrowser.apiContext = self->_context;
+    
+    SCItemsFileManager* first  = [ self->_listBrowser lazyItemsFileManager ];
+    SCItemsFileManager* second = [ self->_listBrowser lazyItemsFileManager ];
+    
+    XCTAssertTrue( first == second, @"fm pointer mismatch" );
+}
 
-
+-(void)testDisposeLazyFileManagerCleansObjectAndOnceToken
+{
+    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    self->_listBrowser.apiContext = self->_context;
+    
+    SCItemsFileManager* first  = [ self->_listBrowser lazyItemsFileManager ];
+    XCTAssertNotNil( first, @"fm not created" );
+    XCTAssertNotNil( [ self->_listBrowser itemsFileManager ], @"fm not created" );
+    XCTAssertFalse( 0 == [ self->_listBrowser onceItemsFileManagerToken ], @"token mismatch" );
+    
+    [ self->_listBrowser disposeLazyItemsFileManager ];
+    XCTAssertNil( [ self->_listBrowser itemsFileManager ], @"fm not created" );
+    XCTAssertTrue( 0 == [ self->_listBrowser onceItemsFileManagerToken ], @"token mismatch" );
+}
 
 @end

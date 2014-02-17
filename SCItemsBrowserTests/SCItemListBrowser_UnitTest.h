@@ -6,4 +6,9 @@
 
 -(SCItemsFileManager*)lazyItemsFileManager;
 
+-(dispatch_once_t)onceItemsFileManagerToken;
+-(SCItemsFileManager*)itemsFileManager;
+
+-(void)disposeLazyItemsFileManager;
+
 @end
