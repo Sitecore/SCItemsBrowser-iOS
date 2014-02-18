@@ -11,6 +11,7 @@
 #import "StubRequestBuilder.h"
 #import "SCItemListBrowser_UnitTest.h"
 
+#import "SCLevelResponse.h"
 #import "ItemsBrowserTestStubs.h"
 
 
@@ -30,7 +31,11 @@
     UITableView         * _tableView    ;
     SCItemListBrowser   * _listBrowser  ;
     
-    StubRequestBuilder  * _stubRequestBuilder;
+    StubListModeTheme* _listModeThemeStub;
+    StubGridModeTheme* _gridModeThemeStub;
+    StubItemsBrowserDelegate* _delegateStub;
+    StubCellFactory* _cellFactoryStub;
+    StubRequestBuilder* _requestBuilderStub;
 }
 
 -(void)setUp
@@ -70,7 +75,13 @@
                                                        style: UITableViewStylePlain ];
     
     self->_listBrowser = [ SCItemListBrowser new ];
-    self->_stubRequestBuilder = [ StubRequestBuilder new ];
+
+    self->_listModeThemeStub  = [ StubListModeTheme        new ];
+    self->_gridModeThemeStub  = [ StubGridModeTheme        new ];
+    self->_delegateStub       = [ StubItemsBrowserDelegate new ];
+    self->_cellFactoryStub    = [ StubCellFactory          new ];
+    self->_requestBuilderStub = [ StubRequestBuilder       new ];
+    
 }
 
 -(void)tearDown
@@ -114,24 +125,32 @@
 
 -(void)testNumberOfRowsReturnsZeroForNonLoadedLevel
 {
-    XCTFail( @"not tested" );
-    
     NSInteger result = NSNotFound;
     
     self->_listBrowser.tableView  = self->_tableView;
     self->_listBrowser.apiContext = self->_context  ;
     self->_listBrowser.rootItem   = self->_rootItem ;
-    self->_listBrowser.delegate   = nil             ;
-    self->_listBrowser.listModeTheme;
-    
-    //    nextLevelRequestBuilder;
-//    delegate;
-//    listModeTheme;
-//    listModeCellBuilder;
+    self->_listBrowser.delegate   = self->_delegateStub;
+    self->_listBrowser.listModeTheme = self->_listModeThemeStub;
+    self->_listBrowser.listModeCellBuilder = self->_cellFactoryStub;
     
     result = [ self->_listBrowser tableView: self->_tableView
                       numberOfRowsInSection: 0 ];
     XCTAssertTrue( 0 == result, @"number of rows mismatch" );
+    
+    
+    {
+        NSArray* mockLevelItems = @[ @"one", @(2), @"three" ];
+        
+        SCLevelResponse* mockResponse =
+        [ [ SCLevelResponse alloc ] initWithItem: self->_rootItem
+                               levelContentItems: mockLevelItems ];
+
+        [ self->_listBrowser setLoadedLevel: mockResponse ];
+    }
+    result = [ self->_listBrowser tableView: self->_tableView
+                      numberOfRowsInSection: 0 ];
+    XCTAssertTrue( 3 == result, @"number of rows mismatch" );
 }
 
 -(void)testLazyItemsFileManagerRequiresContext
@@ -151,7 +170,7 @@
     );
 
     
-    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    self->_listBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
     SCItemsFileManager* fm = [ self->_listBrowser lazyItemsFileManager ];
     XCTAssertNotNil( fm, @"items file manager not created" );
 }
@@ -164,7 +183,7 @@
      @"assert expected"
     );
     
-    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    self->_listBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
     XCTAssertThrows
     (
      [ self->_listBrowser lazyItemsFileManager ],
@@ -179,7 +198,7 @@
 
 -(void)testLazyFileManagerReturnsSameThing
 {
-    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    self->_listBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
     self->_listBrowser.apiContext = self->_context;
     
     SCItemsFileManager* first  = [ self->_listBrowser lazyItemsFileManager ];
@@ -190,7 +209,7 @@
 
 -(void)testDisposeLazyFileManagerCleansObjectAndOnceToken
 {
-    self->_listBrowser.nextLevelRequestBuilder = self->_stubRequestBuilder;
+    self->_listBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
     self->_listBrowser.apiContext = self->_context;
     
     SCItemsFileManager* first  = [ self->_listBrowser lazyItemsFileManager ];

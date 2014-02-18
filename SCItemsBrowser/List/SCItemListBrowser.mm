@@ -7,6 +7,8 @@
 @property ( nonatomic, assign, readonly ) dispatch_once_t     onceItemsFileManagerToken;
 @property ( nonatomic, strong, readonly ) SCItemsFileManager* itemsFileManager         ;
 
+@property ( nonatomic, strong ) SCLevelResponse* loadedLevel;
+
 @end
 
 
