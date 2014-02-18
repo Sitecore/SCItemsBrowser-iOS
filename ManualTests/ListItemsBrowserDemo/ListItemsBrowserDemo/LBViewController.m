@@ -2,7 +2,7 @@
 
 #import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
 
-#define CUSTOMIZATION_ENABLED 1
+#define CUSTOMIZATION_ENABLED 0
 
 //static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home/android/100items";
 
@@ -112,6 +112,11 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
     }
 
     [ self->_itemsBrowserController navigateToRootItem ];
+}
+
+-(IBAction)onReloadButtonTapped:(id)sender
+{
+    [ self->_itemsBrowserController forceRefreshData ];
 }
 
 #pragma mark -
