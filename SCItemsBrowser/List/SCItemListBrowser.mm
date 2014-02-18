@@ -111,12 +111,11 @@
     NSParameterAssert( nil != levelResponse );
     NSParameterAssert( nil != levelResponse.levelParentItem );
     
+    self->_loadedLevel = levelResponse;
+    [ self.tableView reloadData ];
+    
     [ self.delegate itemsBrowser: self
              didLoadLevelForItem: levelResponse.levelParentItem ];
-
-    self->_loadedLevel = levelResponse;
-    
-    [ self.tableView reloadData ];
 }
 
 -(void)onLevelReloadFailedWithError:( NSError* )levelError

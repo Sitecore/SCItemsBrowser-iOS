@@ -4,8 +4,9 @@
 
 #define CUSTOMIZATION_ENABLED 1
 
-//static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
-static NSString* const ROOT_ITEM_PATH = @"/sitecore/Media Library";
+//static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home/android/100items";
+
+static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
 
 @interface LBViewController ()
 <
@@ -31,12 +32,12 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore/Media Library";
 -(void)setupContext
 {
     self->_legacyApiContext =
-    [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
+    [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:7200"
                              login: @"sitecore\\admin"
                           password: @"b"
                            version: SCWebApiMaxSupportedVersion ];
 
-    self->_legacyApiContext.defaultDatabase = @"master";
+    self->_legacyApiContext.defaultDatabase = @"web";
     self->_legacyApiContext.defaultSite = @"/sitecore/shell";
     
     self->_apiContext = self->_legacyApiContext.extendedApiContext;
@@ -140,6 +141,16 @@ didLoadLevelForItem:( SCItem* )levelParentItem
     
     [ self endLoading ];
     self.itemPathTextView.text = levelParentItem.path;
+    
+    
+    // should this be inside the component ?
+    NSIndexPath* top = [ NSIndexPath indexPathForRow: 0
+                                           inSection: 0 ];
+    
+    UITableView* tableView = self->_itemsBrowserController.tableView;
+    [ tableView scrollToRowAtIndexPath: top
+                      atScrollPosition: UITableViewScrollPositionTop
+                              animated: NO ];
 }
 
 #pragma mark -
