@@ -11,10 +11,13 @@
 #import "StubRequestBuilder.h"
 #import "SCItemListBrowser_UnitTest.h"
 
-@interface ItemsBrowserTest : XCTestCase
+#import "ItemsBrowserTestStubs.h"
+
+
+@interface ItemsListBrowserTest : XCTestCase
 @end
 
-@implementation ItemsBrowserTest
+@implementation ItemsListBrowserTest
 {
     SCExtendedApiContext* _context      ;
     SCApiContext        * _legacyContext;
@@ -115,12 +118,13 @@
     
     NSInteger result = NSNotFound;
     
-    self->_listBrowser.tableView = self->_tableView;
-//    self->_listBrowser
-//    
-//    apiContext;
-//    rootItem  ;
-//    nextLevelRequestBuilder;
+    self->_listBrowser.tableView  = self->_tableView;
+    self->_listBrowser.apiContext = self->_context  ;
+    self->_listBrowser.rootItem   = self->_rootItem ;
+    self->_listBrowser.delegate   = nil             ;
+    self->_listBrowser.listModeTheme;
+    
+    //    nextLevelRequestBuilder;
 //    delegate;
 //    listModeTheme;
 //    listModeCellBuilder;
