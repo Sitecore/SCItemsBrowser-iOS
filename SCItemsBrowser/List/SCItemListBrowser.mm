@@ -185,6 +185,8 @@
 
 -(void)navigateToRootItem
 {
+    NSParameterAssert( nil != self->_rootItem );
+    
     [ self disposeLazyItemsFileManager ];
  
     SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
