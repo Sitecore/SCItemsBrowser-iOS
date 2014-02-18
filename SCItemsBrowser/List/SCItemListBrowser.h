@@ -6,7 +6,9 @@
 @protocol SIBListModeAppearance;
 @protocol SIBListModeCellFactory;
 
-
+/**
+ The SCItemListBrowser class is responsible for displaying items hierarchy in the UITableView object provided by the user. It is a controller in terms of the MVC pattern.
+ */
 @interface SCItemListBrowser : NSObject<SCItemsBrowserProtocol, SCItemsBrowserInitialization, UITableViewDataSource, UITableViewDelegate>
 
 @property ( nonatomic, weak ) IBOutlet UITableView* tableView;
