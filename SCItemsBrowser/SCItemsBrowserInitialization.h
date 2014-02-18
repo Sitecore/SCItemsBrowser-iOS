@@ -7,13 +7,31 @@
 @protocol SCItemsLevelRequestBuilder;
 
 
+/**
+ Basic initialization methods for any items browser controller.
+ */
 @protocol SCItemsBrowserInitialization <NSObject>
 
+
+/**
+ @return The context to communicate with the Sitecore instance.
+ */
 -(SCExtendedApiContext*)apiContext;
+
+/**
+ @param apiContext : The context to communicate with the Sitecore instance.
+ */
 -(void)setApiContext:( SCExtendedApiContext* )apiContext;
 
 
+/**
+ @return An item to start browsing with.
+ */
 -(SCItem*)rootItem;
+
+/**
+ @param rootItem : An item to start browsing with.
+ */
 -(void)setRootItem:( SCItem* )rootItem;
 
 -(id<SCItemsLevelRequestBuilder>)nextLevelRequestBuilder;
