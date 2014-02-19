@@ -6,7 +6,7 @@
 @protocol SCItemCell;
 
 /**
- You must implement this protocol in order to construct cells and provide their reuse identifiers for the SCItemListBrowser controller.
+ You must implement this protocol in order to construct cells and provide their reuse identifiers for the SCItemListBrowser controller. Typically, the cells should be children of SCItemListCell class.
  
  You should not invoke dequeueReusableCellWithIdentifier: explicitly. SCItemListBrowser is responsible for doing so.
  */
