@@ -156,6 +156,7 @@
 -(void)reloadDataIgnoringCache:( BOOL )shouldIgnoreCache
 {
     NSParameterAssert( nil != self->_tableView );
+    NSParameterAssert( nil != self->_rootItem  );
     
     SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
     

@@ -103,11 +103,11 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
     self.loadingProgress.hidden = YES;
 }
 
-
 -(IBAction)onRootButtonTapped:(id)sender
 {
     if ( nil == self->_itemsBrowserController.rootItem )
     {
+        [ self showCannotGoToRootMessage ];
         return;
     }
 
@@ -116,7 +116,33 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
 
 -(IBAction)onReloadButtonTapped:(id)sender
 {
+    if ( nil == self->_itemsBrowserController.rootItem )
+    {
+        [ self showCannotReloadMessage ];
+        return;
+    }
+    
     [ self->_itemsBrowserController forceRefreshData ];
+}
+
+-(void)showCannotGoToRootMessage
+{
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot navigate to Root"
+                                                       message: @"Root item unavailable"
+                                                      delegate: nil
+                                             cancelButtonTitle: @"Ok. I understand."
+                                             otherButtonTitles: nil ];
+    [ alert show ];
+}
+
+-(void)showCannotReloadMessage
+{
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot reload the level"
+                                                       message: @"Root item unavailable"
+                                                      delegate: nil
+                                             cancelButtonTitle: @"Ok. I understand."
+                                             otherButtonTitles: nil ];
+    [ alert show ];
 }
 
 #pragma mark -
