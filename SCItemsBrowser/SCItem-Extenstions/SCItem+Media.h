@@ -45,12 +45,11 @@
 /**
  Returns a media path of items that have it.
  
- @return 
+ @return Item's Media path or nil
  
  |self.isMediaItem | return value|
  |-------------------------------|
  |       YES       | media path  |
- |-------------------------------|
  |        NO       | nil         |
   -------------------------------
  */
@@ -62,12 +61,11 @@
  
  @param options Resizing options for media files processing on the back end.
  
- @return
+ @return Loader or nil
  
  |self.isMediaItem | return value|
  |-------------------------------|
  |       YES       | loader      |
- |-------------------------------|
  |        NO       | nil         |
   -------------------------------
  */
