@@ -47,38 +47,40 @@
  
  @param sender An instance of the SCItemListBrowser controller.
  
- @return A custom view for the section footer. It will be forwarded to viewForFooterInSection:
+ @return A custom view for the section footer. It will be forwarded to tableView:viewForFooterInSection:
  */
 -(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( id )sender;
 
 
 /**
- 
+ Height of the section header.
  
  @param sender An instance of the SCItemListBrowser controller
  
- @return
+ @return Height of the section header. It will be forwarded to tableView:heightForHeaderInSection:
  */
 -(CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:( id )sender;
 
 
 /**
+ Height of the section footer.
  
+ @param sender An instance of the SCItemListBrowser controller.
  
- @param sender An instance of the SCItemListBrowser controller
- 
- @return
+ @return Height of the section footer. It will be forwarded to tableView:heightForFooterInSection:
  */
 -(CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:( id )sender;
 
 
 
+
 /**
+ Height of the level up cell.
  
+ @param sender An instance of the SCItemListBrowser controller.
+ @param indexPath NSIndexPath for the level up cell.
  
- @param sender An instance of the SCItemListBrowser controller
- 
- @return
+ @return Height of the level up cell. It will be forwarded to tableView:heightForRowAtIndexPath:
  */
 -(CGFloat)itemsBrowser:( id )sender
 levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
@@ -86,11 +88,13 @@ levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
 
 
 /**
+ Height of the item cell. Feel free to make it different for various types of items.
  
+ @param sender An instance of the SCItemListBrowser controller.
+ @param item An item to be rendered in this cell.
+ @param indexPath NSIndexPath for the item cell.
  
- @param sender An instance of the SCItemListBrowser controller
- 
- @return
+ @return Height of the item cell. It will be forwarded to tableView:heightForRowAtIndexPath:
  */
 -(CGFloat)itemsBrowser:( id )sender
    heightOfCellForItem:( SCItem* )item
