@@ -7,6 +7,24 @@
 @interface SIBWhiteListTemplateRequestBuilder : SIBAbstractTemplateListRequestBuilder
 
 /**
+ Unsupported initializer. It throws an exception when called.
+ Use initWithTemplateNames: instead.
+ */
+-(instancetype)init;
+
+/**
+ Designated initializer.
+ 
+ @param templateNames Names of templates for filtering. Do not include full path entries.
+ For example,
+ [ [ SIBAbstractTemplateListRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder", @"Item", @"Image" ] ];
+ 
+ @return A properly initialized filter.
+ */
+-(instancetype)initWithTemplateNames:( NSArray* )templateNames;
+
+
+/**
  Creates a query based request that fetches children of the given item that match any of the template on the list.
  
  @param sender One of the items browser controllers below.
