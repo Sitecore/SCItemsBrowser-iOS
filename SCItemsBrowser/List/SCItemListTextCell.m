@@ -2,17 +2,17 @@
 
 @implementation SCItemListTextCell
 {
-    SCItem* _item;
+    NSString* _itemName;
 }
 
 -(void)setModel:( SCItem* )item
 {
-    self->_item = item;
+    self->_itemName = item.displayName;
 }
 
 -(void)reloadData
 {
-    self.textLabel.text = self->_item.displayName;
+    self.textLabel.text = self->_itemName;
 }
 
 @end
