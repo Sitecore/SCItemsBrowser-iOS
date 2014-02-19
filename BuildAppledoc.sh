@@ -24,12 +24,14 @@ mkdir -p "$DEPLOYMENT_DIR"
 cd "$DEPLOYMENT_DIR"
 	which appledoc
 
-	${APPLEDOC_EXE}                             \
-	 	--project-name "Sitecore Items Browser" \
-		--project-company "Sitecore"            \
-		--company-id net.sitecore               \
-		--output .                              \
-		"$SDK_LIBRARIES_ROOT"
+	${APPLEDOC_EXE}                                \
+	 	--project-name "Sitecore Items Browser"    \
+		--project-company "Sitecore"               \
+		--company-id net.sitecore                  \
+		--output .                                 \
+	    --ignore "$SDK_LIBRARIES_ROOT/FileManager" \
+	    --ignore "$SDK_LIBRARIES_ROOT/Grid"        \
+		"$SDK_LIBRARIES_ROOT"                      
 
 
 	DOCUMENTATION_PATH=$( cat docset-installed.txt | grep Path: | awk 'BEGIN { FS = " " } ; { print $2 }' )
