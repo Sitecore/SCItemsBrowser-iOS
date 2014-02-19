@@ -34,10 +34,24 @@
  */
 -(void)setRootItem:( SCItem* )rootItem;
 
--(id<SCItemsLevelRequestBuilder>)nextLevelRequestBuilder;
+/**
+ @return A factory to build level queries. It can be used to filter items.
+*/
+ -(id<SCItemsLevelRequestBuilder>)nextLevelRequestBuilder;
+
+/**
+ @param A factory to build level queries. It can be used to filter items.
+ */
 -(void)setNextLevelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder;
 
+/**
+ @return A delegate that gets notifications about levels loading.
+ */
 -(id<SCItemsBrowserDelegate>)delegate;
+
+/**
+ @param A delegate that gets notifications about levels loading. 
+ */
 -(void)setDelegate:( id<SCItemsBrowserDelegate> )delegate;
 
 @end
