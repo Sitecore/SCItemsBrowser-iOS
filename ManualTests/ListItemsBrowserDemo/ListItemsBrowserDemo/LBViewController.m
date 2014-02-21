@@ -6,7 +6,7 @@
 
 //static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home/android/100items";
 
-static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
+static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
 @interface LBViewController ()
 <
@@ -37,7 +37,7 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home";
                           password: @"b"
                            version: SCWebApiMaxSupportedVersion ];
 
-    self->_legacyApiContext.defaultDatabase = @"web";
+    self->_legacyApiContext.defaultDatabase = @"master";
     self->_legacyApiContext.defaultSite = @"/sitecore/shell";
     
     self->_apiContext = self->_legacyApiContext.extendedApiContext;
