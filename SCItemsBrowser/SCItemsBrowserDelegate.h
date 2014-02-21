@@ -7,10 +7,11 @@
 
 /**
  This event is called whenever some event in request processing occurs. For example, 
- * HTTP request has been sent
- * HTTP response has neen received
- * Responce has been cached
- * etc.
+ 
+ - HTTP request has been sent
+ - HTTP response has neen received
+ - Responce has been cached
+ - etc.
  
  @param sender One of the items browser controllers below.
  * SCItemListBrowser 
@@ -25,8 +26,9 @@ didReceiveLevelProgressNotification:( id )progressInfo;
  This method is called when a given level has failed to load.
  
  @param sender One of the items browser controllers below.
- * SCItemListBrowser
- * SCItemGridBrowser
+ 
+ - SCItemListBrowser
+ - SCItemGridBrowser
 
  @param error An error object received from the Mobile SDK.
  */
@@ -38,8 +40,9 @@ levelLoadingFailedWithError:( NSError* )error;
  You can use it either to restrict the user from not seeing some branches of the content tree or to define some custom parent-child item relationships.
  
  @param sender One of the items browser controllers below.
- * SCItemListBrowser
- * SCItemGridBrowser
+ 
+ - SCItemListBrowser
+ - SCItemGridBrowser
  
  @param levelParentItem An item selected by the user.
  
@@ -52,8 +55,9 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem;
  This method notifies about successful level load for the item selected by the user.
  
  @param sender One of the items browser controllers below.
- * SCItemListBrowser
- * SCItemGridBrowser
+
+ - SCItemListBrowser
+ - SCItemGridBrowser
  
  @param levelParentItem The root of a successfully loaded level of items.
  */

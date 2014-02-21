@@ -10,9 +10,10 @@
  The SCItemListBrowser class is responsible for displaying items hierarchy in the UITableView object provided by the user. It is a controller in terms of the MVC pattern.
  
  Once initialized, it should be possible to
- * reloadData
- * forceRefreshData
- * navigateToRootItem
+ 
+ - reloadData
+ - forceRefreshData
+ - navigateToRootItem
 
  It is not possible to modify its properties once initialized. If you need to change the root item or api context, a new controller must be created.
  */

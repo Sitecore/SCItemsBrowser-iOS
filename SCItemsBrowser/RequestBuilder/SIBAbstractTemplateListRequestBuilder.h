@@ -7,8 +7,9 @@
  Do not use it explicitly.
  
  Instead, one of the classes below should be used :
- * SIBWhiteListTemplateRequestBuilder
- * SIBBlackListTemplateRequestBuilder
+ 
+ - SIBWhiteListTemplateRequestBuilder
+ - SIBBlackListTemplateRequestBuilder
  
  */
 @interface SIBAbstractTemplateListRequestBuilder : NSObject<SCItemsLevelRequestBuilder>
@@ -23,9 +24,11 @@
  Designated initializer.
  
  @param templateNames Names of templates for filtering. Do not include full path entries.
- For example, 
- [ [ SIBAbstractTemplateListRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder", @"Item", @"Image" ] ];
+ For example,
  
+    NSArray* templateNamesForFilter = @[ @"Folder", @"Item", @"Image" ]
+    [ [ SIBAbstractTemplateListRequestBuilder alloc ] initWithTemplateNames: templateNamesForFilter ];
+  
  @return A properly initialized filter.
  */
 -(instancetype)initWithTemplateNames:( NSArray* )templateNames;

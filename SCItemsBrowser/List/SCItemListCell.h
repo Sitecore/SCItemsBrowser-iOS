@@ -4,8 +4,9 @@
 /**
  A UITableView cell that is capable of rendering item's content.
  For custom behaviour you should subclass it and override methods below : 
- * setModel:
- * reloadData
+
+ - setModel:
+ - reloadData
  
  For default behaviours please consider SCItemListTextCell and SCMediaItemListCell sub-classes.
  */
