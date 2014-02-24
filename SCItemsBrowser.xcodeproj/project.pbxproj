@@ -58,6 +58,7 @@
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
+		7E7E492118BB7C990068124D /* GridLazyFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E492018BB7C990068124D /* GridLazyFileManagerTest.m */; };
 		7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */; };
 		7EA19EDC18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
@@ -179,6 +180,8 @@
 		7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListTextCellTest.m; sourceTree = "<group>"; };
 		7E73B44A18ABD17500950AEB /* SCMediaItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaItemListCell.h; sourceTree = "<group>"; };
 		7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaItemListCell.m; sourceTree = "<group>"; };
+		7E7E492018BB7C990068124D /* GridLazyFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridLazyFileManagerTest.m; sourceTree = "<group>"; };
+		7E7E492218BB7D670068124D /* SCItemGridBrowser_UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemGridBrowser_UnitTest.h; sourceTree = "<group>"; };
 		7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackListRequestBuilderTest.m; sourceTree = "<group>"; };
 		7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteListRequestBuilderTest.m; sourceTree = "<group>"; };
 		7EAB807318A4E9D800C73F62 /* SCItemsFileManagerCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManagerCallbacks.h; sourceTree = "<group>"; };
@@ -356,15 +359,17 @@
 			isa = PBXGroup;
 			children = (
 				7EFEC3FB18B27D1000363A8F /* SCItemListBrowser_UnitTest.h */,
+				7E7E492218BB7D670068124D /* SCItemGridBrowser_UnitTest.h */,
 				7EB288FF18AF7C7800EBCF11 /* MobileSDK-Private */,
 				7EAB808418A5278A00C73F62 /* Stubs */,
 				7EAB809518A528A000C73F62 /* Hooks */,
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
 				7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */,
 				7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */,
+				7E7E492018BB7C990068124D /* GridLazyFileManagerTest.m */,
+				7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */,
 				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */,
-				7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */,
 				7EA19EDB18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m */,
 				7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */,
 				7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */,
@@ -636,6 +641,7 @@
 				7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
 				7E3A432918B21242002B4160 /* ItemExtensionTests.m in Sources */,
+				7E7E492118BB7C990068124D /* GridLazyFileManagerTest.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
 				7EFEC3E418B2678200363A8F /* ItemsListBrowserTest.m in Sources */,
 			);

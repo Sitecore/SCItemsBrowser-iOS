@@ -1,13 +1,58 @@
 #import "SCItemGridBrowser.h"
 
 @implementation SCItemGridBrowser
-
+{
+    dispatch_once_t _onceItemsFileManagerToken;
+    SCItemsFileManager* _itemsFileManager;
+    
+    SCLevelResponse* _loadedLevel;
+}
 
 -(void)dealloc
 {
     // @adk : this is required since properties are "assign"
     self->_collectionView.delegate   = nil;
     self->_collectionView.dataSource = nil;
+}
+
+#pragma mark -
+#pragma mark LazyProperties
+-(void)disposeLazyItemsFileManager
+{
+    self->_onceItemsFileManagerToken = 0;
+    self->_itemsFileManager          = nil;
+}
+
+-(SCItemsFileManager*)lazyItemsFileManager
+{
+    SCExtendedApiContext* context = self->_apiContext;
+    id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder = self->_nextLevelRequestBuilder;
+    
+    NSParameterAssert( nil != context );
+    NSParameterAssert( nil != nextLevelRequestBuilder );
+    if ( nil == context || nil == nextLevelRequestBuilder )
+    {
+        return nil;
+    }
+    
+    dispatch_once(&self->_onceItemsFileManagerToken, ^void()
+    {
+        self->_itemsFileManager =
+        [ [ SCItemsFileManager alloc ] initWithApiContext: context
+                                      levelRequestBuilder: nextLevelRequestBuilder ];
+    });
+    
+    return self->_itemsFileManager;
+}
+
+-(SCItemsFileManager*)itemsFileManager
+{
+    return self->_itemsFileManager;
+}
+
+-(dispatch_once_t)onceItemsFileManagerToken
+{
+    return self->_onceItemsFileManagerToken;
 }
 
 #pragma mark -
