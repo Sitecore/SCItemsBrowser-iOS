@@ -239,6 +239,7 @@
         // calls
         // registerClass:forCellWithReuseIdentifier:
         // dequeueReusableCellWithReuseIdentifier:forIndexPath:
+        NSParameterAssert( [ itemObject isMemberOfClass: [ SCItem class ] ] );
         SCItem* item = (SCItem*)itemObject;
         
         UICollectionViewCell<SCItemCell>* cell =
