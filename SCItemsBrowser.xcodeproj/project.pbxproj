@@ -53,6 +53,8 @@
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
 		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
+		7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.m */; };
+		7E4CD5BE18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */; };
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
@@ -169,6 +171,9 @@
 		7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLevelUpItem.m; sourceTree = "<group>"; };
 		7E40D84718A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBWhiteListTemplateRequestBuilder.h; sourceTree = "<group>"; };
 		7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBWhiteListTemplateRequestBuilder.m; sourceTree = "<group>"; };
+		7E4CD5B918BB3DB3008B40BB /* SCItemGridBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemGridBrowser.h; sourceTree = "<group>"; };
+		7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemGridBrowser.m; sourceTree = "<group>"; };
+		7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceGridPropertiesTest.m; sourceTree = "<group>"; };
 		7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+Media.h"; sourceTree = "<group>"; };
 		7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItem+Media.m"; sourceTree = "<group>"; };
 		7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListTextCellTest.m; sourceTree = "<group>"; };
@@ -355,6 +360,7 @@
 				7EAB808418A5278A00C73F62 /* Stubs */,
 				7EAB809518A528A000C73F62 /* Hooks */,
 				7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */,
+				7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */,
 				7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */,
 				7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */,
 				7EAB808218A5209900C73F62 /* ItemsFileManagerHistoryTest.m */,
@@ -402,6 +408,8 @@
 			children = (
 				7E1D05F318A1525B006EF056 /* SCItemGridCell.h */,
 				7E1D05F418A1525B006EF056 /* SCItemGridCell.m */,
+				7E4CD5B918BB3DB3008B40BB /* SCItemGridBrowser.h */,
+				7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.m */,
 			);
 			path = Grid;
 			sourceTree = "<group>";
@@ -597,6 +605,7 @@
 				7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */,
 				7E34F72D18AA45E700B5D62E /* SCItemListBrowser.mm in Sources */,
 				7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */,
+				7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.m in Sources */,
 				7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */,
 				7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */,
 				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,
@@ -621,6 +630,7 @@
 				7EAB809218A5278A00C73F62 /* StubListModeTheme.m in Sources */,
 				7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */,
 				7EAB808F18A5278A00C73F62 /* StubCellFactory.m in Sources */,
+				7E4CD5BE18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m in Sources */,
 				7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */,
 				7E06396018B0090600259037 /* AllChildrenRequestBuilderTest.m in Sources */,
 				7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */,
