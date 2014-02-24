@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
+@class SCItemListBrowser;
 @class UITableViewCell;
 
 @protocol SCItemCell;
@@ -19,7 +20,7 @@
  
  @return A new cell.
  */
--(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender;
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
@@ -30,7 +31,7 @@
  
  @return A new cell.
  */
--(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
+-(UITableViewCell<SCItemCell>*)itemsBrowser:( SCItemListBrowser* )sender
                   createListModeCellForItem:( SCItem* )item;
 
 /**
@@ -38,7 +39,7 @@
  
   @param sender SCItemListBrowser controller instance.
  */
--(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender;
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( SCItemListBrowser* )sender;
 
 /**
  Provides the reuse identifier for the item cell.
@@ -46,7 +47,7 @@
   @param sender SCItemListBrowser controller instance.
   @param item An item to be rendered in the given cell.
  */
--(NSString*)itemsBrowser:( id )sender
+-(NSString*)itemsBrowser:( SCItemListBrowser* )sender
 itemCellReuseIdentifierForItem:( SCItem* )item;
 
 @end

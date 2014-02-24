@@ -2,7 +2,7 @@
 
 @implementation StubCellFactory
 
--(UITableViewCell<SCItemCell>*)itemsBrowser:( id )sender
+-(UITableViewCell<SCItemCell>*)itemsBrowser:( SCItemListBrowser* )sender
                   createListModeCellForItem:( SCItem* )item
 {
     return nil;
@@ -13,21 +13,36 @@
     return nil;
 }
 
--(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( id )sender
+-(UITableViewCell*)createLevelUpCellForListModeOfItemsBrowser:( SCItemListBrowser* )sender
 {
     return nil;
 }
 
--(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( id )sender
+-(NSString*)reuseIdentifierForLevelUpCellOfItemsBrowser:( SCItemListBrowser* )sender
 {
     return nil;
 }
 
--(NSString*)itemsBrowser:( id )sender
+-(NSString*)itemsBrowser:( SCItemListBrowser* )sender
 itemCellReuseIdentifierForItem:( SCItem* )item
 {
     return nil;
 }
 
+
+#pragma mark -
+#pragma mark Grid
+-(UICollectionViewCell*)itemsBrowser:( SCItemGridBrowser* )sender
+        createLevelUpCellAtIndexPath:( NSIndexPath* )indexPath
+{
+    return nil;
+}
+
+-(UICollectionViewCell<SCItemCell>*)itemsBrowser:( SCItemGridBrowser* )sender
+                       createGridModeCellForItem:( SCItem* )item
+                                     atIndexPath:( NSIndexPath* )indexPath
+{
+    return nil;
+}
 
 @end
