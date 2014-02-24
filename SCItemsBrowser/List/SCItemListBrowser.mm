@@ -298,6 +298,7 @@ didSelectRowAtIndexPath:( NSIndexPath* )indexPath
     }
     else
     {
+        NSParameterAssert( [ selectedItem isMemberOfClass: [ SCItem class ] ] );
         SCItem* item = (SCItem*)selectedItem;
 
         BOOL shouldGoToNextLevel = [ self->_delegate itemsBrowser: self
