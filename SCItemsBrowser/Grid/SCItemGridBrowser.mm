@@ -3,6 +3,8 @@
 #import "SIBGridModeCellFactory.h"
 #import "SCLevelUpItem.h"
 
+#import "SCItemsBrowserDelegate.h"
+
 @implementation SCItemGridBrowser
 {
     dispatch_once_t _onceItemsFileManagerToken;
@@ -259,17 +261,49 @@
 
 #pragma mark -
 #pragma mark UICollectionViewDelegate
-- (BOOL)collectionView:(UICollectionView *)collectionView
-shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)collectionView:( UICollectionView* )collectionView
+shouldSelectItemAtIndexPath:( NSIndexPath* )indexPath
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
-    return YES;
+    NSUInteger itemIndex = static_cast<NSUInteger>( indexPath.row );
+    id itemObject = self->_loadedLevel.levelContentItems[itemIndex];
+    BOOL isLevelUpItem = [ itemObject isMemberOfClass: [ SCLevelUpItem class ] ];
+    
+    if ( isLevelUpItem )
+    {
+        return YES;
+    }
+    else
+    {
+        NSParameterAssert( [ itemObject isMemberOfClass: [ SCItem class ] ] );
+        SCItem* item = (SCItem*)itemObject;
+
+        return [ self.delegate itemsBrowser: self
+                     shouldLoadLevelForItem: item ];
+    }
 }
 
--(void)collectionView:(UICollectionView *)collectionView
-didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+-(void)collectionView:( UICollectionView* )collectionView
+didSelectItemAtIndexPath:( NSIndexPath* )indexPath
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
+    NSUInteger selectedItemIndex = static_cast<NSUInteger>( indexPath.row );
+    id selectedItem = self->_loadedLevel.levelContentItems[ selectedItemIndex ];
+    BOOL isLevelUpItem = [ selectedItem isMemberOfClass: [ SCLevelUpItem class ] ];
+    
+    SCItemsFileManagerCallbacks* callbacks = [ self newCallbacksForItemsFileManager ];
+
+    if ( isLevelUpItem )
+    {
+        [ self->_itemsFileManager goToLevelUpNotifyingCallbacks: callbacks ];
+    }
+    else
+    {
+        NSParameterAssert( [ selectedItem isMemberOfClass: [ SCItem class ] ] );
+        SCItem* item = (SCItem*)selectedItem;
+
+        [ self->_itemsFileManager loadLevelForItem: item
+                                         callbacks: callbacks
+                                     ignoringCache: NO ];
+    }
 }
 
 @end
