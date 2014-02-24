@@ -5,7 +5,12 @@
 
 @protocol SIBGridModeCellFactory <NSObject>
 
--(UICollectionViewCell<SCItemCell>*)createCellForGridMode;
+-(UICollectionViewCell*)itemsBrowser:( id )sender
+        createLevelUpCellAtIndexPath:( NSIndexPath* )indexPath;
+
+-(UICollectionViewCell<SCItemCell>*)itemsBrowser:( id )sender
+                       createGridModeCellForItem:( SCItem* )item
+                                     atIndexPath:( NSIndexPath* )indexPath;
 
 @end
 
