@@ -1,5 +1,8 @@
 #import "SCItemGridBrowser.h"
 
+#import "SIBGridModeCellFactory.h"
+#import "SCLevelUpItem.h"
+
 @implementation SCItemGridBrowser
 {
     dispatch_once_t _onceItemsFileManagerToken;
@@ -123,28 +126,133 @@
     NSAssert( NO, @"NOT IMPLEMENTED" );
 }
 
+-(void)onLevelReloaded:( SCLevelResponse* )levelResponse
+{
+    NSParameterAssert( nil != levelResponse );
+    NSParameterAssert( nil != levelResponse.levelParentItem );
+    
+    self->_loadedLevel = levelResponse;
+    [ self.collectionView reloadData ];
+    
+    [ self.delegate itemsBrowser: self
+             didLoadLevelForItem: levelResponse.levelParentItem ];
+}
+
+-(void)onLevelReloadFailedWithError:( NSError* )levelError
+{
+    [ self.delegate itemsBrowser: self
+     levelLoadingFailedWithError: levelError ];
+}
+
+-(SCItemsFileManagerCallbacks*)newCallbacksForItemsFileManager
+{
+    __weak SCItemGridBrowser* weakSelf = self;
+    
+    SCItemsFileManagerCallbacks* callbacks = [ SCItemsFileManagerCallbacks new ];
+    {
+        callbacks.onLevelLoadedBlock = ^void( SCLevelResponse* levelResponse, NSError* levelError )
+        {
+            if ( nil == levelResponse )
+            {
+                [ weakSelf onLevelReloadFailedWithError: levelError ];
+            }
+            else
+            {
+                [ weakSelf onLevelReloaded: levelResponse ];
+            }
+        };
+        
+        callbacks.onLevelProgressBlock = ^void( id progressInfo )
+        {
+            [ weakSelf.delegate itemsBrowser: weakSelf
+         didReceiveLevelProgressNotification: progressInfo ];
+        };
+    }
+    
+    return callbacks;
+}
+
+
 -(void)reloadDataIgnoringCache:( BOOL )shouldIgnoreCache
 {
-    NSParameterAssert( nil != self->_apiContext );
+    NSParameterAssert( nil != self->_collectionView  );
     NSParameterAssert( nil != self->_rootItem   );
+    NSParameterAssert( nil != self->_apiContext );
     
-    NSAssert( NO, @"NOT IMPLEMENTED" );
+    SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
+    
+    if ( ![ self.lazyItemsFileManager isRootLevelLoaded ] )
+    {
+        [ self.lazyItemsFileManager loadLevelForItem: self->_rootItem
+                                           callbacks: fmCallbacks
+                                       ignoringCache: shouldIgnoreCache ];
+    }
+    else
+    {
+        [ self.lazyItemsFileManager reloadCurrentLevelNotifyingCallbacks: fmCallbacks
+                                                           ignoringCache: shouldIgnoreCache ];
+    }
 }
 
 
 #pragma mark - 
 #pragma mark UICollectionViewDataSource
+-(NSInteger)numberOfSectionsInCollectionView:( UICollectionView* )collectionView
+{
+    return 1;
+}
+
 -(NSInteger)collectionView:( UICollectionView* )collectionView
     numberOfItemsInSection:( NSInteger )section
 {
-    return 1;
+    if ( nil == self->_loadedLevel )
+    {
+        return 0;
+    }
+    
+    NSUInteger result = [ self->_loadedLevel.levelContentItems count ];
+    return static_cast<NSInteger>( result );
 }
 
 -(UICollectionViewCell*)collectionView:( UICollectionView* )collectionView
                 cellForItemAtIndexPath:( NSIndexPath* )indexPath
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
-    return nil;
+    NSParameterAssert( nil != self->_loadedLevel                   );
+    NSParameterAssert( nil != self->_loadedLevel.levelParentItem   );
+    NSParameterAssert( nil != self->_loadedLevel.levelContentItems );
+    
+    NSUInteger cellIndex = static_cast<NSUInteger>( indexPath.row );
+    id itemObject = self->_loadedLevel.levelContentItems[cellIndex];
+    BOOL isLevelUpItem = [ itemObject isMemberOfClass: [ SCLevelUpItem class ] ];
+  
+    UICollectionViewCell* result = nil;
+    if ( isLevelUpItem )
+    {
+        // calls
+        // registerClass:forCellWithReuseIdentifier:
+        // dequeueReusableCellWithReuseIdentifier:forIndexPath:
+        result = [ self.gridModeCellBuilder itemsBrowser: self
+                            createLevelUpCellAtIndexPath: indexPath ];
+    }
+    else
+    {
+        // calls
+        // registerClass:forCellWithReuseIdentifier:
+        // dequeueReusableCellWithReuseIdentifier:forIndexPath:
+        SCItem* item = (SCItem*)itemObject;
+        
+        UICollectionViewCell<SCItemCell>* cell =
+        [ self.gridModeCellBuilder itemsBrowser: self
+                      createGridModeCellForItem: item
+                                    atIndexPath: indexPath ];
+        
+        [ cell setModel: itemObject ];
+        [ cell reloadData ];
+        
+        result = cell;
+    }
+    
+    return result;
 }
 
 
