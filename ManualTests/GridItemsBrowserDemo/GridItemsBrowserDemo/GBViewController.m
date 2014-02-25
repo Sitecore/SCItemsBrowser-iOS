@@ -1,9 +1,15 @@
 #import "GBViewController.h"
 
+#import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
+
+static NSString* const ROOT_ITEM_PATH = @"/sitecore";
+
 @interface GBViewController ()<SCItemsBrowserDelegate, SIBGridModeAppearance, SIBGridModeCellFactory>
 
 @property (strong, nonatomic) IBOutlet SCItemGridBrowser *itemsBrowserController;
 @property (strong, nonatomic) IBOutlet SIBAllChildrenRequestBuilder *allChildrenRequestBuilder;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
+@property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
 
 @end
 
@@ -44,52 +50,142 @@
     [ self startLoading ];
     __weak GBViewController* weakSelf = self;
     rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
-                   {
-                       [ weakSelf endLoading ];
-                       
-                       if ( nil == rootItem )
-                       {
-                           [ weakSelf didFailLoadingRootItemWithError: blockError ];
-                       }
-                       else
-                       {
-                           [ weakSelf didLoadRootItem: rootItem ];
-                       }
-                   } );
+    {
+       [ weakSelf endLoading ];
+       
+       if ( nil == rootItem )
+       {
+           [ weakSelf didFailLoadingRootItemWithError: blockError ];
+       }
+       else
+       {
+           [ weakSelf didLoadRootItem: rootItem ];
+       }
+    } );
 }
 
--(void)didReceiveMemoryWarning
+
+#pragma mark -
+#pragma mark Progress
+-(void)startLoading
 {
-    [ super didReceiveMemoryWarning ];
-    // Dispose of any resources that can be recreated.
+    self.loadingProgress.hidden = NO;
+    [ self.loadingProgress startAnimating ];
 }
 
+-(void)endLoading
+{
+    [ self.loadingProgress stopAnimating ];
+    self.loadingProgress.hidden = YES;
+}
+
+-(void)didFailLoadingRootItemWithError:( NSError* )error
+{
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Root Item Not Loaded"
+                                                       message: error.localizedDescription
+                                                      delegate: nil
+                                             cancelButtonTitle: @"Okay"
+                                             otherButtonTitles: nil ];
+    
+    [ alert show ];
+}
+
+-(void)didLoadRootItem:( SCItem* )rootItem
+{
+    self.itemsBrowserController.rootItem = rootItem;
+    [ self.itemsBrowserController reloadData ];
+}
+
+
+#pragma mark -
+#pragma mark ButtonEvents
+-(IBAction)onRootButtonTapped:(id)sender
+{
+    if ( nil == self->_itemsBrowserController.rootItem )
+    {
+        [ self showCannotGoToRootMessage ];
+        return;
+    }
+    
+    [ self startLoading ];
+    [ self->_itemsBrowserController navigateToRootItem ];
+}
+
+-(IBAction)onReloadButtonTapped:(id)sender
+{
+    if ( nil == self->_itemsBrowserController.rootItem )
+    {
+        [ self showCannotReloadMessage ];
+        return;
+    }
+    
+    [ self startLoading ];
+    [ self->_itemsBrowserController forceRefreshData ];
+}
+
+-(void)showCannotGoToRootMessage
+{
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot navigate to Root"
+                                                       message: @"Root item unavailable"
+                                                      delegate: nil
+                                             cancelButtonTitle: @"Ok. I understand."
+                                             otherButtonTitles: nil ];
+    [ alert show ];
+}
+
+-(void)showCannotReloadMessage
+{
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot reload the level"
+                                                       message: @"Root item unavailable"
+                                                      delegate: nil
+                                             cancelButtonTitle: @"Ok. I understand."
+                                             otherButtonTitles: nil ];
+    [ alert show ];
+}
 
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
 -(void)itemsBrowser:( id )sender
 didReceiveLevelProgressNotification:( id )progressInfo
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
+    [ self startLoading ];
 }
 
 -(void)itemsBrowser:( id )sender
 levelLoadingFailedWithError:( NSError* )error
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Level Not Loaded"
+                                                       message: error.localizedDescription
+                                                      delegate: nil
+                                             cancelButtonTitle: @"Okay"
+                                             otherButtonTitles: nil ];
+    
+    [ alert show ];
 }
 
 -(void)itemsBrowser:( id )sender
 didLoadLevelForItem:( SCItem* )levelParentItem
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
+    NSParameterAssert( nil != levelParentItem );
+    
+    [ self endLoading ];
+    self.itemPathTextView.text = levelParentItem.path;
+    
+    
+    // leaving this on the user's behalf
+    NSIndexPath* top = [ NSIndexPath indexPathForRow: 0
+                                           inSection: 0 ];
+    
+    UICollectionView* collectionView = self->_itemsBrowserController.collectionView;
+    [ collectionView scrollToItemAtIndexPath: top
+                            atScrollPosition: UICollectionViewScrollPositionTop
+                                    animated: NO ];
 }
 
 -(BOOL)itemsBrowser:( id )sender
 shouldLoadLevelForItem:( SCItem* )levelParentItem
 {
-    NSAssert( NO, @"NOT IMPLEMENTED" );
-    return NO;
+    return levelParentItem.isFolder || levelParentItem.hasChildren;
 }
 
 
