@@ -55,6 +55,7 @@
 {
     __weak SCMediaItemListCell* weakSelf = self;
     
+    self.imageView.image = nil;
     self.textLabel.text = self->_item.displayName;
     if ( ![ self->_item isMediaImage ] )
     {

@@ -26,7 +26,10 @@
 #import <SCItemsBrowser/List/SCItemListTextCell.h>
 #import <SCItemsBrowser/List/SCMediaItemListCell.h>
 
-#import <SCItemsBrowser/Grid/SCItemGridCell.h>
+
 #import <SCItemsBrowser/Grid/SCItemGridBrowser.h>
+#import <SCItemsBrowser/Grid/SCItemGridCell.h>
 #import <SCItemsBrowser/Grid/SCDefaultLevelUpGridCell.h>
+#import <SCItemsBrowser/Grid/SCMediaItemGridCell.h>
+#import <SCItemsBrowser/Grid/SCItemGridTextCell.h>
 

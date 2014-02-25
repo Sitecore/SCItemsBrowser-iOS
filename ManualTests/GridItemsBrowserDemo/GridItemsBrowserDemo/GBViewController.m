@@ -219,7 +219,14 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 
 -(Class)cellClassForItem:( SCItem* )item
 {
-    return Nil;
+    if ( [ item isMediaImage ] )
+    {
+        return [ SCMediaItemGridCell class ];
+    }
+    else
+    {
+        return [ SCItemGridTextCell class ];
+    }
 }
 
 -(UICollectionViewCell*)itemsBrowser:( SCItemGridBrowser* )sender

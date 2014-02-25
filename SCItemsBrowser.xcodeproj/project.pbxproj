@@ -54,6 +54,8 @@
 		7E40D84618A91C1500CE98BF /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
 		7E43425D18BCE3830094C33D /* SCDefaultLevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43425C18BCE3830094C33D /* SCDefaultLevelUpGridCell.m */; };
+		7E43426018BCEA9B0094C33D /* SCItemGridTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43425F18BCEA9B0094C33D /* SCItemGridTextCell.m */; };
+		7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43426218BCF0A30094C33D /* SCMediaItemGridCell.m */; };
 		7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */; };
 		7E4CD5BE18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */; };
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
@@ -175,6 +177,10 @@
 		7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBWhiteListTemplateRequestBuilder.m; sourceTree = "<group>"; };
 		7E43425B18BCE3830094C33D /* SCDefaultLevelUpGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCDefaultLevelUpGridCell.h; sourceTree = "<group>"; };
 		7E43425C18BCE3830094C33D /* SCDefaultLevelUpGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDefaultLevelUpGridCell.m; sourceTree = "<group>"; };
+		7E43425E18BCEA9B0094C33D /* SCItemGridTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemGridTextCell.h; sourceTree = "<group>"; };
+		7E43425F18BCEA9B0094C33D /* SCItemGridTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemGridTextCell.m; sourceTree = "<group>"; };
+		7E43426118BCF0A30094C33D /* SCMediaItemGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaItemGridCell.h; sourceTree = "<group>"; };
+		7E43426218BCF0A30094C33D /* SCMediaItemGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaItemGridCell.m; sourceTree = "<group>"; };
 		7E4CD5B918BB3DB3008B40BB /* SCItemGridBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemGridBrowser.h; sourceTree = "<group>"; };
 		7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCItemGridBrowser.mm; sourceTree = "<group>"; };
 		7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceGridPropertiesTest.m; sourceTree = "<group>"; };
@@ -418,6 +424,10 @@
 				7E1D05F418A1525B006EF056 /* SCItemGridCell.m */,
 				7E43425B18BCE3830094C33D /* SCDefaultLevelUpGridCell.h */,
 				7E43425C18BCE3830094C33D /* SCDefaultLevelUpGridCell.m */,
+				7E43425E18BCEA9B0094C33D /* SCItemGridTextCell.h */,
+				7E43425F18BCEA9B0094C33D /* SCItemGridTextCell.m */,
+				7E43426118BCF0A30094C33D /* SCMediaItemGridCell.h */,
+				7E43426218BCF0A30094C33D /* SCMediaItemGridCell.m */,
 				7E4CD5B918BB3DB3008B40BB /* SCItemGridBrowser.h */,
 				7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */,
 			);
@@ -605,6 +615,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
+				7E43426018BCEA9B0094C33D /* SCItemGridTextCell.m in Sources */,
+				7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */,
 				7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */,
 				7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */,
 				7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */,
