@@ -28,3 +28,5 @@
 
 #import <SCItemsBrowser/Grid/SCItemGridCell.h>
 #import <SCItemsBrowser/Grid/SCItemGridBrowser.h>
+#import <SCItemsBrowser/Grid/SCDefaultLevelUpGridCell.h>
+

@@ -214,7 +214,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 
 -(Class)levelUpCellClass
 {
-    return Nil;
+    return [ SCDefaultLevelUpGridCell class ];
 }
 
 -(Class)cellClassForItem:( SCItem* )item
@@ -232,9 +232,10 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     [ collectionView registerClass: levelUpCellClass
         forCellWithReuseIdentifier: reuseId ];
     
-    UICollectionViewCell* result =
+    SCDefaultLevelUpGridCell* result =
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
+    [ result setLevelUpText: @".." ];
     
     return result;
 }
