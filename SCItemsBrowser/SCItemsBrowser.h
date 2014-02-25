@@ -27,3 +27,4 @@
 #import <SCItemsBrowser/List/SCMediaItemListCell.h>
 
 #import <SCItemsBrowser/Grid/SCItemGridCell.h>
+#import <SCItemsBrowser/Grid/SCItemGridBrowser.h>
