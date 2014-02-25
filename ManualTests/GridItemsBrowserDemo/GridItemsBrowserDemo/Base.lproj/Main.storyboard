@@ -53,8 +53,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="itemsBrowser" destination="tMt-cG-adH" id="bXc-Ey-hBd"/>
-                        <outlet property="requestBuilder" destination="xOH-fB-Muj" id="uH5-bV-tfP"/>
+                        <outlet property="allChildrenRequestBuilder" destination="xOH-fB-Muj" id="vrq-Af-EJQ"/>
+                        <outlet property="itemsBrowserController" destination="tMt-cG-adH" id="mtw-Zb-TGM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
