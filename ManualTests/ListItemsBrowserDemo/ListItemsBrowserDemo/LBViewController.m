@@ -111,6 +111,7 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
         return;
     }
 
+    [ self startLoading ];
     [ self->_itemsBrowserController navigateToRootItem ];
 }
 
@@ -121,7 +122,8 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
         [ self showCannotReloadMessage ];
         return;
     }
-    
+ 
+    [ self startLoading ];
     [ self->_itemsBrowserController forceRefreshData ];
 }
 
@@ -174,7 +176,7 @@ didLoadLevelForItem:( SCItem* )levelParentItem
     self.itemPathTextView.text = levelParentItem.path;
     
     
-    // should this be inside the component ?
+    // leaving this on the user's behalf
     NSIndexPath* top = [ NSIndexPath indexPathForRow: 0
                                            inSection: 0 ];
     
