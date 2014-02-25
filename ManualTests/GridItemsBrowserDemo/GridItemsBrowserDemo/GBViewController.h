@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface GBViewController : UIViewController
 
+@interface GBViewController : UIViewController
 @end
