@@ -95,6 +95,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <customObject id="tMt-cG-adH" customClass="SCItemGridBrowser">
                     <connections>
+                        <outlet property="collectionView" destination="A6w-Ld-Lhl" id="CWh-hn-BkZ"/>
                         <outlet property="delegate" destination="A6w-Ld-Lhl" id="Cjs-0j-q4c"/>
                         <outlet property="gridModeCellBuilder" destination="vXZ-lx-hvc" id="s1Q-zY-Tw4"/>
                         <outlet property="gridModeTheme" destination="vXZ-lx-hvc" id="IQq-Ol-U1V"/>
