@@ -10,6 +10,7 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 @property (strong, nonatomic) IBOutlet SIBAllChildrenRequestBuilder *allChildrenRequestBuilder;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
 @property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
+@property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout *itemsBrowserGridLayout;
 
 @end
 
@@ -33,12 +34,20 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
     self->_apiContext = self->_legacyApiContext.extendedApiContext;
 }
 
+-(void)setupLayout
+{
+    self.itemsBrowserGridLayout.itemSize = CGSizeMake( 80, 80 );
+//    self.itemsBrowserGridLayout.minimumLineSpacing      = 10;
+//    self.itemsBrowserGridLayout.minimumInteritemSpacing = 10;
+}
+
 -(void)viewDidLoad
 {
     [ super viewDidLoad ];
 
     NSParameterAssert( nil != self.itemsBrowserController );
     
+    [ self setupLayout  ];
     [ self setupContext ];
     self.itemsBrowserController.apiContext = self->_apiContext;
     
@@ -243,6 +252,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
     [ result setLevelUpText: @".." ];
+    result.backgroundColor = [ UIColor greenColor ];
     
     return result;
 }
@@ -261,6 +271,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     UICollectionViewCell<SCItemCell>* result =
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
+    result.backgroundColor = [ UIColor greenColor ];
     
     return result;
 }

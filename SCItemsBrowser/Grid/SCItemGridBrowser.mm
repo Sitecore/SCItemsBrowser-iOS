@@ -122,10 +122,14 @@
 -(void)navigateToRootItem
 {
     NSParameterAssert( nil != self->_apiContext );
-    NSParameterAssert( nil != self->_rootItem   );
-
+    NSParameterAssert( nil != self->_rootItem );
     
-    NSAssert( NO, @"NOT IMPLEMENTED" );
+    [ self disposeLazyItemsFileManager ];
+    
+    SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
+    [ self.lazyItemsFileManager loadLevelForItem: self->_rootItem
+                                       callbacks: fmCallbacks
+                                   ignoringCache: NO ];
 }
 
 -(void)onLevelReloaded:( SCLevelResponse* )levelResponse
