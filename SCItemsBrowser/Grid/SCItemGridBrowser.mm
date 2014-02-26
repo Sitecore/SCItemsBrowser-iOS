@@ -335,8 +335,8 @@ didHighlightItemAtIndexPath:( NSIndexPath* )indexPath
                           atIndexPath: indexPath ];
 }
 
--(void)collectionView:(UICollectionView *)collectionView
-didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
+-(void)collectionView:( UICollectionView* )collectionView
+didUnhighlightItemAtIndexPath:( NSIndexPath* )indexPath
 {
     NSParameterAssert( nil != self->_loadedLevel );
     NSParameterAssert( nil != indexPath );
