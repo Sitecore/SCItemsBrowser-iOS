@@ -238,6 +238,11 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
 }
 
+-(void)setColorsForCell:(UICollectionViewCell*)cell
+{
+    cell.backgroundColor = [ UIColor greenColor ];
+}
+
 -(UICollectionViewCell*)itemsBrowser:( SCItemGridBrowser* )sender
         createLevelUpCellAtIndexPath:( NSIndexPath* )indexPath
 {
@@ -252,7 +257,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
     [ result setLevelUpText: @".." ];
-    result.backgroundColor = [ UIColor greenColor ];
+    [ self setColorsForCell: result ];
     
     return result;
 }
@@ -271,7 +276,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     UICollectionViewCell<SCItemCell>* result =
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
-    result.backgroundColor = [ UIColor greenColor ];
+    [ self setColorsForCell: result ];
     
     return result;
 }

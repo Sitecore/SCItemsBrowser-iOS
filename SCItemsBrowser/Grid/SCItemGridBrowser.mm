@@ -310,4 +310,24 @@ didSelectItemAtIndexPath:( NSIndexPath* )indexPath
     }
 }
 
+//-(BOOL)collectionView:(UICollectionView *)collectionView
+//shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return YES;
+//}
+
+-(void)collectionView:(UICollectionView *)collectionView
+didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell* cell = [ self.collectionView cellForItemAtIndexPath: indexPath ];
+    cell.backgroundColor = [ UIColor cyanColor ];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView
+didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell* cell = [ self.collectionView cellForItemAtIndexPath: indexPath ];
+    cell.backgroundColor = [ UIColor greenColor ];
+}
+
 @end
