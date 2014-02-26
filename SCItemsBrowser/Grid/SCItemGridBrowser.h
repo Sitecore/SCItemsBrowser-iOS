@@ -8,7 +8,28 @@
 @protocol SIBGridModeAppearance;
 @protocol SIBGridModeCellFactory;
 
-
+/**
+ The SCItemGridBrowser class is responsible for displaying items hierarchy in the UICollectionView object provided by the user. It is a controller in terms of the MVC pattern. The items hierarchy is read-only so the user cannot edit content using this control.
+ 
+ Once initialized, it should be possible to
+ 
+ - reloadData
+ - forceRefreshData
+ - navigateToRootItem
+ 
+ The controller takes the control over both UICollectionViewDelegate and UICollectionViewDataSource events. The user should not set them directly. Still, the user can set any layout of his choice.
+ 
+ SCItemListBrowser does not support some UICollectionView features.
+ 
+ - Cell menus
+ - Multiple cells selection
+ - Cells editing
+ - Animated insertion or deletion
+ - Supplementary views
+ 
+ 
+ It is not possible to modify its properties once initialized. If you need to change the root item or api context, a new controller must be created.
+ */
 @interface SCItemGridBrowser : NSObject<SCItemsBrowserProtocol, SCItemsBrowserInitialization, UICollectionViewDataSource, UICollectionViewDelegate>
 
 
@@ -47,7 +68,13 @@
 
 
 /**
- A factory that constructs new cells and provides reuse identifiers. It should not invoke tableView:cellForRowAtIndexPath: explicitly since SCItemGridBrowser will do it behind the scenes.
+ A factory that provides cells for various items. The user is responsible for registering cell classes and nib files using the methods below : 
+ 
+ - - registerClass:forCellWithReuseIdentifier:
+ - – registerNib:forCellWithReuseIdentifier:
+ 
+ The user is also responsible for calling the dequeueReusableCellWithReuseIdentifier:forIndexPath: to obtain the cell object. This approach ensures the best possible flexibility since items with different templates may have completely different cells.
+
  It can be set from the Interface Builder.
  */
 @property ( nonatomic, weak   ) IBOutlet id<SIBGridModeCellFactory> gridModeCellBuilder;
