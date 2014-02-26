@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+@class SCItemListBrowser;
+
 /**
  Since SCItemListBrowser overrides the UITableViewDelegate and UITableViewDataSource protocols, there should be some way to configure cells appearance.
  
@@ -18,7 +20,7 @@
  
  @return header title. It will be forwarded to tableView:titleForHeaderInSection:
  */
--(NSString*)levelHeaderTitleForTableViewSectionOfItemsBrowser:( id )sender;
+-(NSString*)levelHeaderTitleForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
@@ -29,7 +31,7 @@
  
  @return header title. It will be forwarded to tableView:titleForFooterInSection:
  */
--(NSString*)levelFooterTitleForTableViewSectionOfItemsBrowser:( id )sender;
+-(NSString*)levelFooterTitleForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
@@ -39,7 +41,7 @@
  
  @return A custom view for the section header. It will be forwarded to tableView:viewForHeaderInSection:
  */
--(UIView*)levelHeaderViewForTableViewSectionOfItemsBrowser:( id )sender;
+-(UIView*)levelHeaderViewForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
@@ -49,7 +51,7 @@
  
  @return A custom view for the section footer. It will be forwarded to tableView:viewForFooterInSection:
  */
--(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( id )sender;
+-(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
@@ -59,7 +61,7 @@
  
  @return Height of the section header. It will be forwarded to tableView:heightForHeaderInSection:
  */
--(CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:( id )sender;
+-(CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
@@ -69,7 +71,7 @@
  
  @return Height of the section footer. It will be forwarded to tableView:heightForFooterInSection:
  */
--(CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:( id )sender;
+-(CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 
@@ -82,7 +84,7 @@
  
  @return Height of the level up cell. It will be forwarded to tableView:heightForRowAtIndexPath:
  */
--(CGFloat)itemsBrowser:( id )sender
+-(CGFloat)itemsBrowser:( SCItemListBrowser* )sender
 levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
 
 
@@ -96,7 +98,7 @@ levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
  
  @return Height of the item cell. It will be forwarded to tableView:heightForRowAtIndexPath:
  */
--(CGFloat)itemsBrowser:( id )sender
+-(CGFloat)itemsBrowser:( SCItemListBrowser* )sender
    heightOfCellForItem:( SCItem* )item
            atIndexPath:( NSIndexPath* )indexPath;
 

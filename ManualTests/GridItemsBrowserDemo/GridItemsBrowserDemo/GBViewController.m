@@ -238,11 +238,6 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     }
 }
 
--(void)setColorsForCell:(UICollectionViewCell*)cell
-{
-    cell.backgroundColor = [ UIColor greenColor ];
-}
-
 -(UICollectionViewCell*)itemsBrowser:( SCItemGridBrowser* )sender
         createLevelUpCellAtIndexPath:( NSIndexPath* )indexPath
 {
@@ -280,5 +275,37 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     
     return result;
 }
+
+
+#pragma mark -
+#pragma mark SIBGridModeAppearance
+-(void)setColorsForCell:(UICollectionViewCell*)cell
+{
+    cell.backgroundColor = [ UIColor greenColor ];
+}
+
+-(void)setHighlightColorsForCell:(UICollectionViewCell*)cell
+{
+    cell.backgroundColor = [ UIColor cyanColor ];
+}
+
+
+
+-(void)itemsBrowser:( SCItemGridBrowser* )sender
+ didUnhighlightCell:( UICollectionViewCell* )cell
+            forItem:( SCItem* )item
+        atIndexPath:( NSIndexPath* )indexPath
+{
+    [ self setColorsForCell: cell ];
+}
+
+-(void)itemsBrowser:( SCItemGridBrowser* )sender
+   didHighlightCell:( UICollectionViewCell* )cell
+            forItem:( SCItem* )item
+        atIndexPath:( NSIndexPath* )indexPath
+{
+    [ self setHighlightColorsForCell: cell ];
+}
+
 
 @end

@@ -3,6 +3,7 @@
 #import "SIBGridModeCellFactory.h"
 #import "SCLevelUpItem.h"
 
+#import "SIBGridModeAppearance.h"
 #import "SCItemsBrowserDelegate.h"
 
 @implementation SCItemGridBrowser
@@ -310,24 +311,49 @@ didSelectItemAtIndexPath:( NSIndexPath* )indexPath
     }
 }
 
-//-(BOOL)collectionView:(UICollectionView *)collectionView
-//shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return YES;
-//}
 
--(void)collectionView:(UICollectionView *)collectionView
-didHighlightItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark -
+#pragma mark Appearance
+-(void)collectionView:( UICollectionView* )collectionView
+didHighlightItemAtIndexPath:( NSIndexPath* )indexPath
 {
+    NSParameterAssert( nil != self->_loadedLevel );
+    NSParameterAssert( nil != indexPath );
+    NSParameterAssert( nil != collectionView );
+    
     UICollectionViewCell* cell = [ self.collectionView cellForItemAtIndexPath: indexPath ];
-    cell.backgroundColor = [ UIColor cyanColor ];
+    NSParameterAssert( nil != cell );
+    
+    
+    NSUInteger selectedItemIndex = static_cast<NSUInteger>( indexPath.row );
+    SCItem* selectedItem = self->_loadedLevel.levelContentItems[selectedItemIndex];
+    NSParameterAssert( nil != selectedItem );
+    
+    [ self.gridModeTheme itemsBrowser: self
+                     didHighlightCell: cell
+                              forItem: selectedItem
+                          atIndexPath: indexPath ];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView
 didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSParameterAssert( nil != self->_loadedLevel );
+    NSParameterAssert( nil != indexPath );
+    NSParameterAssert( nil != collectionView );
+    
+    
     UICollectionViewCell* cell = [ self.collectionView cellForItemAtIndexPath: indexPath ];
-    cell.backgroundColor = [ UIColor greenColor ];
+    NSParameterAssert( nil != cell );
+    
+    NSUInteger selectedItemIndex = static_cast<NSUInteger>( indexPath.row );
+    SCItem* selectedItem = self->_loadedLevel.levelContentItems[selectedItemIndex];
+    NSParameterAssert( nil != selectedItem );
+    
+    [ self.gridModeTheme itemsBrowser: self
+                   didUnhighlightCell: cell
+                              forItem: selectedItem
+                          atIndexPath: indexPath ];
 }
-
+ 
 @end
