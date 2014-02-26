@@ -321,6 +321,13 @@ didHighlightItemAtIndexPath:( NSIndexPath* )indexPath
     NSParameterAssert( nil != indexPath );
     NSParameterAssert( nil != collectionView );
     
+    SEL delegateSelector = @selector( itemsBrowser:didHighlightCell:forItem:atIndexPath: );
+    if ( ![ self.gridModeTheme respondsToSelector: delegateSelector ]  )
+    {
+        return;
+    }
+
+    
     UICollectionViewCell* cell = [ self.collectionView cellForItemAtIndexPath: indexPath ];
     NSParameterAssert( nil != cell );
     
@@ -341,7 +348,12 @@ didUnhighlightItemAtIndexPath:( NSIndexPath* )indexPath
     NSParameterAssert( nil != self->_loadedLevel );
     NSParameterAssert( nil != indexPath );
     NSParameterAssert( nil != collectionView );
-    
+ 
+    SEL delegateSelector = @selector( itemsBrowser:didUnhighlightCell:forItem:atIndexPath: );
+    if ( ![ self.gridModeTheme respondsToSelector: delegateSelector ]  )
+    {
+        return;
+    }
     
     UICollectionViewCell* cell = [ self.collectionView cellForItemAtIndexPath: indexPath ];
     NSParameterAssert( nil != cell );
@@ -355,5 +367,22 @@ didUnhighlightItemAtIndexPath:( NSIndexPath* )indexPath
                               forItem: selectedItem
                           atIndexPath: indexPath ];
 }
- 
+
+-(UICollectionViewTransitionLayout *)collectionView:( UICollectionView* )collectionView
+                       transitionLayoutForOldLayout:( UICollectionViewLayout* )fromLayout
+                                          newLayout:( UICollectionViewLayout* )toLayout
+{
+    SEL delegateSelector = @selector( collectionView:transitionLayoutForOldLayout:newLayout: );
+    if ( ![ self.gridModeTheme respondsToSelector: delegateSelector ]  )
+    {
+        return nil;
+    }
+    
+    return [ self.gridModeTheme itemsBrowser: self
+                transitionLayoutForOldLayout: fromLayout
+                                   newLayout: toLayout ];
+}
+
+
+
 @end

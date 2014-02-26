@@ -5,10 +5,14 @@
 
 @class NSIndexPath;
 @class UICollectionViewCell;
+@class UICollectionViewLayout;
+@class UICollectionViewTransitionLayout;
 
 
 @protocol SIBGridModeAppearance <NSObject>
 
+
+@optional
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
    didHighlightCell:( UICollectionViewCell* )cell
             forItem:( SCItem* )item
@@ -19,5 +23,9 @@
             forItem:( SCItem* )item
         atIndexPath:( NSIndexPath* )indexPath;
 
+
+-(UICollectionViewTransitionLayout*)itemsBrowser:( SCItemGridBrowser* )sender
+                    transitionLayoutForOldLayout:( UICollectionViewLayout* )fromLayout
+                                       newLayout:( UICollectionViewLayout* )toLayout;
 
 @end

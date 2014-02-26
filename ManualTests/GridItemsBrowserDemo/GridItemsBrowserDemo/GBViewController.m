@@ -289,8 +289,6 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     cell.backgroundColor = [ UIColor cyanColor ];
 }
 
-
-
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
  didUnhighlightCell:( UICollectionViewCell* )cell
             forItem:( SCItem* )item
@@ -306,6 +304,5 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 {
     [ self setHighlightColorsForCell: cell ];
 }
-
 
 @end
