@@ -36,6 +36,9 @@
     
     NSParameterAssert( nil != context );
     NSParameterAssert( nil != nextLevelRequestBuilder );
+    
+    // @adk : in case asserts are disabled or ignored
+    // Returning nil to avoid exceptions within dispatch_once()
     if ( nil == context || nil == nextLevelRequestBuilder )
     {
         return nil;
