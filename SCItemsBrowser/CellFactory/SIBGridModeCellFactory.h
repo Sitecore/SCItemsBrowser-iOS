@@ -32,8 +32,11 @@
  
  @param sender SCItemListBrowser controller instance.
  @param item An item to be rendered in the given cell.
+ @param indexPath NSIndexPath from the UICollectionViewDataSource. It should be passed to dequeueReusableCellWithReuseIdentifier:forIndexPath:
  
  @return A new cell.
+ 
+ Do not invoke methods of the SCItemCell protocol directly. SCItemGridBrowser controller will do it for you.
  */
 -(UICollectionViewCell<SCItemCell>*)itemsBrowser:( SCItemGridBrowser* )sender
                        createGridModeCellForItem:( SCItem* )item
