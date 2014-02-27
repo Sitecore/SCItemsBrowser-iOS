@@ -70,8 +70,8 @@
 /**
  A factory that provides cells for various items. The user is responsible for registering cell classes and nib files using the methods below : 
  
- - - registerClass:forCellWithReuseIdentifier:
- - – registerNib:forCellWithReuseIdentifier:
+ - [UICollectionView registerClass:forCellWithReuseIdentifier:]
+ - [UICollectionView registerNib:forCellWithReuseIdentifier:]
  
  The user is also responsible for calling the [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] to obtain the cell object. This approach ensures the best possible flexibility since items with different templates may have completely different cells.
 
