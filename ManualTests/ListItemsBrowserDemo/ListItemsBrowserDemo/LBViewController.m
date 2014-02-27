@@ -21,6 +21,11 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 @property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *rootButton;
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
+
+
 @end
 
 @implementation LBViewController
@@ -43,9 +48,19 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
     self->_apiContext = self->_legacyApiContext.extendedApiContext;
 }
 
+-(void)localizeButtons
+{
+    [ self.rootButton setTitle: NSLocalizedString( @"BTN_GO_TO_ROOT", nil )
+forState: UIControlStateNormal ];
+
+    [ self.reloadButton setTitle: NSLocalizedString( @"BTN_FORCE_REFRESH", nil )
+                      forState: UIControlStateNormal ];
+}
+
 -(void)viewDidLoad
 {
     [ super viewDidLoad ];
+    [ self localizeButtons ];
     
     NSParameterAssert( nil != self.itemsBrowserController );
     
@@ -76,13 +91,14 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Root Item Not Loaded"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_TITLE", nil )
                                                        message: error.localizedDescription
                                                       delegate: nil
-                                             cancelButtonTitle: @"Okay"
+                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
 
     [ alert show ];
+    [ self endLoading ];
 }
 
 -(void)didLoadRootItem:( SCItem* )rootItem
@@ -129,22 +145,24 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
 -(void)showCannotGoToRootMessage
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot navigate to Root"
-                                                       message: @"Root item unavailable"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_TITLE", nil )
+                                                       message: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_MESSAGE", nil )
                                                       delegate: nil
-                                             cancelButtonTitle: @"Ok. I understand."
+                                             cancelButtonTitle: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     [ alert show ];
+    [ self endLoading ];
 }
 
 -(void)showCannotReloadMessage
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot reload the level"
-                                                       message: @"Root item unavailable"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_TITLE", nil )
+                                                       message: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil )
                                                       delegate: nil
-                                             cancelButtonTitle: @"Ok. I understand."
+                                             cancelButtonTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     [ alert show ];
+    [ self endLoading ];
 }
 
 #pragma mark -
@@ -158,13 +176,14 @@ didReceiveLevelProgressNotification:( id )progressInfo
 -(void)itemsBrowser:( id )sender
 levelLoadingFailedWithError:( NSError* )error
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Level Not Loaded"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_LOAD_LEVEL_ERROR_TITLE", nil )
                                                        message: error.localizedDescription
                                                       delegate: nil
-                                             cancelButtonTitle: @"Okay"
+                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_LEVEL_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     
     [ alert show ];
+    [ self endLoading ];
 }
 
 -(void)itemsBrowser:( id )sender

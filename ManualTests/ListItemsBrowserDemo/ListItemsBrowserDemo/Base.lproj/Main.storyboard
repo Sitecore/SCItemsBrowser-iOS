@@ -76,6 +76,8 @@
                         <outlet property="itemPathTextView" destination="maX-iz-5aV" id="rzw-XK-fc0"/>
                         <outlet property="itemsBrowserController" destination="af3-fw-t3A" id="BMi-vj-EsB"/>
                         <outlet property="loadingProgress" destination="VL9-cN-7s8" id="1d0-mE-IMc"/>
+                        <outlet property="reloadButton" destination="FHz-Co-BQA" id="t3z-vs-TJm"/>
+                        <outlet property="rootButton" destination="JMm-Dl-JQr" id="NEu-jg-DGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

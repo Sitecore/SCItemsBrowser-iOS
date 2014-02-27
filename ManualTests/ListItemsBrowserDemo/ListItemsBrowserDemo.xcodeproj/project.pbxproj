@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E4DE9F118BF711600A0514D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F018BF711600A0514D /* Localizable.strings */; };
 		7ECE9BFB18AA825B0017877B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFA18AA825B0017877B /* Foundation.framework */; };
 		7ECE9BFD18AA825B0017877B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFC18AA825B0017877B /* CoreGraphics.framework */; };
 		7ECE9BFF18AA825B0017877B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFE18AA825B0017877B /* UIKit.framework */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E4DE9F018BF711600A0514D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7ECE9BF718AA825B0017877B /* ListItemsBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListItemsBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ECE9BFA18AA825B0017877B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7ECE9BFC18AA825B0017877B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -229,6 +231,7 @@
 				7ECE9C0C18AA825B0017877B /* Main.storyboard */,
 				7ECE9C0F18AA825B0017877B /* LBViewController.h */,
 				7ECE9C1018AA825B0017877B /* LBViewController.m */,
+				7E4DE9F018BF711600A0514D /* Localizable.strings */,
 				7ECE9C1218AA825B0017877B /* Images.xcassets */,
 				7ECE9C0118AA825B0017877B /* Supporting Files */,
 			);
@@ -384,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ECE9C1318AA825B0017877B /* Images.xcassets in Resources */,
+				7E4DE9F118BF711600A0514D /* Localizable.strings in Resources */,
 				7ECE9C0518AA825B0017877B /* InfoPlist.strings in Resources */,
 				7ECE9C0E18AA825B0017877B /* Main.storyboard in Resources */,
 			);
