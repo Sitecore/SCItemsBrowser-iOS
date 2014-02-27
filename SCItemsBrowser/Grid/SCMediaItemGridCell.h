@@ -8,6 +8,15 @@
  */
 @property ( nonatomic, strong, readwrite ) SCFieldImageParams* imageResizingOptions;
 
+
+/**
+ A designated initializer. Used by [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] to initialize the cell.
+ 
+ @param frame A frame to initialize cell view. See [UIView initWithFrame:] for details.
+ @return A properly initialized cell.
+ */
+-(instancetype)initWithFrame:( CGRect )frame;
+
 /**
  Stores the media item in the cell object to populate its image.
  

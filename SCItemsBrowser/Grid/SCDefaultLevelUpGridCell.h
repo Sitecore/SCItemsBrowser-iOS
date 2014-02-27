@@ -9,6 +9,14 @@
 @interface SCDefaultLevelUpGridCell : UICollectionViewCell
 
 /**
+ A designated initializer. Used by [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] to initialize the cell.
+ 
+ @param frame A frame to initialize cell view. See [UIView initWithFrame:] for details.
+ @return A properly initialized cell.
+ */
+-(instancetype)initWithFrame:( CGRect )frame;
+
+/**
  Sets the "level up" text message.
  
  @param levelUp localized text to display within the label. It will be displayed as is.
