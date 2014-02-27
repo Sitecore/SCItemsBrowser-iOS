@@ -1,6 +1,4 @@
 
-
-#import <SCItemsBrowser/SCItemsBrowserView.h>
 #import <SCItemsBrowser/SCItemCell.h>
 #import <SCItemsBrowser/SCItemsBrowserDelegate.h>
 #import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>

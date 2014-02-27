@@ -24,14 +24,15 @@ mkdir -p "$DEPLOYMENT_DIR"
 cd "$DEPLOYMENT_DIR"
 	which appledoc
 
-	${APPLEDOC_EXE}                                    \
-	 	--project-name "Sitecore Items Browser"    \
-		--project-company "Sitecore"               \
-		--company-id net.sitecore                  \
-                --no-repeat-first-par                      \
- 		--output .                                 \
-	        --ignore "$SDK_LIBRARIES_ROOT/FileManager" \
-		"$SDK_LIBRARIES_ROOT"                      \
+	${APPLEDOC_EXE}                                         \
+	 	--project-name "Sitecore Items Browser"         \
+		--project-company "Sitecore"                    \
+		--company-id net.sitecore                       \
+                --no-repeat-first-par                           \
+ 		--output .                                      \
+	        --ignore "$SDK_LIBRARIES_ROOT/FileManager"      \
+                --ignore "$SDK_LIBRARIES_ROOT/ItemsBrowserView" \
+		"$SDK_LIBRARIES_ROOT"                           \
         | tee appledoc-log.txt
 
 

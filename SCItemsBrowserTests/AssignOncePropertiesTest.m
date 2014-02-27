@@ -3,6 +3,7 @@
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 #import <SCItemsBrowser/SCItemsBrowser.h>
 
+#import "SCItemsBrowserView.h"
 #import "SCItem+PrivateMethods.h"
 #import "ItemsBrowserTestStubs.h"
 

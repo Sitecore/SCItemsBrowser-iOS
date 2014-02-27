@@ -15,7 +15,6 @@
 		7E1D05C418A13D8E006EF056 /* libSCItemsBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05AC18A13D8E006EF056 /* libSCItemsBrowser.a */; };
 		7E1D05CA18A13D8E006EF056 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E1D05C818A13D8E006EF056 /* InfoPlist.strings */; };
 		7E1D05CC18A13D8E006EF056 /* AssignOncePropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */; };
-		7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */; };
 		7E1D05D918A14105006EF056 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */; };
 		7E1D05DA18A14105006EF056 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */; };
 		7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1D05F118A15235006EF056 /* SCItemListCell.m */; };
@@ -58,6 +57,7 @@
 		7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43426218BCF0A30094C33D /* SCMediaItemGridCell.m */; };
 		7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */; };
 		7E4CD5BE18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */; };
+		7E4DE9EE18BF6BE500A0514D /* SCItemsBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */; };
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
@@ -117,8 +117,6 @@
 		7E1D05C718A13D8E006EF056 /* SCItemsBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCItemsBrowserTests-Info.plist"; sourceTree = "<group>"; };
 		7E1D05C918A13D8E006EF056 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E1D05CB18A13D8E006EF056 /* AssignOncePropertiesTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssignOncePropertiesTest.m; sourceTree = "<group>"; };
-		7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserView.h; sourceTree = "<group>"; };
-		7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsBrowserView.m; sourceTree = "<group>"; };
 		7E1D05D818A14105006EF056 /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreMobileSDK.framework; path = frameworks/SitecoreMobileSDK.framework; sourceTree = "<group>"; };
 		7E1D05E118A14AC0006EF056 /* SCItemsBrowserDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserDelegate.h; sourceTree = "<group>"; };
 		7E1D05E218A14B95006EF056 /* SCItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemCell.h; sourceTree = "<group>"; };
@@ -184,6 +182,8 @@
 		7E4CD5B918BB3DB3008B40BB /* SCItemGridBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemGridBrowser.h; sourceTree = "<group>"; };
 		7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SCItemGridBrowser.mm; sourceTree = "<group>"; };
 		7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceGridPropertiesTest.m; sourceTree = "<group>"; };
+		7E4DE9EC18BF6BE500A0514D /* SCItemsBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserView.h; sourceTree = "<group>"; };
+		7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsBrowserView.m; sourceTree = "<group>"; };
 		7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+Media.h"; sourceTree = "<group>"; };
 		7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItem+Media.m"; sourceTree = "<group>"; };
 		7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListTextCellTest.m; sourceTree = "<group>"; };
@@ -343,9 +343,8 @@
 				7E225BE918A28EDF009CEBEE /* FileManager */,
 				7EB927BB18A900180007B062 /* RequestBuilder */,
 				7E52E0CD18ACB7BC004DF524 /* SCItem-Extenstions */,
+				7E4DE9EB18BF6BE500A0514D /* ItemsBrowserView */,
 				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
-				7E1D05D518A13DB0006EF056 /* SCItemsBrowserView.h */,
-				7E1D05D618A13DB0006EF056 /* SCItemsBrowserView.m */,
 				7E34F72E18AA482200B5D62E /* SCItemsBrowserInitialization.h */,
 				7E225BE818A28E85009CEBEE /* SCItemsBrowserProtocol.h */,
 				7E1D05E218A14B95006EF056 /* SCItemCell.h */,
@@ -467,6 +466,15 @@
 				7E40D84518A91C1500CE98BF /* SCLevelUpItem.m */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		7E4DE9EB18BF6BE500A0514D /* ItemsBrowserView */ = {
+			isa = PBXGroup;
+			children = (
+				7E4DE9EC18BF6BE500A0514D /* SCItemsBrowserView.h */,
+				7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */,
+			);
+			path = ItemsBrowserView;
 			sourceTree = "<group>";
 		};
 		7E52E0CD18ACB7BC004DF524 /* SCItem-Extenstions */ = {
@@ -616,6 +624,7 @@
 			files = (
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
 				7E43426018BCEA9B0094C33D /* SCItemGridTextCell.m in Sources */,
+				7E4DE9EE18BF6BE500A0514D /* SCItemsBrowserView.m in Sources */,
 				7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */,
 				7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */,
 				7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */,
@@ -631,7 +640,6 @@
 				7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.mm in Sources */,
 				7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */,
 				7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */,
-				7E1D05D718A13DB0006EF056 /* SCItemsBrowserView.m in Sources */,
 				7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */,
 				7E34F72A18AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m in Sources */,
 				7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */,
