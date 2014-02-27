@@ -10,8 +10,8 @@
  
  For default behaviours please consider sub-classes from the list below :
  
- - SCItemListTextCell
- - SCMediaItemListCell
+ - SCItemGridTextCell
+ - SCMediaItemGridCell
  */
 @interface SCItemGridCell : UICollectionViewCell<SCItemCell>
 @end

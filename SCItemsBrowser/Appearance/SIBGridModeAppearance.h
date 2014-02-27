@@ -22,7 +22,7 @@
 /**
  Tells the delegate that the item at the specified index path was highlighted. Overloading this method you should do some changes to the cell so that the user gets visual feedback while tapping on it.
  
- @param sender SCItemListBrowser controller instance.
+ @param sender SCItemGridBrowser controller instance.
  @param cell A UICollectionViewCell the user interacts with
  @param item An item displayed within the given cell
  @param indexPath NSIndexPath value for the given cell
@@ -37,7 +37,7 @@
 /**
  Tells the delegate that the item at the specified index path was unhighlighted. Overloading this method you should revert the cell's appearance to the initial state so that the user gets visual feedback while finishing tapping on it.
  
- @param sender SCItemListBrowser controller instance.
+ @param sender SCItemGridBrowser controller instance.
  @param cell A UICollectionViewCell the user interacts with
  @param item An item displayed within the given cell
  @param indexPath NSIndexPath value for the given cell
@@ -54,7 +54,7 @@
  Asks for the custom transition layout to use when moving between the specified layouts.
  See [UICollectionView collectionView:transitionLayoutForOldLayout:newLayout:] documentation for details.
  
- @param sender SCItemListBrowser controller instance.
+ @param sender SCItemGridBrowser controller instance.
  @param fromLayout The current layout of the collection view. This is the starting point for the transition.
  @param toLayout The new layout for the collection view.
  

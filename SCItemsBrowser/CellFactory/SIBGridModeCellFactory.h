@@ -31,7 +31,7 @@
 /**
  Provides a new cell for the given item.
  
- @param sender SCItemListBrowser controller instance.
+ @param sender SCItemGridBrowser controller instance.
  @param item An item to be rendered in the given cell.
  @param indexPath NSIndexPath from the UICollectionViewDataSource. It should be passed to [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:]
  

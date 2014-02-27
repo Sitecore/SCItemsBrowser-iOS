@@ -19,7 +19,7 @@
  
  The controller takes the control over both UICollectionViewDelegate and UICollectionViewDataSource events. The user should not set them directly. Still, the user can set any layout of his choice.
  
- SCItemListBrowser does not support some UICollectionView features.
+ SCItemGridBrowser does not support some UICollectionView features.
  
  - Cell menus
  - Multiple cells selection
