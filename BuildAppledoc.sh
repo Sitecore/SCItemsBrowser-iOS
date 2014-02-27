@@ -31,7 +31,6 @@ cd "$DEPLOYMENT_DIR"
                 --no-repeat-first-par                      \
  		--output .                                 \
 	        --ignore "$SDK_LIBRARIES_ROOT/FileManager" \
-	        --ignore "$SDK_LIBRARIES_ROOT/Grid"        \
 		"$SDK_LIBRARIES_ROOT"                      
 
 
