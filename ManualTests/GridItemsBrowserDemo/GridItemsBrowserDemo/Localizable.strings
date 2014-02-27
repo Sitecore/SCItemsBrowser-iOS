@@ -1,0 +1,31 @@
+
+// Received from inside mobile SDK
+"JNETWORK_GENERIC_ERROR" = "Network connection lost";
+
+//storyboard : LBViewController
+"BTN_GO_TO_ROOT"    = "Root";
+"BTN_FORCE_REFRESH" = "Reload"   ;
+
+
+//didFailLoadingRootItemWithError
+"ALERT_LOAD_ROOT_ITEM_ERROR_TITLE"  = "Root Item Not Loaded";
+"ALERT_LOAD_ROOT_ITEM_ERROR_CANCEL" = "Okay"                ;
+
+//levelLoadingFailedWithError
+"ALERT_LOAD_LEVEL_ERROR_TITLE"  = "Level Not Loaded";
+"ALERT_LOAD_LEVEL_ERROR_CANCEL" = "Okay"            ;
+
+
+
+//showCannotGoToRootMessage
+"ALERT_GO_TO_ROOT_ITEM_ERROR_TITLE"   = "Cannot navigate to Root";
+"ALERT_GO_TO_ROOT_ITEM_ERROR_MESSAGE" = "Root item unavailable"  ;
+"ALERT_GO_TO_ROOT_ITEM_ERROR_CANCEL"  = "Ok. I understand."      ;
+
+
+//showCannotReloadMessage
+"ALERT_RELOAD_LEVEL_ERROR_TITLE"   = "Cannot reload the level";
+"ALERT_RELOAD_LEVEL_ERROR_MESSAGE" = "Level parent item unavailable"  ;
+"ALERT_RELOAD_LEVEL_ERROR_CANCEL"  = "Ok. I understand."      ;
+
+"CELL_LEVEL_UP_TEXT" = "..";

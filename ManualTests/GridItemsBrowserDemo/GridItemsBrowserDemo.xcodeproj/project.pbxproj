@@ -44,6 +44,7 @@
 		7E43425518BC8FDD0094C33D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425418BC8FDD0094C33D /* Social.framework */; };
 		7E43425718BC8FE10094C33D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425618BC8FE10094C33D /* Twitter.framework */; };
 		7E43425918BC8FFB0094C33D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425818BC8FFB0094C33D /* MessageUI.framework */; };
+		7E4DE9F518BF7A1400A0514D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F418BF7A1400A0514D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		7E43425418BC8FDD0094C33D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7E43425618BC8FE10094C33D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		7E43425818BC8FFB0094C33D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		7E4DE9F418BF7A1400A0514D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 		7E4341E618BC7DE50094C33D /* GridItemsBrowserDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7E4DE9F418BF7A1400A0514D /* Localizable.strings */,
 				7E4341EF18BC7DE50094C33D /* GBAppDelegate.h */,
 				7E4341F018BC7DE50094C33D /* GBAppDelegate.m */,
 				7E4341F218BC7DE50094C33D /* Main.storyboard */,
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E4341F918BC7DE50094C33D /* Images.xcassets in Resources */,
+				7E4DE9F518BF7A1400A0514D /* Localizable.strings in Resources */,
 				7E4341EB18BC7DE50094C33D /* InfoPlist.strings in Resources */,
 				7E4341F418BC7DE50094C33D /* Main.storyboard in Resources */,
 			);

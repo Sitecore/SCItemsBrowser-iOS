@@ -12,6 +12,9 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 @property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
 @property (strong, nonatomic) IBOutlet UICollectionViewFlowLayout *itemsBrowserGridLayout;
 
+@property (weak, nonatomic) IBOutlet UIButton *rootButton;
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
+
 @end
 
 @implementation GBViewController
@@ -41,13 +44,23 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 //    self.itemsBrowserGridLayout.minimumInteritemSpacing = 10;
 }
 
+-(void)localizeButtons
+{
+    [ self.rootButton setTitle: NSLocalizedString( @"BTN_GO_TO_ROOT", nil )
+forState: UIControlStateNormal ];
+
+    [ self.reloadButton setTitle: NSLocalizedString( @"BTN_FORCE_REFRESH", nil )
+                      forState: UIControlStateNormal ];
+}
+
 -(void)viewDidLoad
 {
     [ super viewDidLoad ];
-
-    NSParameterAssert( nil != self.itemsBrowserController );
-    
+    [ self localizeButtons ];
     [ self setupLayout  ];
+    
+    NSParameterAssert( nil != self.itemsBrowserController );
+
     [ self setupContext ];
     self.itemsBrowserController.apiContext = self->_apiContext;
     
@@ -90,18 +103,21 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Root Item Not Loaded"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_TITLE", nil )
                                                        message: error.localizedDescription
                                                       delegate: nil
-                                             cancelButtonTitle: @"Okay"
+                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_ROOT_ITEM_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     
     [ alert show ];
+    [ self endLoading ];
 }
 
 -(void)didLoadRootItem:( SCItem* )rootItem
 {
     self.itemsBrowserController.rootItem = rootItem;
+    
+    [ self startLoading ];
     [ self.itemsBrowserController reloadData ];
 }
 
@@ -134,22 +150,24 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
 -(void)showCannotGoToRootMessage
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot navigate to Root"
-                                                       message: @"Root item unavailable"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_TITLE", nil )
+                                                       message: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_MESSAGE", nil )
                                                       delegate: nil
-                                             cancelButtonTitle: @"Ok. I understand."
+                                             cancelButtonTitle: NSLocalizedString( @"ALERT_GO_TO_ROOT_ITEM_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     [ alert show ];
+    [ self endLoading ];
 }
 
 -(void)showCannotReloadMessage
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Cannot reload the level"
-                                                       message: @"Root item unavailable"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_TITLE", nil )
+                                                       message: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_MESSAGE", nil )
                                                       delegate: nil
-                                             cancelButtonTitle: @"Ok. I understand."
+                                             cancelButtonTitle: NSLocalizedString( @"ALERT_RELOAD_LEVEL_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     [ alert show ];
+    [ self endLoading ];
 }
 
 #pragma mark -
@@ -163,13 +181,14 @@ didReceiveLevelProgressNotification:( id )progressInfo
 -(void)itemsBrowser:( id )sender
 levelLoadingFailedWithError:( NSError* )error
 {
-    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: @"Level Not Loaded"
+    UIAlertView* alert = [ [ UIAlertView alloc ] initWithTitle: NSLocalizedString( @"ALERT_LOAD_LEVEL_ERROR_TITLE", nil )
                                                        message: error.localizedDescription
                                                       delegate: nil
-                                             cancelButtonTitle: @"Okay"
+                                             cancelButtonTitle: NSLocalizedString(@"ALERT_LOAD_LEVEL_ERROR_CANCEL", nil )
                                              otherButtonTitles: nil ];
     
     [ alert show ];
+    [ self endLoading ];
 }
 
 -(void)itemsBrowser:( id )sender
@@ -251,7 +270,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     SCDefaultLevelUpGridCell* result =
     [ collectionView dequeueReusableCellWithReuseIdentifier: reuseId
                                                forIndexPath: indexPath ];
-    [ result setLevelUpText: @".." ];
+    [ result setLevelUpText: NSLocalizedString( @"CELL_LEVEL_UP_TEXT", @".." ) ];
     [ self setColorsForCell: result ];
     
     return result;

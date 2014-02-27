@@ -92,6 +92,8 @@
                         <outlet property="itemsBrowserController" destination="tMt-cG-adH" id="mtw-Zb-TGM"/>
                         <outlet property="itemsBrowserGridLayout" destination="65H-Ld-3aX" id="LpM-rt-mgT"/>
                         <outlet property="loadingProgress" destination="59e-VA-YXt" id="bca-Ph-XK1"/>
+                        <outlet property="reloadButton" destination="oli-Mu-gmR" id="Knu-pv-vjr"/>
+                        <outlet property="rootButton" destination="2uC-YS-yPl" id="qLF-rr-muz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
