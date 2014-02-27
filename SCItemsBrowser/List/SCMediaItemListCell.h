@@ -4,7 +4,7 @@
 
 
 /**
- A UITableView cell that displays both the displayName of the media item and the corresponding image.
+ A UITableViewCell sub-class that displays both the displayName of the media item and the corresponding image.
  */
 @interface SCMediaItemListCell : SCItemListCell
 

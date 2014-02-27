@@ -2,7 +2,7 @@
 #import <SCItemsBrowser/List/SCItemListCell.h>
 
 /**
- A UITableView cell that displays the displayName value of the given SCItem.
+ A UITableViewCell sub-class that displays the displayName value of the given SCItem.
  */
 @interface SCItemListTextCell : SCItemListCell
 

@@ -8,7 +8,11 @@
  - setModel:
  - reloadData
  
- For default behaviours please consider SCItemListTextCell and SCMediaItemListCell sub-classes.
+ 
+  For default behaviours please consider sub-classes from the list below :
+
+  - SCItemListTextCell
+  - SCMediaItemListCell
  */
 @interface SCItemListCell : UITableViewCell<SCItemCell>
 @end
