@@ -1,13 +1,11 @@
 #import "SCItemGridCell.h"
 
-@interface SCMediaItemGridCell : SCItemGridCell
 
 /**
- Options for image resizing. It will be performed on the server side.
- They can be assigned in the cell multiple times since cells are likely to be reused.
+ A UICollectionViewCell sub-class that displays the image of a given media item.
+  It creates a UILabel sized as the entire cell. 
  */
-@property ( nonatomic, strong, readwrite ) SCFieldImageParams* imageResizingOptions;
-
+@interface SCMediaItemGridCell : SCItemGridCell
 
 /**
  A designated initializer. Used by [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] to initialize the cell.
@@ -16,6 +14,14 @@
  @return A properly initialized cell.
  */
 -(instancetype)initWithFrame:( CGRect )frame;
+
+
+/**
+ Options for image resizing. It will be performed on the server side.
+ They can be assigned in the cell multiple times since cells are likely to be reused.
+ */
+@property ( nonatomic, strong, readwrite ) SCFieldImageParams* imageResizingOptions;
+
 
 /**
  Stores the media item in the cell object to populate its image.
