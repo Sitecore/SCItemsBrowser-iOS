@@ -73,7 +73,7 @@
  - - registerClass:forCellWithReuseIdentifier:
  - – registerNib:forCellWithReuseIdentifier:
  
- The user is also responsible for calling the dequeueReusableCellWithReuseIdentifier:forIndexPath: to obtain the cell object. This approach ensures the best possible flexibility since items with different templates may have completely different cells.
+ The user is also responsible for calling the [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] to obtain the cell object. This approach ensures the best possible flexibility since items with different templates may have completely different cells.
 
  It can be set from the Interface Builder.
  */
