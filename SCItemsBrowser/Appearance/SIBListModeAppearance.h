@@ -13,23 +13,23 @@
 @optional
 
 /**
- Sets the title to the header of the only table view section. If levelHeaderViewForTableViewSectionOfItemsBrowser: is specified this one will be ignored.
- See tableView:titleForHeaderInSection: for details.
+ Sets the title to the header of the only table view section. If [SIBListModeAppearance levelHeaderViewForTableViewSectionOfItemsBrowser:] is specified this one will be ignored.
+ See [UITableViewDataSource tableView:titleForHeaderInSection:] for details.
  
  @param sender An instance of the SCItemListBrowser controller
  
- @return header title. It will be forwarded to tableView:titleForHeaderInSection:
+ @return header title. It will be forwarded to [UITableViewDataSource tableView:titleForHeaderInSection:]
  */
 -(NSString*)levelHeaderTitleForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
 
 /**
- Sets the title to the footer of the only table view section. If levelFooterViewForTableViewSectionOfItemsBrowser: is specified this one will be ignored.
- See tableView:titleForFooterInSection: for details.
+ Sets the title to the footer of the only table view section. If [SIBListModeAppearance levelFooterViewForTableViewSectionOfItemsBrowser:] is specified this one will be ignored.
+ See [UITableViewDataSource tableView:titleForFooterInSection:] for details.
  
  @param sender An instance of the SCItemListBrowser controller
  
- @return header title. It will be forwarded to tableView:titleForFooterInSection:
+ @return header title. It will be forwarded to [UITableViewDataSource tableView:titleForFooterInSection:]
  */
 -(NSString*)levelFooterTitleForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
@@ -39,7 +39,7 @@
  
  @param sender An instance of the SCItemListBrowser controller
  
- @return A custom view for the section header. It will be forwarded to tableView:viewForHeaderInSection:
+ @return A custom view for the section header. It will be forwarded to [UITableViewDelegate tableView:viewForHeaderInSection:]
  */
 -(UIView*)levelHeaderViewForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
@@ -49,7 +49,7 @@
  
  @param sender An instance of the SCItemListBrowser controller.
  
- @return A custom view for the section footer. It will be forwarded to tableView:viewForFooterInSection:
+ @return A custom view for the section footer. It will be forwarded to [UITableViewDelegate tableView:viewForFooterInSection:]
  */
 -(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
@@ -59,7 +59,7 @@
  
  @param sender An instance of the SCItemListBrowser controller
  
- @return Height of the section header. It will be forwarded to tableView:heightForHeaderInSection:
+ @return Height of the section header. It will be forwarded to [UITableViewDelegate tableView:heightForHeaderInSection:]
  */
 -(CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
@@ -69,7 +69,7 @@
  
  @param sender An instance of the SCItemListBrowser controller.
  
- @return Height of the section footer. It will be forwarded to tableView:heightForFooterInSection:
+ @return Height of the section footer. It will be forwarded to [UITableViewDelegate tableView:heightForFooterInSection:]
  */
 -(CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:( SCItemListBrowser* )sender;
 
@@ -82,7 +82,7 @@
  @param sender An instance of the SCItemListBrowser controller.
  @param indexPath NSIndexPath for the level up cell.
  
- @return Height of the level up cell. It will be forwarded to tableView:heightForRowAtIndexPath:
+ @return Height of the level up cell. It will be forwarded to [UITableViewDelegate tableView:heightForRowAtIndexPath:]
  */
 -(CGFloat)itemsBrowser:( SCItemListBrowser* )sender
 levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
@@ -96,7 +96,7 @@ levelUpCellHeigtAtIndexPath:( NSIndexPath* )indexPath;
  @param item An item to be rendered in this cell.
  @param indexPath NSIndexPath for the item cell.
  
- @return Height of the item cell. It will be forwarded to tableView:heightForRowAtIndexPath:
+ @return Height of the item cell. It will be forwarded to [UITableViewDelegate tableView:heightForRowAtIndexPath:]
  */
 -(CGFloat)itemsBrowser:( SCItemListBrowser* )sender
    heightOfCellForItem:( SCItem* )item

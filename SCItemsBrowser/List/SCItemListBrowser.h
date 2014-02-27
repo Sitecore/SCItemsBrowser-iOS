@@ -62,7 +62,7 @@
 
 
 /**
-  A factory that constructs new cells and provides reuse identifiers. It should not invoke tableView:cellForRowAtIndexPath: explicitly since SCItemListBrowser will do it behind the scenes.
+  A factory that constructs new cells and provides reuse identifiers. It should not invoke [UITableViewDataSource tableView:cellForRowAtIndexPath:] explicitly since SCItemListBrowser will do it behind the scenes.
   It can be set from the Interface Builder.
  */
 @property ( nonatomic, weak   ) IBOutlet id<SIBListModeCellFactory> listModeCellBuilder;
