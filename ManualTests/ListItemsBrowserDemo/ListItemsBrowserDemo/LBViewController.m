@@ -234,7 +234,7 @@ itemCellReuseIdentifierForItem:( SCItem* )item
 {
     UITableViewCell* cell = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
                                                       reuseIdentifier: LEVEL_UP_CELL_ID ];
-    cell.textLabel.text = @"..";
+    cell.textLabel.text = NSLocalizedString( @"CELL_LEVEL_UP_TEXT", @".." );
     
     return cell;
 }
@@ -271,21 +271,23 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
 #pragma mark -
 #pragma mark Theme
 
+
+
 #if CUSTOMIZATION_ENABLED
 -(NSString*)levelHeaderTitleForTableViewSectionOfItemsBrowser:( id )sender
 {
-    return @"Level Header";
+    return NSLocalizedString( @"ITEMS_TABLE_HEADER_TEXT_TITLE", @"Level Header" );
 }
 
 -(NSString*)levelFooterTitleForTableViewSectionOfItemsBrowser:( id )sender
 {
-    return @"Level Footer";
+    return NSLocalizedString( @"ITEMS_TABLE_FOOTER_TEXT_TITLE", @"Level Footer" );
 }
 
 -(UIView*)levelHeaderViewForTableViewSectionOfItemsBrowser:( id )sender
 {
     UIButton* result = [ UIButton buttonWithType: UIButtonTypeInfoDark ];
-    [result setTitle: @"Header Custom Button"
+    [result setTitle: NSLocalizedString( @"ITEMS_TABLE_HEADER_VIEW_TITLE", "Header Custom Button" )
             forState: UIControlStateNormal ];
 
     return result;
@@ -294,7 +296,7 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
 -(UIView*)levelFooterViewForTableViewSectionOfItemsBrowser:( id )sender
 {
     UIButton* result = [ UIButton buttonWithType: UIButtonTypeContactAdd ];
-    [result setTitle: @"Footer Custom Button"
+    [result setTitle: NSLocalizedString( @"ITEMS_TABLE_FOOTER_VIEW_TITLE", "Footer Custom Button" )
             forState: UIControlStateNormal ];
     
     return result;

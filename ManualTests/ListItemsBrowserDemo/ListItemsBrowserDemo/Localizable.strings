@@ -28,3 +28,12 @@
 "ALERT_RELOAD_LEVEL_ERROR_MESSAGE" = "Level parent item unavailable"  ;
 "ALERT_RELOAD_LEVEL_ERROR_CANCEL"  = "Ok. I understand."      ;
 
+"CELL_LEVEL_UP_TEXT" = "..";
+
+"ITEMS_TABLE_HEADER_TEXT_TITLE" = "Level Header";
+"ITEMS_TABLE_FOOTER_TEXT_TITLE" = "Level Footer";
+
+
+"ITEMS_TABLE_HEADER_VIEW_TITLE" = "Header Custom Button";
+"ITEMS_TABLE_FOOTER_VIEW_TITLE" = "Footer Custom Button";
+
