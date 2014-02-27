@@ -31,12 +31,13 @@ cd "$DEPLOYMENT_DIR"
                 --no-repeat-first-par                      \
  		--output .                                 \
 	        --ignore "$SDK_LIBRARIES_ROOT/FileManager" \
-		"$SDK_LIBRARIES_ROOT"                      
+		"$SDK_LIBRARIES_ROOT"                      \
+        | tee appledoc-log.txt
 
 
 	DOCUMENTATION_PATH=$( cat docset-installed.txt | grep Path: | awk 'BEGIN { FS = " " } ; { print $2 }' )
 	echo DOCUMENTATION_PATH - $DOCUMENTATION_PATH
 	
 	cp -R "${DOCUMENTATION_PATH}" .
-	find . -name "*.docset" -exec zip -r Sitecore-Mobile-SDK-doc.zip {} \;  -print 
+	find . -name "*.docset" -exec zip -r ItemsBrowser-iOS-doc.zip {} \;  -print 
 cd "$LAUNCH_DIR"
