@@ -19,6 +19,7 @@
  Provides a new cell for the level up item
  
  @param sender SCItemGridBrowser controller instance.
+ @param indexPath NSIndexPath from the UICollectionViewDataSource. It should be passed to dequeueReusableCellWithReuseIdentifier:forIndexPath:
  
  @return A new cell.
  
@@ -28,7 +29,7 @@
 
 
 /**
- Constructs a new cell for the item cell.
+ Provides a new cell for the given item.
  
  @param sender SCItemListBrowser controller instance.
  @param item An item to be rendered in the given cell.
