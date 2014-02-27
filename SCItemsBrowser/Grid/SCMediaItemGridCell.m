@@ -53,10 +53,7 @@
     UIImageView* imageView = self->_imageView;
     self->_imageView.image = nil;
 
-    if ( ![ self->_item isMediaImage ] )
-    {
-        return;
-    }
+    NSParameterAssert( [ self->_item isMediaImage ] );
     
     SCFieldImageParams* resizingOptions = [ self normalizedImageResizingOptions ];
     SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: resizingOptions ];

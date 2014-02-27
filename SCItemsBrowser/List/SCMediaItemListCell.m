@@ -57,11 +57,8 @@
     
     self.imageView.image = nil;
     self.textLabel.text = self->_item.displayName;
-    if ( ![ self->_item isMediaImage ] )
-    {
-        return;
-    }
     
+    NSParameterAssert( [ self->_item isMediaImage ] );    
 
     SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: self->_imageResizingOptions ];
     SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
