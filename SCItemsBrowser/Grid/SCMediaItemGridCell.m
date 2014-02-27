@@ -11,7 +11,7 @@
 }
 
 
--(instancetype)initWithFrame:(CGRect)frame
+-(instancetype)initWithFrame:( CGRect )frame
 {
     self = [ super initWithFrame: frame ];
     if ( nil == self )
@@ -52,15 +52,14 @@
 
     UIImageView* imageView = self->_imageView;
     self->_imageView.image = nil;
-    
-//    self.textLabel.text = self->_item.displayName;
+
     if ( ![ self->_item isMediaImage ] )
     {
         return;
     }
     
-    
-    SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: self->_imageResizingOptions ];
+    SCFieldImageParams* resizingOptions = [ self normalizedImageResizingOptions ];
+    SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: resizingOptions ];
     SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
     {
         [ weakSelf stopLoading ];
@@ -75,7 +74,6 @@
     };
     
     
-    imageView.image = nil;
     [ self startLoading   ];
     [ self setNeedsLayout ];
     self->_cancelImageLoader = imageLoader( nil, nil, onImageLoadedBlock );
@@ -102,6 +100,23 @@
     CGRect imageFrame = self.contentView.frame;
     imageFrame.origin = CGPointMake( 0, 0 );
     self->_imageView.frame = imageFrame;
+}
+
+-(SCFieldImageParams*)normalizedImageResizingOptions
+{
+    SCFieldImageParams* result = self->_imageResizingOptions;
+    if ( nil == result )
+    {
+        result = [ SCFieldImageParams new ];
+    }
+    
+    SCItemSourcePOD* itemSource = self->_item.recordItemSource;
+    {
+        result.database = itemSource.database;
+        result.language = itemSource.language;
+    }
+
+    return result;
 }
 
 @end
