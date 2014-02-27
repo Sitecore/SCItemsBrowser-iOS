@@ -161,16 +161,16 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/levelHeaderTitleForTableViewSectionOfItemsBrowser:">&ndash;&nbsp;levelHeaderTitleForTableViewSectionOfItemsBrowser:</a></code>
-		<span class="tooltip"><p>Sets the title to the header of the only table view section. If <a href="#//api/name/levelHeaderViewForTableViewSectionOfItemsBrowser:">levelHeaderViewForTableViewSectionOfItemsBrowser:</a> is specified this one will be ignored.<br/>
-See tableView:titleForHeaderInSection: for details.</p></span>
+		<span class="tooltip"><p>Sets the title to the header of the only table view section. If <a href="#//api/name/levelHeaderViewForTableViewSectionOfItemsBrowser:">[SIBListModeAppearance levelHeaderViewForTableViewSectionOfItemsBrowser:]</a> is specified this one will be ignored.<br/>
+See [UITableViewDataSource tableView:titleForHeaderInSection:] for details.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/levelFooterTitleForTableViewSectionOfItemsBrowser:">&ndash;&nbsp;levelFooterTitleForTableViewSectionOfItemsBrowser:</a></code>
-		<span class="tooltip"><p>Sets the title to the footer of the only table view section. If <a href="#//api/name/levelFooterViewForTableViewSectionOfItemsBrowser:">levelFooterViewForTableViewSectionOfItemsBrowser:</a> is specified this one will be ignored.<br/>
-See tableView:titleForFooterInSection: for details.</p></span>
+		<span class="tooltip"><p>Sets the title to the footer of the only table view section. If <a href="#//api/name/levelFooterViewForTableViewSectionOfItemsBrowser:">[SIBListModeAppearance levelFooterViewForTableViewSectionOfItemsBrowser:]</a> is specified this one will be ignored.<br/>
+See [UITableViewDataSource tableView:titleForFooterInSection:] for details.</p></span>
 	</span>
 	
 	
@@ -245,7 +245,7 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)itemsBrowser:(id)<em>sender</em> heightOfCellForItem:(SCItem *)<em>item</em> atIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)itemsBrowser:(SCItemListBrowser *)<em>sender</em> heightOfCellForItem:(SCItem *)<em>item</em> atIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
 
     
 	
@@ -273,7 +273,7 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Height of the item cell. It will be forwarded to tableView:heightForRowAtIndexPath:</p>
+		<p>Height of the item cell. It will be forwarded to [UITableViewDelegate tableView:heightForRowAtIndexPath:]</p>
 	</div>
 	
 	
@@ -306,7 +306,7 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)itemsBrowser:(id)<em>sender</em> levelUpCellHeigtAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)itemsBrowser:(SCItemListBrowser *)<em>sender</em> levelUpCellHeigtAtIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
 
     
 	
@@ -329,7 +329,7 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Height of the level up cell. It will be forwarded to tableView:heightForRowAtIndexPath:</p>
+		<p>Height of the level up cell. It will be forwarded to [UITableViewDelegate tableView:heightForRowAtIndexPath:]</p>
 	</div>
 	
 	
@@ -362,7 +362,7 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:(id)<em>sender</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)levelFooterHeightForTableViewSectionOfItemsBrowser:(SCItemListBrowser *)<em>sender</em></code></div>
 
     
 	
@@ -380,7 +380,7 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Height of the section footer. It will be forwarded to tableView:heightForFooterInSection:</p>
+		<p>Height of the section footer. It will be forwarded to [UITableViewDelegate tableView:heightForFooterInSection:]</p>
 	</div>
 	
 	
@@ -408,13 +408,13 @@ See tableView:titleForFooterInSection: for details.</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Sets the title to the footer of the only table view section. If <a href="#//api/name/levelFooterViewForTableViewSectionOfItemsBrowser:">levelFooterViewForTableViewSectionOfItemsBrowser:</a> is specified this one will be ignored.<br/>
-See tableView:titleForFooterInSection: for details.</p>
+		<p>Sets the title to the footer of the only table view section. If <a href="#//api/name/levelFooterViewForTableViewSectionOfItemsBrowser:">[SIBListModeAppearance levelFooterViewForTableViewSectionOfItemsBrowser:]</a> is specified this one will be ignored.<br/>
+See [UITableViewDataSource tableView:titleForFooterInSection:] for details.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSString *)levelFooterTitleForTableViewSectionOfItemsBrowser:(id)<em>sender</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)levelFooterTitleForTableViewSectionOfItemsBrowser:(SCItemListBrowser *)<em>sender</em></code></div>
 
     
 	
@@ -432,7 +432,7 @@ See tableView:titleForFooterInSection: for details.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>header title. It will be forwarded to tableView:titleForFooterInSection:</p>
+		<p>header title. It will be forwarded to [UITableViewDataSource tableView:titleForFooterInSection:]</p>
 	</div>
 	
 	
@@ -465,7 +465,7 @@ See tableView:titleForFooterInSection: for details.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (UIView *)levelFooterViewForTableViewSectionOfItemsBrowser:(id)<em>sender</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (UIView *)levelFooterViewForTableViewSectionOfItemsBrowser:(SCItemListBrowser *)<em>sender</em></code></div>
 
     
 	
@@ -483,7 +483,7 @@ See tableView:titleForFooterInSection: for details.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A custom view for the section footer. It will be forwarded to tableView:viewForFooterInSection:</p>
+		<p>A custom view for the section footer. It will be forwarded to [UITableViewDelegate tableView:viewForFooterInSection:]</p>
 	</div>
 	
 	
@@ -516,7 +516,7 @@ See tableView:titleForFooterInSection: for details.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:(id)<em>sender</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (CGFloat)levelHeaderHeightForTableViewSectionOfItemsBrowser:(SCItemListBrowser *)<em>sender</em></code></div>
 
     
 	
@@ -534,7 +534,7 @@ See tableView:titleForFooterInSection: for details.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Height of the section header. It will be forwarded to tableView:heightForHeaderInSection:</p>
+		<p>Height of the section header. It will be forwarded to [UITableViewDelegate tableView:heightForHeaderInSection:]</p>
 	</div>
 	
 	
@@ -562,13 +562,13 @@ See tableView:titleForFooterInSection: for details.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Sets the title to the header of the only table view section. If <a href="#//api/name/levelHeaderViewForTableViewSectionOfItemsBrowser:">levelHeaderViewForTableViewSectionOfItemsBrowser:</a> is specified this one will be ignored.<br/>
-See tableView:titleForHeaderInSection: for details.</p>
+		<p>Sets the title to the header of the only table view section. If <a href="#//api/name/levelHeaderViewForTableViewSectionOfItemsBrowser:">[SIBListModeAppearance levelHeaderViewForTableViewSectionOfItemsBrowser:]</a> is specified this one will be ignored.<br/>
+See [UITableViewDataSource tableView:titleForHeaderInSection:] for details.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSString *)levelHeaderTitleForTableViewSectionOfItemsBrowser:(id)<em>sender</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)levelHeaderTitleForTableViewSectionOfItemsBrowser:(SCItemListBrowser *)<em>sender</em></code></div>
 
     
 	
@@ -586,7 +586,7 @@ See tableView:titleForHeaderInSection: for details.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>header title. It will be forwarded to tableView:titleForHeaderInSection:</p>
+		<p>header title. It will be forwarded to [UITableViewDataSource tableView:titleForHeaderInSection:]</p>
 	</div>
 	
 	
@@ -619,7 +619,7 @@ See tableView:titleForHeaderInSection: for details.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (UIView *)levelHeaderViewForTableViewSectionOfItemsBrowser:(id)<em>sender</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (UIView *)levelHeaderViewForTableViewSectionOfItemsBrowser:(SCItemListBrowser *)<em>sender</em></code></div>
 
     
 	
@@ -637,7 +637,7 @@ See tableView:titleForHeaderInSection: for details.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A custom view for the section header. It will be forwarded to tableView:viewForHeaderInSection:</p>
+		<p>A custom view for the section header. It will be forwarded to [UITableViewDelegate tableView:viewForHeaderInSection:]</p>
 	</div>
 	
 	
@@ -671,7 +671,7 @@ See tableView:titleForHeaderInSection: for details.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Sitecore. All rights reserved. (Last updated: 2014-02-21)</span><br />
+						<p><span class="copyright">&copy; 2014 Sitecore. All rights reserved. (Last updated: 2014-02-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

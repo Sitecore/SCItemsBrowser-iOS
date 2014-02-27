@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>SIBWhiteListTemplateRequestBuilder Class Reference</title>
+		<title>SIBGridModeAppearance Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">SIBWhiteListTemplateRequestBuilder Class Reference</h1>
+				<h1 class="hideInXcode">SIBGridModeAppearance Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -43,11 +43,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	<option value="//api/name/itemsBrowser:didHighlightCell:forItem:atIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;- itemsBrowser:didHighlightCell:forItem:atIndexPath:</option>
 	
-	<option value="//api/name/initWithTemplateNames:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithTemplateNames:</option>
+	<option value="//api/name/itemsBrowser:didUnhighlightCell:forItem:atIndexPath:">&nbsp;&nbsp;&nbsp;&nbsp;- itemsBrowser:didUnhighlightCell:forItem:atIndexPath:</option>
 	
-	<option value="//api/name/itemsBrowser:levelDownRequestForItem:">&nbsp;&nbsp;&nbsp;&nbsp;- itemsBrowser:levelDownRequestForItem:</option>
+	<option value="//api/name/itemsBrowser:transitionLayoutForOldLayout:newLayout:">&nbsp;&nbsp;&nbsp;&nbsp;- itemsBrowser:transitionLayoutForOldLayout:newLayout:</option>
 	
 	
 	
@@ -77,11 +77,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemsBrowser:didHighlightCell:forItem:atIndexPath:">itemsBrowser:didHighlightCell:forItem:atIndexPath:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTemplateNames:">initWithTemplateNames:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemsBrowser:didUnhighlightCell:forItem:atIndexPath:">itemsBrowser:didUnhighlightCell:forItem:atIndexPath:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemsBrowser:levelDownRequestForItem:">itemsBrowser:levelDownRequestForItem:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itemsBrowser:transitionLayoutForOldLayout:newLayout:">itemsBrowser:transitionLayoutForOldLayout:newLayout:</a></span></li>
 	
 </ul></li>
 
@@ -90,7 +90,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="SIBWhiteListTemplateRequestBuilder Class Reference" name="top"></a>
+				<a title="SIBGridModeAppearance Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,18 +99,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">SIBWhiteListTemplateRequestBuilder Class Reference</h1>
+						<h1 class="title title-header">SIBGridModeAppearance Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value"><a href="../Classes/SIBAbstractTemplateListRequestBuilder.html">SIBAbstractTemplateListRequestBuilder</a> : NSObject</td>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">SIBWhiteListTemplateRequestBuilder.h<br />SIBWhiteListTemplateRequestBuilder.m</td>
+	<td class="specification-value">SIBGridModeAppearance.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -120,7 +120,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Creates the request to fetch only those children of the given item having the templates from the initializer list.</p>
+						<p>Since <a href="../Classes/SCItemGridBrowser.html">SCItemGridBrowser</a> overrides the UICollectionViewDelegate and UICollectionViewDataSource protocols, there should be some way to configure cells appearance.</p>
+
+<p>Override methods of this protocol to forward your values to the UICollectionView and customize its appearance.</p>
 					</div>
 					
 					
@@ -138,23 +140,23 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
-		<span class="tooltip"><p>Unsupported initializer. It throws an exception when called.<br/>
-Use <a href="#//api/name/initWithTemplateNames:">initWithTemplateNames:</a> instead.</p></span>
+		<code><a href="#//api/name/itemsBrowser:didHighlightCell:forItem:atIndexPath:">&ndash;&nbsp;itemsBrowser:didHighlightCell:forItem:atIndexPath:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the item at the specified index path was highlighted. Overloading this method you should do some changes to the cell so that the user gets visual feedback while tapping on it.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithTemplateNames:">&ndash;&nbsp;initWithTemplateNames:</a></code>
-		<span class="tooltip"><p>Designated initializer.</p></span>
+		<code><a href="#//api/name/itemsBrowser:didUnhighlightCell:forItem:atIndexPath:">&ndash;&nbsp;itemsBrowser:didUnhighlightCell:forItem:atIndexPath:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the item at the specified index path was unhighlighted. Overloading this method you should revert the cell&rsquo;s appearance to the initial state so that the user gets visual feedback while finishing tapping on it.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/itemsBrowser:levelDownRequestForItem:">&ndash;&nbsp;itemsBrowser:levelDownRequestForItem:</a></code>
-		<span class="tooltip"><p>Creates a query based request that fetches children of the given item that match any of the template on the list.</p></span>
+		<code><a href="#//api/name/itemsBrowser:transitionLayoutForOldLayout:newLayout:">&ndash;&nbsp;itemsBrowser:transitionLayoutForOldLayout:newLayout:</a></code>
+		<span class="tooltip"><p>Asks for the custom transition layout to use when moving between the specified layouts.<br/>
+See [UICollectionView collectionView:transitionLayoutForOldLayout:newLayout:] documentation for details.</p></span>
 	</span>
 	
 	
@@ -176,108 +178,18 @@ Use <a href="#//api/name/initWithTemplateNames:">initWithTemplateNames:</a> inst
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="subsubtitle method-title">init</h3>
+	<a name="//api/name/itemsBrowser:didHighlightCell:forItem:atIndexPath:" title="itemsBrowser:didHighlightCell:forItem:atIndexPath:"></a>
+	<h3 class="subsubtitle method-title">itemsBrowser:didHighlightCell:forItem:atIndexPath:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Unsupported initializer. It throws an exception when called.<br/>
-Use <a href="#//api/name/initWithTemplateNames:">initWithTemplateNames:</a> instead.</p>
+		<p>Tells the delegate that the item at the specified index path was highlighted. Overloading this method you should do some changes to the cell so that the user gets visual feedback while tapping on it.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SIBWhiteListTemplateRequestBuilder.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithTemplateNames:" title="initWithTemplateNames:"></a>
-	<h3 class="subsubtitle method-title">initWithTemplateNames:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Designated initializer.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithTemplateNames:(NSArray *)<em>templateNames</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>templateNames</em></dt>
-			<dd><p>Names of templates for filtering. Do not include full path entries.<br/>
-For example,<br/>
-[ [ <a href="../Classes/SIBAbstractTemplateListRequestBuilder.html">SIBAbstractTemplateListRequestBuilder</a> alloc ] initWithTemplateNames: @[ @&ldquo;Folder&rdquo;, @&ldquo;Item&rdquo;, @&ldquo;Image&rdquo; ] ];</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A properly initialized filter.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SIBWhiteListTemplateRequestBuilder.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/itemsBrowser:levelDownRequestForItem:" title="itemsBrowser:levelDownRequestForItem:"></a>
-	<h3 class="subsubtitle method-title">itemsBrowser:levelDownRequestForItem:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates a query based request that fetches children of the given item that match any of the template on the list.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (SCItemsReaderRequest *)itemsBrowser:(id)<em>sender</em> levelDownRequestForItem:(SCItem *)<em>item</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)itemsBrowser:(SCItemGridBrowser *)<em>sender</em> didHighlightCell:(UICollectionViewCell *)<em>cell</em> forItem:(SCItem *)<em>item</em> atIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
 
     
 	
@@ -286,14 +198,140 @@ For example,<br/>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>sender</em></dt>
-			<dd><p>One of the items browser controllers below.<br/>
-* <a href="../Classes/SCItemListBrowser.html">SCItemListBrowser</a><br/>
-* <a href="../Classes/SCItemGridBrowser.html">SCItemGridBrowser</a></p></dd>
+			<dd><p><a href="../Classes/SCItemGridBrowser.html">SCItemGridBrowser</a> controller instance.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cell</em></dt>
+			<dd><p>A UICollectionViewCell the user interacts with</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>item</em></dt>
-			<dd><p>The children list should be defined for it by this class.</p></dd>
+			<dd><p>An item displayed within the given cell</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>indexPath</em></dt>
+			<dd><p>NSIndexPath value for the given cell</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SIBGridModeAppearance.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemsBrowser:didUnhighlightCell:forItem:atIndexPath:" title="itemsBrowser:didUnhighlightCell:forItem:atIndexPath:"></a>
+	<h3 class="subsubtitle method-title">itemsBrowser:didUnhighlightCell:forItem:atIndexPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the item at the specified index path was unhighlighted. Overloading this method you should revert the cell&rsquo;s appearance to the initial state so that the user gets visual feedback while finishing tapping on it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)itemsBrowser:(SCItemGridBrowser *)<em>sender</em> didUnhighlightCell:(UICollectionViewCell *)<em>cell</em> forItem:(SCItem *)<em>item</em> atIndexPath:(NSIndexPath *)<em>indexPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p><a href="../Classes/SCItemGridBrowser.html">SCItemGridBrowser</a> controller instance.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cell</em></dt>
+			<dd><p>A UICollectionViewCell the user interacts with</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>item</em></dt>
+			<dd><p>An item displayed within the given cell</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>indexPath</em></dt>
+			<dd><p>NSIndexPath value for the given cell</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SIBGridModeAppearance.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/itemsBrowser:transitionLayoutForOldLayout:newLayout:" title="itemsBrowser:transitionLayoutForOldLayout:newLayout:"></a>
+	<h3 class="subsubtitle method-title">itemsBrowser:transitionLayoutForOldLayout:newLayout:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks for the custom transition layout to use when moving between the specified layouts.<br/>
+See [UICollectionView collectionView:transitionLayoutForOldLayout:newLayout:] documentation for details.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (UICollectionViewTransitionLayout *)itemsBrowser:(SCItemGridBrowser *)<em>sender</em> transitionLayoutForOldLayout:(UICollectionViewLayout *)<em>fromLayout</em> newLayout:(UICollectionViewLayout *)<em>toLayout</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sender</em></dt>
+			<dd><p><a href="../Classes/SCItemGridBrowser.html">SCItemGridBrowser</a> controller instance.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fromLayout</em></dt>
+			<dd><p>The current layout of the collection view. This is the starting point for the transition.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>toLayout</em></dt>
+			<dd><p>The new layout for the collection view.</p></dd>
 		</dl>
 		
 	</div>
@@ -302,7 +340,7 @@ For example,<br/>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A request that defines the scope of child items.</p>
+		<p>The collection view transition layout object to use to perform the transition.</p>
 	</div>
 	
 	
@@ -317,7 +355,7 @@ For example,<br/>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SIBWhiteListTemplateRequestBuilder.h</code><br />
+		<code class="declared-in-ref">SIBGridModeAppearance.h</code><br />
 	</div>				
 	
 	

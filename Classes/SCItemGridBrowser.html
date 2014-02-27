@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>SCItemsBrowserView Class Reference</title>
+		<title>SCItemGridBrowser Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">SCItemsBrowserView Class Reference</h1>
+				<h1 class="hideInXcode">SCItemGridBrowser Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -25,6 +25,8 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
 	
 	
 	
@@ -39,7 +41,13 @@
 	
 	<option value="//api/name/apiContext">&nbsp;&nbsp;&nbsp;&nbsp;apiContext</option>
 	
+	<option value="//api/name/collectionView">&nbsp;&nbsp;&nbsp;&nbsp;collectionView</option>
+	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/gridModeCellBuilder">&nbsp;&nbsp;&nbsp;&nbsp;gridModeCellBuilder</option>
+	
+	<option value="//api/name/gridModeTheme">&nbsp;&nbsp;&nbsp;&nbsp;gridModeTheme</option>
 	
 	<option value="//api/name/nextLevelRequestBuilder">&nbsp;&nbsp;&nbsp;&nbsp;nextLevelRequestBuilder</option>
 	
@@ -67,6 +75,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -82,7 +92,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiContext">apiContext</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/collectionView">collectionView</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gridModeCellBuilder">gridModeCellBuilder</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gridModeTheme">gridModeTheme</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nextLevelRequestBuilder">nextLevelRequestBuilder</a></span></li>
 	
@@ -109,7 +125,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="SCItemsBrowserView Class Reference" name="top"></a>
+				<a title="SCItemGridBrowser Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -118,7 +134,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">SCItemsBrowserView Class Reference</h1>
+						<h1 class="title title-header">SCItemGridBrowser Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -126,16 +142,48 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">UIView</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/SCItemsBrowserInitialization.html">SCItemsBrowserInitialization</a><br /><a href="../Protocols/SCItemsBrowserProtocol.html">SCItemsBrowserProtocol</a></td>
+	<td class="specification-value"><a href="../Protocols/SCItemsBrowserInitialization.html">SCItemsBrowserInitialization</a><br /><a href="../Protocols/SCItemsBrowserProtocol.html">SCItemsBrowserProtocol</a><br />UICollectionViewDataSource<br />UICollectionViewDelegate</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">SCItemsBrowserView.h<br />SCItemsBrowserView.m</td>
+	<td class="specification-value">SCItemGridBrowser.h<br />SCItemGridBrowser.mm</td>
 </tr>
 						</tbody></table></div>
 					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The SCItemGridBrowser class is responsible for displaying items hierarchy in the UICollectionView object provided by the user. It is a controller in terms of the MVC pattern. The items hierarchy is read-only so the user cannot edit content using this control.</p>
+
+<p>Once initialized, it should be possible to</p>
+
+<ul>
+<li><a href="#//api/name/reloadData">reloadData</a></li>
+<li><a href="#//api/name/forceRefreshData">forceRefreshData</a></li>
+<li><a href="#//api/name/navigateToRootItem">navigateToRootItem</a></li>
+</ul>
+
+
+<p>The controller takes the control over both UICollectionViewDelegate and UICollectionViewDataSource events. The user should not set them directly. Still, the user can set any layout of his choice.</p>
+
+<p>SCItemGridBrowser does not support some UICollectionView features.</p>
+
+<ul>
+<li>Cell menus</li>
+<li>Multiple cells selection</li>
+<li>Cells editing</li>
+<li>Animated insertion or deletion</li>
+<li>Supplementary views</li>
+</ul>
+
+
+<p>It is not possible to modify its properties once initialized. If you need to change the root item or api context, a new controller must be created.</p>
+					</div>
 					
 					
 					
@@ -152,29 +200,53 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/collectionView">&nbsp;&nbsp;collectionView</a></code>
+		<span class="tooltip"><p>A table view to display items. The SCItemGridBrowser controller will become both a <a href="#//api/name/delegate">delegate</a> and a datasource for it. It can be set from the Interface Builder.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/apiContext">&nbsp;&nbsp;apiContext</a></code>
-		<span class="tooltip"><p>The context to communicate with the Sitecore instance.</p></span>
+		<span class="tooltip"><p>The context to communicate with the Sitecore instance. It can be set from code only.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/rootItem">&nbsp;&nbsp;rootItem</a></code>
-		<span class="tooltip"><p>An item to start browsing with.</p></span>
+		<span class="tooltip"><p>An item to start browsing with. It can be set from code only.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/nextLevelRequestBuilder">&nbsp;&nbsp;nextLevelRequestBuilder</a></code>
-		<span class="tooltip"><p>A factory to build level queries. It can be used to filter items.</p></span>
+		<span class="tooltip"><p>Set this object to perform filtration by template or any other criteria.<br/>
+It can be set from the Interface Builder. For default behaviour (getting all children of the item) please use an instance of the <a href="../Classes/SIBAllChildrenRequestBuilder.html">SIBAllChildrenRequestBuilder</a> class.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
-		<span class="tooltip"><p>A delegate that gets notifications about levels loading.</p></span>
+		<span class="tooltip"><p>A delegate that gets notifications about levels loading.<br/>
+It can be set from the Interface Builder.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gridModeTheme">&nbsp;&nbsp;gridModeTheme</a></code>
+		<span class="tooltip"><p>A theme class that responds to UITableViewDelegate methods.<br/>
+It can be set from the Interface Builder.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gridModeCellBuilder">&nbsp;&nbsp;gridModeCellBuilder</a></code>
+		<span class="tooltip"><p>A factory that provides cells for various items. The user is responsible for registering cell classes and nib files using the methods below :</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -227,7 +299,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The context to communicate with the Sitecore instance.</p>
+		<p>The context to communicate with the Sitecore instance. It can be set from code only.</p>
 	</div>		
 	
     
@@ -237,11 +309,6 @@
     
 	
 	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The context to communicate with the Sitecore instance.</p>
-	</div>
 	
 	
 	
@@ -255,7 +322,43 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SCItemsBrowserInitialization.h</code><br />
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/collectionView" title="collectionView"></a>
+	<h3 class="subsubtitle method-title">collectionView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A table view to display items. The SCItemGridBrowser controller will become both a <a href="#//api/name/delegate">delegate</a> and a datasource for it. It can be set from the Interface Builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) IBOutlet UICollectionView *collectionView</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
 	</div>				
 	
 	
@@ -268,7 +371,8 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A delegate that gets notifications about levels loading.</p>
+		<p>A delegate that gets notifications about levels loading.<br/>
+It can be set from the Interface Builder.</p>
 	</div>		
 	
     
@@ -278,11 +382,6 @@
     
 	
 	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A delegate that gets notifications about levels loading.</p>
-	</div>
 	
 	
 	
@@ -296,7 +395,93 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SCItemsBrowserInitialization.h</code><br />
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gridModeCellBuilder" title="gridModeCellBuilder"></a>
+	<h3 class="subsubtitle method-title">gridModeCellBuilder</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A factory that provides cells for various items. The user is responsible for registering cell classes and nib files using the methods below :</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) IBOutlet id&lt;SIBGridModeCellFactory&gt; gridModeCellBuilder</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li>[UICollectionView registerClass:forCellWithReuseIdentifier:]</li>
+<li>[UICollectionView registerNib:forCellWithReuseIdentifier:]</li>
+</ul>
+
+
+<p>The user is also responsible for calling the [UICollectionView dequeueReusableCellWithReuseIdentifier:forIndexPath:] to obtain the cell object. This approach ensures the best possible flexibility since items with different templates may have completely different cells.</p>
+
+<p>It can be set from the Interface Builder.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gridModeTheme" title="gridModeTheme"></a>
+	<h3 class="subsubtitle method-title">gridModeTheme</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A theme class that responds to UITableViewDelegate methods.<br/>
+It can be set from the Interface Builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) IBOutlet id&lt;SIBGridModeAppearance&gt; gridModeTheme</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
 	</div>				
 	
 	
@@ -309,7 +494,8 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A factory to build level queries. It can be used to filter items.</p>
+		<p>Set this object to perform filtration by template or any other criteria.<br/>
+It can be set from the Interface Builder. For default behaviour (getting all children of the item) please use an instance of the <a href="../Classes/SIBAllChildrenRequestBuilder.html">SIBAllChildrenRequestBuilder</a> class.</p>
 	</div>		
 	
     
@@ -319,11 +505,6 @@
     
 	
 	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A factory to build level queries. It can be used to filter items.</p>
-	</div>
 	
 	
 	
@@ -337,7 +518,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SCItemsBrowserInitialization.h</code><br />
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
 	</div>				
 	
 	
@@ -350,7 +531,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An item to start browsing with.</p>
+		<p>An item to start browsing with. It can be set from code only.</p>
 	</div>		
 	
     
@@ -360,11 +541,6 @@
     
 	
 	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An item to start browsing with.</p>
-	</div>
 	
 	
 	
@@ -378,7 +554,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SCItemsBrowserInitialization.h</code><br />
+		<code class="declared-in-ref">SCItemGridBrowser.h</code><br />
 	</div>				
 	
 	
@@ -515,7 +691,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Sitecore. All rights reserved. (Last updated: 2014-02-21)</span><br />
+						<p><span class="copyright">&copy; 2014 Sitecore. All rights reserved. (Last updated: 2014-02-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
