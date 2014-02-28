@@ -2,14 +2,21 @@
 
 #import "SCItem+Media.h"
 
+#import "SCMediaCellEvents.h"
+#import "SCMediaCellController.h"
+
+
+@interface SCMediaItemGridCell()<SCMediaCellEvents>
+@end
+
 @implementation SCMediaItemGridCell
 {
-    UIImageView            * _imageView        ;
-    UIActivityIndicatorView* _progress         ;
-    SCItem                 * _item             ;
-    SCCancelAsyncOperation   _cancelImageLoader;
+    UIImageView            * _imageView  ;
+    UIActivityIndicatorView* _progress   ;
+    SCMediaCellController  * _imageLoader;
 }
 
+@dynamic imageResizingOptions;
 
 -(instancetype)initWithFrame:( CGRect )frame
 {
@@ -20,6 +27,8 @@
     }
     
     [ self setupUI ];
+    self->_imageLoader = [ SCMediaCellController new ];
+    self->_imageLoader.delegate = self;
     
     return self;
 }
@@ -41,42 +50,34 @@
     [ self.contentView addSubview: progress  ];
 }
 
+-(SCFieldImageParams*)imageResizingOptions
+{
+    NSParameterAssert( nil != self->_imageLoader );
+    return self->_imageLoader.imageResizingOptions;
+}
+
+-(void)setImageResizingOptions:(SCFieldImageParams *)imageResizingOptions
+{
+    NSParameterAssert( nil != self->_imageLoader );
+    self->_imageLoader.imageResizingOptions = imageResizingOptions;
+}
+
 -(void)setModel:( SCItem* )item
 {
-    self->_item = item;
+    NSParameterAssert( nil != self->_imageLoader );
+
+    [ self->_imageLoader setModel: item ];
 }
 
 -(void)reloadData
 {
-    __weak SCMediaItemGridCell* weakSelf = self;
-
-    UIImageView* imageView = self->_imageView;
-    self->_imageView.image = nil;
-
-    NSParameterAssert( [ self->_item isMediaImage ] );
+    NSParameterAssert( nil != self->_imageLoader );
     
-    SCFieldImageParams* resizingOptions = [ self normalizedImageResizingOptions ];
-    SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: resizingOptions ];
-    SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
-    {
-        [ weakSelf stopLoading ];
-        
-        imageView.image = loadedImage;
-        [ weakSelf setNeedsLayout ];
-        
-        if ( nil == loadedImage )
-        {
-            NSLog( @"[INFO] : image loading failed for item : |%@|", self->_item );
-        }
-    };
-    
-    
-    [ self startLoading   ];
-    [ self setNeedsLayout ];
-    self->_cancelImageLoader = imageLoader( nil, nil, onImageLoadedBlock );
-    self->_cancelImageLoader = [ self->_cancelImageLoader copy ];
+    [ self->_imageLoader reloadData ];
 }
 
+#pragma mark - 
+#pragma mark Progress view
 -(void)startLoading
 {
     [ self addSubview: self->_progress ];
@@ -99,21 +100,32 @@
     self->_imageView.frame = imageFrame;
 }
 
--(SCFieldImageParams*)normalizedImageResizingOptions
+#pragma mark -
+#pragma mark SCMediaCellEvents
+-(void)didStartLoadingImageInMediaCellController:( SCMediaCellController* )sender
 {
-    SCFieldImageParams* result = self->_imageResizingOptions;
-    if ( nil == result )
-    {
-        result = [ SCFieldImageParams new ];
-    }
-    
-    SCItemSourcePOD* itemSource = self->_item.recordItemSource;
-    {
-        result.database = itemSource.database;
-        result.language = itemSource.language;
-    }
+    self->_imageView.image = nil;
 
-    return result;
+    [ self startLoading   ];
+    [ self setNeedsLayout ];
+}
+
+-(void)mediaCellController:( SCMediaCellController* )sender
+     didFinishLoadingImage:( UIImage* )image
+                   forItem:( SCItem* )mediaItem;
+{
+    [ self stopLoading ];
+    
+    self->_imageView.image = image;
+    [ self setNeedsLayout ];
+}
+
+-(void)mediaCellController:( SCMediaCellController* )sender
+didFailLoadingImageForItem:( SCItem* )mediaItem
+                 withError:( NSError* )error
+{
+    [ self stopLoading ];
+    NSLog( @"[INFO] : image loading failed for item : |%@|. Error : |%@|", mediaItem, error );
 }
 
 @end

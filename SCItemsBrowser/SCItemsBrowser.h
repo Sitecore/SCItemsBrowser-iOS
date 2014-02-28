@@ -10,7 +10,7 @@
 #import <SCItemsBrowser/RequestBuilder/SIBWhiteListTemplateRequestBuilder.h>
 
 
-#import <SCItemsBrowser/FileManager/SCLevelUpItem.h>
+#import <SCItemsBrowser/ItemsBrowser/SCLevelUpItem.h>
 #import <SCItemsBrowser/FileManager/SCLevelResponse.h>
 
 #import <SCItemsBrowser/Appearance/SIBListModeAppearance.h>

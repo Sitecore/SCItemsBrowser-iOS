@@ -2,13 +2,17 @@
 
 #import "SCItem+Media.h"
 
+#import "SCMediaCellEvents.h"
+#import "SCMediaCellController.h"
+
+
+@interface SCMediaItemListCell()<SCMediaCellEvents>
+@end
+
 @implementation SCMediaItemListCell
 {
-    SCItem                * _item;
-    SCFieldImageParams    * _imageResizingOptions;
-    SCCancelAsyncOperation  _cancelImageLoader;
-    
     UIActivityIndicatorView* _progress;
+    SCMediaCellController* _imageLoader;
 }
 
 
@@ -30,8 +34,12 @@
         return nil;
     }
 
-    self->_imageResizingOptions = imageResizingOptions;
     self->_progress = [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray ];
+
+    self->_imageLoader = [ SCMediaCellController new ];
+    self->_imageLoader.delegate = self;
+    self->_imageLoader.imageResizingOptions = imageResizingOptions;
+
 
     return self;
 }
@@ -43,44 +51,15 @@
 
 -(void)setModel:( SCItem* )item
 {
-    if ( nil != self->_cancelImageLoader )
-    {
-        self->_cancelImageLoader( YES );
-    }
-    self->_cancelImageLoader = nil;
-    self->_item = item;
+    NSParameterAssert( nil != self->_imageLoader );
+    
+    [ self->_imageLoader setModel: item ];
 }
 
 -(void)reloadData
 {
-    __weak SCMediaItemListCell* weakSelf = self;
-    
-    self.imageView.image = nil;
-    self.textLabel.text = self->_item.displayName;
-    
-    NSParameterAssert( [ self->_item isMediaImage ] );    
-
-    SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: self->_imageResizingOptions ];
-    SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
-    {
-        [ weakSelf stopLoading ];
-        
-        weakSelf.imageView.image = loadedImage;
-        [ weakSelf setNeedsLayout ];
-
-        
-        if ( nil == loadedImage )
-        {
-            NSLog( @"[INFO] : image loading failed for item : |%@|", self->_item );
-        }
-    };
-    
-    
-    weakSelf.imageView.image = nil;
-    [ self startLoading   ];
-    [ self setNeedsLayout ];
-    self->_cancelImageLoader = imageLoader( nil, nil, onImageLoadedBlock );
-    self->_cancelImageLoader = [ self->_cancelImageLoader copy ];
+    NSParameterAssert( nil != self->_imageLoader );
+    [ self->_imageLoader reloadData ];
 }
 
 -(void)startLoading
@@ -99,6 +78,36 @@
 {
     [ super layoutSubviews ];
     self->_progress.center = CGPointMake( self.frame.size.width / 2., self.frame.size.height / 2. );
+}
+
+#pragma mark -
+#pragma mark SCMediaCellEvents
+-(void)didStartLoadingImageInMediaCellController:( SCMediaCellController* )sender
+{
+    self.imageView.image = nil;
+    self.textLabel.text = self->_imageLoader.item.displayName;
+
+    
+    [ self startLoading   ];
+    [ self setNeedsLayout ];
+}
+
+-(void)mediaCellController:( SCMediaCellController* )sender
+     didFinishLoadingImage:( UIImage* )image
+                   forItem:( SCItem* )mediaItem;
+{
+    [ self stopLoading ];
+    
+    self.imageView.image = image;
+    [ self setNeedsLayout ];
+}
+
+-(void)mediaCellController:( SCMediaCellController* )sender
+didFailLoadingImageForItem:( SCItem* )mediaItem
+                 withError:( NSError* )error
+{
+    [ self stopLoading ];
+    NSLog( @"[INFO] : image loading failed for item : |%@|. Error : |%@|", mediaItem, error );
 }
 
 @end
