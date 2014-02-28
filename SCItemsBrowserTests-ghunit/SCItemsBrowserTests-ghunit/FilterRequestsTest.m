@@ -7,8 +7,8 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 
 @implementation FilterRequestsTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
     SCItemSourcePOD* _defaultItemSource;
     
     
@@ -26,7 +26,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     [ super setUp ];
     
     self->_defaultItemSource = [ SCItemSourcePOD new ];
-    self->_legacyContext = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
+    self->_legacyContext = [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
                                                     login: @"sitecore\\admin"
                                                  password: @"b" ];
     {
@@ -38,7 +38,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
         self->_defaultItemSource.site     = self->_legacyContext.defaultSite    ;
         self->_defaultItemSource.language = self->_legacyContext.defaultLanguage;
     }
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_context = self->_legacyContext.extendedApiSession;
     
 
     
@@ -49,7 +49,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
         self->_rootItemRecord.displayName = @"home";
     }
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: self->_rootItemRecord
-                                                 apiContext: self->_context ];
+                                                 apiSession: self->_context ];
     
     
     self->_placeholderSettingsRecord = [ SCItemRecord new ];
@@ -59,7 +59,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
         self->_placeholderSettingsRecord.displayName = @"Layout";
     }
     self->_placeholderSettingsStub = [ [ SCItem alloc ] initWithRecord: self->_placeholderSettingsRecord
-                                                            apiContext: self->_context ];
+                                                            apiSession: self->_context ];
 }
 
 -(void)tearDown
@@ -86,7 +86,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     SIBWhiteListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBWhiteListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder" ] ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: foldersOnlyrequestBuilder ];
 
     GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );
@@ -137,7 +137,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     SIBWhiteListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBWhiteListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder", @"Node" ] ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: foldersOnlyrequestBuilder ];
     
     GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );
@@ -188,7 +188,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     SIBBlackListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBBlackListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder" ] ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: foldersOnlyrequestBuilder ];
     
     GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );
@@ -239,7 +239,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     SIBBlackListTemplateRequestBuilder* foldersOnlyrequestBuilder = [ [ SIBBlackListTemplateRequestBuilder alloc ] initWithTemplateNames: @[ @"Folder", @"Node" ] ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: foldersOnlyrequestBuilder ];
     
     GHAssertNotNil( self->_useCacheFm, @"items file manager initialization error" );

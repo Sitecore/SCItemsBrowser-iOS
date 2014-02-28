@@ -6,15 +6,15 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 
 @implementation MediaItemOperationTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
 }
 
 -(void)setUp
 {
     [ super setUp ];
 
-    self->_legacyContext = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
+    self->_legacyContext = [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
                                                     login: @"sitecore\\admin"
                                                  password: @"b" ];
     {
@@ -38,8 +38,8 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     __block SCItem * mediaItem   = nil;
     __block UIImage* actualImage = nil;
     __block NSError* actualError = nil;
-    
-    SCAsyncOp itemLoader = [ self->_legacyContext itemReaderForItemPath: @"/sitecore/Media Library/Images/test image" ];
+        
+    SCAsyncOp itemLoader = [ self->_legacyContext readItemOperationForItemPath: @"/sitecore/Media Library/Images/test image" ];
     
     [ self prepare: thisTest ];
     {

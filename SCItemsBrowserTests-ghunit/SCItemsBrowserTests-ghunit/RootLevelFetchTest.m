@@ -6,8 +6,8 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 
 @implementation RootLevelFetchTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
     SCItemSourcePOD* _defaultItemSource;
     
     SIBAllChildrenRequestBuilder* _allChildrenRequestBuilder;
@@ -24,7 +24,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     [ super setUp ];
 
     self->_defaultItemSource = [ SCItemSourcePOD new ];
-    self->_legacyContext = [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
+    self->_legacyContext = [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
                                                     login: @"sitecore\\admin"
                                                  password: @"b" ];
     {
@@ -36,13 +36,13 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
         self->_defaultItemSource.site     = self->_legacyContext.defaultSite    ;
         self->_defaultItemSource.language = self->_legacyContext.defaultLanguage;
     }
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_context = self->_legacyContext.extendedApiSession;
     
     
     self->_allChildrenRequestBuilder = [ SIBAllChildrenRequestBuilder new ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: self->_allChildrenRequestBuilder ];
     
     
@@ -53,7 +53,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
         self->_rootItemRecord.displayName = @"home";
     }
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: self->_rootItemRecord
-                                                 apiContext: self->_context ];
+                                                 apiSession: self->_context ];
 }
 
 -(void)tearDown
