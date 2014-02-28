@@ -20,7 +20,7 @@
 
 #pragma mark -
 #pragma mark Once assign properties
-@property ( nonatomic, strong ) SCExtendedApiSession* apiContext;
+@property ( nonatomic, strong ) SCExtendedApiSession* apiSession;
 @property ( nonatomic, strong ) SCItem*               rootItem  ;
 @property ( nonatomic, weak   ) IBOutlet id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder;
 

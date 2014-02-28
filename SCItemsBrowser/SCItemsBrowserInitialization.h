@@ -16,12 +16,12 @@
 /**
  @return The context to communicate with the Sitecore instance.
  */
--(SCExtendedApiSession*)apiContext;
+-(SCExtendedApiSession*)apiSession;
 
 /**
  @param apiContext The context to communicate with the Sitecore instance.
  */
--(void)setApiContext:( SCExtendedApiSession* )apiContext;
+-(void)setApiSession:( SCExtendedApiSession* )apiSession;
 
 
 /**

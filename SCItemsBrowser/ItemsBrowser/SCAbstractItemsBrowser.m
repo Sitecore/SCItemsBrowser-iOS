@@ -64,7 +64,7 @@
 
 -(SCItemsFileManager*)lazyItemsFileManager
 {
-    SCExtendedApiSession* context = self->_apiContext;
+    SCExtendedApiSession* context = self->_apiSession;
     id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder = self->_nextLevelRequestBuilder;
     
     NSParameterAssert( nil != context );
@@ -99,10 +99,10 @@
 
 #pragma mark -
 #pragma mark Once assign properties
--(void)setApiContext:( SCExtendedApiSession* )value
+-(void)setApiSession:( SCExtendedApiSession* )value
 {
-    NSParameterAssert( nil == self->_apiContext );
-    self->_apiContext = value;
+    NSParameterAssert( nil == self->_apiSession );
+    self->_apiSession = value;
 }
 
 -(void)setRootItem:( SCItem* )rootItem
@@ -137,7 +137,7 @@
 
 -(void)navigateToRootItem
 {
-    NSParameterAssert( nil != self->_apiContext );
+    NSParameterAssert( nil != self->_apiSession );
     NSParameterAssert( nil != self->_rootItem );
     
     [ self disposeLazyItemsFileManager ];
@@ -199,7 +199,7 @@
 {
 //    NSParameterAssert( nil != self->_collectionView  );
     NSParameterAssert( nil != self->_rootItem   );
-    NSParameterAssert( nil != self->_apiContext );
+    NSParameterAssert( nil != self->_apiSession );
     
     SCItemsFileManagerCallbacks* fmCallbacks = [ self newCallbacksForItemsFileManager ];
     

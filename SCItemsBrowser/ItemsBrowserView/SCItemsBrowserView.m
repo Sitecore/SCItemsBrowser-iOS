@@ -4,10 +4,10 @@
 
 #pragma mark -
 #pragma mark Once assign properties
--(void)setApiContext:( SCExtendedApiSession* )value
+-(void)setApiSession:(SCExtendedApiSession *)apiSession
 {
-    NSParameterAssert( nil == self->_apiContext );
-    self->_apiContext = value;
+    NSParameterAssert( nil == self->_apiSession );
+    self->_apiSession = apiSession;
 }
 
 -(void)setRootItem:(SCItem *)rootItem
