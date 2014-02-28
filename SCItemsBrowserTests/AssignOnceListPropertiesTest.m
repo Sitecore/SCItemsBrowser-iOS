@@ -57,12 +57,12 @@
     [ super tearDown ];
 }
 
--(void)testApiContextIsAssignedOnce
+-(void)testApiSessionIsAssignedOnce
 {
-    XCTAssertNil( self->_itemsBrowser.apiSession, @"nil ApiContext expected" );
+    XCTAssertNil( self->_itemsBrowser.apiSession, @"nil ApiSession expected" );
     
     self->_itemsBrowser.apiSession= self->_session;
-    XCTAssertTrue( self->_itemsBrowser.apiSession== self->_session, @"context pointer mismatch" );
+    XCTAssertTrue( self->_itemsBrowser.apiSession== self->_session, @"Session pointer mismatch" );
     
     XCTAssertThrows
     (

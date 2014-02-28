@@ -59,7 +59,7 @@
     [ super tearDown ];
 }
 
--(void)testLazyItemsFileManagerRequiresContext
+-(void)testLazyItemsFileManagerRequiresSession
 {
     XCTAssertThrows
     (

@@ -153,7 +153,7 @@
     XCTAssertTrue( 3 == result, @"number of rows mismatch" );
 }
 
--(void)testLazyItemsFileManagerRequiresContext
+-(void)testLazyItemsFileManagerRequiresSession
 {
     XCTAssertThrows
     (

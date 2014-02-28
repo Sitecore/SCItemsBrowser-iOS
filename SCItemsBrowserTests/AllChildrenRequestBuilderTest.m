@@ -94,7 +94,7 @@
     XCTAssertEqualObjects( request.language, self->_recordSource.language, @"language mismatch" );
 }
 
--(void)testAllChildrenBuilderTakesTheSourceFromTheContextIfItemHasNone
+-(void)testAllChildrenBuilderTakesTheSourceFromTheSessionIfItemHasNone
 {
     [ self->_rootItemRecord setItemSource: nil ];
 

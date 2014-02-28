@@ -122,7 +122,7 @@
    XCTAssertEqualObjects( request.language, self->_recordSource.language, @"language mismatch" );
 }
 
--(void)testWhiteListBuilderTakesTheSourceFromTheContextIfItemHasNone
+-(void)testWhiteListBuilderTakesTheSourceFromTheSessionIfItemHasNone
 {
     [ self->_rootItemRecord setItemSource: nil ];
     NSArray* templates = @[ @"x", @"y", @"z" ];
