@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>SCItemsBrowserProtocol Protocol Reference</title>
+		<title>SCAbstractItemsBrowser Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">SCItemsBrowserProtocol Protocol Reference</h1>
+				<h1 class="hideInXcode">SCAbstractItemsBrowser Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -35,6 +35,17 @@
 	
 	
 	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/apiContext">&nbsp;&nbsp;&nbsp;&nbsp;apiContext</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/nextLevelRequestBuilder">&nbsp;&nbsp;&nbsp;&nbsp;nextLevelRequestBuilder</option>
+	
+	<option value="//api/name/rootItem">&nbsp;&nbsp;&nbsp;&nbsp;rootItem</option>
 	
 	
 	
@@ -71,6 +82,18 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiContext">apiContext</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nextLevelRequestBuilder">nextLevelRequestBuilder</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rootItem">rootItem</a></span></li>
+	
+</ul></li>
+
 
 
 
@@ -90,7 +113,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="SCItemsBrowserProtocol Protocol Reference" name="top"></a>
+				<a title="SCAbstractItemsBrowser Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -99,18 +122,21 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">SCItemsBrowserProtocol Protocol Reference</h1>
+						<h1 class="title title-header">SCAbstractItemsBrowser Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
+	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/SCItemsBrowserInitialization.html">SCItemsBrowserInitialization</a><br /><a href="../Protocols/SCItemsBrowserProtocol.html">SCItemsBrowserProtocol</a></td>
+</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">SCItemsBrowserProtocol.h</td>
+	<td class="specification-value">SCAbstractItemsBrowser.h<br />SCAbstractItemsBrowser.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -120,7 +146,25 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This protocol describes data load methods that should be supported by each viewController.</p>
+						<p>An abstract items browser class. It is responsible for requesting levels asynchronously and notifying the <a href="#//api/name/delegate">delegate</a> about user&rsquo;s actions.</p>
+
+<p>In order to implement your own component, you should</p>
+
+<ol>
+<li>Subclass SCAbstractItemsBrowser</li>
+<li>Add a content view for items</li>
+<li>Implement the <a href="#//api/name/delegate">delegate</a> and datasource methods of the content view.</li>
+<li>Implement the methods of the <a href="../Protocols/SCAbstractItemsBrowserSubclassing.html">SCAbstractItemsBrowserSubclassing</a> protocol and trigger the content view within them</li>
+</ol>
+
+
+<p>For details, please consider the implementation of</p>
+
+<ul>
+<li><a href="../Classes/SCItemListBrowser.html">SCItemListBrowser</a></li>
+<li><a href="../Classes/SCItemGridBrowser.html">SCItemGridBrowser</a></li>
+</ul>
+
 					</div>
 					
 					
@@ -133,7 +177,45 @@
 						
 						
 						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/apiContext">&nbsp;&nbsp;apiContext</a></code>
+		<span class="tooltip"><p>The context to communicate with the Sitecore instance. It can be set from code only.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rootItem">&nbsp;&nbsp;rootItem</a></code>
+		<span class="tooltip"><p>An item to start browsing with. It can be set from code only.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nextLevelRequestBuilder">&nbsp;&nbsp;nextLevelRequestBuilder</a></code>
+		<span class="tooltip"><p>Set this object to perform filtration by template or any other criteria.<br/>
+It can be set from the Interface Builder. For default behaviour (getting all children of the item) please use an instance of the <a href="../Classes/SIBAllChildrenRequestBuilder.html">SIBAllChildrenRequestBuilder</a> class.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+		<span class="tooltip"><p>A delegate that gets notifications about levels loading.<br/>
+It can be set from the Interface Builder.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
 						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
@@ -142,21 +224,21 @@
 		<span class="tooltip"><p>Reloads items using default ApiContext settings.</p></span>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
+	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/forceRefreshData">&ndash;&nbsp;forceRefreshData</a></code>
 		<span class="tooltip"><p>Reloads items by activating the SCItemReaderRequestIngnoreCache flag.</p></span>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
+	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/navigateToRootItem">&ndash;&nbsp;navigateToRootItem</a></code>
 		<span class="tooltip"><p>Loads child items of the root item using default ApiContext settings.</p></span>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
+	
 </li>
 						</ul>
 						
@@ -165,6 +247,158 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/apiContext" title="apiContext"></a>
+	<h3 class="subsubtitle method-title">apiContext</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The context to communicate with the Sitecore instance. It can be set from code only.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) SCExtendedApiContext *apiContext</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCAbstractItemsBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A delegate that gets notifications about levels loading.<br/>
+It can be set from the Interface Builder.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) IBOutlet id&lt;SCItemsBrowserDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCAbstractItemsBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nextLevelRequestBuilder" title="nextLevelRequestBuilder"></a>
+	<h3 class="subsubtitle method-title">nextLevelRequestBuilder</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set this object to perform filtration by template or any other criteria.<br/>
+It can be set from the Interface Builder. For default behaviour (getting all children of the item) please use an instance of the <a href="../Classes/SIBAllChildrenRequestBuilder.html">SIBAllChildrenRequestBuilder</a> class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) IBOutlet id&lt;SCItemsLevelRequestBuilder&gt; nextLevelRequestBuilder</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCAbstractItemsBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rootItem" title="rootItem"></a>
+	<h3 class="subsubtitle method-title">rootItem</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An item to start browsing with. It can be set from code only.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) SCItem *rootItem</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SCAbstractItemsBrowser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
