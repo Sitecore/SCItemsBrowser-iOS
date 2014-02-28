@@ -19,22 +19,22 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
 @implementation GBViewController
 {
-    SCApiContext* _legacyApiContext;
-    SCExtendedApiContext* _apiContext;
+    SCApiSession* _legacyApiSession;
+    SCExtendedApiSession* _apiSession;
 }
 
 -(void)setupContext
 {
-    self->_legacyApiContext =
-    [ SCApiContext contextWithHost: @"http://mobiledev1ua1.dk.sitecore.net:7200"
+    self->_legacyApiSession =
+    [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:7200"
                              login: @"sitecore\\admin"
                           password: @"b"
                            version: SCWebApiMaxSupportedVersion ];
     
-    self->_legacyApiContext.defaultDatabase = @"master";
-    self->_legacyApiContext.defaultSite = @"/sitecore/shell";
+    self->_legacyApiSession.defaultDatabase = @"master";
+    self->_legacyApiSession.defaultSite = @"/sitecore/shell";
     
-    self->_apiContext = self->_legacyApiContext.extendedApiContext;
+    self->_apiSession = self->_legacyApiSession.extendedApiSession;
 }
 
 -(void)setupLayout
@@ -62,12 +62,12 @@ forState: UIControlStateNormal ];
     NSParameterAssert( nil != self.itemsBrowserController );
 
     [ self setupContext ];
-    self.itemsBrowserController.apiContext = self->_apiContext;
+    self.itemsBrowserController.apiSession = self->_apiSession;
     
     
     SCExtendedAsyncOp rootItemLoader =
-    [ self->_apiContext itemReaderForItemPath: ROOT_ITEM_PATH
-                                   itemSource: nil ];
+    [ self->_apiSession readItemOperationForItemPath: ROOT_ITEM_PATH
+                                          itemSource: nil ];
     
     [ self startLoading ];
     __weak GBViewController* weakSelf = self;
