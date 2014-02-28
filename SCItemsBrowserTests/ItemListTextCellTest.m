@@ -13,8 +13,8 @@
 
 @implementation ItemListTextCellTest
 {
-    SCExtendedApiSession* _context;
-    SCApiSession        * _legacyContext;
+    SCExtendedApiSession* _session;
+    SCApiSession        * _legacySession;
     
     SCItemRecord*  _rootItemRecord;
     SCItem* _rootItemStub;
@@ -25,12 +25,12 @@
 
 -(void)setUp
 {
-    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_legacySession = [ SCApiSession sessionWithHost: @"www.StubHost.net" ];
+    self->_session = self->_legacySession.extendedApiSession;
     {
-        self->_context.defaultDatabase = @"core";
-        self->_context.defaultSite     = nil    ;
-        self->_context.defaultLanguage = @"ru"  ;
+        self->_session.defaultDatabase = @"core";
+        self->_session.defaultSite     = nil    ;
+        self->_session.defaultLanguage = @"ru"  ;
     }
     
     self->_recordSource = [ SCItemSourcePOD new ];
@@ -42,8 +42,8 @@
     
     self->_rootItemRecord = [ SCItemRecord new ];
     {
-        self->_rootItemRecord.apiSession= self->_context;
-        self->_rootItemRecord.mainApiContext = self->_legacyContext;
+        self->_rootItemRecord.apiSession= self->_session;
+        self->_rootItemRecord.mainApiSession = self->_legacySession;
         
         self->_rootItemRecord.path = @"/sitecore/content/home";
         self->_rootItemRecord.itemId = @"{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}";
@@ -52,7 +52,7 @@
         [ self->_rootItemRecord setItemSource: self->_recordSource ];
     }
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: self->_rootItemRecord
-                                                 apiContext: self->_context ];
+                                                 apiSession: self->_session ];
     
     
     self->_cell = [ [ SCItemListTextCell alloc ] initWithStyle: UITableViewCellStyleDefault
@@ -61,8 +61,8 @@
 
 -(void)tearDown
 {
-    self->_legacyContext  = nil;
-    self->_context        = nil;
+    self->_legacySession  = nil;
+    self->_session        = nil;
     
     self->_rootItemStub   = nil;
     self->_rootItemRecord = nil;

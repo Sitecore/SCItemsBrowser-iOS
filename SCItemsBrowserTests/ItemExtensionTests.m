@@ -16,8 +16,8 @@
 
 @implementation ItemExtensionTests
 {
-    SCExtendedApiSession* _context          ;
-    SCApiSession        * _legacyContext    ;
+    SCExtendedApiSession* _session          ;
+    SCApiSession        * _legacySession    ;
     
     SCItemSourcePOD* _recordSource;
     
@@ -40,8 +40,8 @@
     
     SCItemRecord* newRecord  = nil;
     
-    self->_legacyContext = [ SCApiSession contextWithHost: @"stub-host.net" ];
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_legacySession = [ SCApiSession sessionWithHost: @"stub-host.net" ];
+    self->_session = self->_legacySession.extendedApiSession;
 
     SCItemSourcePOD* recordSource = [ SCItemSourcePOD new ];
     {
@@ -58,14 +58,14 @@
         newRecord.path         = @"/sitecore/content/home";
         newRecord.itemTemplate = @"common/folder"         ;
         
-        newRecord.apiSession    = self->_context      ;
-        newRecord.mainApiContext = self->_legacyContext;
+        newRecord.apiSession    = self->_session      ;
+        newRecord.mainApiSession = self->_legacySession;
         
         newRecord.itemSource = recordSource;
     }
     self->_rootRecord = newRecord;
     self->_rootItem   = [ [ SCItem alloc ] initWithRecord: self->_rootRecord
-                                               apiContext: self->_context ];
+                                               apiSession: self->_session ];
     
     
     newRecord = [ SCItemRecord new ];
@@ -74,14 +74,14 @@
         newRecord.path         = @"/sitecore/media library/grumpy cat"  ;
         newRecord.itemTemplate = @"system/media/unversioned/image"      ;
         
-        newRecord.apiSession    = self->_context      ;
-        newRecord.mainApiContext = self->_legacyContext;
+        newRecord.apiSession    = self->_session      ;
+        newRecord.mainApiSession = self->_legacySession;
         
         newRecord.itemSource = recordSource;
     }
     self->_mediaImageRecord = newRecord;
     self->_mediaImageItem   = [ [ SCItem alloc ] initWithRecord: self->_mediaImageRecord
-                                                     apiContext: self->_context ];
+                                                     apiSession: self->_session ];
 
     
     newRecord = [ SCItemRecord new ];
@@ -90,15 +90,15 @@
         newRecord.path         = @"/sitecore/content/home/facepalm.jpg";
         newRecord.itemTemplate = @"system/media/unversioned/image"     ;
         
-        newRecord.apiSession    = self->_context      ;
-        newRecord.mainApiContext = self->_legacyContext;
+        newRecord.apiSession    = self->_session      ;
+        newRecord.mainApiSession = self->_legacySession;
         
         newRecord.itemSource = recordSource;
     }
     self->_mediaRecordOutsideLibrary = newRecord;
     self->_mediaItemOutsideLibrary   =
     [ [ SCItem alloc ] initWithRecord: self->_mediaRecordOutsideLibrary
-                           apiContext: self->_context ];
+                           apiSession: self->_session ];
     
     
     newRecord = [ SCItemRecord new ];
@@ -107,22 +107,22 @@
         newRecord.path         = @"/sitecore/media library/logo icons";
         newRecord.itemTemplate = @"COMMON/FOLDER"                     ;
         
-        newRecord.apiSession    = self->_context      ;
-        newRecord.mainApiContext = self->_legacyContext;
+        newRecord.apiSession    = self->_session      ;
+        newRecord.mainApiSession = self->_legacySession;
         
         newRecord.itemSource = recordSource;        
     }
     self->_folderRecordInsideLibrary = newRecord;
     self->_folderItemInsideLibrary   =
     [ [ SCItem alloc ] initWithRecord: self->_folderRecordInsideLibrary
-                           apiContext: self->_context ];
+                           apiSession: self->_session ];
     
 }
 
 -(void)tearDown
 {
-    self->_context                    = nil;
-    self->_legacyContext              = nil;
+    self->_session                    = nil;
+    self->_legacySession              = nil;
     self->_recordSource               = nil;
     
     self->_rootItem                   = nil;

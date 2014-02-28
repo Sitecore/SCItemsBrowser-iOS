@@ -26,8 +26,8 @@
 @property ( nonatomic, weak ) SCItem* itemRef;
 @property ( nonatomic, weak, readonly ) SCItem* parent;
 @property ( nonatomic, weak, readonly ) SCItem* item;
-@property ( nonatomic ) SCExtendedApiSession* apiContext;
-@property ( nonatomic ) SCApiSession* mainApiContext;
+@property ( nonatomic ) SCExtendedApiSession* apiSession;
+@property ( nonatomic ) SCApiSession* mainApiSession;
 
 +(instancetype)itemRecord;
 +(instancetype)rootRecord;

@@ -14,8 +14,8 @@
 
 @implementation ItemsFileManagerTest
 {
-    SCExtendedApiSession* _context;
-    SCApiSession* _legacyContext;
+    SCExtendedApiSession* _session;
+    SCApiSession* _legacySession;
     
     StubRequestBuilder* _useCacheRequestBuilderStub;
     SCItem* _rootItemStub;
@@ -28,22 +28,22 @@
 {
     [ super setUp ];
 
-    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_legacySession = [ SCApiSession sessionWithHost: @"www.StubHost.net" ];
+    self->_session = self->_legacySession.extendedApiSession;
     self->_useCacheRequestBuilderStub = [ StubRequestBuilder new ];
     
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: nil
-                                                 apiContext: self->_context ];
+                                                 apiSession: self->_session ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_session
                                   levelRequestBuilder: self->_useCacheRequestBuilderStub ];
 }
 
 -(void)tearDown
 {
-    self->_legacyContext = nil;
-    self->_context = nil;
+    self->_legacySession = nil;
+    self->_session = nil;
     self->_useCacheRequestBuilderStub = nil;
     self->_rootItemStub = nil;
     self->_useCacheFm = nil;
@@ -67,14 +67,14 @@
     
     XCTAssertThrows
     (
-     [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
+     [ [ SCItemsFileManager alloc ] initWithApiSession: self->_session
                                    levelRequestBuilder: nil ],
      @"assert expected"
     );
     
     XCTAssertNoThrow
     (
-       [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
+       [ [ SCItemsFileManager alloc ] initWithApiSession: self->_session
                                      levelRequestBuilder: self->_useCacheRequestBuilderStub ],
         @"unexpected assert"
     );

@@ -35,13 +35,13 @@
 -(void)testLevelResponseHoldsParentAndContentItems
 {
     SCItem* mockRootItem = [ [ SCItem alloc ] initWithRecord: nil
-                                                  apiContext: nil ];
+                                                  apiSession: nil ];
     
     SCLevelUpItem* levelUp = [ SCLevelUpItem new ];
     SCItem* mockFirst = [ [ SCItem alloc ] initWithRecord: nil
-                                                  apiContext: nil ];
+                                                  apiSession: nil ];
     SCItem* mockSecond = [ [ SCItem alloc ] initWithRecord: nil
-                                               apiContext: nil ];
+                                               apiSession: nil ];
     
     NSArray* levelContent = @[ levelUp, mockFirst, mockSecond ];
     

@@ -15,8 +15,8 @@
 
 @implementation GridLazyFileManagerTest
 {
-    SCExtendedApiSession* _context;
-    SCApiSession* _legacyContext;
+    SCExtendedApiSession* _session;
+    SCApiSession* _legacySession;
     
     SCItem* _rootItemStub;
     StubGridModeTheme* _GridModeThemeStub;
@@ -35,8 +35,8 @@
     
     self->_itemsBrowser = [ SCItemGridBrowser new ];
     
-    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_legacySession = [ SCApiSession sessionWithHost: @"www.StubHost.net" ];
+    self->_session = self->_legacySession.extendedApiSession;
     
     self->_GridModeThemeStub  = [ StubGridModeTheme        new ];
     self->_gridModeThemeStub  = [ StubGridModeTheme        new ];
@@ -45,14 +45,14 @@
     self->_requestBuilderStub = [ StubRequestBuilder new ];
     
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: nil
-                                                 apiContext: self->_context ];
+                                                 apiSession: self->_session ];
 }
 
 -(void)tearDown
 {
     self->_itemsBrowser  = nil;
-    self->_context       = nil;
-    self->_legacyContext = nil;
+    self->_session       = nil;
+    self->_legacySession = nil;
     self->_rootItemStub  = nil;
     self->_delegateStub  = nil;
     
@@ -68,7 +68,7 @@
      );
     
     
-    self->_itemsBrowser.apiSession= self->_context;
+    self->_itemsBrowser.apiSession= self->_session;
     XCTAssertThrows
     (
      [ self->_itemsBrowser lazyItemsFileManager ],
@@ -97,7 +97,7 @@
      );
     
     
-    self->_itemsBrowser.apiSession= self->_context;
+    self->_itemsBrowser.apiSession= self->_session;
     SCItemsFileManager* fm = [ self->_itemsBrowser lazyItemsFileManager ];
     XCTAssertNotNil( fm, @"items file manager not created" );
 }
@@ -105,7 +105,7 @@
 -(void)testLazyFileManagerReturnsSameThing
 {
     self->_itemsBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
-    self->_itemsBrowser.apiSession= self->_context;
+    self->_itemsBrowser.apiSession= self->_session;
     
     SCItemsFileManager* first  = [ self->_itemsBrowser lazyItemsFileManager ];
     SCItemsFileManager* second = [ self->_itemsBrowser lazyItemsFileManager ];
@@ -116,7 +116,7 @@
 -(void)testDisposeLazyFileManagerCleansObjectAndOnceToken
 {
     self->_itemsBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
-    self->_itemsBrowser.apiSession= self->_context;
+    self->_itemsBrowser.apiSession= self->_session;
     
     SCItemsFileManager* first  = [ self->_itemsBrowser lazyItemsFileManager ];
     XCTAssertNotNil( first, @"fm not created" );

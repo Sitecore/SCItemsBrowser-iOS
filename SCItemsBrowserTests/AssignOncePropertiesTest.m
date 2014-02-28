@@ -13,8 +13,8 @@
 
 @implementation AssignOncePropertiesTest
 {
-    SCExtendedApiSession* _context;
-    SCApiSession* _legacyContext;
+    SCExtendedApiSession* _session;
+    SCApiSession* _legacySession;
     
     SCItem* _rootItemStub;
     StubListModeTheme* _listModeThemeStub;
@@ -35,8 +35,8 @@
     self->_stubRect = CGRectMake( 15.f, 15.f, 320.f, 400.f );
     self->_itemsBrowser = [ [ SCItemsBrowserView alloc ] initWithFrame: self->_stubRect ];
     
-    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
-    self->_context = self->_legacyContext.extendedApiContext;
+    self->_legacySession = [ SCApiSession sessionWithHost: @"www.StubHost.net" ];
+    self->_session = self->_legacySession.extendedApiSession;
     
     self->_listModeThemeStub = [ StubListModeTheme        new ];
     self->_gridModeThemeStub = [ StubGridModeTheme        new ];
@@ -45,14 +45,14 @@
     self->_requestBuilderStub = [ StubRequestBuilder new ];
     
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: nil
-                                                 apiContext: self->_context ];
+                                                 apiSession: self->_session ];
 }
 
 -(void)tearDown
 {
     self->_itemsBrowser  = nil;
-    self->_context       = nil;
-    self->_legacyContext = nil;
+    self->_session       = nil;
+    self->_legacySession = nil;
     self->_rootItemStub  = nil;
     self->_delegateStub  = nil;
 
@@ -63,18 +63,18 @@
 {
     XCTAssertNil( self->_itemsBrowser.apiSession, @"nil ApiContext expected" );
     
-    self->_itemsBrowser.apiSession= self->_context;
-    XCTAssertTrue( self->_itemsBrowser.apiSession== self->_context, @"context pointer mismatch" );
+    self->_itemsBrowser.apiSession= self->_session;
+    XCTAssertTrue( self->_itemsBrowser.apiSession== self->_session, @"context pointer mismatch" );
     
     XCTAssertThrows
     (
-        [ self->_itemsBrowser setApiContext: self->_context ],
+        [ self->_itemsBrowser setApiSession: self->_session ],
         @"assign is allowed only once"
     );
 
     XCTAssertThrows
     (
-     [ self->_itemsBrowser setApiContext: nil ],
+     [ self->_itemsBrowser setApiSession: nil ],
      @"assign is allowed only once"
     );
 }
