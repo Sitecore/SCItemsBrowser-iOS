@@ -24,7 +24,7 @@
 
 
 /**
- The context to communicate with the Sitecore instance. It can be set from code only.
+ The session to communicate with the Sitecore instance. It can be set from code only.
  */
 @property ( nonatomic, strong ) SCExtendedApiSession* apiSession;
 

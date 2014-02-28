@@ -5,7 +5,7 @@
 
 @interface SCItem (PrivateMethods)
 
--(instancetype)initWithRecord:( SCItemRecord* )record_
-                   apiSession:( SCExtendedApiSession* )apiContext_;
+-(instancetype)initWithRecord:( SCItemRecord* )record
+                   apiSession:( SCExtendedApiSession* )apiSession;
 
 @end

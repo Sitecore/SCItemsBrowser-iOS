@@ -7,7 +7,7 @@
 @protocol SCItemsBrowserProtocol <NSObject>
 
 /**
- Reloads items using default ApiContext settings.
+ Reloads items using default settings of SCApiSession.
  */
 -(void)reloadData;
 
@@ -18,7 +18,7 @@
 
 
 /**
- Loads child items of the root item using default ApiContext settings.
+ Loads child items of the root item using default settings of SCApiSession.
  */
 -(void)navigateToRootItem;
 

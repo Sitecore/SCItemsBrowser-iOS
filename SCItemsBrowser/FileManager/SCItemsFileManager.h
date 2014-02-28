@@ -10,7 +10,7 @@
 
 @interface SCItemsFileManager : NSObject
 
--(instancetype)initWithApiSession:( SCExtendedApiSession* )apiContext
+-(instancetype)initWithApiSession:( SCExtendedApiSession* )apiSession
               levelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder;
 
 -(BOOL)isRootLevelLoaded;

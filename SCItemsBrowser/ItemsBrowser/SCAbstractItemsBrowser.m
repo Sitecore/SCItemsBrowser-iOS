@@ -64,15 +64,15 @@
 
 -(SCItemsFileManager*)lazyItemsFileManager
 {
-    SCExtendedApiSession* context = self->_apiSession;
+    SCExtendedApiSession* session = self->_apiSession;
     id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder = self->_nextLevelRequestBuilder;
     
-    NSParameterAssert( nil != context );
+    NSParameterAssert( nil != session );
     NSParameterAssert( nil != nextLevelRequestBuilder );
     
     // @adk : in case asserts are disabled or ignored
     // Returning nil to avoid exceptions within dispatch_once()
-    if ( nil == context || nil == nextLevelRequestBuilder )
+    if ( nil == session || nil == nextLevelRequestBuilder )
     {
         return nil;
     }
@@ -80,7 +80,7 @@
     dispatch_once(&self->_onceItemsFileManagerToken, ^void()
     {
       self->_itemsFileManager =
-      [ [ SCItemsFileManager alloc ] initWithApiSession: context
+      [ [ SCItemsFileManager alloc ] initWithApiSession: session
                                     levelRequestBuilder: nextLevelRequestBuilder ];
     });
     

@@ -73,7 +73,7 @@
 
 
 /**
- @return Item source if available. Default settings of the corresponding context otherwise.
+ @return Item source if available. Default settings of the corresponding session otherwise.
  */
 -(SCItemSourcePOD*)recordItemSource;
 

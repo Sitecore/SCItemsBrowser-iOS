@@ -19,7 +19,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
 
 @implementation SCItemsFileManager
 {
-    SCExtendedApiSession*          _apiContext;
+    SCExtendedApiSession*          _apiSession;
     id<SCItemsLevelRequestBuilder> _nextLevelRequestBuilder;
 }
 
@@ -37,10 +37,10 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
     return nil;
 }
 
--(instancetype)initWithApiSession:( SCExtendedApiSession* )apiContext
+-(instancetype)initWithApiSession:( SCExtendedApiSession* )apiSession
               levelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder
 {
-    NSParameterAssert( nil != apiContext );
+    NSParameterAssert( nil != apiSession );
     NSParameterAssert( nil != nextLevelRequestBuilder );
     
     self = [ super init ];
@@ -50,7 +50,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
         return nil;
     }
     
-    self->_apiContext = apiContext;
+    self->_apiSession = apiSession;
     self->_nextLevelRequestBuilder = nextLevelRequestBuilder;
     self->_levelsHistory = [ SCLevelsHistory new ];
     
@@ -175,7 +175,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
 {
     NSParameterAssert( nil != item );
     
-    NSParameterAssert( nil != self->_apiContext );
+    NSParameterAssert( nil != self->_apiSession );
     NSParameterAssert( nil != self->_nextLevelRequestBuilder );
 
     SCReadItemsRequest* request = [ self->_nextLevelRequestBuilder itemsBrowser: self
@@ -240,7 +240,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
 // Do not inline
 -(SCExtendedAsyncOp)levelLoaderFromRequest:( SCReadItemsRequest* )request
 {
-    return [ self->_apiContext readItemsOperationWithRequest: request ];
+    return [ self->_apiSession readItemsOperationWithRequest: request ];
 }
 
 @end

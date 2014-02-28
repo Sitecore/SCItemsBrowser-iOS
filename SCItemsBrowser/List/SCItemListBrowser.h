@@ -30,7 +30,7 @@
  - Accessory views
  
 
- It is not possible to modify its properties once initialized. If you need to change the root item or api context, a new controller must be created.
+ It is not possible to modify its properties once initialized. If you need to change the root item or api session, a new controller must be created.
  */
 @interface SCItemListBrowser : SCAbstractItemsBrowser<SCAbstractItemsBrowserSubclassing, UITableViewDataSource, UITableViewDelegate>
 
