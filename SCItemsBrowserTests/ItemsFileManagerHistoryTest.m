@@ -19,8 +19,8 @@
 
 @implementation ItemsFileManagerHistoryTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
     
     StubRequestBuilder* _useCacheRequestBuilderStub;
     SCItem* _rootItemStub;
@@ -36,17 +36,17 @@
 {
     [ super setUp ];
     
-    self->_legacyContext = [ SCApiContext contextWithHost: @"www.StubHost.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     self->_useCacheRequestBuilderStub = [ StubRequestBuilder new ];
-    self->_useCacheRequestBuilderStub.requestStub = [ SCItemsReaderRequest new ];
+    self->_useCacheRequestBuilderStub.requestStub = [ SCReadItemsRequest new ];
     
     self->_rootItemStub = [ [ SCItem alloc ] initWithRecord: nil
                                                  apiContext: self->_context ];
 
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: self->_useCacheRequestBuilderStub ];
     
     self->_levelsHistory = [ self->_useCacheFm levelsHistory ];
@@ -77,7 +77,7 @@
         };
     }
     
-    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
     {
         SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
             SCAsyncOperationProgressHandler progressCallback,
@@ -165,7 +165,7 @@
         };
     }
     
-    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
     {
         SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
            SCAsyncOperationProgressHandler progressCallback,
@@ -239,7 +239,7 @@
         };
     }
     
-    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
     {
         SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
                                                            SCAsyncOperationProgressHandler progressCallback,
@@ -302,7 +302,7 @@
         };
     }
     
-    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
     {
         SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
                                                            SCAsyncOperationProgressHandler progressCallback,
@@ -393,7 +393,7 @@
         };
     }
     
-    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+    LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
     {
         SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
            SCAsyncOperationProgressHandler progressCallback,
@@ -466,7 +466,7 @@
       };
    }
    
-   LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+   LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
    {
       SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
                                                          SCAsyncOperationProgressHandler progressCallback,
@@ -549,7 +549,7 @@
       };
    }
    
-   LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCItemsReaderRequest* request )
+   LevelOperationFromRequestBuilder hookImpl = ^SCExtendedAsyncOp( SCReadItemsRequest* request )
    {
       SCExtendedAsyncOp result = ^SCCancelAsyncOperation(
                                                          SCAsyncOperationProgressHandler progressCallback,

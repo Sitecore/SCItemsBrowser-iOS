@@ -25,7 +25,7 @@
 
 -(id)initWithStyle:( UITableViewCellStyle  )style
    reuseIdentifier:( NSString            * )reuseIdentifier
-       imageParams:( SCFieldImageParams  * )imageResizingOptions
+       imageParams:( SCDownloadMediaOptions  * )imageResizingOptions
 {
     self = [ super initWithStyle: style
                  reuseIdentifier: reuseIdentifier ];

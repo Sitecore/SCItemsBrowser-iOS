@@ -13,8 +13,8 @@
 
 @implementation AssignOnceListPropertiesTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
     
     SCItem* _rootItemStub;
     StubListModeTheme* _listModeThemeStub;
@@ -33,7 +33,7 @@
     
     self->_itemsBrowser = [ SCItemListBrowser new ];
     
-    self->_legacyContext = [ SCApiContext contextWithHost: @"www.StubHost.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     
     self->_listModeThemeStub  = [ StubListModeTheme        new ];
@@ -59,10 +59,10 @@
 
 -(void)testApiContextIsAssignedOnce
 {
-    XCTAssertNil( self->_itemsBrowser.apiContext, @"nil ApiContext expected" );
+    XCTAssertNil( self->_itemsBrowser.apiSession, @"nil ApiContext expected" );
     
-    self->_itemsBrowser.apiContext = self->_context;
-    XCTAssertTrue( self->_itemsBrowser.apiContext == self->_context, @"context pointer mismatch" );
+    self->_itemsBrowser.apiSession= self->_context;
+    XCTAssertTrue( self->_itemsBrowser.apiSession== self->_context, @"context pointer mismatch" );
     
     XCTAssertThrows
     (

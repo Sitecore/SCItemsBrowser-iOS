@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <SCItemsBrowser/SCItemsBrowser.h>
 
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 @interface StubRequestBuilder : NSObject<SCItemsLevelRequestBuilder>
 
-@property ( nonatomic ) SCItemsReaderRequest* requestStub;
+@property ( nonatomic ) SCReadItemsRequest* requestStub;
 
 @end

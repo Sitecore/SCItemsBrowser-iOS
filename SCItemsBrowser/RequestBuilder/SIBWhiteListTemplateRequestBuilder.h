@@ -35,7 +35,7 @@
  
  @return A request that defines the scope of child items.
  */
--(SCItemsReaderRequest*)itemsBrowser:( id )sender
+-(SCReadItemsRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item;
 
 @end

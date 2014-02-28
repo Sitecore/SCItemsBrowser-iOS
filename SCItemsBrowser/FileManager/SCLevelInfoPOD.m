@@ -9,7 +9,7 @@
     return nil;
 }
 
--(instancetype)initWithLevelRequest:( SCItemsReaderRequest* )levelRequest
+-(instancetype)initWithLevelRequest:( SCReadItemsRequest* )levelRequest
                             forItem:( SCItem* )item
 {
     self = [ super init ];

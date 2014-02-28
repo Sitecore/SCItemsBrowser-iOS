@@ -5,7 +5,7 @@
 @implementation SIBAllChildrenRequestBuilder
 
 -(void)setSourceFromItem:( SCItem* )item
-               toRequest:( SCItemsReaderRequest* )outRequest
+               toRequest:( SCReadItemsRequest* )outRequest
 {
     SCItemSourcePOD* src = [ item recordItemSource ];
     {
@@ -15,10 +15,10 @@
     }
 }
 
--(SCItemsReaderRequest*)itemsBrowser:( id )sender
+-(SCReadItemsRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item
 {
-    SCItemsReaderRequest* result = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* result = [ SCReadItemsRequest new ];
     {
         result.requestType = SCItemReaderRequestItemPath;
         result.request     = item.path                  ;

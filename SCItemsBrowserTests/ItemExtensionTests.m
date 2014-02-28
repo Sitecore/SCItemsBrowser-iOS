@@ -16,8 +16,8 @@
 
 @implementation ItemExtensionTests
 {
-    SCExtendedApiContext* _context          ;
-    SCApiContext        * _legacyContext    ;
+    SCExtendedApiSession* _context          ;
+    SCApiSession        * _legacyContext    ;
     
     SCItemSourcePOD* _recordSource;
     
@@ -40,7 +40,7 @@
     
     SCItemRecord* newRecord  = nil;
     
-    self->_legacyContext = [ SCApiContext contextWithHost: @"stub-host.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"stub-host.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
 
     SCItemSourcePOD* recordSource = [ SCItemSourcePOD new ];
@@ -58,7 +58,7 @@
         newRecord.path         = @"/sitecore/content/home";
         newRecord.itemTemplate = @"common/folder"         ;
         
-        newRecord.apiContext     = self->_context      ;
+        newRecord.apiSession    = self->_context      ;
         newRecord.mainApiContext = self->_legacyContext;
         
         newRecord.itemSource = recordSource;
@@ -74,7 +74,7 @@
         newRecord.path         = @"/sitecore/media library/grumpy cat"  ;
         newRecord.itemTemplate = @"system/media/unversioned/image"      ;
         
-        newRecord.apiContext     = self->_context      ;
+        newRecord.apiSession    = self->_context      ;
         newRecord.mainApiContext = self->_legacyContext;
         
         newRecord.itemSource = recordSource;
@@ -90,7 +90,7 @@
         newRecord.path         = @"/sitecore/content/home/facepalm.jpg";
         newRecord.itemTemplate = @"system/media/unversioned/image"     ;
         
-        newRecord.apiContext     = self->_context      ;
+        newRecord.apiSession    = self->_context      ;
         newRecord.mainApiContext = self->_legacyContext;
         
         newRecord.itemSource = recordSource;
@@ -107,7 +107,7 @@
         newRecord.path         = @"/sitecore/media library/logo icons";
         newRecord.itemTemplate = @"COMMON/FOLDER"                     ;
         
-        newRecord.apiContext     = self->_context      ;
+        newRecord.apiSession    = self->_context      ;
         newRecord.mainApiContext = self->_legacyContext;
         
         newRecord.itemSource = recordSource;        
@@ -179,7 +179,7 @@
 
 -(void)testItemsOutsideMediaLibraryHaveNoMediaLoader
 {
-    SCFieldImageParams* resizingOptions = [ SCFieldImageParams new ];
+    SCDownloadMediaOptions* resizingOptions = [ SCDownloadMediaOptions new ];
     
     XCTAssertNil   ( [ self->_rootItem                mediaLoaderWithOptions: resizingOptions ], @"_rootItem       misamatch"          );
     XCTAssertNotNil( [ self->_mediaImageItem          mediaLoaderWithOptions: resizingOptions ], @"_mediaImageItem misamatch"          );
@@ -190,10 +190,10 @@
 -(void)testItemsLoaderSetsItemSourceToResizingParams
 {
     __block NSString          * actualMediaPath   = nil;
-    __block SCFieldImageParams* actualImageParams = nil;
+    __block SCDownloadMediaOptions* actualImageParams = nil;
     
     
-    ImageLoaderBuilder hookImpl = ^SCExtendedAsyncOp( SCExtendedApiContext* blockSelf, NSString* mediaPath, SCFieldImageParams* options )
+    ImageLoaderBuilder hookImpl = ^SCExtendedAsyncOp( SCExtendedApiSession* blockSelf, NSString* mediaPath, SCDownloadMediaOptions* options )
     {
         // runtime swaps args
         

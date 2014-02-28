@@ -14,8 +14,8 @@
 
 @implementation ItemsFileManagerTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
     
     StubRequestBuilder* _useCacheRequestBuilderStub;
     SCItem* _rootItemStub;
@@ -28,7 +28,7 @@
 {
     [ super setUp ];
 
-    self->_legacyContext = [ SCApiContext contextWithHost: @"www.StubHost.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     self->_useCacheRequestBuilderStub = [ StubRequestBuilder new ];
     
@@ -36,7 +36,7 @@
                                                  apiContext: self->_context ];
     
     self->_useCacheFm =
-    [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+    [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                   levelRequestBuilder: self->_useCacheRequestBuilderStub ];
 }
 
@@ -60,21 +60,21 @@
 {
     XCTAssertThrows
     (
-        [ [ SCItemsFileManager alloc ] initWithApiContext: nil
+        [ [ SCItemsFileManager alloc ] initWithApiSession: nil
                                       levelRequestBuilder: self->_useCacheRequestBuilderStub ],
         @"assert expected"
     );
     
     XCTAssertThrows
     (
-     [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+     [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                    levelRequestBuilder: nil ],
      @"assert expected"
     );
     
     XCTAssertNoThrow
     (
-       [ [ SCItemsFileManager alloc ] initWithApiContext: self->_context
+       [ [ SCItemsFileManager alloc ] initWithApiSession: self->_context
                                      levelRequestBuilder: self->_useCacheRequestBuilderStub ],
         @"unexpected assert"
     );
@@ -102,8 +102,8 @@
 
 -(void)testRequestBuilderDoesNotModifyFlags
 {
-    SCItemsReaderRequest* actualRequest = nil;
-    SCItemsReaderRequest* requestStub = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* actualRequest = nil;
+    SCReadItemsRequest* requestStub = [ SCReadItemsRequest new ];
     
     {
         SCItemsFileManager* fm = self->_useCacheFm;
@@ -158,8 +158,8 @@
 
 -(void)testRequestBuilderCanModifyIgnoreCacheFlagOnly
 {
-    SCItemsReaderRequest* actualRequest = nil;
-    SCItemsReaderRequest* requestStub = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* actualRequest = nil;
+    SCReadItemsRequest* requestStub = [ SCReadItemsRequest new ];
     
     {
         SCItemsFileManager* fm = self->_useCacheFm;

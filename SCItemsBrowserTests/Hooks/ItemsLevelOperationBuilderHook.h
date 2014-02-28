@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-typedef SCExtendedAsyncOp (^LevelOperationFromRequestBuilder)( SCItemsReaderRequest* request );
+typedef SCExtendedAsyncOp (^LevelOperationFromRequestBuilder)( SCReadItemsRequest* request );
 
 @interface ItemsLevelOperationBuilderHook : NSObject
 

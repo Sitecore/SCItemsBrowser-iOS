@@ -7,7 +7,7 @@
 {
     SCItem                 * _item                ;
     SCCancelAsyncOperation   _cancelImageLoader   ;
-    SCFieldImageParams     * _imageResizingOptions;
+    SCDownloadMediaOptions     * _imageResizingOptions;
 }
 
 -(void)dealloc
@@ -33,7 +33,7 @@
     
     SCItem* mediaItem = self->_item;
     
-    SCFieldImageParams* resizingOptions = [ self normalizedImageResizingOptions ];
+    SCDownloadMediaOptions* resizingOptions = [ self normalizedImageResizingOptions ];
     SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: resizingOptions ];
     SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
     {
@@ -59,12 +59,12 @@
     self->_cancelImageLoader = [ self->_cancelImageLoader copy ];
 }
 
--(SCFieldImageParams*)normalizedImageResizingOptions
+-(SCDownloadMediaOptions*)normalizedImageResizingOptions
 {
-    SCFieldImageParams* result = self->_imageResizingOptions;
+    SCDownloadMediaOptions* result = self->_imageResizingOptions;
     if ( nil == result )
     {
-        result = [ SCFieldImageParams new ];
+        result = [ SCDownloadMediaOptions new ];
     }
     
     SCItemSourcePOD* itemSource = self->_item.recordItemSource;

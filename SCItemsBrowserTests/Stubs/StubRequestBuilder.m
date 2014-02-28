@@ -2,7 +2,7 @@
 
 @implementation StubRequestBuilder
 
--(SCItemsReaderRequest*)itemsBrowser:( id )sender
+-(SCReadItemsRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item
 {
     return self.requestStub;

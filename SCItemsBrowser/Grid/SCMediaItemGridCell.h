@@ -20,7 +20,7 @@
  Options for image resizing. It will be performed on the server side.
  They can be assigned in the cell multiple times since cells are likely to be reused.
  */
-@property ( nonatomic, strong, readwrite ) SCFieldImageParams* imageResizingOptions;
+@property ( nonatomic, strong, readwrite ) SCDownloadMediaOptions* imageResizingOptions;
 
 
 /**

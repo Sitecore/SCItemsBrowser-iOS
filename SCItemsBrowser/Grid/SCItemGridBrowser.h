@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @protocol SIBGridModeAppearance;
 @protocol SIBGridModeCellFactory;
 

@@ -8,7 +8,7 @@
 #import "SCLevelUpItem.h"
 
 typedef void(^UpdateHistoryActionBlock)(void);
-typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReaderRequest* );
+typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsRequest* );
 
 @interface SCItemsFileManager()
 
@@ -19,7 +19,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
 
 @implementation SCItemsFileManager
 {
-    SCExtendedApiContext*          _apiContext;
+    SCExtendedApiSession*          _apiContext;
     id<SCItemsLevelRequestBuilder> _nextLevelRequestBuilder;
 }
 
@@ -37,7 +37,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
     return nil;
 }
 
--(instancetype)initWithApiContext:( SCExtendedApiContext* )apiContext
+-(instancetype)initWithApiSession:( SCExtendedApiSession* )apiContext
               levelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder
 {
     NSParameterAssert( nil != apiContext );
@@ -71,7 +71,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
 {
     SCLevelsHistory* levelsHistory = self->_levelsHistory;
     
-    UpdateHistoryActionFromRequest pushLevelActionFromRequest = ^UpdateHistoryActionBlock( SCItemsReaderRequest* request )
+    UpdateHistoryActionFromRequest pushLevelActionFromRequest = ^UpdateHistoryActionBlock( SCReadItemsRequest* request )
     {
         UpdateHistoryActionBlock pushLevelAction = ^void(void)
         {
@@ -95,7 +95,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
     SCItem* item = [ levelsHistory lastItem ];
     NSParameterAssert( nil != item );
     
-    UpdateHistoryActionFromRequest idleActionFromRequest = ^UpdateHistoryActionBlock( SCItemsReaderRequest* request )
+    UpdateHistoryActionFromRequest idleActionFromRequest = ^UpdateHistoryActionBlock( SCReadItemsRequest* request )
     {
         UpdateHistoryActionBlock idleAction = ^void(void)
         {
@@ -113,7 +113,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
 
 -(void)goToLevelUpNotifyingCallbacks:( SCItemsFileManagerCallbacks* )callbacks
 {
-    SCItemsReaderRequest* request = [ self->_levelsHistory levelUpRequest ];
+    SCReadItemsRequest* request = [ self->_levelsHistory levelUpRequest ];
     SCItem* levelUpParentItem     = [ self->_levelsHistory levelUpParentItem ];
     
     NSParameterAssert( nil != request           );
@@ -152,7 +152,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
 {
     NSParameterAssert( nil != callbacks.onLevelLoadedBlock );
     
-    SCItemsReaderRequest* request = [ self buildLevelRequestForItem: item
+    SCReadItemsRequest* request = [ self buildLevelRequestForItem: item
                                                       ignoringCache: shouldIgnoreCache ];
     SCExtendedAsyncOp loader = [ self levelLoaderFromRequest: request ];
     
@@ -170,7 +170,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
                                     completionHook );
 }
 
--(SCItemsReaderRequest*)buildLevelRequestForItem:( SCItem* )item
+-(SCReadItemsRequest*)buildLevelRequestForItem:( SCItem* )item
                                    ignoringCache:( BOOL )shouldIgnoreCache
 {
     NSParameterAssert( nil != item );
@@ -178,7 +178,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
     NSParameterAssert( nil != self->_apiContext );
     NSParameterAssert( nil != self->_nextLevelRequestBuilder );
 
-    SCItemsReaderRequest* request = [ self->_nextLevelRequestBuilder itemsBrowser: self
+    SCReadItemsRequest* request = [ self->_nextLevelRequestBuilder itemsBrowser: self
                                                           levelDownRequestForItem: item ];
 
     NSParameterAssert( nil != request );
@@ -238,9 +238,9 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCItemsReade
 
 // @adk : used for mocking in unit tests. Rename with care.
 // Do not inline
--(SCExtendedAsyncOp)levelLoaderFromRequest:( SCItemsReaderRequest* )request
+-(SCExtendedAsyncOp)levelLoaderFromRequest:( SCReadItemsRequest* )request
 {
-    return [ self->_apiContext itemsReaderWithRequest: request ];
+    return [ self->_apiContext readItemsOperationWithRequest: request ];
 }
 
 @end

@@ -50,13 +50,13 @@
     [ self.contentView addSubview: progress  ];
 }
 
--(SCFieldImageParams*)imageResizingOptions
+-(SCDownloadMediaOptions*)imageResizingOptions
 {
     NSParameterAssert( nil != self->_imageLoader );
     return self->_imageLoader.imageResizingOptions;
 }
 
--(void)setImageResizingOptions:(SCFieldImageParams *)imageResizingOptions
+-(void)setImageResizingOptions:(SCDownloadMediaOptions *)imageResizingOptions
 {
     NSParameterAssert( nil != self->_imageLoader );
     self->_imageLoader.imageResizingOptions = imageResizingOptions;

@@ -25,7 +25,7 @@
     self->_levelStorage = [ NSMutableArray new ];
 }
 
--(void)pushRequest:( SCItemsReaderRequest* )request
+-(void)pushRequest:( SCReadItemsRequest* )request
            forItem:( SCItem* )item
 {
     SCLevelInfoPOD* record = [ [ SCLevelInfoPOD alloc ] initWithLevelRequest: request
@@ -53,7 +53,7 @@
     return [ self currentLevel ] >= 2;
 }
 
--(SCItemsReaderRequest*)lastRequest
+-(SCReadItemsRequest*)lastRequest
 {
     return [ [ self->_levelStorage lastObject ] levelRequest ];
 }
@@ -76,7 +76,7 @@
     return self->_levelStorage[ index ];
 }
 
--(SCItemsReaderRequest*)levelUpRequest
+-(SCReadItemsRequest*)levelUpRequest
 {
     return [ [ self levelUpRecord ] levelRequest ];
 }

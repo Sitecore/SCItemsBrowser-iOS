@@ -1,11 +1,11 @@
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 
 @class SCItemRecord;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 
 @interface SCItem (PrivateMethods)
 
 -(instancetype)initWithRecord:( SCItemRecord* )record_
-                   apiContext:( SCExtendedApiContext* )apiContext_;
+                   apiContext:( SCExtendedApiSession* )apiContext_;
 
 @end

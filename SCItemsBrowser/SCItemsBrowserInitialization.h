@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 
 @protocol SCItemsBrowserDelegate;
 @protocol SCItemsLevelRequestBuilder;
@@ -16,12 +16,12 @@
 /**
  @return The context to communicate with the Sitecore instance.
  */
--(SCExtendedApiContext*)apiContext;
+-(SCExtendedApiSession*)apiContext;
 
 /**
  @param apiContext The context to communicate with the Sitecore instance.
  */
--(void)setApiContext:( SCExtendedApiContext* )apiContext;
+-(void)setApiContext:( SCExtendedApiSession* )apiContext;
 
 
 /**

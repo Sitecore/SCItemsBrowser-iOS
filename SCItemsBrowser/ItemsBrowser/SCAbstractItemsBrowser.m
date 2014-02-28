@@ -64,7 +64,7 @@
 
 -(SCItemsFileManager*)lazyItemsFileManager
 {
-    SCExtendedApiContext* context = self->_apiContext;
+    SCExtendedApiSession* context = self->_apiContext;
     id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder = self->_nextLevelRequestBuilder;
     
     NSParameterAssert( nil != context );
@@ -80,7 +80,7 @@
     dispatch_once(&self->_onceItemsFileManagerToken, ^void()
     {
       self->_itemsFileManager =
-      [ [ SCItemsFileManager alloc ] initWithApiContext: context
+      [ [ SCItemsFileManager alloc ] initWithApiSession: context
                                     levelRequestBuilder: nextLevelRequestBuilder ];
     });
     
@@ -99,7 +99,7 @@
 
 #pragma mark -
 #pragma mark Once assign properties
--(void)setApiContext:( SCExtendedApiContext* )value
+-(void)setApiContext:( SCExtendedApiSession* )value
 {
     NSParameterAssert( nil == self->_apiContext );
     self->_apiContext = value;

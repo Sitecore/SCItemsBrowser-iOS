@@ -3,7 +3,7 @@
 #import <SCItemsBrowser/SCItemsBrowserInitialization.h>
 
 @class SCItem;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 
 @protocol SCItemsBrowserDelegate;
 @protocol SCItemsLevelRequestBuilder;
@@ -20,7 +20,7 @@
 
 #pragma mark -
 #pragma mark Once assign properties
-@property ( nonatomic, strong ) SCExtendedApiContext* apiContext;
+@property ( nonatomic, strong ) SCExtendedApiSession* apiContext;
 @property ( nonatomic, strong ) SCItem*               rootItem  ;
 @property ( nonatomic, weak   ) IBOutlet id<SCItemsLevelRequestBuilder> nextLevelRequestBuilder;
 

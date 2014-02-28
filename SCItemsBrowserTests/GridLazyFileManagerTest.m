@@ -15,8 +15,8 @@
 
 @implementation GridLazyFileManagerTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext* _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession* _legacyContext;
     
     SCItem* _rootItemStub;
     StubGridModeTheme* _GridModeThemeStub;
@@ -35,7 +35,7 @@
     
     self->_itemsBrowser = [ SCItemGridBrowser new ];
     
-    self->_legacyContext = [ SCApiContext contextWithHost: @"www.StubHost.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     
     self->_GridModeThemeStub  = [ StubGridModeTheme        new ];
@@ -68,7 +68,7 @@
      );
     
     
-    self->_itemsBrowser.apiContext = self->_context;
+    self->_itemsBrowser.apiSession= self->_context;
     XCTAssertThrows
     (
      [ self->_itemsBrowser lazyItemsFileManager ],
@@ -97,7 +97,7 @@
      );
     
     
-    self->_itemsBrowser.apiContext = self->_context;
+    self->_itemsBrowser.apiSession= self->_context;
     SCItemsFileManager* fm = [ self->_itemsBrowser lazyItemsFileManager ];
     XCTAssertNotNil( fm, @"items file manager not created" );
 }
@@ -105,7 +105,7 @@
 -(void)testLazyFileManagerReturnsSameThing
 {
     self->_itemsBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
-    self->_itemsBrowser.apiContext = self->_context;
+    self->_itemsBrowser.apiSession= self->_context;
     
     SCItemsFileManager* first  = [ self->_itemsBrowser lazyItemsFileManager ];
     SCItemsFileManager* second = [ self->_itemsBrowser lazyItemsFileManager ];
@@ -116,7 +116,7 @@
 -(void)testDisposeLazyFileManagerCleansObjectAndOnceToken
 {
     self->_itemsBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
-    self->_itemsBrowser.apiContext = self->_context;
+    self->_itemsBrowser.apiSession= self->_context;
     
     SCItemsFileManager* first  = [ self->_itemsBrowser lazyItemsFileManager ];
     XCTAssertNotNil( first, @"fm not created" );

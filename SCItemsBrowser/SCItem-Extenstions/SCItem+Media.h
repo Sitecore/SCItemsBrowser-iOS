@@ -69,7 +69,7 @@
  |        NO       | nil         |
   -------------------------------
  */
--(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCFieldImageParams* )options;
+-(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCDownloadMediaOptions* )options;
 
 
 /**

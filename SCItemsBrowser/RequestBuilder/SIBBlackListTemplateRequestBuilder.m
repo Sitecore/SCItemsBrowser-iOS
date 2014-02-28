@@ -16,7 +16,7 @@
     return [ super initWithTemplateNames: templateNames ];
 }
 
--(SCItemsReaderRequest*)itemsBrowser:( id )sender
+-(SCReadItemsRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item
 {
     // @adk : required for proper appledoc generation

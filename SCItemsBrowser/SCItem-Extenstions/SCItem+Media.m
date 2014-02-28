@@ -75,13 +75,13 @@ static NSString* const MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
     return mediaPath;
 }
 
--(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCFieldImageParams* )options
+-(SCExtendedAsyncOp)mediaLoaderWithOptions:( SCDownloadMediaOptions* )options
 {
     if ( [ self isMediaItem ] )
     {
         if ( nil == options )
         {
-            options = [ SCFieldImageParams new ];
+            options = [ SCDownloadMediaOptions new ];
         }
         
         SCItemSourcePOD* recordSource = [ self recordItemSource ];
@@ -94,7 +94,7 @@ static NSString* const MEDIA_ROOT = @"/SITECORE/MEDIA LIBRARY";
         
         NSString* mediaPath = [ self mediaPath ];
         
-        return [ self.apiContext imageLoaderForSCMediaPath: mediaPath
+        return [ self.apiSession imageLoaderForSCMediaPath: mediaPath
                                                imageParams: options ];
         
     }

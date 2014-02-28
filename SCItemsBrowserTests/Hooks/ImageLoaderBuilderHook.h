@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
-@class SCFieldImageParams;
-@class SCExtendedApiContext;
+@class SCDownloadMediaOptions;
+@class SCExtendedApiSession;
 
-typedef SCExtendedAsyncOp (^ImageLoaderBuilder)( SCExtendedApiContext* blockSelf, NSString* mediaPath, SCFieldImageParams* options );
+typedef SCExtendedAsyncOp (^ImageLoaderBuilder)( SCExtendedApiSession* blockSelf, NSString* mediaPath, SCDownloadMediaOptions* options );
 
 @interface ImageLoaderBuilderHook : NSObject
 

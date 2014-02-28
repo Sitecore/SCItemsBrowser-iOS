@@ -1,6 +1,6 @@
 #import <SCItemsBrowser/List/SCItemListCell.h>
 
-@class SCFieldImageParams;
+@class SCDownloadMediaOptions;
 
 
 /**
@@ -35,7 +35,7 @@
  */
 -(id)initWithStyle:( UITableViewCellStyle  )style
    reuseIdentifier:( NSString            * )reuseIdentifier
-       imageParams:( SCFieldImageParams  * )imageResizingOptions;
+       imageParams:( SCDownloadMediaOptions  * )imageResizingOptions;
 
 
 

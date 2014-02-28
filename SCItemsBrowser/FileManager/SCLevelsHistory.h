@@ -2,12 +2,12 @@
 
 
 @class SCItem;
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 
 @interface SCLevelsHistory : NSObject
 
--(void)pushRequest:( SCItemsReaderRequest* )request
+-(void)pushRequest:( SCReadItemsRequest* )request
            forItem:( SCItem* )item;
 
 -(void)popRequest;
@@ -18,10 +18,10 @@
 // starts from "1"
 -(NSUInteger)currentLevel;
 
--(SCItemsReaderRequest*)lastRequest;
+-(SCReadItemsRequest*)lastRequest;
 -(SCItem*)lastItem;
 
--(SCItemsReaderRequest*)levelUpRequest;
+-(SCReadItemsRequest*)levelUpRequest;
 -(SCItem*)levelUpParentItem;
 
 

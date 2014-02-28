@@ -4,7 +4,7 @@
 
 #pragma mark -
 #pragma mark Once assign properties
--(void)setApiContext:( SCExtendedApiContext* )value
+-(void)setApiContext:( SCExtendedApiSession* )value
 {
     NSParameterAssert( nil == self->_apiContext );
     self->_apiContext = value;

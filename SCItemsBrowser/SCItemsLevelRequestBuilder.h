@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 /**
  This protocol is used to define parent-child relationships for the items being browsed.
@@ -28,7 +28,7 @@
  
  @return A request that defines the scope of child items.
  */
--(SCItemsReaderRequest*)itemsBrowser:( id )sender
+-(SCReadItemsRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item;
 
 @end

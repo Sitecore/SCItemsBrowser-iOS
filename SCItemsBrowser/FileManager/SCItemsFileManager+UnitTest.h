@@ -11,7 +11,7 @@
 -(SCLevelsHistory*)levelsHistory;
 -(void)setCancelLoaderBlock:(SCCancelAsyncOperation)value;
 
--(SCItemsReaderRequest*)buildLevelRequestForItem:( SCItem* )item
+-(SCReadItemsRequest*)buildLevelRequestForItem:( SCItem* )item
                                    ignoringCache:( BOOL )shouldIgnoreCache;
 
 @end

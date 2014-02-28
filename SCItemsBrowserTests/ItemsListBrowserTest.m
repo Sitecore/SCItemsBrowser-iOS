@@ -20,8 +20,8 @@
 
 @implementation ItemsListBrowserTest
 {
-    SCExtendedApiContext* _context      ;
-    SCApiContext        * _legacyContext;
+    SCExtendedApiSession* _context      ;
+    SCApiSession        * _legacyContext;
     
     SCItemSourcePOD     * _recordSource ;
     
@@ -44,7 +44,7 @@
     
     SCItemRecord* newRecord  = nil;
     
-    self->_legacyContext = [ SCApiContext contextWithHost: @"stub-host.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"stub-host.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     
     SCItemSourcePOD* recordSource = [ SCItemSourcePOD new ];
@@ -62,7 +62,7 @@
         newRecord.path         = @"/sitecore/content/home";
         newRecord.itemTemplate = @"common/folder"         ;
         
-        newRecord.apiContext     = self->_context      ;
+        newRecord.apiSession    = self->_context      ;
         newRecord.mainApiContext = self->_legacyContext;
         
         newRecord.itemSource = recordSource;
@@ -128,7 +128,7 @@
     NSInteger result = NSNotFound;
     
     self->_listBrowser.tableView  = self->_tableView;
-    self->_listBrowser.apiContext = self->_context  ;
+    self->_listBrowser.apiSession= self->_context  ;
     self->_listBrowser.rootItem   = self->_rootItem ;
     self->_listBrowser.delegate   = self->_delegateStub;
     self->_listBrowser.listModeTheme = self->_listModeThemeStub;
@@ -162,7 +162,7 @@
     );
     
     
-    self->_listBrowser.apiContext = self->_context;
+    self->_listBrowser.apiSession= self->_context;
     XCTAssertThrows
     (
      [ self->_listBrowser lazyItemsFileManager ],
@@ -191,7 +191,7 @@
     );
     
     
-    self->_listBrowser.apiContext = self->_context;
+    self->_listBrowser.apiSession= self->_context;
     SCItemsFileManager* fm = [ self->_listBrowser lazyItemsFileManager ];
     XCTAssertNotNil( fm, @"items file manager not created" );
 }
@@ -199,7 +199,7 @@
 -(void)testLazyFileManagerReturnsSameThing
 {
     self->_listBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
-    self->_listBrowser.apiContext = self->_context;
+    self->_listBrowser.apiSession= self->_context;
     
     SCItemsFileManager* first  = [ self->_listBrowser lazyItemsFileManager ];
     SCItemsFileManager* second = [ self->_listBrowser lazyItemsFileManager ];
@@ -210,7 +210,7 @@
 -(void)testDisposeLazyFileManagerCleansObjectAndOnceToken
 {
     self->_listBrowser.nextLevelRequestBuilder = self->_requestBuilderStub;
-    self->_listBrowser.apiContext = self->_context;
+    self->_listBrowser.apiSession= self->_context;
     
     SCItemsFileManager* first  = [ self->_listBrowser lazyItemsFileManager ];
     XCTAssertNotNil( first, @"fm not created" );

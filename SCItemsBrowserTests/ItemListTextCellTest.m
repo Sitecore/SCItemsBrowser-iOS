@@ -13,8 +13,8 @@
 
 @implementation ItemListTextCellTest
 {
-    SCExtendedApiContext* _context;
-    SCApiContext        * _legacyContext;
+    SCExtendedApiSession* _context;
+    SCApiSession        * _legacyContext;
     
     SCItemRecord*  _rootItemRecord;
     SCItem* _rootItemStub;
@@ -25,7 +25,7 @@
 
 -(void)setUp
 {
-    self->_legacyContext = [ SCApiContext contextWithHost: @"www.StubHost.net" ];
+    self->_legacyContext = [ SCApiSession contextWithHost: @"www.StubHost.net" ];
     self->_context = self->_legacyContext.extendedApiContext;
     {
         self->_context.defaultDatabase = @"core";
@@ -42,7 +42,7 @@
     
     self->_rootItemRecord = [ SCItemRecord new ];
     {
-        self->_rootItemRecord.apiContext = self->_context;
+        self->_rootItemRecord.apiSession= self->_context;
         self->_rootItemRecord.mainApiContext = self->_legacyContext;
         
         self->_rootItemRecord.path = @"/sitecore/content/home";

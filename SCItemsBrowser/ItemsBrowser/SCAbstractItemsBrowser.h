@@ -26,7 +26,7 @@
 /**
  The context to communicate with the Sitecore instance. It can be set from code only.
  */
-@property ( nonatomic, strong ) SCExtendedApiContext* apiContext;
+@property ( nonatomic, strong ) SCExtendedApiSession* apiContext;
 
 /**
  An item to start browsing with. It can be set from code only.

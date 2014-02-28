@@ -46,8 +46,8 @@
 #pragma clang diagnostic pop
     
     
-    self->_methodToHook = class_getInstanceMethod( [ SCExtendedApiContext class ], self->_methodToHookSelector );
-    self->_originalImpl = class_getMethodImplementation( [ SCExtendedApiContext class ], self->_methodToHookSelector );
+    self->_methodToHook = class_getInstanceMethod( [ SCExtendedApiSession class ], self->_methodToHookSelector );
+    self->_originalImpl = class_getMethodImplementation( [ SCExtendedApiSession class ], self->_methodToHookSelector );
     
 
     self->_newImpl = imp_implementationWithBlock( self->_hookImpl );

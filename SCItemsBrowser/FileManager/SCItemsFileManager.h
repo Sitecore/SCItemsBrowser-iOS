@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class SCItem;
-@class SCExtendedApiContext;
+@class SCExtendedApiSession;
 @protocol SCItemsLevelRequestBuilder;
 
 
@@ -10,7 +10,7 @@
 
 @interface SCItemsFileManager : NSObject
 
--(instancetype)initWithApiContext:( SCExtendedApiContext* )apiContext
+-(instancetype)initWithApiSession:( SCExtendedApiSession* )apiContext
               levelRequestBuilder:( id<SCItemsLevelRequestBuilder> )nextLevelRequestBuilder;
 
 -(BOOL)isRootLevelLoaded;

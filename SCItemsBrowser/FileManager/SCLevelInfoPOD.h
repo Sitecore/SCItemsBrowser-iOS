@@ -2,15 +2,15 @@
 
 
 @class SCItem;
-@class SCItemsReaderRequest;
+@class SCReadItemsRequest;
 
 
 @interface SCLevelInfoPOD : NSObject
 
--(instancetype)initWithLevelRequest:( SCItemsReaderRequest* )levelRequest
+-(instancetype)initWithLevelRequest:( SCReadItemsRequest* )levelRequest
                             forItem:( SCItem* )item;
 
-@property ( nonatomic, readonly ) SCItemsReaderRequest* levelRequest;
+@property ( nonatomic, readonly ) SCReadItemsRequest* levelRequest;
 @property ( nonatomic, readonly ) SCItem* levelParentItem;
 
 @end

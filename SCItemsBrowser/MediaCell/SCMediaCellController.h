@@ -4,12 +4,12 @@
 @protocol SCMediaCellEvents;
 
 @class SCItem;
-@class SCFieldImageParams;
+@class SCDownloadMediaOptions;
 
 @interface SCMediaCellController : NSObject<SCItemCell>
 
 @property ( nonatomic, weak  , readwrite ) id<SCMediaCellEvents>  delegate            ;
-@property ( nonatomic, strong, readwrite ) SCFieldImageParams   * imageResizingOptions;
+@property ( nonatomic, strong, readwrite ) SCDownloadMediaOptions   * imageResizingOptions;
 
 @property ( nonatomic, readonly ) SCItem* item;
 

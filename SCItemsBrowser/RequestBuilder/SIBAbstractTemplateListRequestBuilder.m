@@ -36,7 +36,7 @@
 }
 
 -(void)setSourceFromItem:( SCItem* )item
-               toRequest:( SCItemsReaderRequest* )outRequest
+               toRequest:( SCReadItemsRequest* )outRequest
 {
     SCItemSourcePOD* src = [ item recordItemSource ];
     {
@@ -46,12 +46,12 @@
     }
 }
 
--(SCItemsReaderRequest*)itemsBrowser:( id )sender
+-(SCReadItemsRequest*)itemsBrowser:( id )sender
              levelDownRequestForItem:( SCItem* )item
 {
     NSString* templatesFilter = [ self templateFilterClause ];
     
-    SCItemsReaderRequest* result = [ SCItemsReaderRequest new ];
+    SCReadItemsRequest* result = [ SCReadItemsRequest new ];
     {
         result.requestType = SCItemReaderRequestQuery;
         result.request     = [ NSString stringWithFormat: @"%@/*[%@]", item.path, templatesFilter ];
