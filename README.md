@@ -1,0 +1,4 @@
+# Licence
+```
+SITECORE SHARED SOURCE LICENSE
+```
