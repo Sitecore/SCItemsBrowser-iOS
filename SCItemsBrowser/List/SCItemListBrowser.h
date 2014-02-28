@@ -1,6 +1,9 @@
 #import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowser.h>
+#import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowserSubclassing.h>
+
 #import <SCItemsBrowser/SCItemsBrowserProtocol.h>
 #import <SCItemsBrowser/SCItemsBrowserInitialization.h>
+
 
 
 #import <UIKit/UIKit.h>
@@ -29,7 +32,7 @@
 
  It is not possible to modify its properties once initialized. If you need to change the root item or api context, a new controller must be created.
  */
-@interface SCItemListBrowser : SCAbstractItemsBrowser<UITableViewDataSource, UITableViewDelegate>
+@interface SCItemListBrowser : SCAbstractItemsBrowser<SCAbstractItemsBrowserSubclassing, UITableViewDataSource, UITableViewDelegate>
 
 /**
  A table view to display items. The SCItemListBrowser controller will become both a delegate and a datasource for it. It can be set from the Interface Builder.

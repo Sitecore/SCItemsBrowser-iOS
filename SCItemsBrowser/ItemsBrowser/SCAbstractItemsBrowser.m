@@ -1,8 +1,10 @@
 #import "SCAbstractItemsBrowser.h"
+#import "SCAbstractItemsBrowserSubclassing.h"
+
 
 #import "SCLevelUpItem.h"
 
-@interface SCAbstractItemsBrowser()
+@interface SCAbstractItemsBrowser()<SCAbstractItemsBrowserSubclassing>
 
 // unit test
 @property ( nonatomic, assign, readonly ) dispatch_once_t     onceItemsFileManagerToken;
@@ -193,7 +195,6 @@
     return callbacks;
 }
 
-
 -(void)reloadDataIgnoringCache:( BOOL )shouldIgnoreCache
 {
 //    NSParameterAssert( nil != self->_collectionView  );
@@ -214,7 +215,5 @@
                                                            ignoringCache: shouldIgnoreCache ];
     }
 }
-
-
 
 @end

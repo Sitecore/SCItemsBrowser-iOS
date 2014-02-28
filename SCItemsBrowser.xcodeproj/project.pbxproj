@@ -158,6 +158,7 @@
 		7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManager.h; sourceTree = "<group>"; };
 		7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManager.m; sourceTree = "<group>"; };
 		7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerTest.m; sourceTree = "<group>"; };
+		7E2BF91718C0701400C36DD1 /* SCAbstractItemsBrowserSubclassing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAbstractItemsBrowserSubclassing.h; sourceTree = "<group>"; };
 		7E34F72518AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBBlackListTemplateRequestBuilder.h; sourceTree = "<group>"; };
 		7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBBlackListTemplateRequestBuilder.m; sourceTree = "<group>"; };
 		7E34F72818AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAbstractTemplateListRequestBuilder.h; sourceTree = "<group>"; };
@@ -496,6 +497,7 @@
 			children = (
 				7E82859718BFA19700E6F7E7 /* SCAbstractItemsBrowser.h */,
 				7E82859818BFA19700E6F7E7 /* SCAbstractItemsBrowser.m */,
+				7E2BF91718C0701400C36DD1 /* SCAbstractItemsBrowserSubclassing.h */,
 				7E82859A18BFA4AD00E6F7E7 /* SCAbstractItemsBrowser_Protected.h */,
 			);
 			path = ItemsBrowser;

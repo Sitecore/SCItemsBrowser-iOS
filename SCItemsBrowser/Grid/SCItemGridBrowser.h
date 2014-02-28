@@ -1,9 +1,13 @@
+#import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowser.h>
+#import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowserSubclassing.h>
+
+#import <SCItemsBrowser/SCItemsBrowserProtocol.h>
+#import <SCItemsBrowser/SCItemsBrowserInitialization.h>
+
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowser.h>
-#import <SCItemsBrowser/SCItemsBrowserProtocol.h>
-#import <SCItemsBrowser/SCItemsBrowserInitialization.h>
 
 @class SCExtendedApiContext;
 @protocol SIBGridModeAppearance;
@@ -31,7 +35,7 @@
  
  It is not possible to modify its properties once initialized. If you need to change the root item or api context, a new controller must be created.
  */
-@interface SCItemGridBrowser : SCAbstractItemsBrowser<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SCItemGridBrowser : SCAbstractItemsBrowser<SCAbstractItemsBrowserSubclassing, UICollectionViewDataSource, UICollectionViewDelegate>
 
 
 /**
