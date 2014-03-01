@@ -1,0 +1,58 @@
+The “Items browser for iOS” library contains some UI related classes and interfaces that will help third-party developers navigate through the content tree of a given instance. The end user will get the navigation experience similar to one in traditional desktop file managers such as Windows Explorer and Finder (on Mac OS).
+
+Note : due to screen size limitation and potentially large content tree size we have not implemented the “tree view” mode. This means that the end user will see only one folder at a time.
+
+The component has been designed to be Interface Builder friendly. We have applied the well known patterns and best practices of the CocoaTouch framework. So it should be easy for iOS developers to get started with it. The downside of this approach is having a lot of delegate objects to initialise and configure. Let’s take a closer look at them.
+
+Note : Once initialised, it is not possible to assign new values to the configuration properties as the component will crash. This has been made by design with the concurrent programming best practices in mind.
+
+
+1. The Entry Point For Browsing
+
+In order to browse the content tree we need to know items’ location : 
+* The instance
+* The user’s credentials
+* The root item to start with
+* etc.
+
+All this information must be submitted by initialising the properties below :
+* apiSession
+* rootItem
+
+This is the only piece of information that is not Interface Builder compatible and requires coding. They can be either received from the previous view controller in case the “inversion of control” principle is used or created in place. For example :
+========<code example>========
+-(void)setupContext
+{
+    self->_legacyApiSession =
+    [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:7200"
+                             login: @"sitecore\\admin"
+                          password: @"b"
+                           version: SCWebApiMaxSupportedVersion ];
+
+    self->_legacyApiSession.defaultDatabase = @"master";
+    self->_legacyApiSession.defaultSite = @"/sitecore/shell";
+    
+    self->_apiSession = self->_legacyApiSession.extendedApiSession;
+}
+
+-(void)didLoadRootItem:( SCItem* )rootItem
+{
+    self.itemsBrowserController.apiSession = self->_apiSession;
+    self.itemsBrowserController.rootItem = rootItem;
+    [ self.itemsBrowserController reloadData ];
+}
+==============================
+
+
+Other configuration is based on Objective-C protocols and can be performed visually.
+
+
+2. Items Navigation
+
+In order to navigate between the items, you have to implement two delegates :
+* nextLevelRequestBuilder
+* delegate
+
+
+
+
