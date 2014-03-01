@@ -2,7 +2,7 @@
 #import <SCItemsBrowser/RequestBuilder/SIBAbstractTemplateListRequestBuilder.h>
 
 /**
- Creates the request to fetch only those children of the given item having the templates from the initializer list.
+ Creates the request to fetch only those children of the given item having the templates on the initializer list.
  */
 @interface SIBWhiteListTemplateRequestBuilder : SIBAbstractTemplateListRequestBuilder
 
