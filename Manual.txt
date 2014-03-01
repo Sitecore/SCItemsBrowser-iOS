@@ -53,6 +53,15 @@ In order to navigate between the items, you have to implement two delegates :
 * nextLevelRequestBuilder
 * delegate
 
+The delegate notifies the developer about level loading start, stop and progress. The developer may restrict the end user from navigating to some particular levels. This may be useful for items that do not have sub-items or for system ones.
+
+It may also be useful to restrict the user from seeing some items on a given level. For example, browsing the media library, one may want to see only images while ignoring the documents that do not have any thumbnails or video files not supporting streaming. The “nextLevelRequestBuilder” delegate has been designed exactly for this purpose. It has only one method that constructs a request to get “children” for a given item. Moreover, it is possible to redefine the notion of the parent-child relationships.
+For example, if an item has a MultiList field, the referenced items can be used as children instead of actual sub-items.
+
+The library contains three pre-defined request builders : 
+* SIBAllChildrenRequestBuilder - gets all children of a given item.
+* SIBWhiteListTemplateRequestBuilder - gets only those children of the given item having the templates from the list.
+* SIBBlackListTemplateRequestBuilder - gets only those children of the given item having any templates except those on the list.
 
 
 
