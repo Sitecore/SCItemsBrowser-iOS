@@ -11,13 +11,12 @@
 
 
 #import <SitecoreItemsBrowser/ItemsBrowser/SCLevelUpItem.h>
-#import <SitecoreItemsBrowserFileManager/SCLevelResponse.h>
 
-#import <SitecoreItemsBrowserAppearance/SIBListModeAppearance.h>
-#import <SitecoreItemsBrowserAppearance/SIBGridModeAppearance.h>
+#import <SitecoreItemsBrowser/Appearance/SIBListModeAppearance.h>
+#import <SitecoreItemsBrowser/Appearance/SIBGridModeAppearance.h>
 
-#import <SitecoreItemsBrowserCellFactory/SIBListModeCellFactory.h>
-#import <SitecoreItemsBrowserCellFactory/SIBGridModeCellFactory.h>
+#import <SitecoreItemsBrowser/CellFactory/SIBListModeCellFactory.h>
+#import <SitecoreItemsBrowser/CellFactory/SIBGridModeCellFactory.h>
 
 #import <SitecoreItemsBrowser/List/SCItemListBrowser.h>
 #import <SitecoreItemsBrowser/List/SCItemListCell.h>
@@ -25,9 +24,9 @@
 #import <SitecoreItemsBrowser/List/SCMediaItemListCell.h>
 
 
-#import <SitecoreItemsBrowserGrid/SCItemGridBrowser.h>
-#import <SitecoreItemsBrowserGrid/SCItemGridCell.h>
-#import <SitecoreItemsBrowserGrid/SCDefaultLevelUpGridCell.h>
-#import <SitecoreItemsBrowserGrid/SCMediaItemGridCell.h>
-#import <SitecoreItemsBrowserGrid/SCItemGridTextCell.h>
+#import <SitecoreItemsBrowser/Grid/SCItemGridBrowser.h>
+#import <SitecoreItemsBrowser/Grid/SCItemGridCell.h>
+#import <SitecoreItemsBrowser/Grid/SCDefaultLevelUpGridCell.h>
+#import <SitecoreItemsBrowser/Grid/SCMediaItemGridCell.h>
+#import <SitecoreItemsBrowser/Grid/SCItemGridTextCell.h>
 

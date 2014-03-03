@@ -244,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				7E43421718BC7EA80094C33D /* SCItemsBrowser.xcodeproj */,
-				7E43421518BC7E9E0094C33D /* SitecoreMobileSDK.framework */,
 				7E4341E618BC7DE50094C33D /* GridItemsBrowserDemo */,
 				7E43420518BC7DE60094C33D /* GridItemsBrowserDemoTests */,
 				7E4341DF18BC7DE50094C33D /* Frameworks */,
@@ -266,6 +265,7 @@
 		7E4341DF18BC7DE50094C33D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E43421518BC7E9E0094C33D /* SitecoreMobileSDK.framework */,
 				7E11576118C4EFB900D10DE3 /* SitecoreItemsBrowser.framework */,
 				7E43425818BC8FFB0094C33D /* MessageUI.framework */,
 				7E43425618BC8FE10094C33D /* Twitter.framework */,

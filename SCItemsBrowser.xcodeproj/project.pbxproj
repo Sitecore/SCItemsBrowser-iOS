@@ -119,6 +119,7 @@
 		7EA388B318C4F2EC0065A228 /* SCItemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1D05E218A14B95006EF056 /* SCItemCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388B418C4F2EC0065A228 /* SCItemsBrowserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1D05E118A14AC0006EF056 /* SCItemsBrowserDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388B518C4F2EC0065A228 /* SCItemsLevelRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E225BE318A28715009CEBEE /* SCItemsLevelRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA388B918C4F50D0065A228 /* SCHighlightableBackgroundGridCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2276D418C4B29B00EE839F /* SCHighlightableBackgroundGridCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EAB807518A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807418A4E9D800C73F62 /* SCItemsFileManagerCallbacks.m */; };
 		7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807718A4EDE300C73F62 /* SCLevelsHistory.m */; };
 		7EAB807B18A503A000C73F62 /* SCLevelInfoPOD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB807A18A503A000C73F62 /* SCLevelInfoPOD.m */; };
@@ -705,6 +706,7 @@
 				7EA388B318C4F2EC0065A228 /* SCItemCell.h in Headers */,
 				7EA388B418C4F2EC0065A228 /* SCItemsBrowserDelegate.h in Headers */,
 				7EA388B518C4F2EC0065A228 /* SCItemsLevelRequestBuilder.h in Headers */,
+				7EA388B918C4F50D0065A228 /* SCHighlightableBackgroundGridCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
