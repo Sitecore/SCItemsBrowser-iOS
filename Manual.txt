@@ -79,5 +79,24 @@ We have different delegates since different underlying controls are used to disp
 
 
 4. Contents of the Items Browser Library 
-The items browser library has 
+The items browser library has two primary classes : 
+* SCItemListBrowser
+* SCItemGridBrowser
+
+The SCItemListBrowser class is based on UITableView class while the SCItemGridBrowser class is based on UICollectionView class. Both of them are inherited from the NSObject class and are controllers in term of the MVC pattern. They are fully responsible of fetching the content and displaying it within the content view (UITableView and UICollectionView respectively).
+
+The library also contains some helper classes such as 
+* request builders
+* list cells
+* grid cells
+
+We have implemented cells for two kinds :
+* displaying item display names
+* display images of media items
+
+
+
+
+
+
 
