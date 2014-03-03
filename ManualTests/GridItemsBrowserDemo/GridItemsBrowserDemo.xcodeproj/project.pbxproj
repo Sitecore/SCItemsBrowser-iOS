@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E11573618C4EE9000D10DE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4341EC18BC7DE50094C33D /* main.m */; };
+		7E11573718C4EE9000D10DE3 /* GBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4341F618BC7DE50094C33D /* GBViewController.m */; };
+		7E11573818C4EE9000D10DE3 /* GBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4341F018BC7DE50094C33D /* GBAppDelegate.m */; };
+		7E11573A18C4EE9000D10DE3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425818BC8FFB0094C33D /* MessageUI.framework */; };
+		7E11573B18C4EE9000D10DE3 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425618BC8FE10094C33D /* Twitter.framework */; };
+		7E11573C18C4EE9000D10DE3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425418BC8FDD0094C33D /* Social.framework */; };
+		7E11573D18C4EE9000D10DE3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425218BC8FD10094C33D /* CFNetwork.framework */; };
+		7E11573E18C4EE9000D10DE3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424818BC8FC70094C33D /* CoreAudio.framework */; };
+		7E11573F18C4EE9000D10DE3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424918BC8FC70094C33D /* CoreLocation.framework */; };
+		7E11574018C4EE9000D10DE3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424A18BC8FC70094C33D /* CoreMedia.framework */; };
+		7E11574118C4EE9000D10DE3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424B18BC8FC70094C33D /* CoreMotion.framework */; };
+		7E11574218C4EE9000D10DE3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424C18BC8FC70094C33D /* CoreText.framework */; };
+		7E11574318C4EE9000D10DE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E218BC7DE50094C33D /* CoreGraphics.framework */; };
+		7E11574418C4EE9000D10DE3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424618BC8FB70094C33D /* AudioToolbox.framework */; };
+		7E11574518C4EE9000D10DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424418BC8FB20094C33D /* MapKit.framework */; };
+		7E11574618C4EE9000D10DE3 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424018BC8FAD0094C33D /* EventKit.framework */; };
+		7E11574718C4EE9000D10DE3 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424118BC8FAD0094C33D /* EventKitUI.framework */; };
+		7E11574818C4EE9000D10DE3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423C18BC850D0094C33D /* AddressBook.framework */; };
+		7E11574918C4EE9000D10DE3 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423D18BC850D0094C33D /* AddressBookUI.framework */; };
+		7E11574A18C4EE9000D10DE3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423A18BC84FB0094C33D /* libsqlite3.dylib */; };
+		7E11574B18C4EE9000D10DE3 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423818BC84B00094C33D /* libiconv.dylib */; };
+		7E11574C18C4EE9000D10DE3 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423418BC84A50094C33D /* libc++.dylib */; };
+		7E11574D18C4EE9000D10DE3 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423518BC84A50094C33D /* libstdc++.dylib */; };
+		7E11574E18C4EE9000D10DE3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423218BC849D0094C33D /* libz.dylib */; };
+		7E11574F18C4EE9000D10DE3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423018BC84990094C33D /* libxml2.dylib */; };
+		7E11575118C4EE9000D10DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E418BC7DE50094C33D /* UIKit.framework */; };
+		7E11575218C4EE9000D10DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E018BC7DE50094C33D /* Foundation.framework */; };
+		7E11575318C4EE9000D10DE3 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43421518BC7E9E0094C33D /* SitecoreMobileSDK.framework */; };
+		7E11575518C4EE9000D10DE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4341F818BC7DE50094C33D /* Images.xcassets */; };
+		7E11575618C4EE9000D10DE3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F418BF7A1400A0514D /* Localizable.strings */; };
+		7E11575718C4EE9000D10DE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4341E918BC7DE50094C33D /* InfoPlist.strings */; };
+		7E11575818C4EE9000D10DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4341F218BC7DE50094C33D /* Main.storyboard */; };
 		7E4341E118BC7DE50094C33D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E018BC7DE50094C33D /* Foundation.framework */; };
 		7E4341E318BC7DE50094C33D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E218BC7DE50094C33D /* CoreGraphics.framework */; };
 		7E4341E518BC7DE50094C33D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E418BC7DE50094C33D /* UIKit.framework */; };
@@ -79,6 +111,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E11575D18C4EE9000D10DE3 /* GridItemsBrowserFrameworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridItemsBrowserFrameworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E11575E18C4EE9000D10DE3 /* GridItemsBrowserDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GridItemsBrowserDemo copy-Info.plist"; path = "/Volumes/untitled/github/SCItemsBrowser/ManualTests/GridItemsBrowserDemo/GridItemsBrowserDemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		7E4341DD18BC7DE50094C33D /* GridItemsBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridItemsBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4341E018BC7DE50094C33D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E4341E218BC7DE50094C33D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +159,38 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7E11573918C4EE9000D10DE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E11573A18C4EE9000D10DE3 /* MessageUI.framework in Frameworks */,
+				7E11573B18C4EE9000D10DE3 /* Twitter.framework in Frameworks */,
+				7E11573C18C4EE9000D10DE3 /* Social.framework in Frameworks */,
+				7E11573D18C4EE9000D10DE3 /* CFNetwork.framework in Frameworks */,
+				7E11573E18C4EE9000D10DE3 /* CoreAudio.framework in Frameworks */,
+				7E11573F18C4EE9000D10DE3 /* CoreLocation.framework in Frameworks */,
+				7E11574018C4EE9000D10DE3 /* CoreMedia.framework in Frameworks */,
+				7E11574118C4EE9000D10DE3 /* CoreMotion.framework in Frameworks */,
+				7E11574218C4EE9000D10DE3 /* CoreText.framework in Frameworks */,
+				7E11574318C4EE9000D10DE3 /* CoreGraphics.framework in Frameworks */,
+				7E11574418C4EE9000D10DE3 /* AudioToolbox.framework in Frameworks */,
+				7E11574518C4EE9000D10DE3 /* MapKit.framework in Frameworks */,
+				7E11574618C4EE9000D10DE3 /* EventKit.framework in Frameworks */,
+				7E11574718C4EE9000D10DE3 /* EventKitUI.framework in Frameworks */,
+				7E11574818C4EE9000D10DE3 /* AddressBook.framework in Frameworks */,
+				7E11574918C4EE9000D10DE3 /* AddressBookUI.framework in Frameworks */,
+				7E11574A18C4EE9000D10DE3 /* libsqlite3.dylib in Frameworks */,
+				7E11574B18C4EE9000D10DE3 /* libiconv.dylib in Frameworks */,
+				7E11574C18C4EE9000D10DE3 /* libc++.dylib in Frameworks */,
+				7E11574D18C4EE9000D10DE3 /* libstdc++.dylib in Frameworks */,
+				7E11574E18C4EE9000D10DE3 /* libz.dylib in Frameworks */,
+				7E11574F18C4EE9000D10DE3 /* libxml2.dylib in Frameworks */,
+				7E11575118C4EE9000D10DE3 /* UIKit.framework in Frameworks */,
+				7E11575218C4EE9000D10DE3 /* Foundation.framework in Frameworks */,
+				7E11575318C4EE9000D10DE3 /* SitecoreMobileSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7E4341DA18BC7DE50094C33D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,6 +246,7 @@
 				7E43420518BC7DE60094C33D /* GridItemsBrowserDemoTests */,
 				7E4341DF18BC7DE50094C33D /* Frameworks */,
 				7E4341DE18BC7DE50094C33D /* Products */,
+				7E11575E18C4EE9000D10DE3 /* GridItemsBrowserDemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +255,7 @@
 			children = (
 				7E4341DD18BC7DE50094C33D /* GridItemsBrowserDemo.app */,
 				7E4341FE18BC7DE50094C33D /* GridItemsBrowserDemoTests.xctest */,
+				7E11575D18C4EE9000D10DE3 /* GridItemsBrowserFrameworkDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,6 +348,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7E11573218C4EE9000D10DE3 /* GridItemsBrowserFrameworkDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E11575918C4EE9000D10DE3 /* Build configuration list for PBXNativeTarget "GridItemsBrowserFrameworkDemo" */;
+			buildPhases = (
+				7E11573518C4EE9000D10DE3 /* Sources */,
+				7E11573918C4EE9000D10DE3 /* Frameworks */,
+				7E11575418C4EE9000D10DE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GridItemsBrowserFrameworkDemo;
+			productName = GridItemsBrowserDemo;
+			productReference = 7E11575D18C4EE9000D10DE3 /* GridItemsBrowserFrameworkDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		7E4341DC18BC7DE50094C33D /* GridItemsBrowserDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E43420F18BC7DE60094C33D /* Build configuration list for PBXNativeTarget "GridItemsBrowserDemo" */;
@@ -351,6 +436,7 @@
 			projectRoot = "";
 			targets = (
 				7E4341DC18BC7DE50094C33D /* GridItemsBrowserDemo */,
+				7E11573218C4EE9000D10DE3 /* GridItemsBrowserFrameworkDemo */,
 				7E4341FD18BC7DE50094C33D /* GridItemsBrowserDemoTests */,
 			);
 		};
@@ -374,6 +460,17 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7E11575418C4EE9000D10DE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E11575518C4EE9000D10DE3 /* Images.xcassets in Resources */,
+				7E11575618C4EE9000D10DE3 /* Localizable.strings in Resources */,
+				7E11575718C4EE9000D10DE3 /* InfoPlist.strings in Resources */,
+				7E11575818C4EE9000D10DE3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7E4341DB18BC7DE50094C33D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +493,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7E11573518C4EE9000D10DE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E11573618C4EE9000D10DE3 /* main.m in Sources */,
+				7E11573718C4EE9000D10DE3 /* GBViewController.m in Sources */,
+				7E11573818C4EE9000D10DE3 /* GBAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7E4341D918BC7DE50094C33D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +564,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7E11575A18C4EE9000D10DE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridItemsBrowserDemo/GridItemsBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "GridItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = GridItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E11575B18C4EE9000D10DE3 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridItemsBrowserDemo/GridItemsBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "GridItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = GridItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		7E11575C18C4EE9000D10DE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridItemsBrowserDemo/GridItemsBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "GridItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = GridItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		7E43420D18BC7DE60094C33D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -708,6 +857,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7E11575918C4EE9000D10DE3 /* Build configuration list for PBXNativeTarget "GridItemsBrowserFrameworkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E11575A18C4EE9000D10DE3 /* Debug */,
+				7E11575B18C4EE9000D10DE3 /* Coverage */,
+				7E11575C18C4EE9000D10DE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7E4341D818BC7DE50094C33D /* Build configuration list for PBXProject "GridItemsBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
