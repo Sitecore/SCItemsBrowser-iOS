@@ -1,6 +1,6 @@
 #import "LBViewController.h"
 
-#import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
+#import <SitecoreItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
 
 #define CUSTOMIZATION_ENABLED 0
 
