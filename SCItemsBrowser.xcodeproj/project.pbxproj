@@ -45,6 +45,7 @@
 		7E225BD318A24313009CEBEE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BD218A24313009CEBEE /* MessageUI.framework */; };
 		7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */; };
 		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
+		7E2276D518C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2276D318C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m */; };
 		7E2BF91A18C0789200C36DD1 /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2BF91918C0789200C36DD1 /* SCLevelUpItem.m */; };
 		7E2BF91E18C07A7400C36DD1 /* SCMediaCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2BF91D18C07A7400C36DD1 /* SCMediaCellController.m */; };
 		7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */; };
@@ -159,6 +160,9 @@
 		7E225BEA18A2968B009CEBEE /* SCItemsFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsFileManager.h; sourceTree = "<group>"; };
 		7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsFileManager.m; sourceTree = "<group>"; };
 		7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsFileManagerTest.m; sourceTree = "<group>"; };
+		7E2276D218C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGridCellBackgroundHighlightingAnimation.h; sourceTree = "<group>"; };
+		7E2276D318C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGridCellBackgroundHighlightingAnimation.m; sourceTree = "<group>"; };
+		7E2276D418C4B29B00EE839F /* SCHighlightableBackgroundGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHighlightableBackgroundGridCell.h; sourceTree = "<group>"; };
 		7E2BF91718C0701400C36DD1 /* SCAbstractItemsBrowserSubclassing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAbstractItemsBrowserSubclassing.h; sourceTree = "<group>"; };
 		7E2BF91818C0789200C36DD1 /* SCLevelUpItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLevelUpItem.h; sourceTree = "<group>"; };
 		7E2BF91918C0789200C36DD1 /* SCLevelUpItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLevelUpItem.m; sourceTree = "<group>"; };
@@ -430,6 +434,7 @@
 		7E1D05EB18A14FB3006EF056 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
+				7E2276D118C4B29B00EE839F /* Animation */,
 				7E1D05F318A1525B006EF056 /* SCItemGridCell.h */,
 				7E1D05F418A1525B006EF056 /* SCItemGridCell.m */,
 				7E43425B18BCE3830094C33D /* SCDefaultLevelUpGridCell.h */,
@@ -475,6 +480,16 @@
 				7EAB807D18A5120B00C73F62 /* SCLevelResponse.m */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		7E2276D118C4B29B00EE839F /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				7E2276D218C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.h */,
+				7E2276D318C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m */,
+				7E2276D418C4B29B00EE839F /* SCHighlightableBackgroundGridCell.h */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		7E2BF91B18C07A0D00C36DD1 /* MediaCell */ = {
@@ -659,6 +674,7 @@
 				7E4DE9EE18BF6BE500A0514D /* SCItemsBrowserView.m in Sources */,
 				7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */,
 				7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */,
+				7E2276D518C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m in Sources */,
 				7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */,
 				7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */,
 				7E1D05F518A1525B006EF056 /* SCItemGridCell.m in Sources */,
