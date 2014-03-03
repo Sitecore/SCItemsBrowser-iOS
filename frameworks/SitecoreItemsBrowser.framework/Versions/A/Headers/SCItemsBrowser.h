@@ -1,33 +1,33 @@
 
-#import <SCItemsBrowser/SCItemCell.h>
-#import <SCItemsBrowser/SCItemsBrowserDelegate.h>
-#import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>
-#import <SCItemsBrowser/SCItemsBrowserProtocol.h>
+#import <SitecoreItemsBrowser/SCItemCell.h>
+#import <SitecoreItemsBrowser/SCItemsBrowserDelegate.h>
+#import <SitecoreItemsBrowser/SCItemsLevelRequestBuilder.h>
+#import <SitecoreItemsBrowser/SCItemsBrowserProtocol.h>
 
 
-#import <SCItemsBrowser/RequestBuilder/SIBAllChildrenRequestBuilder.h>
-#import <SCItemsBrowser/RequestBuilder/SIBBlackListTemplateRequestBuilder.h>
-#import <SCItemsBrowser/RequestBuilder/SIBWhiteListTemplateRequestBuilder.h>
+#import <SitecoreItemsBrowser/RequestBuilder/SIBAllChildrenRequestBuilder.h>
+#import <SitecoreItemsBrowser/RequestBuilder/SIBBlackListTemplateRequestBuilder.h>
+#import <SitecoreItemsBrowser/RequestBuilder/SIBWhiteListTemplateRequestBuilder.h>
 
 
-#import <SCItemsBrowser/ItemsBrowser/SCLevelUpItem.h>
-#import <SCItemsBrowser/FileManager/SCLevelResponse.h>
+#import <SitecoreItemsBrowser/ItemsBrowser/SCLevelUpItem.h>
+#import <SitecoreItemsBrowserFileManager/SCLevelResponse.h>
 
-#import <SCItemsBrowser/Appearance/SIBListModeAppearance.h>
-#import <SCItemsBrowser/Appearance/SIBGridModeAppearance.h>
+#import <SitecoreItemsBrowserAppearance/SIBListModeAppearance.h>
+#import <SitecoreItemsBrowserAppearance/SIBGridModeAppearance.h>
 
-#import <SCItemsBrowser/CellFactory/SIBListModeCellFactory.h>
-#import <SCItemsBrowser/CellFactory/SIBGridModeCellFactory.h>
+#import <SitecoreItemsBrowserCellFactory/SIBListModeCellFactory.h>
+#import <SitecoreItemsBrowserCellFactory/SIBGridModeCellFactory.h>
 
-#import <SCItemsBrowser/List/SCItemListBrowser.h>
-#import <SCItemsBrowser/List/SCItemListCell.h>
-#import <SCItemsBrowser/List/SCItemListTextCell.h>
-#import <SCItemsBrowser/List/SCMediaItemListCell.h>
+#import <SitecoreItemsBrowser/List/SCItemListBrowser.h>
+#import <SitecoreItemsBrowser/List/SCItemListCell.h>
+#import <SitecoreItemsBrowser/List/SCItemListTextCell.h>
+#import <SitecoreItemsBrowser/List/SCMediaItemListCell.h>
 
 
-#import <SCItemsBrowser/Grid/SCItemGridBrowser.h>
-#import <SCItemsBrowser/Grid/SCItemGridCell.h>
-#import <SCItemsBrowser/Grid/SCDefaultLevelUpGridCell.h>
-#import <SCItemsBrowser/Grid/SCMediaItemGridCell.h>
-#import <SCItemsBrowser/Grid/SCItemGridTextCell.h>
+#import <SitecoreItemsBrowserGrid/SCItemGridBrowser.h>
+#import <SitecoreItemsBrowserGrid/SCItemGridCell.h>
+#import <SitecoreItemsBrowserGrid/SCDefaultLevelUpGridCell.h>
+#import <SitecoreItemsBrowserGrid/SCMediaItemGridCell.h>
+#import <SitecoreItemsBrowserGrid/SCItemGridTextCell.h>
 

@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 
-#import <SCItemsBrowser/SCItemsBrowser.h>
+#import <SitecoreItemsBrowser/SCItemsBrowser.h>
 
 #import "SCItem+Media.h"
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>

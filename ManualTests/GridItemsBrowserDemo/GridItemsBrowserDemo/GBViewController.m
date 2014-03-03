@@ -1,7 +1,7 @@
 #import "GBViewController.h"
 
-#import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
-#import <SCItemsBrowser/Grid/Animation/SCHighlightableBackgroundGridCell.h>
+#import <SitecoreItemsBrowserSCItem-Extenstions/SCItem+Media.h>
+#import <SitecoreItemsBrowserGrid/Animation/SCHighlightableBackgroundGridCell.h>
 
 static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 

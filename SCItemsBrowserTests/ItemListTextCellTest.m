@@ -3,7 +3,7 @@
 #import <MobileSDK-Private/SCItemRecord_Source.h>
 #import <MobileSDK-Private/SCItem+PrivateMethods.h>
 
-#import <SCItemsBrowser/SCItemsBrowser.h>
+#import <SitecoreItemsBrowser/SCItemsBrowser.h>
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 
 
