@@ -296,6 +296,11 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 }
 
 
+typedef void (^AnimationBlock)(void);
+typedef void (^AnimationCompletionBlock)(BOOL);
+
+static const NSTimeInterval CELL_ANIMATION_DURATION = 0.2;
+
 #pragma mark -
 #pragma mark SIBGridModeAppearance
 -(void)setColorsForCell:(UICollectionViewCell*)cell
@@ -305,7 +310,7 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 
 -(void)setHighlightColorsForCell:(UICollectionViewCell*)cell
 {
-    cell.backgroundColor = [ UIColor cyanColor ];
+    cell.backgroundColor = [ UIColor redColor ];
 }
 
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
@@ -313,7 +318,9 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
             forItem:( SCItem* )item
         atIndexPath:( NSIndexPath* )indexPath
 {
-    [ self setColorsForCell: cell ];
+    // IDLE
+    
+    // @adk : to make highlighting animations look nice
 }
 
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
@@ -322,6 +329,18 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
         atIndexPath:( NSIndexPath* )indexPath
 {
     [ self setHighlightColorsForCell: cell ];
+    
+    AnimationBlock animation = ^void()
+    {
+        [ self setColorsForCell: cell ];
+    };
+    
+    
+    [ UIView animateWithDuration: CELL_ANIMATION_DURATION
+                           delay: 0
+                         options: UIViewAnimationOptionCurveLinear
+                      animations: animation
+                      completion: nil ];
 }
 
 @end
