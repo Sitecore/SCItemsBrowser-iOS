@@ -5,6 +5,8 @@
  
  It creates a UILabel sized as the entire cell. It uses default font and color settings.
  There is no way to configure its look and feel except of using UIAppearance API.
+ 
+  We have added some background color animations to this sub-class to make the demo application UI look more responsive. If you need some advanced effects, please override the [UICollectionViewCell setHighlighted:] method in your sub-classes.
  */
 @interface SCDefaultLevelUpGridCell : UICollectionViewCell
 
@@ -23,7 +25,15 @@
  */
 -(void)setLevelUpText:( NSString* )levelUp;
 
+
+/**
+ Background color that is applied when the cell is displayed in UICollectionView without any user's interaction.
+ */
 @property ( nonatomic, strong ) UIColor* backgroundColorForNormalState;
+
+/**
+ Background color that is applied when the cell is being touched by the user.
+ */
 @property ( nonatomic, strong ) UIColor* backgroundColorForHighlightedState;
 
 @end
