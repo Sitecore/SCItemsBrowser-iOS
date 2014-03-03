@@ -7,6 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E26913418C4F6360024DF14 /* LBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECE9C0A18AA825B0017877B /* LBAppDelegate.m */; };
+		7E26913518C4F6360024DF14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECE9C0618AA825B0017877B /* main.m */; };
+		7E26913618C4F6360024DF14 /* LBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECE9C1018AA825B0017877B /* LBViewController.m */; };
+		7E26913818C4F6360024DF14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C6618AA85270017877B /* MapKit.framework */; };
+		7E26913918C4F6360024DF14 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C6418AA85220017877B /* AVFoundation.framework */; };
+		7E26913A18C4F6360024DF14 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C6218AA85110017877B /* MessageUI.framework */; };
+		7E26913B18C4F6360024DF14 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5E18AA85090017877B /* AddressBook.framework */; };
+		7E26913C18C4F6360024DF14 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5F18AA85090017877B /* AddressBookUI.framework */; };
+		7E26913D18C4F6360024DF14 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5A18AA85010017877B /* EventKit.framework */; };
+		7E26913E18C4F6360024DF14 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5B18AA85010017877B /* EventKitUI.framework */; };
+		7E26913F18C4F6360024DF14 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5818AA84FC0017877B /* Twitter.framework */; };
+		7E26914018C4F6360024DF14 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5618AA84F80017877B /* Social.framework */; };
+		7E26914118C4F6360024DF14 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C5418AA84F30017877B /* AudioToolbox.framework */; };
+		7E26914218C4F6360024DF14 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4A18AA84EC0017877B /* CoreAudio.framework */; };
+		7E26914318C4F6360024DF14 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4B18AA84EC0017877B /* CoreLocation.framework */; };
+		7E26914418C4F6360024DF14 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4C18AA84EC0017877B /* CoreMedia.framework */; };
+		7E26914518C4F6360024DF14 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4D18AA84EC0017877B /* CoreMotion.framework */; };
+		7E26914618C4F6360024DF14 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4E18AA84EC0017877B /* CoreVideo.framework */; };
+		7E26914718C4F6360024DF14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFC18AA825B0017877B /* CoreGraphics.framework */; };
+		7E26914818C4F6360024DF14 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4818AA84DA0017877B /* libxml2.dylib */; };
+		7E26914918C4F6360024DF14 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4618AA84D30017877B /* libsqlite3.dylib */; };
+		7E26914A18C4F6360024DF14 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4418AA84CF0017877B /* libz.dylib */; };
+		7E26914B18C4F6360024DF14 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C4218AA84CC0017877B /* libiconv.dylib */; };
+		7E26914C18C4F6360024DF14 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C3E18AA84C70017877B /* libc++.dylib */; };
+		7E26914D18C4F6360024DF14 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C3F18AA84C70017877B /* libstdc++.dylib */; };
+		7E26914F18C4F6360024DF14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFE18AA825B0017877B /* UIKit.framework */; };
+		7E26915018C4F6360024DF14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFA18AA825B0017877B /* Foundation.framework */; };
+		7E26915118C4F6360024DF14 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9C3918AA83E00017877B /* SitecoreMobileSDK.framework */; };
+		7E26915318C4F6360024DF14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ECE9C1218AA825B0017877B /* Images.xcassets */; };
+		7E26915418C4F6360024DF14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F018BF711600A0514D /* Localizable.strings */; };
+		7E26915518C4F6360024DF14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7ECE9C0318AA825B0017877B /* InfoPlist.strings */; };
+		7E26915618C4F6360024DF14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ECE9C0C18AA825B0017877B /* Main.storyboard */; };
+		7E26916018C4F6680024DF14 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E26915F18C4F6680024DF14 /* SitecoreItemsBrowser.framework */; };
 		7E4DE9F118BF711600A0514D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F018BF711600A0514D /* Localizable.strings */; };
 		7ECE9BFB18AA825B0017877B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFA18AA825B0017877B /* Foundation.framework */; };
 		7ECE9BFD18AA825B0017877B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECE9BFC18AA825B0017877B /* CoreGraphics.framework */; };
@@ -79,6 +112,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E26915B18C4F6360024DF14 /* ListItemsBrowserFrameworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListItemsBrowserFrameworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E26915C18C4F6360024DF14 /* ListItemsBrowserDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ListItemsBrowserDemo copy-Info.plist"; path = "/Volumes/untitled/github/SCItemsBrowser/ManualTests/ListItemsBrowserDemo/ListItemsBrowserDemo copy-Info.plist"; sourceTree = "<absolute>"; };
+		7E26915F18C4F6680024DF14 /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreItemsBrowser.framework; path = ../../frameworks/SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
 		7E4DE9F018BF711600A0514D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7ECE9BF718AA825B0017877B /* ListItemsBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListItemsBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ECE9BFA18AA825B0017877B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +161,39 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7E26913718C4F6360024DF14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E26913818C4F6360024DF14 /* MapKit.framework in Frameworks */,
+				7E26913918C4F6360024DF14 /* AVFoundation.framework in Frameworks */,
+				7E26916018C4F6680024DF14 /* SitecoreItemsBrowser.framework in Frameworks */,
+				7E26913A18C4F6360024DF14 /* MessageUI.framework in Frameworks */,
+				7E26913B18C4F6360024DF14 /* AddressBook.framework in Frameworks */,
+				7E26913C18C4F6360024DF14 /* AddressBookUI.framework in Frameworks */,
+				7E26913D18C4F6360024DF14 /* EventKit.framework in Frameworks */,
+				7E26913E18C4F6360024DF14 /* EventKitUI.framework in Frameworks */,
+				7E26913F18C4F6360024DF14 /* Twitter.framework in Frameworks */,
+				7E26914018C4F6360024DF14 /* Social.framework in Frameworks */,
+				7E26914118C4F6360024DF14 /* AudioToolbox.framework in Frameworks */,
+				7E26914218C4F6360024DF14 /* CoreAudio.framework in Frameworks */,
+				7E26914318C4F6360024DF14 /* CoreLocation.framework in Frameworks */,
+				7E26914418C4F6360024DF14 /* CoreMedia.framework in Frameworks */,
+				7E26914518C4F6360024DF14 /* CoreMotion.framework in Frameworks */,
+				7E26914618C4F6360024DF14 /* CoreVideo.framework in Frameworks */,
+				7E26914718C4F6360024DF14 /* CoreGraphics.framework in Frameworks */,
+				7E26914818C4F6360024DF14 /* libxml2.dylib in Frameworks */,
+				7E26914918C4F6360024DF14 /* libsqlite3.dylib in Frameworks */,
+				7E26914A18C4F6360024DF14 /* libz.dylib in Frameworks */,
+				7E26914B18C4F6360024DF14 /* libiconv.dylib in Frameworks */,
+				7E26914C18C4F6360024DF14 /* libc++.dylib in Frameworks */,
+				7E26914D18C4F6360024DF14 /* libstdc++.dylib in Frameworks */,
+				7E26914F18C4F6360024DF14 /* UIKit.framework in Frameworks */,
+				7E26915018C4F6360024DF14 /* Foundation.framework in Frameworks */,
+				7E26915118C4F6360024DF14 /* SitecoreMobileSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ECE9BF418AA825B0017877B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +248,7 @@
 				7ECE9C1F18AA825C0017877B /* ListItemsBrowserDemoTests */,
 				7ECE9BF918AA825B0017877B /* Frameworks */,
 				7ECE9BF818AA825B0017877B /* Products */,
+				7E26915C18C4F6360024DF14 /* ListItemsBrowserDemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +257,7 @@
 			children = (
 				7ECE9BF718AA825B0017877B /* ListItemsBrowserDemo.app */,
 				7ECE9C1818AA825C0017877B /* ListItemsBrowserDemoTests.xctest */,
+				7E26915B18C4F6360024DF14 /* ListItemsBrowserFrameworkDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +341,7 @@
 		7ECE9C2F18AA82960017877B /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				7E26915F18C4F6680024DF14 /* SitecoreItemsBrowser.framework */,
 				7ECE9C3918AA83E00017877B /* SitecoreMobileSDK.framework */,
 				7ECE9C3018AA82A10017877B /* SCItemsBrowser.xcodeproj */,
 			);
@@ -288,6 +360,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7E26913018C4F6360024DF14 /* ListItemsBrowserFrameworkDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E26915718C4F6360024DF14 /* Build configuration list for PBXNativeTarget "ListItemsBrowserFrameworkDemo" */;
+			buildPhases = (
+				7E26913318C4F6360024DF14 /* Sources */,
+				7E26913718C4F6360024DF14 /* Frameworks */,
+				7E26915218C4F6360024DF14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ListItemsBrowserFrameworkDemo;
+			productName = ListItemsBrowserDemo;
+			productReference = 7E26915B18C4F6360024DF14 /* ListItemsBrowserFrameworkDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		7ECE9BF618AA825B0017877B /* ListItemsBrowserDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7ECE9C2918AA825C0017877B /* Build configuration list for PBXNativeTarget "ListItemsBrowserDemo" */;
@@ -359,6 +448,7 @@
 			projectRoot = "";
 			targets = (
 				7ECE9BF618AA825B0017877B /* ListItemsBrowserDemo */,
+				7E26913018C4F6360024DF14 /* ListItemsBrowserFrameworkDemo */,
 				7ECE9C1718AA825C0017877B /* ListItemsBrowserDemoTests */,
 			);
 		};
@@ -382,6 +472,17 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7E26915218C4F6360024DF14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E26915318C4F6360024DF14 /* Images.xcassets in Resources */,
+				7E26915418C4F6360024DF14 /* Localizable.strings in Resources */,
+				7E26915518C4F6360024DF14 /* InfoPlist.strings in Resources */,
+				7E26915618C4F6360024DF14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ECE9BF518AA825B0017877B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +505,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7E26913318C4F6360024DF14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E26913418C4F6360024DF14 /* LBAppDelegate.m in Sources */,
+				7E26913518C4F6360024DF14 /* main.m in Sources */,
+				7E26913618C4F6360024DF14 /* LBViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7ECE9BF318AA825B0017877B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,6 +576,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7E26915818C4F6360024DF14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListItemsBrowserDemo/ListItemsBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "ListItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = ListItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E26915918C4F6360024DF14 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListItemsBrowserDemo/ListItemsBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "ListItemsBrowserDemo copy-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-L../../frameworks",
+					"-lXCode5gcovPatch-Automation",
+				);
+				PRODUCT_NAME = ListItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		7E26915A18C4F6360024DF14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ListItemsBrowserDemo/ListItemsBrowserDemo-Prefix.pch";
+				INFOPLIST_FILE = "ListItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = ListItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		7E43422918BC83B10094C33D /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -714,6 +881,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7E26915718C4F6360024DF14 /* Build configuration list for PBXNativeTarget "ListItemsBrowserFrameworkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E26915818C4F6360024DF14 /* Debug */,
+				7E26915918C4F6360024DF14 /* Coverage */,
+				7E26915A18C4F6360024DF14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7ECE9BF218AA825B0017877B /* Build configuration list for PBXProject "ListItemsBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
