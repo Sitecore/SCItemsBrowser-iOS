@@ -1,6 +1,7 @@
 #import "GBViewController.h"
 
 #import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
+#import <SCItemsBrowser/Grid/Animation/SCHighlightableBackgroundGridCell.h>
 
 static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
@@ -306,12 +307,21 @@ static const NSTimeInterval CELL_ANIMATION_DURATION = 0.2;
 -(void)setColorsForCell:(UICollectionViewCell*)cell
 {
     cell.backgroundColor = [ UIColor greenColor ];
+    
+    
+//    if ( ![ cell isKindOfClass: [ SCItemGridCell class ] ] )
+//    {
+//        return;
+//    }
+    UICollectionViewCell<SCHighlightableBackgroundGridCell>* gridCell = (UICollectionViewCell<SCHighlightableBackgroundGridCell>*)cell;
+    [ gridCell setBackgroundColorForNormalState: [ UIColor greenColor ] ];
+    [ gridCell setBackgroundColorForHighlightedState: [ UIColor redColor ] ];
 }
 
--(void)setHighlightColorsForCell:(UICollectionViewCell*)cell
-{
-    cell.backgroundColor = [ UIColor redColor ];
-}
+//-(void)setHighlightColorsForCell:(UICollectionViewCell*)cell
+//{
+//    cell.backgroundColor = [ UIColor redColor ];
+//}
 
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
  didUnhighlightCell:( UICollectionViewCell* )cell
@@ -328,19 +338,19 @@ static const NSTimeInterval CELL_ANIMATION_DURATION = 0.2;
             forItem:( SCItem* )item
         atIndexPath:( NSIndexPath* )indexPath
 {
-    [ self setHighlightColorsForCell: cell ];
-    
-    AnimationBlock animation = ^void()
-    {
-        [ self setColorsForCell: cell ];
-    };
-    
-    
-    [ UIView animateWithDuration: CELL_ANIMATION_DURATION
-                           delay: 0
-                         options: UIViewAnimationOptionCurveLinear
-                      animations: animation
-                      completion: nil ];
+//    [ self setHighlightColorsForCell: cell ];
+//    
+//    AnimationBlock animation = ^void()
+//    {
+//        [ self setColorsForCell: cell ];
+//    };
+//    
+//    
+//    [ UIView animateWithDuration: CELL_ANIMATION_DURATION
+//                           delay: 0
+//                         options: UIViewAnimationOptionCurveLinear
+//                      animations: animation
+//                      completion: nil ];
 }
 
 @end

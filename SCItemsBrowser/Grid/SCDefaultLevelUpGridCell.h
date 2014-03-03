@@ -23,4 +23,7 @@
  */
 -(void)setLevelUpText:( NSString* )levelUp;
 
+@property ( nonatomic, strong ) UIColor* backgroundColorForNormalState;
+@property ( nonatomic, strong ) UIColor* backgroundColorForHighlightedState;
+
 @end
