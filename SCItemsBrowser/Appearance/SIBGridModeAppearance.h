@@ -20,7 +20,9 @@
 @optional
 
 /**
- Tells the delegate that the item at the specified index path was highlighted. Overloading this method you should do some changes to the cell so that the user gets visual feedback while tapping on it.
+ Tells the delegate that the item at the specified index path was highlighted. Overloading this method you may do some changes to the cell so that the user gets visual feedback while tapping on it.
+ 
+ Note : we recommend overloading the [UICollectionViewCell setHighlighted:] method to add visual effects if you are aiming for the UITableView style highlighting.
  
  @param sender SCItemGridBrowser controller instance.
  @param cell A UICollectionViewCell the user interacts with
@@ -35,7 +37,9 @@
 
 
 /**
- Tells the delegate that the item at the specified index path was unhighlighted. Overloading this method you should revert the cell's appearance to the initial state so that the user gets visual feedback while finishing tapping on it.
+ Tells the delegate that the item at the specified index path was unhighlighted. Overloading this method you may revert the cell's appearance to the initial state so that the user gets visual feedback while finishing tapping on it.
+ 
+  Note : we recommend overloading the [UICollectionViewCell setHighlighted:] method to add visual effects if you are aiming for the UITableView style highlighting.
  
  @param sender SCItemGridBrowser controller instance.
  @param cell A UICollectionViewCell the user interacts with
