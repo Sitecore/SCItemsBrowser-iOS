@@ -7,7 +7,7 @@ The component has been designed to be Interface Builder friendly. We have applie
 Note : Once initialised, it is not possible to assign new values to the configuration properties as the component will crash. This has been made by design with the concurrent programming best practices in mind.
 
 
-1. The Entry Point For Browsing
+1. Getting the Content
 
 In order to browse the content tree we need to know items’ location : 
 * The instance
@@ -19,7 +19,7 @@ All this information must be submitted by initialising the properties below :
 * apiSession
 * rootItem
 
-This is the only piece of information that is not Interface Builder compatible and requires coding. They can be either received from the previous view controller in case the “inversion of control” principle is used or created in place. For example :
+This is the only piece of information that is not Interface Builder compatible and requires coding. They can be either received from the previous view controller in case the “inversion of control” principle is used or created in place and downloaded respectively. For example :
 ========<code example>========
 -(void)setupContext
 {
@@ -62,6 +62,22 @@ The library contains three pre-defined request builders :
 * SIBAllChildrenRequestBuilder - gets all children of a given item.
 * SIBWhiteListTemplateRequestBuilder - gets only those children of the given item having the templates from the list.
 * SIBBlackListTemplateRequestBuilder - gets only those children of the given item having any templates except those on the list.
+
+
+
+3. Customizing Appearance
+
+There are two primary appearance related aspects to take care of :
+* Content cells customization
+* Items browser view customization
+
+For this purpose we have two delegate objects : 
+* SIBListModeCellFactory, SIBGridModeCellFactory - delegates to build and customise cells.
+* SIBListModeAppearance, SIBGridModeAppearance - delegates to configure the overall control appearance.
+
+We have different delegates since different underlying controls are used to display the content. See more details in the upcoming chapters.
+
+
 
 
 
