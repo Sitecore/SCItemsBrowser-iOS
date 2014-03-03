@@ -1132,7 +1132,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SCItemsBrowser-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1158,7 +1158,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SCItemsBrowser-Prefix.pch";
 				GCC_WARN_PEDANTIC = NO;
 				INFOPLIST_FILE = "SCItemsBrowserTests/SCItemsBrowserTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1262,7 +1262,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SCItemsBrowser/SCItemsBrowser-Prefix.pch";
+				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SCItemsBrowser-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
