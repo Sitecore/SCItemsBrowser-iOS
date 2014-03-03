@@ -1,6 +1,7 @@
 #import "GBViewController.h"
 
 #import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
+#import <SCItemsBrowser/Grid/Animation/SCHighlightableBackgroundGridCell.h>
 
 static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 
@@ -301,11 +302,10 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
 -(void)setColorsForCell:(UICollectionViewCell*)cell
 {
     cell.backgroundColor = [ UIColor greenColor ];
-}
-
--(void)setHighlightColorsForCell:(UICollectionViewCell*)cell
-{
-    cell.backgroundColor = [ UIColor cyanColor ];
+    
+    UICollectionViewCell<SCHighlightableBackgroundGridCell>* gridCell = (UICollectionViewCell<SCHighlightableBackgroundGridCell>*)cell;
+    [ gridCell setBackgroundColorForNormalState: [ UIColor greenColor ] ];
+    [ gridCell setBackgroundColorForHighlightedState: [ UIColor redColor ] ];
 }
 
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
@@ -313,7 +313,9 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
             forItem:( SCItem* )item
         atIndexPath:( NSIndexPath* )indexPath
 {
-    [ self setColorsForCell: cell ];
+    // IDLE
+    
+    // @adk : to make highlighting animations look nice
 }
 
 -(void)itemsBrowser:( SCItemGridBrowser* )sender
@@ -321,7 +323,9 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
             forItem:( SCItem* )item
         atIndexPath:( NSIndexPath* )indexPath
 {
-    [ self setHighlightColorsForCell: cell ];
+    // IDLE
+    
+    // @adk : to make highlighting animations look nice
 }
 
 @end
