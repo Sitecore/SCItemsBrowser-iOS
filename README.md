@@ -6,8 +6,9 @@ This library contains GUI controls for viewing the content tree or some its bran
 * Total Commander
 * Far Manager
 
-![1-List-Content-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/5-Readme/Readme-images/1-ListMode.png)
-![2-Instance-Content-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/5-Readme/Readme-images/1-Instance-Home.png)
+
+![1-List-Content-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/master/Readme-images/1-ListMode.png)
+![2-Instance-Content-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/master/Readme-images/1-Instance-Home.png)
 
 
 # Licence
@@ -27,9 +28,9 @@ SITECORE SHARED SOURCE LICENSE
 
 The user is not limited to displaying item names in textual format as you might have thought looking at the screenshots above. Cells are fully customizable by the user and the user can display any content, retrieved from the item. Check out screenshots of the media folder below :
 
-![3-List-Media-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/5-Readme/Readme-images/2-ListMedia.png)
-![4-Grid-Content-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/5-Readme/Readme-images/3-Grid-Media.png)
-![5-Instance-Media-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/5-Readme/Readme-images/2-InstanceMedia.png)
+![3-List-Media-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/master/Readme-images/2-ListMedia.png)
+![4-Grid-Content-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/master/Readme-images/3-Grid-Media.png)
+![5-Instance-Media-Tree](https://github.com/Sitecore/SCItemsBrowser-iOS/raw/master/Readme-images/2-InstanceMedia.png)
 
 
 # Content Views and Subclassing
