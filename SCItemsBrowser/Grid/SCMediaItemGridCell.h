@@ -1,5 +1,6 @@
 #import "SCItemGridCell.h"
 
+@class SCDownloadMediaOptions;
 
 /**
  A UICollectionViewCell sub-class that displays the image of a given media item.

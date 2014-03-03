@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E06396018B0090600259037 /* AllChildrenRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */; };
+		7E11573018C4ED7700D10DE3 /* SCItemsBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */; };
 		7E1D05B018A13D8E006EF056 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05AF18A13D8E006EF056 /* Foundation.framework */; };
 		7E1D05B518A13D8E006EF056 /* SCItemsBrowser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */; };
 		7E1D05BE18A13D8E006EF056 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1D05BD18A13D8E006EF056 /* XCTest.framework */; };
@@ -71,7 +72,6 @@
 		7E22770718C4E9E000EE839F /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E22770818C4E9E000EE839F /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2BF91918C0789200C36DD1 /* SCLevelUpItem.m */; };
 		7E22770918C4E9E000EE839F /* SCAbstractItemsBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82859818BFA19700E6F7E7 /* SCAbstractItemsBrowser.m */; };
-		7E22770A18C4E9E000EE839F /* SCItemsBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */; };
 		7E22770B18C4EA4900EE839F /* SIBGridModeAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1D05E618A14F6D006EF056 /* SIBGridModeAppearance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E22770C18C4EA4900EE839F /* SIBListModeAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1D05E718A14F6D006EF056 /* SIBListModeAppearance.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E22770D18C4EA4900EE839F /* SIBGridModeCellFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1D05E918A14F6D006EF056 /* SIBGridModeCellFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -112,7 +112,6 @@
 		7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43426218BCF0A30094C33D /* SCMediaItemGridCell.m */; };
 		7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */; };
 		7E4CD5BE18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */; };
-		7E4DE9EE18BF6BE500A0514D /* SCItemsBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */; };
 		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
@@ -862,7 +861,6 @@
 			files = (
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
 				7E43426018BCEA9B0094C33D /* SCItemGridTextCell.m in Sources */,
-				7E4DE9EE18BF6BE500A0514D /* SCItemsBrowserView.m in Sources */,
 				7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */,
 				7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */,
 				7E2276D518C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m in Sources */,
@@ -883,6 +881,7 @@
 				7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */,
 				7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */,
 				7E34F72A18AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m in Sources */,
+				7E11573018C4ED7700D10DE3 /* SCItemsBrowserView.m in Sources */,
 				7EAB807818A4EDE300C73F62 /* SCLevelsHistory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -940,7 +939,6 @@
 				7E2276F818C4E9E000EE839F /* SCGridCellBackgroundHighlightingAnimation.m in Sources */,
 				7E2276F518C4E9E000EE839F /* SCLevelsHistory.m in Sources */,
 				7E22770018C4E9E000EE839F /* SCItemListTextCell.m in Sources */,
-				7E22770A18C4E9E000EE839F /* SCItemsBrowserView.m in Sources */,
 				7E22770718C4E9E000EE839F /* SCItem+Media.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1026,6 +1024,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
 					./frameworks,
+					./frameworks/SitecoreMobileSDK.framework/Headers,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1079,6 +1078,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
 					./frameworks,
+					./frameworks/SitecoreMobileSDK.framework/Headers,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-all_load";
@@ -1220,6 +1220,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					.,
 					./frameworks,
+					./frameworks/SitecoreMobileSDK.framework/Headers,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1280,6 +1281,10 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SitecoreItemsBrowser-Prefix.pch";
@@ -1300,6 +1305,10 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SitecoreItemsBrowser-Prefix.pch";
@@ -1316,6 +1325,10 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SitecoreItemsBrowser-Prefix.pch";
@@ -1367,6 +1380,7 @@
 				7E2276EA18C4E99000EE839F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,9 +1,18 @@
-//
-//  Prefix header
-//
-//  The contents of this file are implicitly included at the beginning of every source file.
-//
+
 
 #ifdef __OBJC__
+    #import "SCLevelResponse.h"
+    #import "SCItemsFileManager.h"
+    #import "SCItemsFileManagerCallbacks.h"
+
+    #import "SCItemCell.h"
+    #import "SIBListModeCellFactory.h"
+
+    #import "SIBListModeAppearance.h"
+    #import "SCItemsBrowserDelegate.h"
+
+    #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
+
+    #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
