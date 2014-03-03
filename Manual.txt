@@ -78,6 +78,6 @@ For this purpose we have two delegate objects :
 We have different delegates since different underlying controls are used to display the content. See more details in the upcoming chapters.
 
 
-
-
+4. Contents of the Items Browser Library 
+The items browser library has 
 
