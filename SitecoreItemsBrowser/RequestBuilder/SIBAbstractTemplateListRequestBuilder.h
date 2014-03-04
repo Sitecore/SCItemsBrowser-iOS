@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <SCItemsBrowser/SCItemsLevelRequestBuilder.h>
+#import <SitecoreItemsBrowser/SCItemsLevelRequestBuilder.h>
 
 
 /**

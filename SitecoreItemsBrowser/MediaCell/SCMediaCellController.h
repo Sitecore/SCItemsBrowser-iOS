@@ -1,4 +1,4 @@
-#import <SCItemsBrowser/SCItemCell.h>
+#import <SitecoreItemsBrowser/SCItemCell.h>
 #import <Foundation/Foundation.h>
 
 @protocol SCMediaCellEvents;

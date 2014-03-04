@@ -3,7 +3,7 @@
 
 #import "SCItemsFileManager.h"
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
-#import <SCItemsBrowser/SCItemsBrowser.h>
+#import <SitecoreItemsBrowser/SCItemsBrowser.h>
 
 #import "SCItemsFileManager+UnitTest.h"
 #import "SCItem+PrivateMethods.h"

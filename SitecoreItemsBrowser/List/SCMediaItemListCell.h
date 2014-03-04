@@ -1,4 +1,4 @@
-#import <SCItemsBrowser/List/SCItemListCell.h>
+#import <SitecoreItemsBrowser/List/SCItemListCell.h>
 
 @class SCFieldImageParams;
 

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
-#import <SCItemsBrowser/SCItemsBrowserProtocol.h>
-#import <SCItemsBrowser/SCItemsBrowserInitialization.h>
+#import <SitecoreItemsBrowser/SCItemsBrowserProtocol.h>
+#import <SitecoreItemsBrowser/SCItemsBrowserInitialization.h>
 
 @class SCItem;
 @class SCExtendedApiContext;

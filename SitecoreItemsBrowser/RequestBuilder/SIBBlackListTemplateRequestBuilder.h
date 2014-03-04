@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import <SCItemsBrowser/RequestBuilder/SIBAbstractTemplateListRequestBuilder.h>
+#import <SitecoreItemsBrowser/RequestBuilder/SIBAbstractTemplateListRequestBuilder.h>
 
 /**
- Creates the request to fetch only those children of the given item having the templates from the initializer list.
+ Creates the request to fetch only those children of the given item having any templates except those on the initializer list.
  */
-@interface SIBWhiteListTemplateRequestBuilder : SIBAbstractTemplateListRequestBuilder
+@interface SIBBlackListTemplateRequestBuilder : SIBAbstractTemplateListRequestBuilder
 
 /**
  Unsupported initializer. It throws an exception when called.
@@ -23,9 +23,8 @@
  */
 -(instancetype)initWithTemplateNames:( NSArray* )templateNames;
 
-
 /**
- Creates a query based request that fetches children of the given item that match any of the template on the list.
+ Creates a query based request that fetches children of the given item that match none of the template on the list.
  
  @param sender One of the items browser controllers below.
  * SCItemListBrowser

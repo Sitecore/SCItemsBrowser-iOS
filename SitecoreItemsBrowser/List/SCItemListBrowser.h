@@ -1,8 +1,8 @@
-#import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowser.h>
-#import <SCItemsBrowser/ItemsBrowser/SCAbstractItemsBrowserSubclassing.h>
+#import <SitecoreItemsBrowser/ItemsBrowser/SCAbstractItemsBrowser.h>
+#import <SitecoreItemsBrowser/ItemsBrowser/SCAbstractItemsBrowserSubclassing.h>
 
-#import <SCItemsBrowser/SCItemsBrowserProtocol.h>
-#import <SCItemsBrowser/SCItemsBrowserInitialization.h>
+#import <SitecoreItemsBrowser/SCItemsBrowserProtocol.h>
+#import <SitecoreItemsBrowser/SCItemsBrowserInitialization.h>
 
 
 

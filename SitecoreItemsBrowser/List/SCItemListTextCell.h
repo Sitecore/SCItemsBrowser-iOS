@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <SCItemsBrowser/List/SCItemListCell.h>
+#import <SitecoreItemsBrowser/List/SCItemListCell.h>
 
 /**
  A UITableViewCell sub-class that displays the displayName value of the given SCItem.

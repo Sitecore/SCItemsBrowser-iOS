@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import <SCItemsBrowser/SCItemCell.h>
+#import <SitecoreItemsBrowser/SCItemCell.h>
 
 /**
  A UITableView cell that is capable of rendering item's content.

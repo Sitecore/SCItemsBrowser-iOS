@@ -1,4 +1,4 @@
-#import <SCItemsBrowser/Grid/SCItemGridCell.h>
+#import <SitecoreItemsBrowser/Grid/SCItemGridCell.h>
 
 
 /**
