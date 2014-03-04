@@ -1,3 +1,5 @@
+#import <SitecoreItemsBrowser/FileManager/SCLevelResponse.h>
+
 static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
 
 
