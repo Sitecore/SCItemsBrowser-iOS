@@ -11,11 +11,11 @@
 #endif
 
 #ifdef __OBJC__
-    #import <SCItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
+    #import <SitecoreItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
 
-    #import <SCItemsBrowser/FileManager/SCItemsFileManager.h>
-    #import <SCItemsBrowser/FileManager/SCItemsFileManagerCallbacks.h>
-    #import <SCItemsBrowser/SCItemsBrowser.h>
+    #import <SitecoreItemsBrowser/FileManager/SCItemsFileManager.h>
+    #import <SitecoreItemsBrowser/FileManager/SCItemsFileManagerCallbacks.h>
+    #import <SitecoreItemsBrowser/SCItemsBrowser.h>
 
     #import <MobileSDK-Private/SCItemRecord_UnitTest.h>
     #import <MobileSDK-Private/SCItem+PrivateMethods.h>
