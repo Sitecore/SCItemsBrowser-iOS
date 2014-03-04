@@ -12,7 +12,7 @@ fi
 PROJECT_ROOT=$PWD
 
 DEPLOYMENT_DIR=${PROJECT_ROOT}/deployment
-SDK_LIBRARIES_ROOT=${PROJECT_ROOT}/SCItemsBrowser
+SDK_LIBRARIES_ROOT=${PROJECT_ROOT}/SitecoreItemsBrowser
 
 
 if [ -d "$DEPLOYMENT_DIR" ]; then
@@ -32,6 +32,7 @@ cd "$DEPLOYMENT_DIR"
  		--output .                                      \
 	        --ignore "$SDK_LIBRARIES_ROOT/FileManager"      \
                 --ignore "$SDK_LIBRARIES_ROOT/ItemsBrowserView" \
+                --ignore "$SDK_LIBRARIES_ROOT/Grid/Animation"   \
 		"$SDK_LIBRARIES_ROOT"                           \
         | tee appledoc-log.txt
 
