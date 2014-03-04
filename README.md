@@ -15,6 +15,14 @@ This library contains GUI controls for viewing the content tree or some its bran
 SITECORE SHARED SOURCE LICENSE
 ```
 
+# Distribution
+The component is distributed as a **static framework** for iOS. 
+
+```
+Note : CocoaPods approach is not offcially supported. However, we'll happily accept your pull requests if you create one.
+```
+
+
 # Requirements
 
 1. iOS 6 and newer
@@ -43,3 +51,6 @@ It offers two kinds of components :
 They are based on UITableView and UICollectionView respectively. However, you can implement your own content viewer based on any built-in or third-party iOS controls. In this case you should subclass the 
 [SCAbstractItemsBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCAbstractItemsBrowser.html) controller and provide the missing code to interact with your content UI and provide data for it.
 
+# Docimentation
+You can find the library's **appledoc reference** at our [github pages](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk1.2/hierarchy.html)
+Full documentation is available at **SDN**.
