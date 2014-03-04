@@ -45,6 +45,39 @@
 		7E43425718BC8FE10094C33D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425618BC8FE10094C33D /* Twitter.framework */; };
 		7E43425918BC8FFB0094C33D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425818BC8FFB0094C33D /* MessageUI.framework */; };
 		7E4DE9F518BF7A1400A0514D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F418BF7A1400A0514D /* Localizable.strings */; };
+		7EB8A58D18C5BF01005925F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4341EC18BC7DE50094C33D /* main.m */; };
+		7EB8A58E18C5BF01005925F5 /* GBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4341F618BC7DE50094C33D /* GBViewController.m */; };
+		7EB8A58F18C5BF01005925F5 /* GBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4341F018BC7DE50094C33D /* GBAppDelegate.m */; };
+		7EB8A59118C5BF01005925F5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425818BC8FFB0094C33D /* MessageUI.framework */; };
+		7EB8A59218C5BF01005925F5 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425618BC8FE10094C33D /* Twitter.framework */; };
+		7EB8A59318C5BF01005925F5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425418BC8FDD0094C33D /* Social.framework */; };
+		7EB8A59418C5BF01005925F5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43425218BC8FD10094C33D /* CFNetwork.framework */; };
+		7EB8A59518C5BF01005925F5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424818BC8FC70094C33D /* CoreAudio.framework */; };
+		7EB8A59618C5BF01005925F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424918BC8FC70094C33D /* CoreLocation.framework */; };
+		7EB8A59718C5BF01005925F5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424A18BC8FC70094C33D /* CoreMedia.framework */; };
+		7EB8A59818C5BF01005925F5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424B18BC8FC70094C33D /* CoreMotion.framework */; };
+		7EB8A59918C5BF01005925F5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424C18BC8FC70094C33D /* CoreText.framework */; };
+		7EB8A59A18C5BF01005925F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E218BC7DE50094C33D /* CoreGraphics.framework */; };
+		7EB8A59B18C5BF01005925F5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424618BC8FB70094C33D /* AudioToolbox.framework */; };
+		7EB8A59C18C5BF01005925F5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424418BC8FB20094C33D /* MapKit.framework */; };
+		7EB8A59D18C5BF01005925F5 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424018BC8FAD0094C33D /* EventKit.framework */; };
+		7EB8A59E18C5BF01005925F5 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43424118BC8FAD0094C33D /* EventKitUI.framework */; };
+		7EB8A59F18C5BF01005925F5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423C18BC850D0094C33D /* AddressBook.framework */; };
+		7EB8A5A018C5BF01005925F5 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423D18BC850D0094C33D /* AddressBookUI.framework */; };
+		7EB8A5A118C5BF01005925F5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423A18BC84FB0094C33D /* libsqlite3.dylib */; };
+		7EB8A5A218C5BF01005925F5 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423818BC84B00094C33D /* libiconv.dylib */; };
+		7EB8A5A318C5BF01005925F5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423418BC84A50094C33D /* libc++.dylib */; };
+		7EB8A5A418C5BF01005925F5 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423518BC84A50094C33D /* libstdc++.dylib */; };
+		7EB8A5A518C5BF01005925F5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423218BC849D0094C33D /* libz.dylib */; };
+		7EB8A5A618C5BF01005925F5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43423018BC84990094C33D /* libxml2.dylib */; };
+		7EB8A5A818C5BF01005925F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E418BC7DE50094C33D /* UIKit.framework */; };
+		7EB8A5A918C5BF01005925F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4341E018BC7DE50094C33D /* Foundation.framework */; };
+		7EB8A5AA18C5BF01005925F5 /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E43421518BC7E9E0094C33D /* SitecoreMobileSDK.framework */; };
+		7EB8A5AC18C5BF01005925F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E4341F818BC7DE50094C33D /* Images.xcassets */; };
+		7EB8A5AD18C5BF01005925F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4DE9F418BF7A1400A0514D /* Localizable.strings */; };
+		7EB8A5AE18C5BF01005925F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4341E918BC7DE50094C33D /* InfoPlist.strings */; };
+		7EB8A5AF18C5BF01005925F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4341F218BC7DE50094C33D /* Main.storyboard */; };
+		7EB8A5BC18C5BF59005925F5 /* SitecoreItemsBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB8A5BB18C5BF59005925F5 /* SitecoreItemsBrowser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +108,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7E1D05AB18A13D8E006EF056;
 			remoteInfo = SCItemsBrowser;
+		};
+		7EB8A5B818C5BF02005925F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E43421718BC7EA80094C33D /* SCItemsBrowser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7EC7052718C5BBB900B9EFDF;
+			remoteInfo = SitecoreItemsBrowser;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -122,6 +162,9 @@
 		7E43425618BC8FE10094C33D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		7E43425818BC8FFB0094C33D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7E4DE9F418BF7A1400A0514D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7EB8A5B418C5BF01005925F5 /* GridItemsBrowserFrameworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GridItemsBrowserFrameworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB8A5B518C5BF01005925F5 /* GridItemsBrowserDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GridItemsBrowserDemo copy-Info.plist"; path = "/Volumes/untitled/github/SCItemsBrowser/ManualTests/GridItemsBrowserDemo/GridItemsBrowserDemo copy-Info.plist"; sourceTree = "<absolute>"; };
+		7EB8A5BB18C5BF59005925F5 /* SitecoreItemsBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SitecoreItemsBrowser.framework; path = ../../frameworks/SitecoreItemsBrowser.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,18 +211,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB8A59018C5BF01005925F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB8A59118C5BF01005925F5 /* MessageUI.framework in Frameworks */,
+				7EB8A59218C5BF01005925F5 /* Twitter.framework in Frameworks */,
+				7EB8A59318C5BF01005925F5 /* Social.framework in Frameworks */,
+				7EB8A59418C5BF01005925F5 /* CFNetwork.framework in Frameworks */,
+				7EB8A59518C5BF01005925F5 /* CoreAudio.framework in Frameworks */,
+				7EB8A59618C5BF01005925F5 /* CoreLocation.framework in Frameworks */,
+				7EB8A59718C5BF01005925F5 /* CoreMedia.framework in Frameworks */,
+				7EB8A59818C5BF01005925F5 /* CoreMotion.framework in Frameworks */,
+				7EB8A59918C5BF01005925F5 /* CoreText.framework in Frameworks */,
+				7EB8A59A18C5BF01005925F5 /* CoreGraphics.framework in Frameworks */,
+				7EB8A59B18C5BF01005925F5 /* AudioToolbox.framework in Frameworks */,
+				7EB8A59C18C5BF01005925F5 /* MapKit.framework in Frameworks */,
+				7EB8A59D18C5BF01005925F5 /* EventKit.framework in Frameworks */,
+				7EB8A59E18C5BF01005925F5 /* EventKitUI.framework in Frameworks */,
+				7EB8A5BC18C5BF59005925F5 /* SitecoreItemsBrowser.framework in Frameworks */,
+				7EB8A59F18C5BF01005925F5 /* AddressBook.framework in Frameworks */,
+				7EB8A5A018C5BF01005925F5 /* AddressBookUI.framework in Frameworks */,
+				7EB8A5A118C5BF01005925F5 /* libsqlite3.dylib in Frameworks */,
+				7EB8A5A218C5BF01005925F5 /* libiconv.dylib in Frameworks */,
+				7EB8A5A318C5BF01005925F5 /* libc++.dylib in Frameworks */,
+				7EB8A5A418C5BF01005925F5 /* libstdc++.dylib in Frameworks */,
+				7EB8A5A518C5BF01005925F5 /* libz.dylib in Frameworks */,
+				7EB8A5A618C5BF01005925F5 /* libxml2.dylib in Frameworks */,
+				7EB8A5A818C5BF01005925F5 /* UIKit.framework in Frameworks */,
+				7EB8A5A918C5BF01005925F5 /* Foundation.framework in Frameworks */,
+				7EB8A5AA18C5BF01005925F5 /* SitecoreMobileSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7E4341D418BC7DE50094C33D = {
 			isa = PBXGroup;
 			children = (
-				7E43421718BC7EA80094C33D /* SCItemsBrowser.xcodeproj */,
-				7E43421518BC7E9E0094C33D /* SitecoreMobileSDK.framework */,
+				7EB8A5BA18C5BF42005925F5 /* lib */,
 				7E4341E618BC7DE50094C33D /* GridItemsBrowserDemo */,
 				7E43420518BC7DE60094C33D /* GridItemsBrowserDemoTests */,
 				7E4341DF18BC7DE50094C33D /* Frameworks */,
 				7E4341DE18BC7DE50094C33D /* Products */,
+				7EB8A5B518C5BF01005925F5 /* GridItemsBrowserDemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +264,7 @@
 			children = (
 				7E4341DD18BC7DE50094C33D /* GridItemsBrowserDemo.app */,
 				7E4341FE18BC7DE50094C33D /* GridItemsBrowserDemoTests.xctest */,
+				7EB8A5B418C5BF01005925F5 /* GridItemsBrowserFrameworkDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,9 +349,20 @@
 			isa = PBXGroup;
 			children = (
 				7E43421D18BC7EA80094C33D /* libSCItemsBrowser.a */,
+				7EB8A5B918C5BF02005925F5 /* SitecoreItemsBrowser.framework */,
 				7E43421F18BC7EA80094C33D /* SCItemsBrowserTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7EB8A5BA18C5BF42005925F5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				7EB8A5BB18C5BF59005925F5 /* SitecoreItemsBrowser.framework */,
+				7E43421718BC7EA80094C33D /* SCItemsBrowser.xcodeproj */,
+				7E43421518BC7E9E0094C33D /* SitecoreMobileSDK.framework */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +404,23 @@
 			productReference = 7E4341FE18BC7DE50094C33D /* GridItemsBrowserDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7EB8A58918C5BF01005925F5 /* GridItemsBrowserFrameworkDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EB8A5B018C5BF01005925F5 /* Build configuration list for PBXNativeTarget "GridItemsBrowserFrameworkDemo" */;
+			buildPhases = (
+				7EB8A58C18C5BF01005925F5 /* Sources */,
+				7EB8A59018C5BF01005925F5 /* Frameworks */,
+				7EB8A5AB18C5BF01005925F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GridItemsBrowserFrameworkDemo;
+			productName = GridItemsBrowserDemo;
+			productReference = 7EB8A5B418C5BF01005925F5 /* GridItemsBrowserFrameworkDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -351,6 +456,7 @@
 			projectRoot = "";
 			targets = (
 				7E4341DC18BC7DE50094C33D /* GridItemsBrowserDemo */,
+				7EB8A58918C5BF01005925F5 /* GridItemsBrowserFrameworkDemo */,
 				7E4341FD18BC7DE50094C33D /* GridItemsBrowserDemoTests */,
 			);
 		};
@@ -369,6 +475,13 @@
 			fileType = wrapper.cfbundle;
 			path = SCItemsBrowserTests.xctest;
 			remoteRef = 7E43421E18BC7EA80094C33D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7EB8A5B918C5BF02005925F5 /* SitecoreItemsBrowser.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework.static;
+			path = SitecoreItemsBrowser.framework;
+			remoteRef = 7EB8A5B818C5BF02005925F5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -393,6 +506,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB8A5AB18C5BF01005925F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB8A5AC18C5BF01005925F5 /* Images.xcassets in Resources */,
+				7EB8A5AD18C5BF01005925F5 /* Localizable.strings in Resources */,
+				7EB8A5AE18C5BF01005925F5 /* InfoPlist.strings in Resources */,
+				7EB8A5AF18C5BF01005925F5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -411,6 +535,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E43420C18BC7DE60094C33D /* GridItemsBrowserDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB8A58C18C5BF01005925F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB8A58D18C5BF01005925F5 /* main.m in Sources */,
+				7EB8A58E18C5BF01005925F5 /* GBViewController.m in Sources */,
+				7EB8A58F18C5BF01005925F5 /* GBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +839,69 @@
 			};
 			name = Coverage;
 		};
+		7EB8A5B118C5BF01005925F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridItemsBrowserDemo/GridItemsBrowserDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "GridItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = GridItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7EB8A5B218C5BF01005925F5 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridItemsBrowserDemo/GridItemsBrowserDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "GridItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = GridItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Coverage;
+		};
+		7EB8A5B318C5BF01005925F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GridItemsBrowserDemo/GridItemsBrowserDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "GridItemsBrowserDemo copy-Info.plist";
+				PRODUCT_NAME = GridItemsBrowserFrameworkDemo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -734,6 +931,16 @@
 				7E43421318BC7DE60094C33D /* Debug */,
 				7E43422218BC7F2D0094C33D /* Coverage */,
 				7E43421418BC7DE60094C33D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EB8A5B018C5BF01005925F5 /* Build configuration list for PBXNativeTarget "GridItemsBrowserFrameworkDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EB8A5B118C5BF01005925F5 /* Debug */,
+				7EB8A5B218C5BF01005925F5 /* Coverage */,
+				7EB8A5B318C5BF01005925F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
