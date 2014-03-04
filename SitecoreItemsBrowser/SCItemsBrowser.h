@@ -11,7 +11,6 @@
 
 
 #import <SitecoreItemsBrowser/ItemsBrowser/SCLevelUpItem.h>
-#import <SitecoreItemsBrowser/FileManager/SCLevelResponse.h>
 
 #import <SitecoreItemsBrowser/Appearance/SIBListModeAppearance.h>
 #import <SitecoreItemsBrowser/Appearance/SIBGridModeAppearance.h>
