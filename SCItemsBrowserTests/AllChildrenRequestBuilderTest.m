@@ -6,7 +6,7 @@
 #import <MobileSDK-Private/SCItemRecord_UnitTest.h>
 #import <MobileSDK-Private/SCItem+PrivateMethods.h>
 
-#import <SCItemsBrowser/SCItemsBrowser.h>
+#import <SitecoreItemsBrowser/SCItemsBrowser.h>
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 
 @interface AllChildrenRequestBuilderTest : XCTestCase
