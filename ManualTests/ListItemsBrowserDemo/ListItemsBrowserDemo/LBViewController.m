@@ -48,6 +48,32 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
     self->_apiSession = self->_legacyApiSession.extendedApiSession;
 }
 
+-(void)downloadRootItem
+{
+    self.itemsBrowserController.apiSession = self->_apiSession;
+    
+    
+    SCExtendedAsyncOp rootItemLoader =
+    [ self->_apiSession readItemOperationForItemPath: ROOT_ITEM_PATH
+                                          itemSource: nil ];
+    
+    [ self startLoading ];
+    __weak LBViewController* weakSelf = self;
+    rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
+   {
+       [ weakSelf endLoading ];
+       
+       if ( nil == rootItem )
+       {
+           [ weakSelf didFailLoadingRootItemWithError: blockError ];
+       }
+       else
+       {
+           [ weakSelf didLoadRootItem: rootItem ];
+       }
+   } );
+}
+
 -(void)localizeButtons
 {
     [ self.rootButton setTitle: NSLocalizedString( @"BTN_GO_TO_ROOT", nil )
@@ -65,28 +91,7 @@ forState: UIControlStateNormal ];
     NSParameterAssert( nil != self.itemsBrowserController );
     
     [ self setupContext ];
-    self.itemsBrowserController.apiSession = self->_apiSession;
-    
-
-    SCExtendedAsyncOp rootItemLoader =
-    [ self->_apiSession readItemOperationForItemPath: ROOT_ITEM_PATH
-                                          itemSource: nil ];
-    
-    [ self startLoading ];
-    __weak LBViewController* weakSelf = self;
-    rootItemLoader( nil, nil, ^( SCItem* rootItem, NSError* blockError )
-    {
-        [ weakSelf endLoading ];
-        
-       if ( nil == rootItem )
-       {
-           [ weakSelf didFailLoadingRootItemWithError: blockError ];
-       }
-       else
-       {
-           [ weakSelf didLoadRootItem: rootItem ];
-       }
-    } );
+    [ self downloadRootItem ];
 }
 
 -(void)didFailLoadingRootItemWithError:( NSError* )error
