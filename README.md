@@ -51,6 +51,6 @@ It offers two kinds of components :
 They are based on UITableView and UICollectionView respectively. However, you can implement your own content viewer based on any built-in or third-party iOS controls. In this case you should subclass the 
 [SCAbstractItemsBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCAbstractItemsBrowser.html) controller and provide the missing code to interact with your content UI and provide data for it.
 
-# Docimentation
+# Docmentation
 You can find the library's **appledoc reference** at our [github pages](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk1.3/hierarchy.html)
 Full documentation is available at **SDN**.
