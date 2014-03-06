@@ -52,7 +52,7 @@ They are based on UITableView and UICollectionView respectively. However, you ca
 [SCAbstractItemsBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCAbstractItemsBrowser.html) controller and provide the missing code to interact with your content UI and provide data for it.
 
 
-# Docimentation
+# Documentation
 You can find the library's **appledoc reference** at our [github pages](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk1.2/hierarchy.html)
 Full documentation is available at **SDN**.
 
