@@ -107,6 +107,22 @@
  */
 @property(nonatomic) NSString *defaultDatabase;
 
+
+/**
+ Media library root folder in the content tree.
+ By default it is "/sitecore/media library"
+ 
+ Note : it must match the web.config settings on the back end.
+ */
+@property(nonatomic) NSString *mediaLibraryPath;
+
+/**
+ Default media library root folder in the content tree.
+ @return "/sitecore/media library"
+ */
++(NSString*)defaultMediaLibraryPath;
+
+
 /**
  The version used to request Sitecore items, default is "nil" which means the latest version will be retrieved.
  */
@@ -124,7 +140,7 @@
 
 /**
  The Sitecore system languages, by default is nil.
- To read Sitecore system languages call -[SCApiSession systemLanguagesReader] method.
+ To read Sitecore system languages call -[SCApiSession readSystemLanguagesOperation] method.
  */
 @property(nonatomic) NSSet *systemLanguages;
 
@@ -149,7 +165,7 @@
  Used to load Sitecore system languages from the backend.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSSet of strings or nil if error happens.
  */
-- (SCAsyncOp)systemLanguagesReader;
+- (SCAsyncOp)readSystemLanguagesOperation;
 
 /**
  Used to load items from the backend according to the properties of SCReadItemsRequest object
@@ -245,7 +261,7 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                                itemId:(NSString *)itemId;
+                                      itemId:(NSString *)itemId;
 
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
                             itemSource:( id<SCItemSource> )itemSource
@@ -268,7 +284,7 @@
  - SCInvalidResponseFormatError - response can not be processed
  */
 - (SCAsyncOp)readItemOperationForFieldsNames:(NSSet *)fieldNames
-                              itemPath:(NSString *)path;
+                                    itemPath:(NSString *)path;
 
 /**
  Used to create item according to the properties of SCCreateItemRequest object
@@ -303,7 +319,7 @@
  @param itemId system item's id, -[SCItem itemId] can be used.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSArray of SCItem objects or nil if error happens.
  */
-- (SCAsyncOp)childrenReaderWithItemId:(NSString *)itemId;
+- (SCAsyncOp)readChildrenOperationForItemId:(NSString *)itemId;
 
 /**
  Used to load item's children by the system item id.
@@ -318,22 +334,22 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCAsyncOp)childrenReaderWithItemPath:(NSString *)path;
+- (SCAsyncOp)readChildrenOperationForItemPath:(NSString *)path;
 
 /**
  Used to load image with the image path, see [SCImageField imagePath].
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)path;
+- (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path;
 
 /**
  Used to load image with the image path, see [SCImageField imagePath] with additional parameters.
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
-                           imageParams:( SCDownloadMediaOptions * )params;
+- (SCAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
+                                       imageParams:( SCDownloadMediaOptions * )params;
 
 /**
  Used to request rendering HTML for rendering with request
@@ -347,8 +363,8 @@
  @param sourceId - item's id for render using rendering with renderingId
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
  */
-- (SCAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId
-                                          sourceId:(NSString *)sourceId;
+- (SCAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
+                                                sourceId:(NSString *)sourceId;
 
 /**
  Used to trigger a goal or a campain with the given request

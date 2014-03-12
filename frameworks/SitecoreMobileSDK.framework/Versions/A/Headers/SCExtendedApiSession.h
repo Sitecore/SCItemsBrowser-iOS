@@ -80,6 +80,22 @@
 @property(nonatomic) NSString *defaultItemVersion;
 
 /**
+ Media library root folder in the content tree.
+ By default it is "/sitecore/media library".
+ 
+ Note : it must match the web.config settings on the back end.
+ */
+@property(nonatomic) NSString *mediaLibraryPath;
+
+
+/**
+ Default media library root folder in the content tree.
+ @return "/sitecore/media library"
+ */
++(NSString*)defaultMediaLibraryPath;
+
+
+/**
  The default life time in cache after which object in cache becames old. Default value is ten minutes
 */
 @property(nonatomic) NSTimeInterval defaultLifeTimeInCache;
@@ -91,7 +107,7 @@
 
 /**
  The Sitecore system languages, by default is nil.
- To read Sitecore system languages call -[SCApiSession systemLanguagesReader] method.
+ To read Sitecore system languages call -[SCApiSession readSystemLanguagesOperation] method.
  */
 @property(nonatomic) NSSet *systemLanguages;
 
@@ -118,7 +134,7 @@
  Used to load Sitecore system languages from the backend.
  @return SCExtendedAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSSet of strings or nil if error happens.
  */
-- (SCExtendedAsyncOp)systemLanguagesReader;
+- (SCExtendedAsyncOp)readSystemLanguagesOperation;
 
 /**
  Used to load items from the backend according to the properties of SCReadItemsRequest object
@@ -262,7 +278,7 @@
  @param itemId system item's id, -[SCItem itemId] can be used.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSArray of SCItem objects or nil if error happens.
  */
-- (SCExtendedAsyncOp)childrenReaderWithItemId:(NSString *)itemId
+- (SCExtendedAsyncOp)readChildrenOperationForItemId:(NSString *)itemId
                                    itemSource:(id<SCItemSource>)itemSource;
 
 /**
@@ -278,8 +294,8 @@
  
  - SCInvalidResponseFormatError - response can not be processed
  */
-- (SCExtendedAsyncOp)childrenReaderWithItemPath:(NSString *)path
-                                     itemSource:(id<SCItemSource>)itemSource;
+- (SCExtendedAsyncOp)readChildrenOperationForItemPath:(NSString *)path
+                                           itemSource:(id<SCItemSource>)itemSource;
 
 
 /**
@@ -287,8 +303,8 @@
  @param path image's path. Image with http://{WebApiHost}/~/media{path}.ashx will be loaded.
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is UIImage object or nil if error happens.
  */
-- (SCExtendedAsyncOp)imageLoaderForSCMediaPath:(NSString *)path
-                                   imageParams:( SCDownloadMediaOptions * )params;
+- (SCExtendedAsyncOp)downloadResourceOperationForMediaPath:(NSString *)path
+                                               imageParams:( SCDownloadMediaOptions * )params;
 
 
 /**
@@ -303,8 +319,8 @@
  @param sourceId - item's id for render using rendering with renderingId
  @return SCAsyncOp block. Call it to get the expected result. The SCAsyncOpResult handler's result is NSString object or nil if error happens.
 */
-- (SCExtendedAsyncOp)renderingHTMLLoaderForRenderingWithId:(NSString *)renderingId
-                                                  sourceId:(NSString *)sourceId;
+- (SCExtendedAsyncOp)getRenderingHtmlOperationForRenderingWithId:(NSString *)renderingId
+                                                        sourceId:(NSString *)sourceId;
 
 /**
   Used to trigger a goal or a campain with the given request
