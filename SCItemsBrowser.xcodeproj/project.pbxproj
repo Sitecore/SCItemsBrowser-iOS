@@ -54,7 +54,6 @@
 		7E34F72718AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */; };
 		7E34F72A18AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72918AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m */; };
 		7E34F72D18AA45E700B5D62E /* SCItemListBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72C18AA45E700B5D62E /* SCItemListBrowser.mm */; };
-		7E3A432918B21242002B4160 /* ItemExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A432818B21242002B4160 /* ItemExtensionTests.m */; };
 		7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */; };
 		7E40D84918A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
 		7E43425D18BCE3830094C33D /* SCDefaultLevelUpGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43425C18BCE3830094C33D /* SCDefaultLevelUpGridCell.m */; };
@@ -130,7 +129,6 @@
 		7EAB809818A528C700C73F62 /* ItemsLevelOperationBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */; };
 		7EB927BE18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */; };
 		7EC6143A18AD2F7D008E6011 /* AssignOnceListPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */; };
-		7EE94C6718B24CEA00E28C7B /* ImageLoaderBuilderHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE94C6618B24CE900E28C7B /* ImageLoaderBuilderHook.m */; };
 		7EF614D918ABA8C300C648B4 /* SCItemListTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */; };
 		7EFEC3E418B2678200363A8F /* ItemsListBrowserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFEC3E318B2678200363A8F /* ItemsListBrowserTest.m */; };
 /* End PBXBuildFile section */
@@ -231,7 +229,6 @@
 		7E34F72E18AA482200B5D62E /* SCItemsBrowserInitialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserInitialization.h; sourceTree = "<group>"; };
 		7E35B1F318A37D6D000F30E8 /* SCItemsFileManager+UnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItemsFileManager+UnitTest.h"; sourceTree = "<group>"; };
 		7E35B1F618A3976D000F30E8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		7E3A432818B21242002B4160 /* ItemExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemExtensionTests.m; sourceTree = "<group>"; };
 		7E3BF9EF18A8C240001454C5 /* HelperStructuresTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperStructuresTest.m; sourceTree = "<group>"; };
 		7E3CB67718A62A0F004D28BD /* libXCode5gcovPatch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libXCode5gcovPatch.a; path = frameworks/libXCode5gcovPatch.a; sourceTree = "<group>"; };
 		7E40D84718A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBWhiteListTemplateRequestBuilder.h; sourceTree = "<group>"; };
@@ -285,8 +282,6 @@
 		7EB927BC18A9002C0007B062 /* SIBAllChildrenRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIBAllChildrenRequestBuilder.h; sourceTree = "<group>"; };
 		7EB927BD18A9002C0007B062 /* SIBAllChildrenRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIBAllChildrenRequestBuilder.m; sourceTree = "<group>"; };
 		7EC6143918AD2F7D008E6011 /* AssignOnceListPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceListPropertiesTest.m; sourceTree = "<group>"; };
-		7EE94C6518B24CE900E28C7B /* ImageLoaderBuilderHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoaderBuilderHook.h; sourceTree = "<group>"; };
-		7EE94C6618B24CE900E28C7B /* ImageLoaderBuilderHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderBuilderHook.m; sourceTree = "<group>"; };
 		7EF614D718ABA8C300C648B4 /* SCItemListTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemListTextCell.h; sourceTree = "<group>"; };
 		7EF614D818ABA8C300C648B4 /* SCItemListTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemListTextCell.m; sourceTree = "<group>"; };
 		7EFEC3E318B2678200363A8F /* ItemsListBrowserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsListBrowserTest.m; sourceTree = "<group>"; };
@@ -457,7 +452,6 @@
 				7E84902618AF863C00B1EE15 /* BlackListRequestBuilderTest.m */,
 				7E06395F18B0090600259037 /* AllChildrenRequestBuilderTest.m */,
 				7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */,
-				7E3A432818B21242002B4160 /* ItemExtensionTests.m */,
 				7EFEC3E318B2678200363A8F /* ItemsListBrowserTest.m */,
 				7E1D05C618A13D8E006EF056 /* Supporting Files */,
 			);
@@ -625,8 +619,6 @@
 			children = (
 				7EAB809618A528C700C73F62 /* ItemsLevelOperationBuilderHook.h */,
 				7EAB809718A528C700C73F62 /* ItemsLevelOperationBuilderHook.m */,
-				7EE94C6518B24CE900E28C7B /* ImageLoaderBuilderHook.h */,
-				7EE94C6618B24CE900E28C7B /* ImageLoaderBuilderHook.m */,
 			);
 			path = Hooks;
 			sourceTree = "<group>";
@@ -880,7 +872,6 @@
 				7EAB809018A5278A00C73F62 /* StubGridModeTheme.m in Sources */,
 				7EAB809118A5278A00C73F62 /* StubItemsBrowserDelegate.m in Sources */,
 				7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */,
-				7EE94C6718B24CEA00E28C7B /* ImageLoaderBuilderHook.m in Sources */,
 				7E3BF9F018A8C240001454C5 /* HelperStructuresTest.m in Sources */,
 				7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */,
 				7EA19EDC18AD34CD00DD18CD /* WhiteListRequestBuilderTest.m in Sources */,
@@ -892,7 +883,6 @@
 				7E06396018B0090600259037 /* AllChildrenRequestBuilderTest.m in Sources */,
 				7E84902718AF863C00B1EE15 /* BlackListRequestBuilderTest.m in Sources */,
 				7EAB808318A5209900C73F62 /* ItemsFileManagerHistoryTest.m in Sources */,
-				7E3A432918B21242002B4160 /* ItemExtensionTests.m in Sources */,
 				7E7E492118BB7C990068124D /* GridLazyFileManagerTest.m in Sources */,
 				7EAB809318A5278A00C73F62 /* StubRequestBuilder.m in Sources */,
 				7EFEC3E418B2678200363A8F /* ItemsListBrowserTest.m in Sources */,
