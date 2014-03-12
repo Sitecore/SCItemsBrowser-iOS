@@ -120,7 +120,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
     NSParameterAssert( nil != levelUpParentItem );
     
     // set cache flag to zero
-    request.flags &= SCItemReaderRequestReadFieldsValues;
+    request.flags &= SCReadItemRequestReadFieldsValues;
     
     
     SCLevelsHistory* levelsHistory = self->_levelsHistory;
@@ -185,7 +185,7 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
     
     if ( shouldIgnoreCache )
     {
-        request.flags |= SCItemReaderRequestIngnoreCache;
+        request.flags |= SCReadItemRequestIngnoreCache;
     }
 
     return request;

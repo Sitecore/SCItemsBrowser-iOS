@@ -117,7 +117,7 @@
     
     
     {
-        requestStub.flags = SCItemReaderRequestIngnoreCache;
+        requestStub.flags = SCReadItemRequestIngnoreCache;
         
         SCItemsFileManager* fm = self->_useCacheFm;
         self->_useCacheRequestBuilderStub.requestStub = requestStub;
@@ -130,7 +130,7 @@
     }
     
     {
-        requestStub.flags = SCItemReaderRequestReadFieldsValues;
+        requestStub.flags = SCReadItemRequestReadFieldsValues;
         
         SCItemsFileManager* fm = self->_useCacheFm;
         self->_useCacheRequestBuilderStub.requestStub = requestStub;
@@ -143,7 +143,7 @@
     }
     
     {
-        requestStub.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        requestStub.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         
         SCItemsFileManager* fm = self->_useCacheFm;
         self->_useCacheRequestBuilderStub.requestStub = requestStub;
@@ -168,12 +168,12 @@
         actualRequest = [ fm buildLevelRequestForItem: self->_rootItemStub
                                         ignoringCache: YES ];
         
-        XCTAssertTrue( SCItemReaderRequestIngnoreCache == actualRequest.flags, @"flags should not be changed" );
+        XCTAssertTrue( SCReadItemRequestIngnoreCache == actualRequest.flags, @"flags should not be changed" );
     }
     
     
     {
-        requestStub.flags = SCItemReaderRequestIngnoreCache;
+        requestStub.flags = SCReadItemRequestIngnoreCache;
         
         SCItemsFileManager* fm = self->_useCacheFm;
         self->_useCacheRequestBuilderStub.requestStub = requestStub;
@@ -182,11 +182,11 @@
                                         ignoringCache: YES ];
         
         
-        XCTAssertTrue( SCItemReaderRequestIngnoreCache == actualRequest.flags, @"flags should not be changed" );
+        XCTAssertTrue( SCReadItemRequestIngnoreCache == actualRequest.flags, @"flags should not be changed" );
     }
     
     {
-        requestStub.flags = SCItemReaderRequestReadFieldsValues;
+        requestStub.flags = SCReadItemRequestReadFieldsValues;
         
         SCItemsFileManager* fm = self->_useCacheFm;
         self->_useCacheRequestBuilderStub.requestStub = requestStub;
@@ -195,11 +195,11 @@
                                         ignoringCache: YES ];
         
         
-        XCTAssertTrue( (SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues) == actualRequest.flags, @"flags should not be changed" );
+        XCTAssertTrue( (SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues) == actualRequest.flags, @"flags should not be changed" );
     }
     
     {
-        requestStub.flags = SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues;
+        requestStub.flags = SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues;
         
         SCItemsFileManager* fm = self->_useCacheFm;
         self->_useCacheRequestBuilderStub.requestStub = requestStub;
@@ -208,7 +208,7 @@
                                         ignoringCache: YES ];
         
         
-        XCTAssertTrue( (SCItemReaderRequestIngnoreCache | SCItemReaderRequestReadFieldsValues) == actualRequest.flags, @"flags should not be changed" );
+        XCTAssertTrue( (SCReadItemRequestIngnoreCache | SCReadItemRequestReadFieldsValues) == actualRequest.flags, @"flags should not be changed" );
     }
 }
 

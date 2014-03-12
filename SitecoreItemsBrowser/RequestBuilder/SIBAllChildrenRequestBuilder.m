@@ -1,6 +1,6 @@
 #import "SIBAllChildrenRequestBuilder.h"
 
-#import "SCItem+Media.h"
+
 
 @implementation SIBAllChildrenRequestBuilder
 
@@ -20,9 +20,9 @@
 {
     SCReadItemsRequest* result = [ SCReadItemsRequest new ];
     {
-        result.requestType = SCItemReaderRequestItemPath;
-        result.request     = item.path                  ;
-        result.scope       = SCItemReaderChildrenScope  ;
+        result.requestType = SCReadItemRequestItemPath;
+        result.request     = item.path                ;
+        result.scope       = SCReadItemChildrenScope  ;
     }
     
     [ self setSourceFromItem: item

@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 
-#import "SCItem+Media.h"
+
 
 #import <MobileSDK-Private/SCItemRecord_Source.h>
 #import <MobileSDK-Private/SCItemRecord_UnitTest.h>
@@ -150,7 +150,7 @@
                                  levelDownRequestForItem: self->_rootItemStub ];
    
    XCTAssertNotNil( request, @"request builder failed and returned nil" );
-   XCTAssertTrue( SCItemReaderRequestQuery == request.requestType, @"Request type is not 'Query' " );
+   XCTAssertTrue( SCReadItemRequestQuery == request.requestType, @"Request type is not 'Query' " );
    XCTAssertEqualObjects( request.request, @"/sitecore/content/home/*[@@templatename != 'Folder' AND @@templatename != 'Author' AND @@templatename != 'BlogPost']", @"query mismatch" );
 }
 
@@ -165,7 +165,7 @@
                                  levelDownRequestForItem: self->_rootItemStub ];
    
    XCTAssertNotNil( request, @"request builder failed and returned nil" );
-   XCTAssertTrue( SCItemReaderRequestQuery == request.requestType, @"Request type is not 'Query' " );
+   XCTAssertTrue( SCReadItemRequestQuery == request.requestType, @"Request type is not 'Query' " );
    XCTAssertEqualObjects( request.request, @"/sitecore/content/home/*[@@templatename != '    Folder    ' AND @@templatename != '\t' AND @@templatename != '']", @"query mismatch" );
 }
 

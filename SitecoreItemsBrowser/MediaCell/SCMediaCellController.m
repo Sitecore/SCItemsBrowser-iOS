@@ -1,7 +1,6 @@
 #import "SCMediaCellController.h"
 
 #import "SCMediaCellEvents.h"
-#import "SCItem+Media.h"
 
 @implementation SCMediaCellController
 {

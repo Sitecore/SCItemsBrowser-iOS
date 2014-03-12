@@ -1,6 +1,6 @@
 #import "SIBAbstractTemplateListRequestBuilder.h"
 
-#import "SCItem+Media.h"
+
 
 @implementation SIBAbstractTemplateListRequestBuilder
 
@@ -47,15 +47,15 @@
 }
 
 -(SCReadItemsRequest*)itemsBrowser:( id )sender
-             levelDownRequestForItem:( SCItem* )item
+           levelDownRequestForItem:( SCItem* )item
 {
     NSString* templatesFilter = [ self templateFilterClause ];
     
     SCReadItemsRequest* result = [ SCReadItemsRequest new ];
     {
-        result.requestType = SCItemReaderRequestQuery;
+        result.requestType = SCReadItemRequestQuery;
         result.request     = [ NSString stringWithFormat: @"%@/*[%@]", item.path, templatesFilter ];
-        result.scope       = SCItemReaderChildrenScope  ;
+        result.scope       = SCReadItemChildrenScope  ;
     }
    
     [ self setSourceFromItem: item

@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
 
-#import "SCItem+Media.h"
+
 
 #import <MobileSDK-Private/SCItemRecord_Source.h>
 #import <MobileSDK-Private/SCItemRecord_UnitTest.h>
@@ -77,9 +77,9 @@
                                   levelDownRequestForItem: self->_rootItemStub ];
     
     XCTAssertNotNil( request, @"request builder failed and returned nil" );
-    XCTAssertTrue( SCItemReaderRequestItemPath == request.requestType, @"Request type is not 'Query' " );
+    XCTAssertTrue( SCReadItemRequestItemPath == request.requestType, @"Request type is not 'Query' " );
     XCTAssertEqualObjects( request.request, @"/sitecore/content/home", @"query mismatch" );
-    XCTAssertTrue( SCItemReaderChildrenScope == request.scope, @"scope mismatch" );
+    XCTAssertTrue( SCReadItemChildrenScope == request.scope, @"scope mismatch" );
 }
 
 -(void)testAllChildrenBuilderTakesTheSourceFromTheItem

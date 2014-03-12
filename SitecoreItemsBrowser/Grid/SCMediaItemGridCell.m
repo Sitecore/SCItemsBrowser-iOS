@@ -1,6 +1,6 @@
 #import "SCMediaItemGridCell.h"
 
-#import "SCItem+Media.h"
+
 
 #import "SCMediaCellEvents.h"
 #import "SCMediaCellController.h"

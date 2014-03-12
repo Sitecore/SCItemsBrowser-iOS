@@ -2,7 +2,7 @@
 
 #import <SitecoreItemsBrowser/SCItemsBrowser.h>
 
-#import "SCItem+Media.h"
+
 #import <SitecoreMobileSDK/SitecoreMobileSDK.h>
 
 #import <MobileSDK-Private/SCItemRecord_Source.h>
