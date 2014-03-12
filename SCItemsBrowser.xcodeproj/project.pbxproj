@@ -62,7 +62,6 @@
 		7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43426218BCF0A30094C33D /* SCMediaItemGridCell.m */; };
 		7E4CD5BB18BB3DB3008B40BB /* SCItemGridBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BA18BB3DB3008B40BB /* SCItemGridBrowser.mm */; };
 		7E4CD5BE18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */; };
-		7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7E58471718B00CF5001057B9 /* ItemListTextCellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */; };
 		7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */; };
 		7E7E492118BB7C990068124D /* GridLazyFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E492018BB7C990068124D /* GridLazyFileManagerTest.m */; };
@@ -89,7 +88,6 @@
 		7EA3889418C4F2980065A228 /* SIBAbstractTemplateListRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72918AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.m */; };
 		7EA3889518C4F2980065A228 /* SIBWhiteListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E40D84818A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.m */; };
 		7EA3889618C4F2980065A228 /* SIBBlackListTemplateRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E34F72618AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.m */; };
-		7EA3889718C4F2980065A228 /* SCItem+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */; };
 		7EA3889818C4F2980065A228 /* SCLevelUpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2BF91918C0789200C36DD1 /* SCLevelUpItem.m */; };
 		7EA3889918C4F2980065A228 /* SCAbstractItemsBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E82859818BFA19700E6F7E7 /* SCAbstractItemsBrowser.m */; };
 		7EA3889B18C4F2CA0065A228 /* SIBGridModeAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1D05E618A14F6D006EF056 /* SIBGridModeAppearance.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -109,7 +107,6 @@
 		7EA388A918C4F2EC0065A228 /* SIBAbstractTemplateListRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E34F72818AA2E9500B5D62E /* SIBAbstractTemplateListRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388AA18C4F2EC0065A228 /* SIBWhiteListTemplateRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E40D84718A9357500CE98BF /* SIBWhiteListTemplateRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388AB18C4F2EC0065A228 /* SIBBlackListTemplateRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E34F72518AA2C0A00B5D62E /* SIBBlackListTemplateRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA388AC18C4F2EC0065A228 /* SCItem+Media.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388AD18C4F2EC0065A228 /* SCLevelUpItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2BF91818C0789200C36DD1 /* SCLevelUpItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388AE18C4F2EC0065A228 /* SCAbstractItemsBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E82859718BFA19700E6F7E7 /* SCAbstractItemsBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA388AF18C4F2EC0065A228 /* SCAbstractItemsBrowserSubclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E2BF91718C0701400C36DD1 /* SCAbstractItemsBrowserSubclassing.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -250,8 +247,6 @@
 		7E4CD5BD18BB4D1D008B40BB /* AssignOnceGridPropertiesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignOnceGridPropertiesTest.m; sourceTree = "<group>"; };
 		7E4DE9EC18BF6BE500A0514D /* SCItemsBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCItemsBrowserView.h; sourceTree = "<group>"; };
 		7E4DE9ED18BF6BE500A0514D /* SCItemsBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCItemsBrowserView.m; sourceTree = "<group>"; };
-		7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCItem+Media.h"; sourceTree = "<group>"; };
-		7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCItem+Media.m"; sourceTree = "<group>"; };
 		7E58471618B00CF5001057B9 /* ItemListTextCellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemListTextCellTest.m; sourceTree = "<group>"; };
 		7E73B44A18ABD17500950AEB /* SCMediaItemListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaItemListCell.h; sourceTree = "<group>"; };
 		7E73B44B18ABD17500950AEB /* SCMediaItemListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaItemListCell.m; sourceTree = "<group>"; };
@@ -421,7 +416,6 @@
 				7E1D05EC18A14FB3006EF056 /* List */,
 				7E2BF91B18C07A0D00C36DD1 /* MediaCell */,
 				7EB927BB18A900180007B062 /* RequestBuilder */,
-				7E52E0CD18ACB7BC004DF524 /* SCItem-Extenstions */,
 				7E82859618BFA17300E6F7E7 /* ItemsBrowser */,
 				7E4DE9EB18BF6BE500A0514D /* ItemsBrowserView */,
 				7E1D05B418A13D8E006EF056 /* SCItemsBrowser.h */,
@@ -595,15 +589,6 @@
 			path = ItemsBrowserView;
 			sourceTree = "<group>";
 		};
-		7E52E0CD18ACB7BC004DF524 /* SCItem-Extenstions */ = {
-			isa = PBXGroup;
-			children = (
-				7E52E0CE18ACB7D2004DF524 /* SCItem+Media.h */,
-				7E52E0CF18ACB7D2004DF524 /* SCItem+Media.m */,
-			);
-			path = "SCItem-Extenstions";
-			sourceTree = "<group>";
-		};
 		7E82859618BFA17300E6F7E7 /* ItemsBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,7 +681,6 @@
 				7EA388A918C4F2EC0065A228 /* SIBAbstractTemplateListRequestBuilder.h in Headers */,
 				7EA388AA18C4F2EC0065A228 /* SIBWhiteListTemplateRequestBuilder.h in Headers */,
 				7EA388AB18C4F2EC0065A228 /* SIBBlackListTemplateRequestBuilder.h in Headers */,
-				7EA388AC18C4F2EC0065A228 /* SCItem+Media.h in Headers */,
 				7EA388AD18C4F2EC0065A228 /* SCLevelUpItem.h in Headers */,
 				7EA388AE18C4F2EC0065A228 /* SCAbstractItemsBrowser.h in Headers */,
 				7EA388AF18C4F2EC0065A228 /* SCAbstractItemsBrowserSubclassing.h in Headers */,
@@ -865,7 +849,6 @@
 				7E1D05F218A15235006EF056 /* SCItemListCell.m in Sources */,
 				7E43426018BCEA9B0094C33D /* SCItemGridTextCell.m in Sources */,
 				7E43426318BCF0A30094C33D /* SCMediaItemGridCell.m in Sources */,
-				7E52E0D018ACB7D2004DF524 /* SCItem+Media.m in Sources */,
 				7E2276D518C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m in Sources */,
 				7E73B44C18ABD17500950AEB /* SCMediaItemListCell.m in Sources */,
 				7EAB807E18A5120B00C73F62 /* SCLevelResponse.m in Sources */,
@@ -940,7 +923,6 @@
 				7EA3889418C4F2980065A228 /* SIBAbstractTemplateListRequestBuilder.m in Sources */,
 				7EA3889518C4F2980065A228 /* SIBWhiteListTemplateRequestBuilder.m in Sources */,
 				7EA3889618C4F2980065A228 /* SIBBlackListTemplateRequestBuilder.m in Sources */,
-				7EA3889718C4F2980065A228 /* SCItem+Media.m in Sources */,
 				7EA3889818C4F2980065A228 /* SCLevelUpItem.m in Sources */,
 				7EA3889918C4F2980065A228 /* SCAbstractItemsBrowser.m in Sources */,
 			);
