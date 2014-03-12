@@ -12,7 +12,7 @@
 -(void)reloadData;
 
 /**
- Reloads items by activating the SCItemReaderRequestIngnoreCache flag.
+ Reloads items by activating the SCReadItemRequestIngnoreCache flag.
  */
 -(void)forceRefreshData;
 
