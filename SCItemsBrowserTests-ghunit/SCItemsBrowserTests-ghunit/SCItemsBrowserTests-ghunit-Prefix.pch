@@ -11,8 +11,6 @@
 #endif
 
 #ifdef __OBJC__
-    #import <SitecoreItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
-
     #import <SitecoreItemsBrowser/FileManager/SCItemsFileManager.h>
     #import <SitecoreItemsBrowser/FileManager/SCItemsFileManagerCallbacks.h>
     #import <SitecoreItemsBrowser/SCItemsBrowser.h>

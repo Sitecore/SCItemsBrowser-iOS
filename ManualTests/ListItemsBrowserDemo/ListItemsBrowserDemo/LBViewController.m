@@ -1,7 +1,5 @@
 #import "LBViewController.h"
 
-#import <SitecoreItemsBrowser/SCItem-Extenstions/SCItem+Media.h>
-
 #define CUSTOMIZATION_ENABLED 0
 
 //static NSString* const ROOT_ITEM_PATH = @"/sitecore/content/home/android/100items";
