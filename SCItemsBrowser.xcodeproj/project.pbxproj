@@ -23,27 +23,11 @@
 		7E225BA518A2420C009CEBEE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BA418A2420C009CEBEE /* libsqlite3.dylib */; };
 		7E225BA718A24211009CEBEE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BA618A24211009CEBEE /* libz.dylib */; };
 		7E225BA918A2421B009CEBEE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BA818A2421B009CEBEE /* CFNetwork.framework */; };
-		7E225BAC18A24220009CEBEE /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BAA18A24220009CEBEE /* AddressBook.framework */; };
-		7E225BAD18A24220009CEBEE /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BAB18A24220009CEBEE /* AddressBookUI.framework */; };
-		7E225BB518A2423E009CEBEE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BAE18A2423E009CEBEE /* AVFoundation.framework */; };
-		7E225BB618A2423E009CEBEE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BAF18A2423E009CEBEE /* CoreAudio.framework */; };
-		7E225BB718A2423E009CEBEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BB018A2423E009CEBEE /* CoreGraphics.framework */; };
-		7E225BB818A2423E009CEBEE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BB118A2423E009CEBEE /* CoreLocation.framework */; };
-		7E225BB918A2423E009CEBEE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BB218A2423E009CEBEE /* CoreMedia.framework */; };
-		7E225BBA18A2423E009CEBEE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BB318A2423E009CEBEE /* CoreMotion.framework */; };
-		7E225BBB18A2423E009CEBEE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BB418A2423E009CEBEE /* CoreVideo.framework */; };
 		7E225BBD18A24254009CEBEE /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BBC18A24254009CEBEE /* libxml2.dylib */; };
 		7E225BBF18A2426B009CEBEE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BBE18A2426B009CEBEE /* libc++.dylib */; };
 		7E225BC118A24271009CEBEE /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BC018A24271009CEBEE /* libstdc++.dylib */; };
-		7E225BC318A24276009CEBEE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BC218A24276009CEBEE /* MapKit.framework */; };
-		7E225BC618A24292009CEBEE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BC418A24292009CEBEE /* EventKit.framework */; };
-		7E225BC718A24292009CEBEE /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BC518A24292009CEBEE /* EventKitUI.framework */; };
-		7E225BC918A24296009CEBEE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BC818A24296009CEBEE /* Social.framework */; };
 		7E225BCB18A242B0009CEBEE /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BCA18A242B0009CEBEE /* libiconv.dylib */; };
-		7E225BCD18A242BF009CEBEE /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BCC18A242BF009CEBEE /* Twitter.framework */; };
-		7E225BCF18A242D2009CEBEE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BCE18A242D2009CEBEE /* AudioToolbox.framework */; };
 		7E225BD118A242FC009CEBEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BD018A242FC009CEBEE /* UIKit.framework */; };
-		7E225BD318A24313009CEBEE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E225BD218A24313009CEBEE /* MessageUI.framework */; };
 		7E225BEC18A2968B009CEBEE /* SCItemsFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BEB18A2968B009CEBEE /* SCItemsFileManager.m */; };
 		7E225BEE18A296D0009CEBEE /* ItemsFileManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E225BED18A296D0009CEBEE /* ItemsFileManagerTest.m */; };
 		7E2276D518C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2276D318C4B29B00EE839F /* SCGridCellBackgroundHighlightingAnimation.m */; };
@@ -302,33 +286,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E225BD318A24313009CEBEE /* MessageUI.framework in Frameworks */,
+				7E1D05DA18A14105006EF056 /* SitecoreMobileSDK.framework in Frameworks */,
+				7E1D05C418A13D8E006EF056 /* libSCItemsBrowser.a in Frameworks */,
 				7E225BD118A242FC009CEBEE /* UIKit.framework in Frameworks */,
-				7E225BCF18A242D2009CEBEE /* AudioToolbox.framework in Frameworks */,
-				7E225BCD18A242BF009CEBEE /* Twitter.framework in Frameworks */,
 				7E225BCB18A242B0009CEBEE /* libiconv.dylib in Frameworks */,
-				7E225BC918A24296009CEBEE /* Social.framework in Frameworks */,
-				7E225BC618A24292009CEBEE /* EventKit.framework in Frameworks */,
-				7E225BC718A24292009CEBEE /* EventKitUI.framework in Frameworks */,
-				7E225BC318A24276009CEBEE /* MapKit.framework in Frameworks */,
 				7E225BC118A24271009CEBEE /* libstdc++.dylib in Frameworks */,
 				7E225BBF18A2426B009CEBEE /* libc++.dylib in Frameworks */,
 				7E225BBD18A24254009CEBEE /* libxml2.dylib in Frameworks */,
-				7E225BB518A2423E009CEBEE /* AVFoundation.framework in Frameworks */,
-				7E225BB618A2423E009CEBEE /* CoreAudio.framework in Frameworks */,
-				7E225BB718A2423E009CEBEE /* CoreGraphics.framework in Frameworks */,
-				7E225BB818A2423E009CEBEE /* CoreLocation.framework in Frameworks */,
-				7E225BB918A2423E009CEBEE /* CoreMedia.framework in Frameworks */,
-				7E225BBA18A2423E009CEBEE /* CoreMotion.framework in Frameworks */,
-				7E225BBB18A2423E009CEBEE /* CoreVideo.framework in Frameworks */,
-				7E225BAC18A24220009CEBEE /* AddressBook.framework in Frameworks */,
-				7E225BAD18A24220009CEBEE /* AddressBookUI.framework in Frameworks */,
 				7E225BA918A2421B009CEBEE /* CFNetwork.framework in Frameworks */,
 				7E225BA718A24211009CEBEE /* libz.dylib in Frameworks */,
 				7E225BA518A2420C009CEBEE /* libsqlite3.dylib in Frameworks */,
 				7E1D05BE18A13D8E006EF056 /* XCTest.framework in Frameworks */,
-				7E1D05DA18A14105006EF056 /* SitecoreMobileSDK.framework in Frameworks */,
-				7E1D05C418A13D8E006EF056 /* libSCItemsBrowser.a in Frameworks */,
 				7E1D05BF18A13D8E006EF056 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1102,6 +1070,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SCItemsBrowser-Prefix.pch";
@@ -1128,6 +1097,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SCItemsBrowser-Prefix.pch";
@@ -1232,6 +1202,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Volumes/untitled/github/SCItemsBrowser/frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SitecoreItemsBrowser/SCItemsBrowser-Prefix.pch";
