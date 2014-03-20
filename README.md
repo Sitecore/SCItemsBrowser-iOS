@@ -25,9 +25,9 @@ Note : CocoaPods approach is not offcially supported. However, we'll happily acc
 
 # Requirements
 
-1. iOS 6 and newer
-2. ARC should be enabled
-3. [Sitecore iOS SDK 1.2](http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS.aspx) and its dependencies.
+1. **iOS 6** and newer
+2. **ARC** should be **enabled**
+3. [Sitecore iOS SDK 2.0](https://github.com/sitecore/sitecore-ios-sdk/) and its dependencies.
 
 
 
@@ -52,5 +52,5 @@ They are based on UITableView and UICollectionView respectively. However, you ca
 [SCAbstractItemsBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCAbstractItemsBrowser.html) controller and provide the missing code to interact with your content UI and provide data for it.
 
 # Documentation
-You can find the library's **appledoc reference** at our [github pages](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk1.3/hierarchy.html)
+You can find the library's **appledoc reference** at our [github pages](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk2.0/hierarchy.html)
 Full documentation is available at **SDN**.

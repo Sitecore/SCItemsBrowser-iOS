@@ -62,7 +62,7 @@ static const NSTimeInterval SINGLE_REQUEST_TIMEOUT = 60;
     GHAssertNil   ( actualError, @"unexpected error" );
     
 
-    SCExtendedAsyncOp imageLoader = [ mediaItem mediaLoaderWithOptions: nil ];
+    SCExtendedAsyncOp imageLoader = [ mediaItem downloadMediaExtendedOperationWithOptions: nil ];
     [ self prepare: thisTest ];
     {
         dispatch_async( dispatch_get_main_queue(), ^void()
