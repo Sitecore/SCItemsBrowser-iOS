@@ -33,7 +33,7 @@
     SCItem* mediaItem = self->_item;
     
     SCDownloadMediaOptions* resizingOptions = [ self normalizedImageResizingOptions ];
-    SCExtendedAsyncOp imageLoader = [ self->_item mediaLoaderWithOptions: resizingOptions ];
+    SCExtendedAsyncOp imageLoader = [ self->_item downloadMediaExtendedOperationWithOptions: resizingOptions ];
     SCDidFinishAsyncOperationHandler onImageLoadedBlock = ^void( UIImage* loadedImage, NSError* imageError )
     {
         if ( nil == loadedImage )
