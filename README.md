@@ -45,11 +45,11 @@ The user is not limited to displaying item names in textual format as you might 
 The library follows the CocoaTouch conventions and best practices.
 It offers two kinds of components :
 
-* [SCItemListBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCItemListBrowser.html)
-* [SCItemGridBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCItemGridBrowser.html)
+* [SCItemListBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk2.0/Classes/SCItemListBrowser.html)
+* [SCItemGridBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk2.0/Classes/SCItemGridBrowser.html)
 
 They are based on UITableView and UICollectionView respectively. However, you can implement your own content viewer based on any built-in or third-party iOS controls. In this case you should subclass the 
-[SCAbstractItemsBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/Classes/SCAbstractItemsBrowser.html) controller and provide the missing code to interact with your content UI and provide data for it.
+[SCAbstractItemsBrowser](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk2.0/Classes/SCAbstractItemsBrowser.html) controller and provide the missing code to interact with your content UI and provide data for it.
 
 # Documentation
 You can find the library's **appledoc reference** at our [github pages](http://sitecore.github.io/SCItemsBrowser-iOS/v1.0-sdk2.0/hierarchy.html)
