@@ -64,4 +64,16 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem;
 -(void)itemsBrowser:( id )sender
 didLoadLevelForItem:( SCItem* )levelParentItem;
 
+@optional
+
+/**
+ This method should provide comparator to sort items list recived from server. Return nil if no sorting needed.
+ 
+ @param sender One of the items browser controllers below.
+ 
+ - SCItemListBrowser
+ - SCItemGridBrowser
+*/
+-(NSComparator)sortResultComparatorForItemsBrowser:( id )sender;
+
 @end

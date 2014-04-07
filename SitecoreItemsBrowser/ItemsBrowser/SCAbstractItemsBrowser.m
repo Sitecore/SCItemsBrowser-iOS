@@ -163,8 +163,23 @@
     self->_loadedLevel = levelResponse;
     [ self reloadContentView ];
     
+
+    
+    if ( [ self.delegate respondsToSelector:@selector(sortResultComparatorForItemsBrowser:) ] )
+    {
+        NSComparator comparator = [ self.delegate sortResultComparatorForItemsBrowser: self ];
+        
+        if ( comparator != nil )
+        {
+            NSArray *sortedItems = [ levelResponse.levelContentItems sortedArrayUsingComparator: comparator ];
+            self->_loadedLevel = [ [ SCLevelResponse alloc ] initWithItem: levelResponse.levelParentItem
+                                                   levelContentItems: sortedItems ];
+        }
+    }
+    
+    
     [ self.delegate itemsBrowser: self
-             didLoadLevelForItem: levelResponse.levelParentItem ];
+             didLoadLevelForItem: self->_loadedLevel.levelParentItem ];
 }
 
 -(SCItemsFileManagerCallbacks*)newCallbacksForItemsFileManager

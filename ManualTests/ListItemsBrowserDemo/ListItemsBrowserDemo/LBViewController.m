@@ -170,6 +170,38 @@ forState: UIControlStateNormal ];
 
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
+
+-(NSComparator)sortResultComparatorForItemsBrowser:( id )sender
+{
+    return ^(SCItem *obj1, SCItem *obj2) {
+
+        if ( ![obj1 isMemberOfClass:[SCItem class]] )
+        {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        
+        if ( ![obj2 isMemberOfClass:[SCItem class]] )
+        {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        NSString *fastTemplateName = @"System/Media/Media folder";
+        
+        if ( [obj1.itemTemplate isEqualToString:fastTemplateName] && ![obj2.itemTemplate isEqualToString:fastTemplateName])
+        {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        
+        if ( [obj2.itemTemplate isEqualToString:fastTemplateName] && ![obj1.itemTemplate isEqualToString:fastTemplateName])
+        {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        return [ obj1.displayName compare: obj2.displayName ];
+        
+    };
+}
+
 -(void)itemsBrowser:( id )sender
 didReceiveLevelProgressNotification:( id )progressInfo
 {
