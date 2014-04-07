@@ -44,7 +44,7 @@
     UIActivityIndicatorView* progress =
     [ [ UIActivityIndicatorView alloc ] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray ];
     self->_progress = progress;
-    self->_progress.center = CGPointMake( imageFrame.size.width / 2. , imageFrame.size.height / 2. );
+    self->_progress.center = CGPointMake( imageFrame.size.width / 2.f , imageFrame.size.height / 2.f );
     
     [ self.contentView addSubview: imageView ];
     [ self.contentView addSubview: progress  ];
@@ -93,7 +93,7 @@
 -(void)layoutSubviews
 {
     [ super layoutSubviews ];
-    self->_progress.center = CGPointMake( self.frame.size.width / 2., self.frame.size.height / 2. );
+    self->_progress.center = CGPointMake( self.frame.size.width / 2.f, self.frame.size.height / 2.f );
     
     CGRect imageFrame = self.contentView.frame;
     imageFrame.origin = CGPointMake( 0, 0 );

@@ -75,7 +75,7 @@
 -(void)layoutSubviews
 {
     [ super layoutSubviews ];
-    self->_progress.center = CGPointMake( self.frame.size.width / 2., self.frame.size.height / 2. );
+    self->_progress.center = CGPointMake( self.frame.size.width / 2.f, self.frame.size.height / 2.f );
 }
 
 #pragma mark -
