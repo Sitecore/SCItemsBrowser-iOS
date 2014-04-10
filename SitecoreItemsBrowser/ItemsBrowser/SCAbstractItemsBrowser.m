@@ -161,9 +161,6 @@
     NSParameterAssert( nil != levelResponse.levelParentItem );
     
     self->_loadedLevel = levelResponse;
-    [ self reloadContentView ];
-    
-
     
     if ( [ self.delegate respondsToSelector:@selector(sortResultComparatorForItemsBrowser:) ] )
     {
@@ -177,6 +174,7 @@
         }
     }
     
+    [ self reloadContentView ];
     
     [ self.delegate itemsBrowser: self
              didLoadLevelForItem: self->_loadedLevel.levelParentItem ];
