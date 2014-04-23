@@ -2,7 +2,15 @@
 #import <SitecoreMobileSDK/SCExtendedOperations.h>
 
 
+/**
+ This class contains some methods to control the flow of asynchronous operations of SCExtendedAsyncOp type.
+ With its help the user can avoid the "callback hell" problem and reduce the depth of asycnhronous calls.
+ 
+ To control the flow of SCAsyncOp operations please consider the SCAsyncOpRelationsBuilder class.
+ Alternatively, you can convert the operation using the +[SCAsyncOpRelationsBuilder operationFromExtendedOperation:] class.
+ */
 @interface SCExtendedAsyncOpRelationsBuilder : NSObject
+
 
 /**
  Converts operations array to a single operation. The operations will be executed one after another.
@@ -14,7 +22,9 @@
  
  @return a single SCExtendedAsyncOp as a combination
  */
-+(SCExtendedAsyncOp)sequence:( NSArray* )operations_;
++(SCExtendedAsyncOp)sequence:( NSArray* )operations;
+
+
 
 
 /**
@@ -24,7 +34,9 @@
  
  @return a single SCExtendedAsyncOp as a combination
  */
-+(SCExtendedAsyncOp)stopOnFirstSuccessInSequence:( NSArray* )operations_;
++(SCExtendedAsyncOp)stopOnFirstSuccessInSequence:( NSArray* )operations;
+
+
 
 
 /**
@@ -37,7 +49,7 @@
  
  @return a single SCExtendedAsyncOp as a combination
  
- 
+ ```
  [ SCExtendedAsyncOpRelationsBuilder group: @[a, b, c, d, e] ]( nil, nil,
  void^( NSArray* result, NSError* error )
  {
@@ -46,9 +58,11 @@
  // and result == nil
  // error is non determined. It may be either c.error or e.error
  } );
- 
+ ```
  */
-+(SCExtendedAsyncOp)group:( NSArray* )operations_;
++(SCExtendedAsyncOp)group:( NSArray* )operations;
+
+
 
 
 /**
@@ -60,7 +74,8 @@
  
  @return a single SCExtendedAsyncOp as a combination
  */
-+(SCExtendedAsyncOp)stopOnFirstErrorInGroup:( NSArray* )operations_;
++(SCExtendedAsyncOp)stopOnFirstErrorInGroup:( NSArray* )operations;
+
 
 
 
@@ -77,6 +92,7 @@
  */
 +(SCExtendedAsyncOp)waterfallForOperation:( SCExtendedAsyncOp )firstOperation
                         chainingCallbacks:( NSArray* )chainingCallbacks;
+
 
 
 /**
