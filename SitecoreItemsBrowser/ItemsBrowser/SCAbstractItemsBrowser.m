@@ -4,6 +4,12 @@
 
 #import "SCLevelUpItem.h"
 
+// @adk : TODO : expose the **asyncOperationWithSyncOperation** API in the SCExtendedAsyncOpRelationsBuilder class
+typedef id (^JFFSyncOperation)(NSError *__autoreleasing *outError);
+OBJC_EXTERN SCExtendedAsyncOp asyncOperationWithSyncOperation(JFFSyncOperation loadDataBlock);
+
+
+
 @interface SCAbstractItemsBrowser()<SCAbstractItemsBrowserSubclassing>
 
 // unit test
@@ -148,7 +154,6 @@
                                    ignoringCache: NO ];
 }
 
-
 -(void)onLevelReloadFailedWithError:( NSError* )levelError
 {
     [ self.delegate itemsBrowser: self
@@ -159,23 +164,11 @@
 {
     NSParameterAssert( nil != levelResponse );
     NSParameterAssert( nil != levelResponse.levelParentItem );
-    
+
+    // @adk : order matters
     self->_loadedLevel = levelResponse;
-    
-    if ( [ self.delegate respondsToSelector:@selector(sortResultComparatorForItemsBrowser:) ] )
-    {
-        NSComparator comparator = [ self.delegate sortResultComparatorForItemsBrowser: self ];
-        
-        if ( comparator != nil )
-        {
-            NSArray *sortedItems = [ levelResponse.levelContentItems sortedArrayUsingComparator: comparator ];
-            self->_loadedLevel = [ [ SCLevelResponse alloc ] initWithItem: levelResponse.levelParentItem
-                                                   levelContentItems: sortedItems ];
-        }
-    }
-    
     [ self reloadContentView ];
-    
+
     [ self.delegate itemsBrowser: self
              didLoadLevelForItem: self->_loadedLevel.levelParentItem ];
 }
@@ -203,6 +196,8 @@
             [ weakSelf.delegate itemsBrowser: weakSelf
          didReceiveLevelProgressNotification: progressInfo ];
         };
+        
+        callbacks.asyncSortDownloadedItemsMonad = [ self asyncSortDownloadedItemsMonad ];
     }
     
     return callbacks;
@@ -227,6 +222,41 @@
         [ self.lazyItemsFileManager reloadCurrentLevelNotifyingCallbacks: fmCallbacks
                                                            ignoringCache: shouldIgnoreCache ];
     }
+}
+
+#pragma mark -
+#pragma mark Utils
+
+-(SCExtendedOpChainUnit)asyncSortDownloadedItemsMonad
+{
+    NSComparator comparator = nil;
+    if ( [ self.delegate respondsToSelector:@selector(sortResultComparatorForItemsBrowser:) ] )
+    {
+        comparator = [ self.delegate sortResultComparatorForItemsBrowser: self ];
+        comparator = [ comparator copy ];
+    }
+    
+    
+    SCExtendedOpChainUnit result = ^SCExtendedAsyncOp( NSArray* levelContentItems )
+    {
+        JFFSyncOperation syncBlockResult = ^NSArray*( NSError *__autoreleasing *outError )
+        {
+            if ( nil == comparator )
+            {
+                return levelContentItems;
+            }
+            else
+            {
+                NSArray* sortedItems = [ levelContentItems sortedArrayUsingComparator: comparator ];
+                return sortedItems;
+            }
+        };
+        
+        SCExtendedAsyncOp blockResult = asyncOperationWithSyncOperation( syncBlockResult );
+        return [ blockResult copy ];
+    };
+
+    return [ result copy ];
 }
 
 @end

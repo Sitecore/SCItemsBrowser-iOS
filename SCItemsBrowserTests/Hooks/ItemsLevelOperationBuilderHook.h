@@ -2,6 +2,7 @@
 
 typedef SCExtendedAsyncOp (^LevelOperationFromRequestBuilder)( SCReadItemsRequest* request );
 
+
 @interface ItemsLevelOperationBuilderHook : NSObject
 
 -(instancetype)initWithHookImpl:(LevelOperationFromRequestBuilder)hookImpl;

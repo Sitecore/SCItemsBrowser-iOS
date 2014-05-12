@@ -116,8 +116,9 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
     SCReadItemsRequest* request = [ self->_levelsHistory levelUpRequest ];
     SCItem* levelUpParentItem     = [ self->_levelsHistory levelUpParentItem ];
     
-    NSParameterAssert( nil != request           );
-    NSParameterAssert( nil != levelUpParentItem );
+    NSParameterAssert( nil != request                                 );
+    NSParameterAssert( nil != levelUpParentItem                       );
+    NSParameterAssert( nil != callbacks.asyncSortDownloadedItemsMonad );
     
     // set cache flag to zero
     request.flags &= SCReadItemRequestReadFieldsValues;
@@ -135,11 +136,17 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
                                                                parentItemOfLevel: levelUpParentItem ];
     
     
-    SCExtendedAsyncOp loader = [ self levelLoaderFromRequest: request ];
-    self.cancelLoaderBlock = loader(
+    SCExtendedAsyncOp levelUpItemsLoader = [ self levelLoaderFromRequest: request ];
+    SCExtendedOpChainUnit asyncSortLevelItems = callbacks.asyncSortDownloadedItemsMonad;
+    SCExtendedAsyncOp loader = [ SCExtendedAsyncOpRelationsBuilder waterfallForOperation: levelUpItemsLoader
+                                                                       chainingCallbacks: @[asyncSortLevelItems] ];
+    
+    self.cancelLoaderBlock = loader
+    (
         callbacks.onLevelProgressBlock,
-        nil,
-        completionHook );
+        nil                           ,
+        completionHook
+    );
 }
 
 
@@ -150,11 +157,15 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
           ignoringCache:( BOOL )shouldIgnoreCache
  pushLevelActionBuilder:( UpdateHistoryActionFromRequest )actionFromRequest
 {
-    NSParameterAssert( nil != callbacks.onLevelLoadedBlock );
+    NSParameterAssert( nil != callbacks.onLevelLoadedBlock            );
+    NSParameterAssert( nil != callbacks.asyncSortDownloadedItemsMonad );
     
     SCReadItemsRequest* request = [ self buildLevelRequestForItem: item
                                                       ignoringCache: shouldIgnoreCache ];
-    SCExtendedAsyncOp loader = [ self levelLoaderFromRequest: request ];
+    SCExtendedAsyncOp levelItemsLoader = [ self levelLoaderFromRequest: request ];
+    SCExtendedOpChainUnit asyncSortLevelItems = callbacks.asyncSortDownloadedItemsMonad;
+    SCExtendedAsyncOp loader = [ SCExtendedAsyncOpRelationsBuilder waterfallForOperation: levelItemsLoader
+                                                                       chainingCallbacks: @[asyncSortLevelItems] ];
     
     
     UpdateHistoryActionBlock pushLevelAction = actionFromRequest( request );
@@ -164,10 +175,12 @@ typedef UpdateHistoryActionBlock (^UpdateHistoryActionFromRequest)( SCReadItemsR
                                                                byUpdatingHistory: pushLevelAction
                                                                parentItemOfLevel: item ];
     
-    self.cancelLoaderBlock = loader(
-                                    callbacks.onLevelProgressBlock,
-                                    nil,
-                                    completionHook );
+    self.cancelLoaderBlock = loader
+    (
+        callbacks.onLevelProgressBlock,
+        nil                           ,
+        completionHook
+    );
 }
 
 -(SCReadItemsRequest*)buildLevelRequestForItem:( SCItem* )item
