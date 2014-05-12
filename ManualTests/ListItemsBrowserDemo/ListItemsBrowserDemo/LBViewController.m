@@ -13,15 +13,15 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
     SIBListModeCellFactory
 >
 
-@property (strong, nonatomic) IBOutlet SCItemListBrowser *itemsBrowserController;
-@property (strong, nonatomic) IBOutlet SIBAllChildrenRequestBuilder *allChildrenRequestBuilder;
+@property (strong, nonatomic) IBOutlet SCItemListBrowser* itemsBrowserController;
+@property (strong, nonatomic) IBOutlet SIBAllChildrenRequestBuilder* allChildrenRequestBuilder;
 
-@property (weak, nonatomic) IBOutlet UITextView *itemPathTextView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingProgress;
+@property (weak, nonatomic) IBOutlet UITextView* itemPathTextView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* loadingProgress;
 
 
-@property (weak, nonatomic) IBOutlet UIButton *rootButton;
-@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
+@property (weak, nonatomic) IBOutlet UIButton* rootButton;
+@property (weak, nonatomic) IBOutlet UIButton* reloadButton;
 
 
 @end
@@ -35,7 +35,7 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 -(void)setupContext
 {
     self->_legacyApiSession =
-    [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:7200"
+    [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
                              login: @"sitecore\\admin"
                           password: @"b"
                            version: SCWebApiMaxSupportedVersion ];
@@ -171,36 +171,38 @@ forState: UIControlStateNormal ];
 #pragma mark -
 #pragma mark SCItemsBrowserDelegate
 
--(NSComparator)sortResultComparatorForItemsBrowser:( id )sender
+-(NSComparator)sortResultComparatorForItemsBrowser:(SCItemListBrowser*)sender
 {
-    return ^(SCItem *obj1, SCItem *obj2) {
-
+    NSComparator result = ^NSComparisonResult(SCItem* obj1, SCItem* obj2)
+    {
+        
         if ( ![obj1 isMemberOfClass:[SCItem class]] )
         {
-            return (NSComparisonResult)NSOrderedAscending;
+            return NSOrderedAscending;
         }
         
         if ( ![obj2 isMemberOfClass:[SCItem class]] )
         {
-            return (NSComparisonResult)NSOrderedDescending;
+            return NSOrderedDescending;
         }
         
-        NSString *fastTemplateName = @"System/Media/Media folder";
-        
-        if ( [obj1.itemTemplate isEqualToString:fastTemplateName] && ![obj2.itemTemplate isEqualToString:fastTemplateName])
+        if ( obj1.isFolder && !obj2.isFolder)
         {
-            return (NSComparisonResult)NSOrderedAscending;
+            return NSOrderedAscending;
         }
         
-        if ( [obj2.itemTemplate isEqualToString:fastTemplateName] && ![obj1.itemTemplate isEqualToString:fastTemplateName])
+        if ( obj2.isFolder && !obj1.isFolder)
         {
-            return (NSComparisonResult)NSOrderedDescending;
+            return NSOrderedDescending;
         }
         
         return [ obj1.displayName compare: obj2.displayName ];
         
     };
+    
+    return result;
 }
+
 
 -(void)itemsBrowser:( id )sender
 didReceiveLevelProgressNotification:( id )progressInfo
@@ -302,6 +304,7 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem
 {
     return levelParentItem.isFolder || levelParentItem.hasChildren;
 }
+
 
 #pragma mark -
 #pragma mark Theme

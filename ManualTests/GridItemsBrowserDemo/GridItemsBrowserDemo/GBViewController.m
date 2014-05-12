@@ -26,7 +26,7 @@ static NSString* const ROOT_ITEM_PATH = @"/sitecore";
 -(void)setupContext
 {
     self->_legacyApiSession =
-    [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:7200"
+    [ SCApiSession sessionWithHost: @"http://mobiledev1ua1.dk.sitecore.net:722"
                              login: @"sitecore\\admin"
                           password: @"b"
                            version: SCWebApiMaxSupportedVersion ];
@@ -325,6 +325,37 @@ static NSString* const IMAGE_CELL_ID     = @"net.sitecore.MobileSdk.ItemsBrowser
     // IDLE
     
     // @adk : to make highlighting animations look nice
+}
+
+-(NSComparator)sortResultComparatorForItemsBrowser:(SCItemGridBrowser*)sender
+{
+    NSComparator result = ^NSComparisonResult(SCItem* obj1, SCItem* obj2)
+    {
+        if ( ![obj1 isMemberOfClass:[SCItem class]] )
+        {
+            return NSOrderedAscending;
+        }
+        
+        if ( ![obj2 isMemberOfClass:[SCItem class]] )
+        {
+            return NSOrderedDescending;
+        }
+        
+        if ( obj1.isFolder && !obj2.isFolder)
+        {
+            return NSOrderedAscending;
+        }
+        
+        if ( obj2.isFolder && !obj1.isFolder)
+        {
+            return NSOrderedDescending;
+        }
+        
+        return [ obj1.displayName compare: obj2.displayName ];
+        
+    };
+    
+    return result;
 }
 
 @end
