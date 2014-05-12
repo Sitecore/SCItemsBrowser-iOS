@@ -64,6 +64,7 @@ shouldLoadLevelForItem:( SCItem* )levelParentItem;
 -(void)itemsBrowser:( id )sender
 didLoadLevelForItem:( SCItem* )levelParentItem;
 
+
 @optional
 
 /**
@@ -73,6 +74,10 @@ didLoadLevelForItem:( SCItem* )levelParentItem;
  
  - SCItemListBrowser
  - SCItemGridBrowser
+ 
+ @return A standard Apple's NSComparator predicate.
+
+ Return nil or do not implement this method if no sorting is required.
 */
 -(NSComparator)sortResultComparatorForItemsBrowser:( id )sender;
 
