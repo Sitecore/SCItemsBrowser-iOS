@@ -1,3 +1,5 @@
+
+*.xccheckout
 .svn
 build
 DerivedData
